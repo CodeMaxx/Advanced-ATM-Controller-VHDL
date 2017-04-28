@@ -54,141 +54,141 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="123"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/framing.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/framing.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="135"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/miim_control.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/miim_control.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="136"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/crc.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/crc.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="137"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/ethernet_with_fifos.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/ethernet_with_fifos.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="138"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/single_signal_synchronizer.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/single_signal_synchronizer.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="139"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/utility.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/utility.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="140"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/ethernet_mac_tb.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/ethernet_mac_tb.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="141"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="141"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="141"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="141"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/crc32_tb.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/crc32_tb.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="142"/>
       <association xil_pn:name="PostMapSimulation" xil_pn:seqID="142"/>
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="142"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="142"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/ethernet.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/ethernet.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="143"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/rx_fifo.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/rx_fifo.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="144"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/miim_types.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/miim_types.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="145"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/miim.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/miim.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="146"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/mii_gmii.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/mii_gmii.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="147"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/ethernet_types.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/ethernet_types.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="148"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/miim_registers.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/miim_registers.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="149"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/framing_common.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/framing_common.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="150"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/mii_gmii_io.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/mii_gmii_io.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="151"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/crc32.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/crc32.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="152"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/reset_generator.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/reset_generator.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="153"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/tx_fifo_adapter.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/tx_fifo_adapter.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/fixed_input_delay.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/fixed_input_delay.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="155"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/input_buffer.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/input_buffer.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="156"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/mii_gmii_io_spartan6.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/mii_gmii_io_spartan6.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="157"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/output_buffer.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/output_buffer.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="158"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/single_signal_synchronizer_spartan6.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/single_signal_synchronizer_spartan6.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="159"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/tx_fifo.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../ethernet_mac/xilinx/tx_fifo.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="160"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.xco" xil_pn:type="FILE_COREGEN">
+    <file xil_pn:name="../ethernet_mac/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.xco" xil_pn:type="FILE_COREGEN">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="165"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
@@ -200,7 +200,7 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="177"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
-    <file xil_pn:name="../ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.xise" xil_pn:type="FILE_COREGENISE">
+    <file xil_pn:name="../ethernet_mac/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.xise" xil_pn:type="FILE_COREGENISE">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
   </files>

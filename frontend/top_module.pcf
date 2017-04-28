@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Apr 28 18:10:15 2017
+// Written by: Map P.20131013 on Fri Apr 28 22:49:25 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -96,11 +96,7 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "ATM_Main_cont/timer1/temp_6" BEL "ATM_Main_cont/timer1/temp_5" BEL
         "ATM_Main_cont/timer1/temp_4" BEL "ATM_Main_cont/timer1/temp_3" BEL
         "ATM_Main_cont/timer1/temp_2" BEL "ATM_Main_cont/timer1/temp_1" BEL
-        "ATM_Main_cont/timer1/temp_0" BEL "ATM_Main_cont/d100_7" BEL
-        "ATM_Main_cont/d100_6" BEL "ATM_Main_cont/d100_5" BEL
-        "ATM_Main_cont/d100_4" BEL "ATM_Main_cont/d100_3" BEL
-        "ATM_Main_cont/d100_2" BEL "ATM_Main_cont/d100_1" BEL
-        "ATM_Main_cont/d100_0" BEL "ATM_Main_cont/d500_7" BEL
+        "ATM_Main_cont/timer1/temp_0" BEL "ATM_Main_cont/d500_7" BEL
         "ATM_Main_cont/d500_6" BEL "ATM_Main_cont/d500_5" BEL
         "ATM_Main_cont/d500_4" BEL "ATM_Main_cont/d500_3" BEL
         "ATM_Main_cont/d500_2" BEL "ATM_Main_cont/d500_1" BEL
@@ -108,12 +104,16 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "ATM_Main_cont/d1000_6" BEL "ATM_Main_cont/d1000_5" BEL
         "ATM_Main_cont/d1000_4" BEL "ATM_Main_cont/d1000_3" BEL
         "ATM_Main_cont/d1000_2" BEL "ATM_Main_cont/d1000_1" BEL
-        "ATM_Main_cont/d1000_0" BEL "ATM_Main_cont/d2000_7" BEL
-        "ATM_Main_cont/d2000_6" BEL "ATM_Main_cont/d2000_5" BEL
-        "ATM_Main_cont/d2000_4" BEL "ATM_Main_cont/d2000_3" BEL
-        "ATM_Main_cont/d2000_2" BEL "ATM_Main_cont/d2000_1" BEL
-        "ATM_Main_cont/d2000_0" BEL "ATM_Main_cont/count_blink_2" BEL
+        "ATM_Main_cont/d1000_0" BEL "ATM_Main_cont/d100_7" BEL
+        "ATM_Main_cont/d100_6" BEL "ATM_Main_cont/d100_5" BEL
+        "ATM_Main_cont/d100_4" BEL "ATM_Main_cont/d100_3" BEL
+        "ATM_Main_cont/d100_2" BEL "ATM_Main_cont/d100_1" BEL
+        "ATM_Main_cont/d100_0" BEL "ATM_Main_cont/count_blink_2" BEL
         "ATM_Main_cont/count_blink_1" BEL "ATM_Main_cont/count_blink_0" BEL
+        "ATM_Main_cont/d2000_7" BEL "ATM_Main_cont/d2000_6" BEL
+        "ATM_Main_cont/d2000_5" BEL "ATM_Main_cont/d2000_4" BEL
+        "ATM_Main_cont/d2000_3" BEL "ATM_Main_cont/d2000_2" BEL
+        "ATM_Main_cont/d2000_1" BEL "ATM_Main_cont/d2000_0" BEL
         "ATM_Main_cont/substate_FSM_FFd1" BEL
         "ATM_Main_cont/substate_FSM_FFd2" BEL
         "ATM_Main_cont/substate_FSM_FFd3" BEL "ATM_Main_cont/state_FSM_FFd1"
@@ -251,10 +251,9 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "ATM_Main_cont/data_out_leds_7" BEL "ATM_Main_cont/data_out_leds_6"
         BEL "ATM_Main_cont/data_out_leds_5" BEL
         "ATM_Main_cont/data_out_leds_4" BEL "ATM_Main_cont/data_out_leds_3"
-        BEL "ATM_Main_cont/data_out_leds_0" BEL "ATM_Main_cont/bank_id_4" BEL
-        "ATM_Main_cont/bank_id_3" BEL "ATM_Main_cont/bank_id_2" BEL
-        "ATM_Main_cont/bank_id_1" BEL "ATM_Main_cont/bank_id_0" BEL
-        "ATM_Main_cont/money_31" BEL "ATM_Main_cont/money_30" BEL
+        BEL "ATM_Main_cont/data_out_leds_2" BEL
+        "ATM_Main_cont/data_out_leds_1" BEL "ATM_Main_cont/data_out_leds_0"
+        BEL "ATM_Main_cont/money_31" BEL "ATM_Main_cont/money_30" BEL
         "ATM_Main_cont/money_29" BEL "ATM_Main_cont/money_28" BEL
         "ATM_Main_cont/money_27" BEL "ATM_Main_cont/money_26" BEL
         "ATM_Main_cont/money_25" BEL "ATM_Main_cont/money_24" BEL
@@ -269,24 +268,25 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "ATM_Main_cont/money_7" BEL "ATM_Main_cont/money_6" BEL
         "ATM_Main_cont/money_5" BEL "ATM_Main_cont/money_4" BEL
         "ATM_Main_cont/money_3" BEL "ATM_Main_cont/money_2" BEL
-        "ATM_Main_cont/money_1" BEL "ATM_Main_cont/money_0" BEL
-        "ATM_Main_cont/n2000_7" BEL "ATM_Main_cont/n2000_6" BEL
-        "ATM_Main_cont/n2000_5" BEL "ATM_Main_cont/n2000_4" BEL
-        "ATM_Main_cont/n2000_3" BEL "ATM_Main_cont/n2000_2" BEL
-        "ATM_Main_cont/n2000_1" BEL "ATM_Main_cont/n2000_0" BEL
-        "ATM_Main_cont/n1000_7" BEL "ATM_Main_cont/n1000_6" BEL
-        "ATM_Main_cont/n1000_5" BEL "ATM_Main_cont/n1000_4" BEL
-        "ATM_Main_cont/n1000_3" BEL "ATM_Main_cont/n1000_2" BEL
-        "ATM_Main_cont/n1000_1" BEL "ATM_Main_cont/n1000_0" BEL
-        "ATM_Main_cont/n500_7" BEL "ATM_Main_cont/n500_6" BEL
-        "ATM_Main_cont/n500_5" BEL "ATM_Main_cont/n500_4" BEL
-        "ATM_Main_cont/n500_3" BEL "ATM_Main_cont/n500_2" BEL
-        "ATM_Main_cont/n500_1" BEL "ATM_Main_cont/n500_0" BEL
-        "ATM_Main_cont/n100_7" BEL "ATM_Main_cont/n100_6" BEL
-        "ATM_Main_cont/n100_5" BEL "ATM_Main_cont/n100_4" BEL
-        "ATM_Main_cont/n100_3" BEL "ATM_Main_cont/n100_2" BEL
-        "ATM_Main_cont/n100_1" BEL "ATM_Main_cont/n100_0" BEL
-        "ATM_Main_cont/data_to_be_decrypted_63" BEL
+        "ATM_Main_cont/bank_id_4" BEL "ATM_Main_cont/bank_id_3" BEL
+        "ATM_Main_cont/bank_id_2" BEL "ATM_Main_cont/bank_id_1" BEL
+        "ATM_Main_cont/bank_id_0" BEL "ATM_Main_cont/n2000_7" BEL
+        "ATM_Main_cont/n2000_6" BEL "ATM_Main_cont/n2000_5" BEL
+        "ATM_Main_cont/n2000_4" BEL "ATM_Main_cont/n2000_3" BEL
+        "ATM_Main_cont/n2000_2" BEL "ATM_Main_cont/n2000_1" BEL
+        "ATM_Main_cont/n2000_0" BEL "ATM_Main_cont/n1000_7" BEL
+        "ATM_Main_cont/n1000_6" BEL "ATM_Main_cont/n1000_5" BEL
+        "ATM_Main_cont/n1000_4" BEL "ATM_Main_cont/n1000_3" BEL
+        "ATM_Main_cont/n1000_2" BEL "ATM_Main_cont/n1000_1" BEL
+        "ATM_Main_cont/n1000_0" BEL "ATM_Main_cont/n500_7" BEL
+        "ATM_Main_cont/n500_6" BEL "ATM_Main_cont/n500_5" BEL
+        "ATM_Main_cont/n500_4" BEL "ATM_Main_cont/n500_3" BEL
+        "ATM_Main_cont/n500_2" BEL "ATM_Main_cont/n500_1" BEL
+        "ATM_Main_cont/n500_0" BEL "ATM_Main_cont/n100_7" BEL
+        "ATM_Main_cont/n100_6" BEL "ATM_Main_cont/n100_5" BEL
+        "ATM_Main_cont/n100_4" BEL "ATM_Main_cont/n100_3" BEL
+        "ATM_Main_cont/n100_2" BEL "ATM_Main_cont/n100_1" BEL
+        "ATM_Main_cont/n100_0" BEL "ATM_Main_cont/data_to_be_decrypted_63" BEL
         "ATM_Main_cont/data_to_be_decrypted_62" BEL
         "ATM_Main_cont/data_to_be_decrypted_61" BEL
         "ATM_Main_cont/data_to_be_decrypted_60" BEL
@@ -709,8 +709,8 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "comm/checkuser_4" BEL "comm/checkuser_3" BEL "comm/checkuser_2" BEL
         "comm/checkuser_1" BEL "comm/checkuser_0" BEL
         "ATM_Main_cont/start_comm" BEL "ATM_Main_cont/start_decrypt" BEL
-        "ATM_Main_cont/is_suf_atm_signal" BEL "ATM_Main_cont/data_inp/done"
-        BEL "encrypt/done" BEL "encrypt/state" BEL "decrypt/done" BEL
+        "ATM_Main_cont/is_suf_atm" BEL "ATM_Main_cont/data_inp/done" BEL
+        "encrypt/done" BEL "encrypt/state" BEL "decrypt/done" BEL
         "decrypt/state" BEL "comm_fpga/isAligned" BEL "debouncer5/button_deb"
         BEL "debouncer5/oldbutton" BEL "debouncer4/button_deb" BEL
         "debouncer4/oldbutton" BEL "debouncer3/button_deb" BEL
@@ -720,9 +720,13 @@ TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
         "ATM_Main_cont/finish_display" BEL "ATM_Main_cont/double_time" BEL
         "comm/f2hValid_out" BEL "ATM_Main_cont/start_encrypt" BEL
         "ATM_Main_cont/n500_1_1" BEL "ATM_Main_cont/n2000_1_1" BEL
-        "ATM_Main_cont/n1000_1_1" BEL "ATM_Main_cont/n500_2_1" BEL
-        "ATM_Main_cont/n2000_2_1" BEL "ATM_Main_cont/n1000_2_1" BEL
-        "ATM_Main_cont/n1000_2_2" BEL "fx2Clk_in_BUFGP/BUFG";
+        "ATM_Main_cont/n2000_2_1" BEL "ATM_Main_cont/n500_2_1" BEL
+        "ATM_Main_cont/n1000_2_1" BEL "ATM_Main_cont/state_FSM_FFd5_1" BEL
+        "ATM_Main_cont/state_FSM_FFd3_1" BEL "ATM_Main_cont/state_FSM_FFd4_1"
+        BEL "ATM_Main_cont/n1000_1_1" BEL "ATM_Main_cont/n2000_2_2" BEL
+        "ATM_Main_cont/state_FSM_FFd4_2" BEL "ATM_Main_cont/n500_2_2" BEL
+        "ATM_Main_cont/state_FSM_FFd5_2" BEL "ATM_Main_cont/state_FSM_FFd3_2"
+        BEL "fx2Clk_in_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 SCHEMATIC END;
 

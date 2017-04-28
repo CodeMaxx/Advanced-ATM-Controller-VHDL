@@ -194,9 +194,9 @@ begin
 					if(atm_cash_that_can_be_given >= data_to_be_encrypted_signal(31 downto 0)) then
 					is_suf_atm <= '1';
 					is_suf_atm_signal <= '1';
+					end if;
 					state <= "00010";				--send data for encryption
 					start_encrypt <= '1';
-					end if;
 				end if;
 			elsif(state = "00010" and done_encrypt = '1' and current_user_bank_id = bank_id) then
 				start_encrypt <= '0';
@@ -208,22 +208,29 @@ begin
 				state <= "00100";				--backend communication done + decrption start
 				data_to_be_decrypted <= decrypted_data_comm;
 				start_decrypt <= '1';
-			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
-				start_decrypt <= '0';
-				money <= decrypted_data(31 downto 0);
-				state <= "00101"; 						--user with sufficient balance and less than restricted total
+			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1') then
+				if(decrypted_data(31 downto 0) <= restriction_total) then
+					start_decrypt <= '0';
+					money <= decrypted_data(31 downto 0);
+					state <= "00101";						 						--user with sufficient balance and less than restricted total
+				else
+					start_decrypt <= '0';
+					state <= "01111";
+				end if;
 			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
+				start_decrypt <= '0';
 				state <= "00110"; 						--user with insufficient balance
 			elsif(state = "00100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
+				start_decrypt <= '0';
 				state <= "00111";				--admin
 				n2000 <= data_to_be_encrypted_signal(31 downto 24);
 				n1000 <= data_to_be_encrypted_signal(23 downto 16);
 				n500 <= data_to_be_encrypted_signal(15 downto 8);
 				n100 <= data_to_be_encrypted_signal(7 downto 0);
-			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
-				state <= "01111";
 			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
+				start_decrypt <= '0';
 				state <= "00000";
+			
 			elsif(state = "00010" and done_encrypt = '1') then --- User of different bank
 				start_encrypt <= '0';
 				state <= "10011";
@@ -238,12 +245,12 @@ begin
 				start_decrypt <= '0';
 				money <= decrypted_data(31 downto 0);
 				state <= "10101"; 						--user with sufficient balance and less than restricted total
+			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
+				state <= "11111";
 			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
 				state <= "10110"; 						--user with insufficient balance
 			elsif(state = "10100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
 				state <= "00000";
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
-				state <= "11111";
 			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
 				state <= "00000";
 
@@ -258,9 +265,12 @@ begin
 				count_blink <= "000";
 				is_suf_atm <= '0';
 				is_suf_atm_signal <= '0';
-
+				substate <= "000";
+				atm_cash_that_can_be_given <= X"00000000";
+				money <= X"00000000";
 				start_decrypt <= '0';
 				start_comm <= '0';
+				start_mac_comm <= '0';
 				start_encrypt <= '0';
 				double_time <= '1';
 				d2000 <= X"00";
@@ -309,48 +319,47 @@ begin
 								count_blink <= count_blink + "1";
 							end if;
 						end if;
-
+						data_out_leds <= money(7 downto 0);
 						if(double_time = '0') then
-							if(money > 0) then
-								if(money >= "11111010000" and d2000 < restriction_2000 and n2000 > 0) then
-									if(timer_inp = '1') then	data_out_leds <= "11111000";
-									else	data_out_leds <= "00000000";
-									end if;
-									if(is_blink = '1') then
-										d2000 <= d2000 + "00000001";
-										money <= money - "11111010000";
-										n2000 <= n2000 - "00000001";
-									end if;
-								elsif(money >= "1111101000" and d1000 < restriction_1000 and n1000 > 0) then
-									if(timer_inp = '1') then	data_out_leds <= "11111000";
-									else	data_out_leds <= "00000000";
-									end if;
-									if(is_blink = '1') then
-										d1000 <= d1000 + "00000001";
-										money <= money - "1111101000";
-										n1000 <= n1000 - "00000001";
-									end if;
-								elsif(money >= "111110100" and d500 < restriction_500 and n500 > 0) then
-									if(timer_inp = '1') then	data_out_leds <= "11111000";
-									else	data_out_leds <= "00000000";
-									end if;
-									if(is_blink = '1') then
-										d500 <= d500 + "00000001";
-										money <= money - "111110100";
-										n500 <= n500 - "00000001";
-									end if;
-								elsif(money >= "1100100" and d100 < restriction_100 and n100 > 0) then
-									if(timer_inp = '1') then	data_out_leds <= "11111000";
-									else	data_out_leds <= "00000000";
-									end if;
-									if(is_blink = '1') then
-										d100 <= d100 + "00000001";
-										money <= money - "1100100";
-										n100 <= n100 - "00000001";
-									end if;
-								elsif(count_blink < "101") then
-									if(timer_inp = '1') then	data_out_leds <= "11110000";
-									else	data_out_leds <= "00000000";
+							if(money >= "11111010000" and d2000 < restriction_2000 and n2000 > 0) then
+								if(timer_inp = '1') then	data_out_leds <= "11111000";
+								else	data_out_leds <= "00000000";
+								end if;
+								if(is_blink = '1') then
+									d2000 <= d2000 + "00000001";
+									money <= money - "11111010000";
+									n2000 <= n2000 - "00000001";
+								end if;
+							elsif(money >= "1111101000" and d1000 < restriction_1000 and n1000 > 0) then
+								if(timer_inp = '1') then	data_out_leds <= "11110100";
+								else	data_out_leds <= "00000000";
+								end if;
+								if(is_blink = '1') then
+									d1000 <= d1000 + "00000001";
+									money <= money - "1111101000";
+									n1000 <= n1000 - "00000001";
+								end if;
+							elsif(money >= "111110100" and d500 < restriction_500 and n500 > 0) then
+								if(timer_inp = '1') then	data_out_leds <= "11110010";
+								else	data_out_leds <= "00000000";
+								end if;
+								if(is_blink = '1') then
+									d500 <= d500 + "00000001";
+									money <= money - "111110100";
+									n500 <= n500 - "00000001";
+								end if;
+							elsif(money >= "1100100" and d100 < restriction_100 and n100 > 0) then
+								if(timer_inp = '1') then	data_out_leds <= "11110001";
+								else	data_out_leds <= "00000000";
+								end if;
+								if(is_blink = '1') then
+									d100 <= d100 + "00000001";
+									money <= money - "1100100";
+									n100 <= n100 - "00000001";
+								end if;
+							elsif(count_blink < "101") then
+								if(timer_inp = '1') then	data_out_leds <= "11110000";
+								else	data_out_leds <= "00000000";
 								end if;
 							else
 								data_out_leds <= "00000000";
@@ -376,15 +385,14 @@ begin
 						end if;
 					end if;
 				end if;
-			elsif((state = "01111" or state = "11111") and count_blink < "101") then
+			elsif(state = "01111" and count_blink < "101") then
 				data_out_leds <= timer_inp & timer_inp & timer_inp & timer_inp & timer_inp & "000"; -- Blinking due to restriction on total money
 				if(is_blink = '1') then
 					count_blink <= count_blink + "001";
 				end if;
-			elsif((state = "01111" or state = "11111") and count_blink = "101") then
+			elsif((state = "01111" or state = "11111") and count_blink >= "101") then
 				data_out_leds <= "00000000";
 			end if;
-		end if;
 		end if;
 	end process;
 end Behavioral;

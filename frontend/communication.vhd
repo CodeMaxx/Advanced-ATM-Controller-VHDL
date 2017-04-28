@@ -82,6 +82,7 @@ begin
 		if(reset = '1') then
 			checkuser <= "00000000";
 		elsif(rising_edge(clk)) then
+			h2fReady_out <= '1';
 			if(h2fValid_in = '1') then
 				if(chanAddr_in = "0010100") then
 					restriction_2000 <= h2fData_in;

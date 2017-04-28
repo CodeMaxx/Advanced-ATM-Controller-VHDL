@@ -14,6 +14,7 @@
  * You should have received a copy of the GNU General Public licenses
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -103,7 +104,7 @@ int readUsersFromFile(void){
 		return 0;
 	}
 
-	if ((f = fopen( "input.csv", "r" )) == NULL ){ //Reading a file
+	if ((f = fopen( "SampleBackEndDatabase.csv", "r" )) == NULL ){ //Reading a file
 		printf( "File could not be opened.\n" );
 		return 0;
 	}
@@ -182,7 +183,7 @@ uint16 hashPIN(uint16 PIN){
 	return (PIN << 11) | (PIN >> 5);
 }
 
-bool matchPIN(uint16 ID, uint16 PIN, bool* isAdmin,int* cash,int* index, int numberOfUsers){
+bool matchPIN(uint16 ID, uint16 PIN, bool* isAdmin,uint32* cash,int* index, int numberOfUsers){
 	for(int i = 0; i<numberOfUsers; i++){
 		if(Users[i].ID == ID){
 			if(Users[i].PIN == PIN){
@@ -411,11 +412,11 @@ int main(int argc, char* argv[]) {
 ////////////////////////////////Advanced///////////////////////////////////
 
 							uint8 restrictions[4];
-							restrictions[0] = INT8_MAX; // Restriction on 2000 notes
-							restrictions[1] = INT8_MAX; // Restriction on 1000 notes
-							restrictions[2] = INT8_MAX; // Restriction on 500 notes
-							restrictions[3] = INT8_MAX; // Restriction on 100 notes
-							uint res_total = UINT_MAX; // TODO - Will have to change this in VHDL.
+							restrictions[0] = 2*INT8_MAX + 1; // Restriction on 2000 notes
+							restrictions[1] = 2*INT8_MAX + 1; // Restriction on 1000 notes
+							restrictions[2] = 2*INT8_MAX + 1; // Restriction on 500 notes
+							restrictions[3] = 2*INT8_MAX + 1; // Restriction on 100 notes
+							uint32 res_total = 500; // TODO - Will have to change this in VHDL.
 							printf("Sending Restriction Info...\n");
 							for(int i = 20; i < 24; i++)
 							{
@@ -423,11 +424,19 @@ int main(int argc, char* argv[]) {
 								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 							}
 
+							printf("%u\n",res_total >> 24 );
+							printf("%u\n",res_total >> 16 );
+							printf("%u\n",res_total >> 8 );
+							printf("%u\n",res_total );
 							uint8 restrict_total[4] = {res_total >> 24, res_total >> 16, res_total >> 8, res_total};
+							printf("%u\n",restrict_total[0] );
+							printf("%u\n",restrict_total[1] );
+							printf("%u\n",restrict_total[2] );
+							printf("%u\n",restrict_total[3] );
 
-							for(int i = 24, i < 28; i++)
+							for(int i = 24; i < 28; i = i +1)
 							{
-								fStatus = flWriteChannel(handle, (uint8) i, 1, &restrict_total[i-25], &error);
+								fStatus = flWriteChannel(handle, (uint8) i, 1, &restrict_total[i-24], &error);
 								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 							}
 							printf("Restriction Info Sent!\n");
@@ -456,8 +465,10 @@ int main(int argc, char* argv[]) {
 							}
 
 							bool isAdmin;
-							int cash, index;
+							uint32 cash; 
+							int index;
 							bool valid = matchPIN(ID, PIN, &isAdmin, &cash, &index, numberOfUsers);
+							printf("%u %u\n",ID,PIN );
 							if(!valid){
 								printf("Invalid pin or id\n");
 								message = 0x04;
@@ -466,13 +477,14 @@ int main(int argc, char* argv[]) {
 							}else{
 								printf("Valid pin and id\n");
 								//// Advanced
-								uint cashReqd = realData[4]*pow(2,24) + realData[5]*pow(2,16) + realData[6]*pow(2,8) + realData[7];
+								uint32 cashReqd = realData[4]*pow(2,24) + realData[5]*pow(2,16) + realData[6]*pow(2,8) + realData[7];
 								// Calculate amount of cash
 
 								for(int i = 0; i < 4; i++)	realData[i] = 0;
 								
 								if(!isAdmin){
-									if(cashReqd<=cash and cashReqd <= res_total){
+									// if(cashReqd<=cash && cashReqd <= res_total){
+									if(cashReqd<=0.9*cash){
 										realData[3] = 0x06;
 										encrypt(realData);
 										for(int i = 0; i < 8; i++){
@@ -486,11 +498,11 @@ int main(int argc, char* argv[]) {
 										printf("Sufficient balance\n");
 									}
 									else{
+										printf("InSufficient balance\n");
 										realData[3] = 0x02;
 										encrypt(realData);
 										for(int i = 0; i < 8; i++){
-											message = 0x00;
-											fStatus = flWriteChannel(handle, (uint8) i+10, 1, &message, &error);
+											fStatus = flWriteChannel(handle, (uint8) i+10, 1, &realData[i], &error);
 											CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 										}
 										message = 0x02;
@@ -539,4 +551,4 @@ cleanup:
 		flFreeError(error);
 	}
 	return retVal;
-uint8
+}
