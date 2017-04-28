@@ -214,7 +214,7 @@ Parsing architecture <Behavioral> of entity <top_module>.
 =========================================================================
 
 Elaborating entity <top_module> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:871 - "/home/kanak/CS254/ATM/top_module.vhd" Line 229: Using initial value "11" for speed_override_i since it is never assigned
+WARNING:HDLCompiler:871 - "/home/kanak/CS254/ATM/top_module.vhd" Line 270: Using initial value "11" for speed_override_i since it is never assigned
 
 Elaborating entity <ethernet_with_fifos> (architecture <rtl>) with generics from library <ethernet_mac>.
 
@@ -264,11 +264,16 @@ Elaborating entity <timer> (architecture <Behavioral>) with generics from librar
 Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <communication> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 224: Net <mac_address_i[47]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 226: Net <rgmii_rx_ctl_i> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 234: Net <tx_data_i[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 235: Net <tx_wr_en_i> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 239: Net <rx_rd_en_i> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 265: Net <mac_address_i[47]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 267: Net <rgmii_rx_ctl_i> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 275: Net <tx_data_i[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 276: Net <tx_wr_en_i> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 280: Net <rx_rd_en_i> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 314: Net <done_mac_comm> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 316: Net <data_response_mac_comm[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 318: Net <request_mac_comm> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 319: Net <is_suf_atm_request> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 320: Net <data_request_mac_comm[63]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -276,19 +281,29 @@ WARNING:HDLCompiler:634 - "/home/kanak/CS254/ATM/top_module.vhd" Line 239: Net <
 
 Synthesizing Unit <top_module>.
     Related source file is "/home/kanak/CS254/ATM/top_module.vhd".
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <speed_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <rx_data_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <rgmii_tx_ctl_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <link_up_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <tx_reset_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <tx_full_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <rx_reset_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 283: Output port <rx_empty_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <speed_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <rx_data_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <rgmii_tx_ctl_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <link_up_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <tx_reset_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <tx_full_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <rx_reset_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 339: Output port <rx_empty_o> of the instance <ethernet_with_mac> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 439: Output port <data_send_mac_comm> of the instance <ATM_Main_cont> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 439: Output port <data_reply_to_request_mac_comm> of the instance <ATM_Main_cont> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 439: Output port <start_mac_comm> of the instance <ATM_Main_cont> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 439: Output port <reply_mac_comm_valid> of the instance <ATM_Main_cont> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/top_module.vhd" line 439: Output port <reply_mac_comm_notvalid> of the instance <ATM_Main_cont> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <mac_address_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <tx_data_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <data_response_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <data_request_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <rgmii_rx_ctl_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <tx_wr_en_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <rx_rd_en_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <done_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <request_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <is_suf_atm_request> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit tristate buffer for signal <fx2Addr_out<0>> created at line 38
     Summary:
 	inferred   1 Tristate(s).
@@ -769,71 +784,125 @@ Unit <decrypter> synthesized.
 
 Synthesizing Unit <ATM_main_controller>.
     Related source file is "/home/kanak/CS254/ATM/ATM_main_controller.vhd".
+    Found 64-bit register for signal <data_to_be_decrypted>.
+    Found 1-bit register for signal <start_decrypt>.
+    Found 5-bit register for signal <state2>.
+    Found 1-bit register for signal <is_suf_atm>.
+    Found 64-bit register for signal <encrypted_data_comm>.
+    Found 1-bit register for signal <start_comm>.
+    Found 1-bit register for signal <reply_mac_comm_notvalid>.
+    Found 64-bit register for signal <data_reply_to_request_mac_comm>.
+    Found 1-bit register for signal <reply_mac_comm_valid>.
+    Found 5-bit register for signal <state>.
     Found 8-bit register for signal <n100>.
     Found 8-bit register for signal <n500>.
     Found 8-bit register for signal <n1000>.
     Found 8-bit register for signal <n2000>.
+    Found 5-bit register for signal <current_user_bank_id>.
     Found 64-bit register for signal <data_to_be_encrypted>.
-    Found 1-bit register for signal <is_suf_atm>.
+    Found 32-bit register for signal <atm_cash_that_can_be_given>.
+    Found 3-bit register for signal <substate>.
+    Found 1-bit register for signal <is_suf_atm_signal>.
     Found 1-bit register for signal <start_encrypt>.
-    Found 64-bit register for signal <encrypted_data_comm>.
-    Found 1-bit register for signal <start_comm>.
-    Found 64-bit register for signal <data_to_be_decrypted>.
-    Found 1-bit register for signal <start_decrypt>.
+    Found 32-bit register for signal <money>.
+    Found 64-bit register for signal <data_send_mac_comm>.
+    Found 8-bit register for signal <data_out_leds>.
+    Found 3-bit register for signal <count_blink>.
+    Found 1-bit register for signal <double_time>.
     Found 8-bit register for signal <d2000>.
     Found 8-bit register for signal <d1000>.
     Found 8-bit register for signal <d500>.
     Found 8-bit register for signal <d100>.
-    Found 8-bit register for signal <data_out_leds>.
-    Found 3-bit register for signal <count_blink>.
-    Found 1-bit register for signal <double_time>.
     Found 1-bit register for signal <finish_display>.
-    Found 3-bit register for signal <state>.
-    Found finite state machine <FSM_8> for signal <state>.
+    Found 5-bit register for signal <bank_id>.
+    Found finite state machine <FSM_8> for signal <substate>.
     -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 23                                             |
-    | Inputs             | 8                                              |
-    | Outputs            | 12                                             |
+    | States             | 5                                              |
+    | Transitions        | 25                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | reset_button (positive)                        |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 000                                            |
     | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <count_blink[2]_GND_77_o_add_189_OUT> created at line 258.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_128_OUT<7:0>> created at line 210.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_129_OUT<7:0>> created at line 211.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_134_OUT<7:0>> created at line 218.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_135_OUT<7:0>> created at line 219.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_140_OUT<7:0>> created at line 226.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_141_OUT<7:0>> created at line 227.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_146_OUT<7:0>> created at line 234.
-    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_147_OUT<7:0>> created at line 235.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0741> created at line 149.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0747> created at line 149.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0749> created at line 149.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0751> created at line 149.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0753> created at line 149.
-    Found 8-bit comparator lessequal for signal <n0003> created at line 109
-    Found 8-bit comparator lessequal for signal <n0005> created at line 110
-    Found 8-bit comparator lessequal for signal <n0007> created at line 111
-    Found 8-bit comparator lessequal for signal <n0009> created at line 112
-    Found 3-bit comparator greater for signal <count_blink[2]_GND_77_o_LessThan_101_o> created at line 173
-    Found 8-bit comparator lessequal for signal <n0138> created at line 191
-    Found 8-bit comparator lessequal for signal <n0140> created at line 191
-    Found 8-bit comparator lessequal for signal <n0142> created at line 191
-    Found 8-bit comparator lessequal for signal <n0144> created at line 191
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_55_o_LessThan_150_o> created at line 237
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_55_o_LessThan_188_o> created at line 253
+INFO:Xst:1799 - State 11111 is never reached in FSM <state>.
+INFO:Xst:1799 - State 10100 is never reached in FSM <state>.
+INFO:Xst:1799 - State 10110 is never reached in FSM <state>.
+INFO:Xst:1799 - State 10101 is never reached in FSM <state>.
+    Found finite state machine <FSM_10> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 34                                             |
+    | Inputs             | 15                                             |
+    | Outputs            | 15                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset_button (positive)                        |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Power Up State     | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_21_OUT> created at line 167.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_23_OUT> created at line 169.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_28_OUT> created at line 174.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_30_OUT> created at line 176.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_35_OUT> created at line 181.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_37_OUT> created at line 183.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_42_OUT> created at line 188.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_77_o_add_44_OUT> created at line 190.
+    Found 8-bit adder for signal <d2000[7]_GND_77_o_add_226_OUT> created at line 320.
+    Found 8-bit adder for signal <d1000[7]_GND_77_o_add_236_OUT> created at line 329.
+    Found 8-bit adder for signal <d500[7]_GND_77_o_add_246_OUT> created at line 338.
+    Found 8-bit adder for signal <d100[7]_GND_77_o_add_256_OUT> created at line 347.
+    Found 3-bit adder for signal <count_blink[2]_GND_77_o_add_338_OUT> created at line 382.
+    Found 32-bit subtractor for signal <GND_77_o_GND_77_o_sub_228_OUT<31:0>> created at line 321.
+    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_229_OUT<7:0>> created at line 322.
+    Found 32-bit subtractor for signal <GND_77_o_GND_77_o_sub_238_OUT<31:0>> created at line 330.
+    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_239_OUT<7:0>> created at line 331.
+    Found 32-bit subtractor for signal <GND_77_o_GND_77_o_sub_248_OUT<31:0>> created at line 339.
+    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_249_OUT<7:0>> created at line 340.
+    Found 32-bit subtractor for signal <GND_77_o_GND_77_o_sub_258_OUT<31:0>> created at line 348.
+    Found 8-bit subtractor for signal <GND_77_o_GND_77_o_sub_259_OUT<7:0>> created at line 349.
+    Found 8x11-bit multiplier for signal <n2000[7]_PWR_55_o_MuLt_20_OUT> created at line 167.
+    Found 8x11-bit multiplier for signal <restriction_2000[7]_PWR_55_o_MuLt_22_OUT> created at line 169.
+    Found 8x10-bit multiplier for signal <n1000[7]_PWR_55_o_MuLt_27_OUT> created at line 174.
+    Found 8x10-bit multiplier for signal <restriction_1000[7]_PWR_55_o_MuLt_29_OUT> created at line 176.
+    Found 8x9-bit multiplier for signal <n500[7]_PWR_55_o_MuLt_34_OUT> created at line 181.
+    Found 8x9-bit multiplier for signal <restriction_500[7]_PWR_55_o_MuLt_36_OUT> created at line 183.
+    Found 8x7-bit multiplier for signal <n100[7]_PWR_55_o_MuLt_41_OUT> created at line 188.
+    Found 8x7-bit multiplier for signal <restriction_100[7]_PWR_55_o_MuLt_43_OUT> created at line 190.
+    Found 32-bit 4-to-1 multiplexer for signal <_n1110> created at line 165.
+    Found 8-bit comparator lessequal for signal <n0037> created at line 166
+    Found 8-bit comparator lessequal for signal <n0045> created at line 173
+    Found 8-bit comparator lessequal for signal <n0053> created at line 180
+    Found 8-bit comparator lessequal for signal <n0061> created at line 187
+    Found 32-bit comparator greater for signal <n0069> created at line 194
+    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_64_o> created at line 201
+    Found 32-bit comparator greater for signal <n0106> created at line 211
+    Found 3-bit comparator greater for signal <count_blink[2]_GND_77_o_LessThan_198_o> created at line 282
+    Found 32-bit comparator lessequal for signal <n0314> created at line 315
+    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_224_o> created at line 315
+    Found 8-bit comparator greater for signal <GND_77_o_n2000[7]_LessThan_225_o> created at line 315
+    Found 32-bit comparator lessequal for signal <n0326> created at line 324
+    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_234_o> created at line 324
+    Found 8-bit comparator greater for signal <GND_77_o_n1000[7]_LessThan_235_o> created at line 324
+    Found 32-bit comparator lessequal for signal <n0338> created at line 333
+    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_244_o> created at line 333
+    Found 8-bit comparator greater for signal <GND_77_o_n500[7]_LessThan_245_o> created at line 333
+    Found 32-bit comparator lessequal for signal <n0350> created at line 342
+    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_254_o> created at line 342
+    Found 8-bit comparator greater for signal <GND_77_o_n100[7]_LessThan_255_o> created at line 342
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_55_o_LessThan_306_o> created at line 367
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_55_o_LessThan_338_o> created at line 379
     Summary:
-	inferred   9 Adder/Subtractor(s).
-	inferred 273 D-type flip-flop(s).
-	inferred  11 Comparator(s).
-	inferred 341 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred   8 Multiplier(s).
+	inferred  11 Adder/Subtractor(s).
+	inferred 476 D-type flip-flop(s).
+	inferred  22 Comparator(s).
+	inferred 178 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
 Unit <ATM_main_controller> synthesized.
 
 Synthesizing Unit <timer>.
@@ -859,7 +928,7 @@ Synthesizing Unit <read_multiple_data_bytes>.
     Found 1-bit register for signal <done>.
     Found 64-bit register for signal <data>.
     Found 1-bit register for signal <prev_value>.
-    Found finite state machine <FSM_9> for signal <state>.
+    Found finite state machine <FSM_11> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -887,6 +956,15 @@ Unit <read_multiple_data_bytes> synthesized.
 Synthesizing Unit <communication>.
     Related source file is "/home/kanak/CS254/ATM/communication.vhd".
     Found 8-bit register for signal <checkuser>.
+    Found 8-bit register for signal <restriction_2000>.
+    Found 8-bit register for signal <restriction_1000>.
+    Found 8-bit register for signal <restriction_500>.
+    Found 8-bit register for signal <restriction_100>.
+    Found 8-bit register for signal <x1>.
+    Found 8-bit register for signal <x2>.
+    Found 8-bit register for signal <x3>.
+    Found 8-bit register for signal <x4>.
+    Found 32-bit register for signal <restriction_total>.
     Found 1-bit register for signal <f2hValid_out>.
     Found 8-bit register for signal <f2hData_out>.
     Found 1-bit register for signal <h2fReady_out>.
@@ -900,7 +978,7 @@ Synthesizing Unit <communication>.
     Found 8-bit register for signal <h>.
     Found 64-bit register for signal <data_recieved>.
     Summary:
-	inferred 146 D-type flip-flop(s).
+	inferred 242 D-type flip-flop(s).
 	inferred   8 Multiplexer(s).
 Unit <communication> synthesized.
 
@@ -912,7 +990,12 @@ Macro Statistics
  16x1-bit single-port Read Only RAM                    : 2
  4096x8-bit dual-port RAM                              : 1
  4x1-bit single-port Read Only RAM                     : 2
-# Adders/Subtractors                                   : 60
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 2
+ 8x7-bit multiplier                                    : 2
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 63
  1-bit adder                                           : 1
  10-bit adder                                          : 1
  11-bit adder                                          : 1
@@ -920,39 +1003,40 @@ Macro Statistics
  12-bit adder                                          : 7
  12-bit subtractor                                     : 2
  17-bit subtractor                                     : 1
- 20-bit adder                                          : 4
+ 20-bit adder                                          : 5
  24-bit adder                                          : 1
  25-bit adder                                          : 1
  3-bit adder                                           : 1
- 32-bit adder                                          : 15
- 32-bit subtractor                                     : 3
+ 32-bit adder                                          : 16
+ 32-bit subtractor                                     : 4
  4-bit adder                                           : 5
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
  6-bit adder                                           : 4
  64-bit adder                                          : 1
  7-bit subtractor                                      : 1
- 8-bit subtractor                                      : 8
-# Registers                                            : 131
- 1-bit register                                        : 52
+ 8-bit adder                                           : 4
+ 8-bit subtractor                                      : 4
+# Registers                                            : 150
+ 1-bit register                                        : 55
  10-bit register                                       : 1
  11-bit register                                       : 2
  12-bit register                                       : 6
  16-bit register                                       : 2
  17-bit register                                       : 1
  2-bit register                                        : 2
- 20-bit register                                       : 4
+ 20-bit register                                       : 5
  24-bit register                                       : 1
  25-bit register                                       : 1
  3-bit register                                        : 3
- 32-bit register                                       : 8
+ 32-bit register                                       : 11
  4-bit register                                        : 5
- 5-bit register                                        : 2
+ 5-bit register                                        : 4
  6-bit register                                        : 4
- 64-bit register                                       : 8
+ 64-bit register                                       : 10
  7-bit register                                        : 2
- 8-bit register                                        : 27
-# Comparators                                          : 32
+ 8-bit register                                        : 35
+# Comparators                                          : 43
  11-bit comparator greater                             : 2
  11-bit comparator lessequal                           : 1
  12-bit comparator equal                               : 3
@@ -962,13 +1046,17 @@ Macro Statistics
  2-bit comparator equal                                : 1
  25-bit comparator greater                             : 2
  3-bit comparator greater                              : 6
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 4
  4-bit comparator greater                              : 1
+ 5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
  6-bit comparator lessequal                            : 1
- 8-bit comparator lessequal                            : 8
-# Multiplexers                                         : 547
+ 8-bit comparator greater                              : 8
+ 8-bit comparator lessequal                            : 4
+# Multiplexers                                         : 384
  1-bit 16-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 99
+ 1-bit 2-to-1 multiplexer                              : 103
  1-bit 4-to-1 multiplexer                              : 2
  11-bit 2-to-1 multiplexer                             : 1
  12-bit 2-to-1 multiplexer                             : 10
@@ -977,21 +1065,21 @@ Macro Statistics
  17-bit 2-to-1 multiplexer                             : 3
  2-bit 2-to-1 multiplexer                              : 2
  24-bit 2-to-1 multiplexer                             : 1
- 3-bit 2-to-1 multiplexer                              : 5
- 32-bit 2-to-1 multiplexer                             : 21
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 55
  4-bit 2-to-1 multiplexer                              : 20
  5-bit 2-to-1 multiplexer                              : 7
  6-bit 2-to-1 multiplexer                              : 1
- 64-bit 2-to-1 multiplexer                             : 1
+ 64-bit 2-to-1 multiplexer                             : 5
  7-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 362
- 8-bit 4-to-1 multiplexer                              : 6
+ 8-bit 2-to-1 multiplexer                              : 163
+ 8-bit 4-to-1 multiplexer                              : 1
  8-bit 7-to-1 multiplexer                              : 1
 # Tristates                                            : 14
  1-bit tristate buffer                                 : 14
-# FSMs                                                 : 10
-# Xors                                                 : 50
- 1-bit xor2                                            : 26
+# FSMs                                                 : 11
+# Xors                                                 : 52
+ 1-bit xor2                                            : 28
  32-bit xor2                                           : 24
 
 =========================================================================
@@ -1003,6 +1091,11 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 Reading core <../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.ngc>.
 Loading core <ethernet_mac_tx_fifo_xilinx> for timing and area information for instance <tx_data_fifo_inst>.
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
 WARNING:Xst:1710 - FF/Latch <update_safe_address_0> (without init value) has a constant value of 0 in block <rx_fifo_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <update_safe_address_1> (without init value) has a constant value of 0 in block <rx_fifo_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <update_safe_address_2> (without init value) has a constant value of 0 in block <rx_fifo_inst>. This FF/Latch will be trimmed during the optimization process.
@@ -1021,7 +1114,12 @@ WARNING:Xst:1290 - Hierarchical block <sync_reset_inst> is unconnected in block 
    It will be removed from the design.
 
 Synthesizing (advanced) Unit <ATM_main_controller>.
+The following registers are absorbed into accumulator <atm_cash_that_can_be_given>: 1 register on signal <atm_cash_that_can_be_given>.
 The following registers are absorbed into counter <count_blink>: 1 register on signal <count_blink>.
+The following registers are absorbed into counter <d2000>: 1 register on signal <d2000>.
+The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
+The following registers are absorbed into counter <d500>: 1 register on signal <d500>.
+The following registers are absorbed into counter <d100>: 1 register on signal <d100>.
 Unit <ATM_main_controller> synthesized (advanced).
 
 Synthesizing (advanced) Unit <debouncer>.
@@ -1157,37 +1255,44 @@ Macro Statistics
  16x1-bit single-port distributed Read Only RAM        : 2
  4096x8-bit dual-port block RAM                        : 1
  4x1-bit single-port distributed Read Only RAM         : 2
-# Adders/Subtractors                                   : 41
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 2
+ 8x7-bit multiplier                                    : 2
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 38
  11-bit subtractor                                     : 2
  12-bit adder                                          : 7
  17-bit subtractor                                     : 1
- 20-bit adder                                          : 4
- 3-bit adder                                           : 2
+ 20-bit adder                                          : 5
+ 3-bit adder                                           : 1
  32-bit adder                                          : 13
- 32-bit subtractor                                     : 1
+ 32-bit subtractor                                     : 2
  4-bit adder                                           : 1
  5-bit adder                                           : 1
  7-bit subtractor                                      : 1
- 8-bit subtractor                                      : 8
-# Counters                                             : 19
+ 8-bit subtractor                                      : 4
+# Counters                                             : 24
  1-bit up counter                                      : 1
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
  12-bit down counter                                   : 1
- 20-bit up counter                                     : 4
+ 20-bit up counter                                     : 5
  24-bit up counter                                     : 1
  25-bit up counter                                     : 1
  3-bit up counter                                      : 2
  4-bit up counter                                      : 2
  5-bit down counter                                    : 1
  6-bit up counter                                      : 4
-# Accumulators                                         : 5
+ 8-bit up counter                                      : 4
+# Accumulators                                         : 6
  32-bit down loadable accumulator                      : 2
+ 32-bit up accumulator                                 : 1
  32-bit up loadable accumulator                        : 2
  64-bit up loadable accumulator                        : 1
-# Registers                                            : 1026
- Flip-Flops                                            : 1026
-# Comparators                                          : 32
+# Registers                                            : 1263
+ Flip-Flops                                            : 1263
+# Comparators                                          : 43
  11-bit comparator greater                             : 2
  11-bit comparator lessequal                           : 1
  12-bit comparator equal                               : 3
@@ -1197,30 +1302,35 @@ Macro Statistics
  2-bit comparator equal                                : 1
  25-bit comparator greater                             : 2
  3-bit comparator greater                              : 6
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 4
  4-bit comparator greater                              : 1
+ 5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
  6-bit comparator lessequal                            : 1
- 8-bit comparator lessequal                            : 8
-# Multiplexers                                         : 535
+ 8-bit comparator greater                              : 8
+ 8-bit comparator lessequal                            : 4
+# Multiplexers                                         : 372
  1-bit 16-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 99
+ 1-bit 2-to-1 multiplexer                              : 103
  1-bit 4-to-1 multiplexer                              : 2
  12-bit 2-to-1 multiplexer                             : 9
  12-bit 6-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
  17-bit 2-to-1 multiplexer                             : 3
  2-bit 2-to-1 multiplexer                              : 2
- 3-bit 2-to-1 multiplexer                              : 4
- 32-bit 2-to-1 multiplexer                             : 17
+ 3-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 51
  4-bit 2-to-1 multiplexer                              : 19
  5-bit 2-to-1 multiplexer                              : 6
+ 64-bit 2-to-1 multiplexer                             : 4
  7-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 362
- 8-bit 4-to-1 multiplexer                              : 6
+ 8-bit 2-to-1 multiplexer                              : 163
+ 8-bit 4-to-1 multiplexer                              : 1
  8-bit 7-to-1 multiplexer                              : 1
-# FSMs                                                 : 10
-# Xors                                                 : 50
- 1-bit xor2                                            : 26
+# FSMs                                                 : 11
+# Xors                                                 : 52
+ 1-bit xor2                                            : 28
  32-bit xor2                                           : 24
 
 =========================================================================
@@ -1228,6 +1338,70 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <data_reply_to_request_mac_comm_32> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_33> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_34> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_35> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_36> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_37> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_38> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_39> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_40> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_41> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_42> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_43> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_44> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_45> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_46> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_47> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_48> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_49> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_50> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_51> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_52> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_53> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_54> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_55> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_56> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_57> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_58> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_59> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_60> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_61> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_62> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_63> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_0> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_1> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_2> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_3> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_4> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_5> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_6> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_7> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_8> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_9> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_10> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_11> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_12> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_13> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_14> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_15> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_16> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_17> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_18> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_19> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_20> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_21> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_22> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_23> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_24> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_25> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_26> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_27> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_28> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_29> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_30> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_reply_to_request_mac_comm_31> (without init value) has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <update_safe_address_0> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <update_safe_address_1> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <update_safe_address_2> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
@@ -1241,23 +1415,45 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <update_safe_address
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <update_safe_address_10> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <update_safe_address_11> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_update_safe_address_req> (without init value) has a constant value of 0 in block <rx_fifo>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
 INFO:Xst:2261 - The FF/Latch <write_safe_address_0> in Unit <rx_fifo> is equivalent to the following 11 FFs/Latches, which will be removed : <write_safe_address_1> <write_safe_address_2> <write_safe_address_3> <write_safe_address_4> <write_safe_address_5> <write_safe_address_6> <write_safe_address_7> <write_safe_address_8> <write_safe_address_9> <write_safe_address_10> <write_safe_address_11> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_8> on signal <state[1:3]> with user encoding.
+Optimizing FSM <ATM_Main_cont/FSM_10> on signal <state[1:5]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 11111 | unreached
+ 00001 | 00001
+ 00010 | 00010
+ 00011 | 00011
+ 00100 | 00100
+ 10100 | unreached
+ 10110 | unreached
+ 10101 | unreached
+ 10011 | 10011
+ 01111 | 01111
+ 00111 | 00111
+ 00110 | 00110
+ 00101 | 00101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ATM_Main_cont/FSM_8> on signal <substate[1:3]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
  000   | 000
- 111   | 111
  001   | 001
- 010   | 010
- 011   | 011
- 100   | 100
- 110   | 110
- 101   | 101
+ 010   | 011
+ 011   | 010
+ 100   | 110
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/data_inp/FSM_9> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <ATM_Main_cont/data_inp/FSM_11> on signal <state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -1375,6 +1571,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <miim_data_write_o_1
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <miim_data_write_o_14> (without init value) has a constant value of 0 in block <miim_control>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <miim_data_write_o_6> in Unit <miim_control> is equivalent to the following FF/Latch, which will be removed : <miim_data_write_o_8> 
 INFO:Xst:2261 - The FF/Latch <miim_data_write_o_12> in Unit <miim_control> is equivalent to the following FF/Latch, which will be removed : <miim_data_write_o_15> 
+INFO:Xst:2261 - The FF/Latch <data_out_leds_0> in Unit <ATM_main_controller> is equivalent to the following 2 FFs/Latches, which will be removed : <data_out_leds_1> <data_out_leds_2> 
 
 Optimizing unit <top_module> ...
 
@@ -1416,6 +1613,70 @@ WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_2> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_1> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_0> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_63> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_62> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_61> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_60> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_59> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_58> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_57> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_56> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_55> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_54> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_53> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_52> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_51> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_50> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_49> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_48> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_47> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_46> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_45> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_44> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_43> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_42> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_41> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_40> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_39> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_38> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_37> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_36> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_35> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_34> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_33> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_32> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_31> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_30> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_29> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_28> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_27> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_26> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_25> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_24> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_23> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_22> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_21> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_20> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_19> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_18> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_17> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_16> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_15> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_14> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_13> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_12> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_11> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_10> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_9> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_8> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_7> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_6> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_5> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_4> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_3> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_2> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_1> of sequential type is unconnected in block <top_module>.
+WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_0> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_7> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_6> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_5> of sequential type is unconnected in block <top_module>.
@@ -1451,22 +1712,27 @@ WARNING:Xst:2677 - Node <ethernet_with_mac/rx_fifo_inst/read_address_2> of seque
 WARNING:Xst:2677 - Node <ethernet_with_mac/rx_fifo_inst/read_address_1> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:2677 - Node <ethernet_with_mac/rx_fifo_inst/read_address_0> of sequential type is unconnected in block <top_module>.
 WARNING:Xst:1293 - FF/Latch <ethernet_with_mac/ethernet_inst/framing_inst/tx_padding_required_6> has a constant value of 0 in block <top_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_bit_position_4> has a constant value of 0 in block <top_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ATM_Main_cont/atm_cash_that_can_be_given_1> has a constant value of 0 in block <top_module>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ATM_Main_cont/atm_cash_that_can_be_given_0> has a constant value of 0 in block <top_module>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <ATM_Main_cont/is_suf_atm_signal> in Unit <top_module> is equivalent to the following FF/Latch, which will be removed : <ATM_Main_cont/is_suf_atm> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 10.
+Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 13.
 INFO:Xst:2260 - The FF/Latch <ethernet_with_mac/sync_rx_reset_inst/FDPE_tmp_inst> in Unit <top_module> is equivalent to the following FF/Latch : <ethernet_with_mac/sync_tx_reset_inst/FDPE_tmp_inst> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
-INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2> in Unit <ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid> 
-FlipFlop ATM_Main_cont/d2000_6 has been replicated 1 time(s)
+FlipFlop ATM_Main_cont/n2000_1 has been replicated 1 time(s)
+FlipFlop ATM_Main_cont/n2000_2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1474,8 +1740,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1372
- Flip-Flops                                            : 1372
+# Registers                                            : 1560
+ Flip-Flops                                            : 1560
 
 =========================================================================
 
@@ -1498,40 +1764,39 @@ Top Level Output File Name         : top_module.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4352
+# BELS                             : 5302
 #      GND                         : 3
-#      INV                         : 205
-#      LUT1                        : 337
-#      LUT2                        : 284
-#      LUT3                        : 189
-#      LUT4                        : 252
-#      LUT5                        : 381
-#      LUT6                        : 841
-#      MUXCY                       : 922
-#      MUXF7                       : 10
+#      INV                         : 209
+#      LUT1                        : 416
+#      LUT2                        : 324
+#      LUT3                        : 270
+#      LUT4                        : 330
+#      LUT5                        : 580
+#      LUT6                        : 678
+#      MUXCY                       : 1257
+#      MUXF7                       : 13
 #      MUXF8                       : 1
 #      VCC                         : 2
-#      XORCY                       : 925
-# FlipFlops/Latches                : 1555
-#      FD                          : 48
+#      XORCY                       : 1219
+# FlipFlops/Latches                : 1743
+#      FD                          : 54
 #      FDC                         : 128
 #      FDCE                        : 193
-#      FDE                         : 930
+#      FDE                         : 1050
 #      FDP                         : 24
 #      FDPE                        : 44
-#      FDR                         : 118
-#      FDRE                        : 37
+#      FDR                         : 139
+#      FDRE                        : 78
 #      FDSE                        : 32
 #      ODDR2                       : 1
 # RAMS                             : 1
 #      RAMB16BWER                  : 1
-# Clock Buffers                    : 4
+# Clock Buffers                    : 3
 #      BUFG                        : 2
 #      BUFGMUX                     : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 63
+# IO Buffers                       : 64
 #      BUFIO2                      : 1
-#      IBUF                        : 24
+#      IBUF                        : 25
 #      IBUFG                       : 3
 #      IOBUF                       : 9
 #      OBUF                        : 20
@@ -1546,16 +1811,16 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1555  out of  54576     2%  
- Number of Slice LUTs:                 2489  out of  27288     9%  
-    Number used as Logic:              2489  out of  27288     9%  
+ Number of Slice Registers:            1743  out of  54576     3%  
+ Number of Slice LUTs:                 2807  out of  27288    10%  
+    Number used as Logic:              2807  out of  27288    10%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3037
-   Number with an unused Flip Flop:    1482  out of   3037    48%  
-   Number with an unused LUT:           548  out of   3037    18%  
-   Number of fully used LUT-FF pairs:  1007  out of   3037    33%  
-   Number of unique control sets:       101
+ Number of LUT Flip Flop pairs used:   3480
+   Number with an unused Flip Flop:    1737  out of   3480    49%  
+   Number with an unused LUT:           673  out of   3480    19%  
+   Number of fully used LUT-FF pairs:  1070  out of   3480    30%  
+   Number of unique control sets:       114
 
 IO Utilization: 
  Number of IOs:                          75
@@ -1564,7 +1829,7 @@ IO Utilization:
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    116     0%  
     Number using Block RAM only:          1
- Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1587,8 +1852,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock_125_i                        | IBUFG+BUFG             | 180   |
-fx2Clk_in                          | BUFGP                  | 1040  |
+fx2Clk_in                          | IBUFG+BUFG             | 1408  |
 mii_tx_clk_i                       | IBUFG+BUFGMUX          | 218   |
 mii_rx_clk_i                       | IBUFG+BUFIO2+BUFG      | 120   |
 -----------------------------------+------------------------+-------+
@@ -1601,8 +1865,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 7.132ns (Maximum Frequency: 140.218MHz)
-   Minimum input arrival time before clock: 7.737ns
+   Minimum period: 8.200ns (Maximum Frequency: 121.951MHz)
+   Minimum input arrival time before clock: 6.669ns
    Maximum output required time after clock: 7.328ns
    Maximum combinational path delay: 6.889ns
 
@@ -1611,88 +1875,65 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clock_125_i'
-  Clock period: 4.990ns (frequency: 200.415MHz)
-  Total number of paths / destination ports: 2203 / 368
--------------------------------------------------------------------------
-Delay:               4.990ns (Levels of Logic = 4)
-  Source:            ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/poll_wait_counter_12 (FF)
-  Destination:       ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state_0 (FF)
-  Source Clock:      clock_125_i rising
-  Destination Clock: clock_125_i rising
-
-  Data Path: ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/poll_wait_counter_12 to ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDE:C->Q              2   0.447   0.981  ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/poll_wait_counter_12 (ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/poll_wait_counter_12)
-     LUT6:I0->O           25   0.203   1.440  ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/PWR_34_o_poll_wait_counter[23]_equal_12_o<23>1 (ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/PWR_34_o_poll_wait_counter[23]_equal_12_o<23>)
-     LUT4:I0->O            1   0.203   0.579  ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/PWR_34_o_poll_wait_counter[23]_equal_12_o<23>5 (ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/PWR_34_o_poll_wait_counter[23]_equal_12_o)
-     MUXF7:S->O            1   0.148   0.684  ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state[3]_GND_46_o_mux_48_OUT<0>4 (ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state[3]_GND_46_o_mux_48_OUT<0>4)
-     LUT3:I1->O            1   0.203   0.000  ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state[3]_GND_46_o_mux_48_OUT<0>5 (ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state[3]_GND_46_o_mux_48_OUT<0>)
-     FD:D                      0.102          ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/state_0
-    ----------------------------------------
-    Total                      4.990ns (1.306ns logic, 3.684ns route)
-                                       (26.2% logic, 73.8% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
-  Clock period: 7.132ns (frequency: 140.218MHz)
-  Total number of paths / destination ports: 217850 / 2130
+  Clock period: 8.200ns (frequency: 121.951MHz)
+  Total number of paths / destination ports: 936152 / 2839
 -------------------------------------------------------------------------
-Delay:               7.132ns (Levels of Logic = 5)
-  Source:            ATM_Main_cont/d100_3 (FF)
-  Destination:       ATM_Main_cont/d100_7 (FF)
+Delay:               8.200ns (Levels of Logic = 6)
+  Source:            ATM_Main_cont/n2000_4 (FF)
+  Destination:       ATM_Main_cont/money_31 (FF)
   Source Clock:      fx2Clk_in rising
   Destination Clock: fx2Clk_in rising
 
-  Data Path: ATM_Main_cont/d100_3 to ATM_Main_cont/d100_7
+  Data Path: ATM_Main_cont/n2000_4 to ATM_Main_cont/money_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              7   0.447   1.002  ATM_Main_cont/d100_3 (ATM_Main_cont/d100_3)
-     LUT4:I1->O            1   0.205   0.924  ATM_Main_cont/d100[7]_n100[7]_LessThan_117_o1_SW1 (N97)
-     LUT5:I0->O            5   0.203   0.962  ATM_Main_cont/d2000[7]_d100[7]_AND_106_o4 (ATM_Main_cont/d2000[7]_d100[7]_AND_106_o4)
-     LUT6:I2->O            2   0.203   0.721  ATM_Main_cont/Mmux__n0814141111_1 (ATM_Main_cont/Mmux__n0814141111)
-     LUT6:I4->O           13   0.203   0.933  ATM_Main_cont/d100[7]_GND_77_o_mux_268_OUT<8>11 (ATM_Main_cont/d100[7]_GND_77_o_mux_268_OUT<8>1)
-     LUT6:I5->O            8   0.205   0.802  ATM_Main_cont/_n3508_inv1 (ATM_Main_cont/_n3508_inv)
-     FDE:CE                    0.322          ATM_Main_cont/d500_0
+     FDE:C->Q             14   0.447   1.186  ATM_Main_cont/n2000_4 (ATM_Main_cont/n2000_4)
+     LUT5:I2->O            4   0.205   0.684  ATM_Main_cont/Mmux_n2000[7]_n2000[7]_mux_426_OUT17121 (ATM_Main_cont/Mmux_n2000[7]_n2000[7]_mux_426_OUT1712)
+     LUT4:I3->O            1   0.205   0.580  ATM_Main_cont/GND_77_o_GND_77_o_AND_496_o_lut_SW0 (N373)
+     LUT6:I5->O            1   0.205   0.000  ATM_Main_cont/GND_77_o_GND_77_o_AND_496_o_lut (ATM_Main_cont/GND_77_o_GND_77_o_AND_496_o_lut)
+     MUXCY:S->O           51   0.366   1.555  ATM_Main_cont/GND_77_o_GND_77_o_AND_496_o_cy (ATM_Main_cont/GND_77_o_GND_77_o_AND_496_o)
+     LUT4:I3->O            6   0.205   0.745  ATM_Main_cont/_n4325_inv11 (ATM_Main_cont/_n4325_inv1)
+     LUT6:I5->O           32   0.205   1.291  ATM_Main_cont/_n4325_inv (ATM_Main_cont/_n4325_inv)
+     FDE:CE                    0.322          ATM_Main_cont/money_0
     ----------------------------------------
-    Total                      7.132ns (1.788ns logic, 5.344ns route)
-                                       (25.1% logic, 74.9% route)
+    Total                      8.200ns (2.160ns logic, 6.040ns route)
+                                       (26.3% logic, 73.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mii_tx_clk_i'
-  Clock period: 6.383ns (frequency: 156.672MHz)
-  Total number of paths / destination ports: 10191 / 478
+  Clock period: 6.560ns (frequency: 152.447MHz)
+  Total number of paths / destination ports: 10328 / 478
 -------------------------------------------------------------------------
-Delay:               6.383ns (Levels of Logic = 5)
-  Source:            ethernet_with_mac/ethernet_inst/framing_inst/tx_state_2 (FF)
-  Destination:       ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_11 (FF)
+Delay:               6.560ns (Levels of Logic = 6)
+  Source:            ethernet_with_mac/tx_fifo_inst/tx_fifo_adapter_inst/mac_tx_data_o_2 (FF)
+  Destination:       ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_23 (FF)
   Source Clock:      mii_tx_clk_i rising
   Destination Clock: mii_tx_clk_i rising
 
-  Data Path: ethernet_with_mac/ethernet_inst/framing_inst/tx_state_2 to ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_11
+  Data Path: ethernet_with_mac/tx_fifo_inst/tx_fifo_adapter_inst/mac_tx_data_o_2 to ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_23
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            42   0.447   1.538  ethernet_with_mac/ethernet_inst/framing_inst/tx_state_2 (ethernet_with_mac/ethernet_inst/framing_inst/tx_state_2)
-     LUT3:I1->O            4   0.203   0.684  ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>11 (ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>1)
-     LUT6:I5->O            4   0.205   0.788  ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>61 (ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>6)
-     LUT6:I4->O           14   0.203   0.958  ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<7> (ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>)
-     LUT6:I5->O            2   0.205   0.845  ethernet_with_mac/ethernet_inst/framing_inst/Mmux_tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_71_OUT121 (ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_71_OUT<1>)
-     LUT5:I2->O            1   0.205   0.000  ethernet_with_mac/ethernet_inst/framing_inst/Mmux_tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_83_OUT32 (ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_83_OUT<11>)
-     FDSE:D                    0.102          ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_11
+     FDE:C->Q              2   0.447   0.845  ethernet_with_mac/tx_fifo_inst/tx_fifo_adapter_inst/mac_tx_data_o_2 (ethernet_with_mac/tx_fifo_inst/tx_fifo_adapter_inst/mac_tx_data_o_2)
+     LUT3:I0->O            1   0.205   0.580  ethernet_with_mac/ethernet_inst/framing_inst/PWR_27_o_tx_data_i[7]_equal_10_o<7>_SW0 (N208)
+     LUT6:I5->O            9   0.205   0.830  ethernet_with_mac/ethernet_inst/framing_inst/PWR_27_o_tx_data_i[7]_equal_10_o<7> (ethernet_with_mac/ethernet_inst/framing_inst/PWR_27_o_tx_data_i[7]_equal_10_o)
+     LUT6:I5->O            4   0.205   0.684  ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>61 (ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>6)
+     LUT6:I5->O           13   0.205   0.933  ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<7> (ethernet_with_mac/ethernet_inst/framing_inst/tx_state[3]_GND_41_o_wide_mux_61_OUT<1>)
+     LUT4:I3->O           12   0.205   0.909  ethernet_with_mac/ethernet_inst/framing_inst/Mxor_tx_frame_check_sequence[30]_tx_state[3]_XOR_77_o_xo<0>1 (ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence[30]_tx_state[3]_XOR_77_o)
+     LUT6:I5->O            1   0.205   0.000  ethernet_with_mac/ethernet_inst/framing_inst/Mmux_tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_83_OUT41 (ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence[30]_tx_frame_check_sequence[30]_mux_83_OUT<12>)
+     FDSE:D                    0.102          ethernet_with_mac/ethernet_inst/framing_inst/tx_frame_check_sequence_12
     ----------------------------------------
-    Total                      6.383ns (1.570ns logic, 4.813ns route)
-                                       (24.6% logic, 75.4% route)
+    Total                      6.560ns (1.779ns logic, 4.781ns route)
+                                       (27.1% logic, 72.9% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mii_rx_clk_i'
-  Clock period: 6.416ns (frequency: 155.869MHz)
-  Total number of paths / destination ports: 8972 / 235
+  Clock period: 6.538ns (frequency: 152.960MHz)
+  Total number of paths / destination ports: 8942 / 235
 -------------------------------------------------------------------------
-Delay:               6.416ns (Levels of Logic = 5)
+Delay:               6.538ns (Levels of Logic = 5)
   Source:            ethernet_with_mac/rx_fifo_inst/write_start_address_0 (FF)
   Destination:       ethernet_with_mac/rx_fifo_inst/write_address_11 (FF)
   Source Clock:      mii_rx_clk_i rising
@@ -1702,59 +1943,38 @@ Delay:               6.416ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             6   0.447   1.089  ethernet_with_mac/rx_fifo_inst/write_start_address_0 (ethernet_with_mac/rx_fifo_inst/write_start_address_0)
-     LUT6:I1->O            1   0.203   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o11 (ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o1)
+     FDCE:C->Q             6   0.447   1.109  ethernet_with_mac/rx_fifo_inst/write_start_address_0 (ethernet_with_mac/rx_fifo_inst/write_start_address_0)
+     LUT6:I0->O            1   0.203   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o11 (ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o1)
      LUT3:I1->O            1   0.203   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o13 (ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o12)
-     LUT6:I4->O            1   0.203   0.580  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o17 (ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o16)
-     LUT5:I4->O            4   0.205   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o114 (ethernet_with_mac/rx_fifo_inst/write_start_address[11]_GND_47_o_MUX_313_o)
+     LUT6:I4->O            1   0.203   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o17 (ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o16)
+     LUT5:I3->O            4   0.203   0.684  ethernet_with_mac/rx_fifo_inst/Mmux_write_start_address[11]_GND_47_o_MUX_313_o114 (ethernet_with_mac/rx_fifo_inst/write_start_address[11]_GND_47_o_MUX_313_o)
      LUT4:I3->O           12   0.205   0.908  ethernet_with_mac/rx_fifo_inst/Mmux_write_state[2]_X_27_o_wide_mux_65_OUT231 (ethernet_with_mac/rx_fifo_inst/Mmux_write_state[2]_X_27_o_wide_mux_65_OUT23)
      FDCE:CE                   0.322          ethernet_with_mac/rx_fifo_inst/write_address_0
     ----------------------------------------
-    Total                      6.416ns (1.788ns logic, 4.628ns route)
-                                       (27.9% logic, 72.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_125_i'
-  Total number of paths / destination ports: 3 / 3
--------------------------------------------------------------------------
-Offset:              2.180ns (Levels of Logic = 2)
-  Source:            mdio_io (PAD)
-  Destination:       ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_11 (FF)
-  Destination Clock: clock_125_i rising
-
-  Data Path: mdio_io to ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_11
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IOBUF:IO->O           3   1.222   0.651  mdio_io_IOBUF (N162)
-     LUT6:I5->O            1   0.205   0.000  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_data_read_o[6]_mdio_io_MUX_229_o11 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o[6]_mdio_io_MUX_229_o)
-     FDE:D                     0.102          ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_6
-    ----------------------------------------
-    Total                      2.180ns (1.529ns logic, 0.651ns route)
-                                       (70.1% logic, 29.9% route)
+    Total                      6.538ns (1.786ns logic, 4.752ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 889 / 423
+  Total number of paths / destination ports: 1078 / 613
 -------------------------------------------------------------------------
-Offset:              7.737ns (Levels of Logic = 5)
+Offset:              6.669ns (Levels of Logic = 4)
   Source:            fx2GotData_in (PAD)
-  Destination:       comm/f_7 (FF)
+  Destination:       comm/d_7 (FF)
   Destination Clock: fx2Clk_in rising
 
-  Data Path: fx2GotData_in to comm/f_7
+  Data Path: fx2GotData_in to comm/d_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            28   1.222   1.599  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
-     LUT6:I0->O            2   0.203   0.617  comm_fpga/Mmux_h2fValid_out11 (h2fValid)
-     LUT4:I3->O           69   0.205   1.673  comm/_n0322_inv111 (comm/_n0322_inv11)
-     LUT6:I5->O            4   0.205   0.684  comm/_n0390_inv11 (comm/_n0390_inv1)
-     LUT3:I2->O            8   0.205   0.802  comm/_n0364_inv1 (comm/_n0364_inv)
-     FDE:CE                    0.322          comm/c_0
+     IBUF:I->O            27   1.222   1.585  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT6:I0->O            7   0.203   1.138  comm_fpga/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            6   0.203   0.992  comm/_n0629_inv211 (comm/_n0629_inv21)
+     LUT4:I0->O            8   0.203   0.802  comm/_n0697_inv1 (comm/_n0697_inv)
+     FDE:CE                    0.322          comm/d_0
     ----------------------------------------
-    Total                      7.737ns (2.362ns logic, 5.375ns route)
-                                       (30.5% logic, 69.5% route)
+    Total                      6.669ns (2.153ns logic, 4.516ns route)
+                                       (32.3% logic, 67.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'mii_rx_clk_i'
@@ -1777,24 +1997,26 @@ Offset:              0.681ns (Levels of Logic = 0)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 140 / 22
+  Total number of paths / destination ports: 190 / 25
 -------------------------------------------------------------------------
-Offset:              6.754ns (Levels of Logic = 3)
-  Source:            comm_fpga/state_FSM_FFd4 (FF)
-  Destination:       fx2Data_io<7> (PAD)
+Offset:              7.328ns (Levels of Logic = 5)
+  Source:            ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 (FF)
+  Destination:       mdio_io (PAD)
   Source Clock:      fx2Clk_in rising
 
-  Data Path: comm_fpga/state_FSM_FFd4 to fx2Data_io<7>
+  Data Path: ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 to mdio_io
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              35   0.447   1.699  comm_fpga/state_FSM_FFd4 (comm_fpga/state_FSM_FFd4)
-     LUT6:I0->O           18   0.203   1.050  comm_fpga/driveBus_inv1 (comm_fpga/driveBus_inv)
-     LUT2:I1->O            1   0.205   0.579  comm_fpga/Mmux_dataOut11 (comm_fpga/dataOut<0>)
-     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+     FDE:C->Q              9   0.447   1.174  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1)
+     LUT5:I0->O            1   0.203   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o31 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o3)
+     LUT6:I5->O            1   0.205   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o32 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o31)
+     LUT5:I4->O            1   0.205   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o34 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o33)
+     LUT5:I4->O            1   0.205   0.579  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o35 (mdio_io_IOBUF)
+     IOBUF:I->IO               2.571          mdio_io_IOBUF (mdio_io)
     ----------------------------------------
-    Total                      6.754ns (3.426ns logic, 3.328ns route)
-                                       (50.7% logic, 49.3% route)
+    Total                      7.328ns (3.836ns logic, 3.492ns route)
+                                       (52.3% logic, 47.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'mii_tx_clk_i'
@@ -1814,29 +2036,6 @@ Offset:              3.597ns (Levels of Logic = 1)
     ----------------------------------------
     Total                      3.597ns (3.018ns logic, 0.579ns route)
                                        (83.9% logic, 16.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_125_i'
-  Total number of paths / destination ports: 50 / 3
--------------------------------------------------------------------------
-Offset:              7.328ns (Levels of Logic = 5)
-  Source:            ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 (FF)
-  Destination:       mdio_io (PAD)
-  Source Clock:      clock_125_i rising
-
-  Data Path: ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 to mdio_io
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDE:C->Q              9   0.447   1.174  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/command_bit_position_1)
-     LUT5:I0->O            1   0.203   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o31 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o3)
-     LUT6:I5->O            1   0.205   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o32 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o31)
-     LUT5:I4->O            1   0.205   0.580  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o34 (ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o33)
-     LUT5:I4->O            1   0.205   0.579  ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/Mmux_state[2]_data_bit_position[3]_Mux_10_o35 (mdio_io_IOBUF)
-     IOBUF:I->IO               2.571          mdio_io_IOBUF (mdio_io)
-    ----------------------------------------
-    Total                      7.328ns (3.836ns logic, 3.492ns route)
-                                       (52.3% logic, 47.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1863,22 +2062,14 @@ Delay:               6.889ns (Levels of Logic = 4)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clock_125_i
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clock_125_i    |    4.990|         |         |         |
-mii_rx_clk_i   |    1.199|         |         |         |
-mii_tx_clk_i   |    2.182|         |         |         |
----------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock fx2Clk_in
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |    7.132|         |         |         |
+fx2Clk_in      |    8.200|         |         |         |
+mii_rx_clk_i   |    1.199|         |         |         |
+mii_tx_clk_i   |    2.197|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock mii_rx_clk_i
@@ -1886,8 +2077,8 @@ Clock to Setup on destination clock mii_rx_clk_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_125_i    |    1.812|         |         |         |
-mii_rx_clk_i   |    6.416|         |         |         |
+fx2Clk_in      |    1.812|         |         |         |
+mii_rx_clk_i   |    6.538|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock mii_tx_clk_i
@@ -1895,22 +2086,22 @@ Clock to Setup on destination clock mii_tx_clk_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock_125_i    |    5.550|         |    2.200|         |
-mii_tx_clk_i   |    6.383|         |         |         |
+fx2Clk_in      |    5.639|         |    2.200|         |
+mii_tx_clk_i   |    6.560|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 21.34 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.53 secs
  
 --> 
 
 
-Total memory usage is 442104 kilobytes
+Total memory usage is 454092 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  102 (   0 filtered)
-Number of infos    :   33 (   0 filtered)
+Number of warnings :  243 (   0 filtered)
+Number of infos    :   54 (   0 filtered)
 

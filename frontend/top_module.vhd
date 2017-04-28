@@ -62,30 +62,30 @@ entity top_module is
         done: in STD_LOGIC;
         start: in STD_LOGIC;
 		  		-- Unbuffered 125 MHz clock input
-		clock_125_i      : in    std_ulogic;
+		--clock_125_i      : in    std_ulogic;
 		  -- MII (Media-independent interface)
-		mii_tx_clk_i     : in    std_ulogic;
-		mii_tx_er_o      : out   std_ulogic;
-		mii_tx_en_o      : out   std_ulogic;
-		mii_txd_o        : out   std_ulogic_vector(7 downto 0);
-		mii_rx_clk_i     : in    std_ulogic;
-		mii_rx_er_i      : in    std_ulogic;
-		mii_rx_dv_i      : in    std_ulogic;
-		mii_rxd_i        : in    std_ulogic_vector(7 downto 0);
+		--mii_tx_clk_i     : in    std_ulogic;
+		--mii_tx_er_o      : out   std_ulogic;
+		--mii_tx_en_o      : out   std_ulogic;
+		--mii_txd_o        : out   std_ulogic_vector(7 downto 0);
+		--mii_rx_clk_i     : in    std_ulogic;
+		--mii_rx_er_i      : in    std_ulogic;
+		--mii_rx_dv_i      : in    std_ulogic;
+		--mii_rxd_i        : in    std_ulogic_vector(7 downto 0);
 
-		-- GMII (Gigabit media-independent interface)
-		gmii_gtx_clk_o   : out   std_ulogic;
+		---- GMII (Gigabit media-independent interface)
+		--gmii_gtx_clk_o   : out   std_ulogic;
 
-		---- RGMII (Reduced pin count gigabit media-independent interface)
-		--rgmii_tx_ctl_o   : out   std_ulogic;
-		--rgmii_rx_ctl_i   : in    std_ulogic;
+		------ RGMII (Reduced pin count gigabit media-independent interface)
+		----rgmii_tx_ctl_o   : out   std_ulogic;
+		----rgmii_rx_ctl_i   : in    std_ulogic;
 
-		-- MII Management Interface
-		-- Clock, can be identical to clock_125_i
-		-- If not, adjust MIIM_CLOCK_DIVIDER accordingly
-		--miim_clock_i     : in    std_ulogic;
-		mdc_o            : out   std_ulogic;
-		mdio_io          : inout std_ulogic
+		---- MII Management Interface
+		---- Clock, can be identical to clock_125_i
+		---- If not, adjust MIIM_CLOCK_DIVIDER accordingly
+		----miim_clock_i     : in    std_ulogic;
+		--mdc_o            : out   std_ulogic;
+		--mdio_io          : inout std_ulogic
 
 		  
 		  
@@ -114,18 +114,48 @@ architecture Behavioral of top_module is
 		  done_decrypt : in STD_LOGIC;
 		  start_comm : out STD_LOGIC;
 		  done_comm : in STD_LOGIC;
-		  is_user: in STD_LOGIC;
-		  is_suf_bal: in STD_LOGIC;
 		  is_suf_atm: out STD_LOGIC;
 		  restriction_2000: in STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_1000: in STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_500: in STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_100: in STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_total: in STD_LOGIC_VECTOR (7 downto 0);
-		  load_bank_id: in STD_LOGIC
+		  restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
+		  load_bank_id: in STD_LOGIC;
+
+
+		  start_mac_comm : out STD_LOGIC;
+		  done_mac_comm : in STD_LOGIC;
+		  data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  
+		  request_mac_comm : in STD_LOGIC;
+		  is_suf_atm_request : in STD_LOGIC;
+		  data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  reply_mac_comm_valid : out STD_LOGIC;
+		  reply_mac_comm_notvalid : out STD_LOGIC
 );
 	 end component;
 	
+
+	 --component mac_communication
+	 --	port(
+		--  clk : in STD_LOGIC;
+	 -- 	  start_mac_comm : in STD_LOGIC;
+		--  done_mac_comm : out STD_LOGIC;
+		--  data_send_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		--  data_response_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		--  is_suf_atm : in STD_LOGIC;
+		  
+		--  request_mac_comm : out STD_LOGIC;
+		--  is_suf_atm_request : out STD_LOGIC;
+		--  data_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		--  data_reply_to_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		--  reply_mac_comm_valid : in STD_LOGIC;
+		--  reply_mac_comm_notvalid : in STD_LOGIC
+		--  );
+	 --end component;
+
     component debouncer
         port(clk: in STD_LOGIC;
             button: in STD_LOGIC;
@@ -150,30 +180,29 @@ architecture Behavioral of top_module is
             done: out STD_LOGIC);
     end component;
 	 component communication 
-		PORT( clk : in  STD_LOGIC;
-				reset : in STD_LOGIC;
-				is_user: out STD_LOGIC;
-			  is_suf_bal: out STD_LOGIC;
-			  is_suf_atm: in STD_LOGIC;
-			  start_comm : in STD_LOGIC;
-			  done_comm : out STD_LOGIC;
-			  data_send: in STD_LOGIC_VECTOR (63 downto 0);
-			  data_recieved: out STD_LOGIC_VECTOR (63 downto 0);
-			  restriction_2000: out STD_LOGIC_VECTOR (7 downto 0);
-			  restriction_1000: out STD_LOGIC_VECTOR (7 downto 0);
-			  restriction_500: out STD_LOGIC_VECTOR (7 downto 0);
-			  restriction_100: out STD_LOGIC_VECTOR (7 downto 0);
-			  restriction_total: out STD_LOGIC_VECTOR (7 downto 0);
-			  chanAddr_in  : in std_logic_vector(6 downto 0);
-				-- Host >> FPGA pipe:
-				h2fData_in   : in std_logic_vector(7 downto 0);  
-				h2fValid_in  : in std_logic;                     
-				h2fReady_out  : out std_logic;                     
-				-- Host << FPGA pipe:
-				f2hData_out   : out std_logic_vector(7 downto 0);  
-				f2hValid_out  : out std_logic;                     
-				f2hReady_in  : in std_logic                   
-				);
+		PORT( 
+			clk : in  STD_LOGIC;
+			reset : in STD_LOGIC;
+			is_suf_atm: in STD_LOGIC;
+			start_comm : in STD_LOGIC;
+			done_comm : out STD_LOGIC;
+			data_send: in STD_LOGIC_VECTOR (63 downto 0);
+			data_recieved: out STD_LOGIC_VECTOR (63 downto 0);
+			restriction_2000: out STD_LOGIC_VECTOR (7 downto 0);
+			restriction_1000: out STD_LOGIC_VECTOR (7 downto 0);
+			restriction_500: out STD_LOGIC_VECTOR (7 downto 0);
+			restriction_100: out STD_LOGIC_VECTOR (7 downto 0);
+			restriction_total: out STD_LOGIC_VECTOR (31 downto 0);
+			chanAddr_in  : in std_logic_vector(6 downto 0);
+			-- Host >> FPGA pipe:
+			h2fData_in   : in std_logic_vector(7 downto 0);  
+			h2fValid_in  : in std_logic;                     
+			h2fReady_out  : out std_logic;                     
+			-- Host << FPGA pipe:
+			f2hData_out   : out std_logic_vector(7 downto 0);  
+			f2hValid_out  : out std_logic;                     
+			f2hReady_in  : in std_logic                   
+		);
 	end component;
 	
 	component comm_fpga_fx2 
@@ -260,7 +289,7 @@ signal restriction_2000: STD_LOGIC_VECTOR (7 downto 0);
 signal restriction_1000: STD_LOGIC_VECTOR (7 downto 0);
 signal restriction_500: STD_LOGIC_VECTOR (7 downto 0);
 signal restriction_100: STD_LOGIC_VECTOR (7 downto 0);
-signal restriction_total: STD_LOGIC_VECTOR (7 downto 0);
+signal restriction_total: STD_LOGIC_VECTOR (31 downto 0);
 signal debounced_next_data_in_button: STD_LOGIC;
 signal debounced_load_bank_id: STD_LOGIC;
 signal debounced_done_button: STD_LOGIC := '0';
@@ -276,12 +305,26 @@ signal start_decrypt: STD_LOGIC;
 signal start_encrypt: STD_LOGIC;
 signal start_comm : STD_LOGIC;
 signal done_comm : STD_LOGIC;
-signal is_user: STD_LOGIC;
-signal is_suf_bal: STD_LOGIC;
 signal is_suf_atm: STD_LOGIC;
 signal encrypted_data_comm: STD_LOGIC_VECTOR (63 downto 0);
 signal decrypted_data_comm: STD_LOGIC_VECTOR (63 downto 0);
 signal done_or_reset : STD_LOGIC;
+
+signal start_mac_comm : STD_LOGIC;
+signal done_mac_comm : STD_LOGIC;
+signal data_send_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+signal data_response_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+		  
+signal request_mac_comm : STD_LOGIC;
+signal is_suf_atm_request : STD_LOGIC;
+signal data_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+signal data_reply_to_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+signal reply_mac_comm_valid : STD_LOGIC;
+signal reply_mac_comm_notvalid : STD_LOGIC;
+
+
+
+
 
 
 begin
@@ -293,39 +336,39 @@ begin
 		'0' when fx2Reset = '0'
 		else 'Z';
 	
-	ethernet_with_mac : entity ethernet_mac.ethernet_with_fifos
-	port map(
-			clock_125_i => clock_125_i,
-			reset_i => '0',
-			mac_address_i => mac_address_i,
-			mii_tx_clk_i => mii_tx_clk_i,
-			mii_tx_er_o => mii_tx_er_o,
-			mii_tx_en_o => mii_tx_en_o,
-			mii_txd_o => mii_txd_o,
-			mii_rx_clk_i => mii_rx_clk_i,
-			mii_rx_er_i => mii_rx_er_i,
-			mii_rx_dv_i => mii_rx_dv_i,
-			mii_rxd_i => mii_rxd_i,
-			gmii_gtx_clk_o => gmii_gtx_clk_o,
-			rgmii_tx_ctl_o => rgmii_tx_ctl_o,
-			rgmii_rx_ctl_i => rgmii_rx_ctl_i,
-			miim_clock_i => clock_125_i,
-			mdc_o => mdc_o,
-			mdio_io => mdio_io,
-			link_up_o => link_up_o,
-			speed_o => speed_o,
-			speed_override_i => speed_override_i,
-			tx_clock_i => clock_125_i,
-			tx_reset_o => tx_reset_o,
-			tx_data_i => tx_data_i,
-			tx_wr_en_i => tx_wr_en_i,
-			tx_full_o => tx_full_o,
-			rx_clock_i => clock_125_i,
-			rx_reset_o => rx_reset_o,
-			rx_empty_o => rx_empty_o,
-			rx_rd_en_i => rx_rd_en_i,
-			rx_data_o => rx_data_o
-		);
+	--ethernet_with_mac : entity ethernet_mac.ethernet_with_fifos
+	--port map(
+	--		clock_125_i => fx2Clk_in,
+	--		reset_i => '0',
+	--		mac_address_i => mac_address_i,
+	--		mii_tx_clk_i => mii_tx_clk_i,
+	--		mii_tx_er_o => mii_tx_er_o,
+	--		mii_tx_en_o => mii_tx_en_o,
+	--		mii_txd_o => mii_txd_o,
+	--		mii_rx_clk_i => mii_rx_clk_i,
+	--		mii_rx_er_i => mii_rx_er_i,
+	--		mii_rx_dv_i => mii_rx_dv_i,
+	--		mii_rxd_i => mii_rxd_i,
+	--		gmii_gtx_clk_o => gmii_gtx_clk_o,
+	--		rgmii_tx_ctl_o => rgmii_tx_ctl_o,
+	--		rgmii_rx_ctl_i => rgmii_rx_ctl_i,
+	--		miim_clock_i => fx2Clk_in,
+	--		mdc_o => mdc_o,
+	--		mdio_io => mdio_io,
+	--		link_up_o => link_up_o,
+	--		speed_o => speed_o,
+	--		speed_override_i => speed_override_i,
+	--		tx_clock_i => fx2Clk_in,
+	--		tx_reset_o => tx_reset_o,
+	--		tx_data_i => tx_data_i,
+	--		tx_wr_en_i => tx_wr_en_i,
+	--		tx_full_o => tx_full_o,
+	--		rx_clock_i => fx2Clk_in,
+	--		rx_reset_o => rx_reset_o,
+	--		rx_empty_o => rx_empty_o,
+	--		rx_rd_en_i => rx_rd_en_i,
+	--		rx_data_o => rx_data_o
+	--	);
 	
 	comm_fpga : comm_fpga_fx2
 		port map(
@@ -414,15 +457,23 @@ ATM_Main_cont : ATM_main_controller
 						   decrypted_data_comm => decrypted_data_comm,
 						   start_comm => start_comm,
 						   done_comm => done_comm,
-						   is_user => is_user,
-						   is_suf_bal => is_suf_bal,
 						   is_suf_atm => is_suf_atm,
 						   restriction_2000 => restriction_2000,
 							restriction_1000 => restriction_1000,
 							restriction_500 => restriction_500,
 							restriction_100 => restriction_100,
 							restriction_total => restriction_total,
-							load_bank_id => debounced_load_bank_id
+							load_bank_id => debounced_load_bank_id,
+							start_mac_comm => start_mac_comm,
+							done_mac_comm => done_mac_comm,
+							data_send_mac_comm => data_send_mac_comm,
+							data_response_mac_comm => data_response_mac_comm,
+							request_mac_comm => request_mac_comm,
+							is_suf_atm_request => is_suf_atm_request,
+							data_request_mac_comm => data_request_mac_comm,
+							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
+							reply_mac_comm_valid => reply_mac_comm_valid,
+							reply_mac_comm_notvalid => reply_mac_comm_notvalid
 							);
 
 comm : communication
@@ -438,8 +489,6 @@ comm : communication
 							reset => done_or_reset,
 							start_comm => start_comm,
 						   done_comm => done_comm,
-						   is_user => is_user,
-						   is_suf_bal => is_suf_bal,
 						   is_suf_atm => is_suf_atm,
 							data_send => encrypted_data_comm,
 						    data_recieved => decrypted_data_comm,
@@ -449,4 +498,19 @@ comm : communication
 							restriction_100 => restriction_100,
 							restriction_total => restriction_total
 					);
+--mac_comm : mac_communication
+--		port map(
+--			clk => fx2Clk_in,
+--							start_mac_comm => start_mac_comm,
+--							done_mac_comm => done_mac_comm,
+--							data_send_mac_comm => data_send_mac_comm,
+--							data_response_mac_comm => data_response_mac_comm,
+--							request_mac_comm => request_mac_comm,
+--							is_suf_atm_request => is_suf_atm_request,
+--							data_request_mac_comm => data_request_mac_comm,
+--							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
+--							reply_mac_comm_valid => reply_mac_comm_valid,
+--							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
+--							is_suf_atm => is_suf_atm
+--			);
 end Behavioral;

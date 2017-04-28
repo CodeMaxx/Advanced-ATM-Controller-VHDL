@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: ATM_main_controller.prj
@@ -137,14 +137,10 @@ Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from l
 
 Synthesizing Unit <ATM_main_controller>.
     Related source file is "/home/kanak/CS254/ATM/ATM_main_controller.vhd".
-WARNING:Xst:647 - Input <restriction_2000> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <restriction_1000> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <restriction_500> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <restriction_100> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <restriction_total> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 64-bit register for signal <data_to_be_decrypted>.
     Found 1-bit register for signal <start_decrypt>.
     Found 5-bit register for signal <state2>.
+    Found 1-bit register for signal <is_suf_atm>.
     Found 64-bit register for signal <encrypted_data_comm>.
     Found 1-bit register for signal <start_comm>.
     Found 1-bit register for signal <reply_mac_comm_notvalid>.
@@ -157,12 +153,13 @@ WARNING:Xst:647 - Input <restriction_total> is never used. This port will be pre
     Found 8-bit register for signal <n2000>.
     Found 5-bit register for signal <current_user_bank_id>.
     Found 64-bit register for signal <data_to_be_encrypted>.
-    Found 1-bit register for signal <is_suf_atm>.
+    Found 32-bit register for signal <atm_cash_that_can_be_given>.
+    Found 3-bit register for signal <substate>.
+    Found 1-bit register for signal <is_suf_atm_signal>.
     Found 1-bit register for signal <start_encrypt>.
+    Found 32-bit register for signal <money>.
     Found 64-bit register for signal <data_send_mac_comm>.
     Found 1-bit register for signal <start_mac_comm>.
-    Found 1-bit register for signal <is_user_mac>.
-    Found 1-bit register for signal <is_suf_bal_mac>.
     Found 8-bit register for signal <data_out_leds>.
     Found 3-bit register for signal <count_blink>.
     Found 1-bit register for signal <double_time>.
@@ -172,23 +169,34 @@ WARNING:Xst:647 - Input <restriction_total> is never used. This port will be pre
     Found 8-bit register for signal <d100>.
     Found 1-bit register for signal <finish_display>.
     Found 5-bit register for signal <bank_id>.
+    Found finite state machine <FSM_0> for signal <substate>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 25                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
     Found finite state machine <FSM_1> for signal <state2>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 7                                              |
-    | Inputs             | 4                                              |
+    | Inputs             | 3                                              |
     | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Power Up State     | 00000                                          |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_0> for signal <state>.
+    Found finite state machine <FSM_2> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 13                                             |
-    | Transitions        | 39                                             |
-    | Inputs             | 12                                             |
-    | Outputs            | 17                                             |
+    | States             | 14                                             |
+    | Transitions        | 49                                             |
+    | Inputs             | 17                                             |
+    | Outputs            | 19                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | reset_button (positive)                        |
     | Reset type         | synchronous                                    |
@@ -197,39 +205,66 @@ WARNING:Xst:647 - Input <restriction_total> is never used. This port will be pre
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 19-bit adder for signal <n0823> created at line 159.
-    Found 19-bit adder for signal <n0826> created at line 159.
-    Found 19-bit adder for signal <n2000[7]_GND_5_o_add_25_OUT> created at line 159.
-    Found 3-bit adder for signal <count_blink[2]_GND_5_o_add_227_OUT> created at line 328.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_166_OUT<7:0>> created at line 280.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_167_OUT<7:0>> created at line 281.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_172_OUT<7:0>> created at line 288.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_173_OUT<7:0>> created at line 289.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_178_OUT<7:0>> created at line 296.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_179_OUT<7:0>> created at line 297.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_184_OUT<7:0>> created at line 304.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_185_OUT<7:0>> created at line 305.
-    Found 8x11-bit multiplier for signal <n0820> created at line 159.
-    Found 8x10-bit multiplier for signal <n1000[7]_PWR_5_o_MuLt_20_OUT> created at line 159.
-    Found 8x9-bit multiplier for signal <n500[7]_PWR_5_o_MuLt_22_OUT> created at line 159.
-    Found 8x7-bit multiplier for signal <n100[7]_PWR_5_o_MuLt_24_OUT> created at line 159.
-    Found 5-bit comparator equal for signal <bank_id[4]_decrypted_data[52]_equal_4_o> created at line 130
-    Found 32-bit comparator lessequal for signal <n0042> created at line 159
-    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_29_o> created at line 163
-    Found 3-bit comparator greater for signal <count_blink[2]_GND_5_o_LessThan_136_o> created at line 243
-    Found 8-bit comparator lessequal for signal <n0238> created at line 261
-    Found 8-bit comparator lessequal for signal <n0240> created at line 261
-    Found 8-bit comparator lessequal for signal <n0242> created at line 261
-    Found 8-bit comparator lessequal for signal <n0244> created at line 261
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_5_o_LessThan_188_o> created at line 307
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_5_o_LessThan_226_o> created at line 323
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_21_OUT> created at line 168.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_23_OUT> created at line 170.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_28_OUT> created at line 175.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_30_OUT> created at line 177.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_35_OUT> created at line 182.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_37_OUT> created at line 184.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_42_OUT> created at line 189.
+    Found 32-bit adder for signal <atm_cash_that_can_be_given[31]_GND_5_o_add_44_OUT> created at line 191.
+    Found 8-bit adder for signal <d2000[7]_GND_5_o_add_227_OUT> created at line 323.
+    Found 8-bit adder for signal <d1000[7]_GND_5_o_add_237_OUT> created at line 332.
+    Found 8-bit adder for signal <d500[7]_GND_5_o_add_247_OUT> created at line 341.
+    Found 8-bit adder for signal <d100[7]_GND_5_o_add_257_OUT> created at line 350.
+    Found 3-bit adder for signal <count_blink[2]_GND_5_o_add_339_OUT> created at line 385.
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_229_OUT<31:0>> created at line 324.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_230_OUT<7:0>> created at line 325.
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_239_OUT<31:0>> created at line 333.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_240_OUT<7:0>> created at line 334.
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_249_OUT<31:0>> created at line 342.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_250_OUT<7:0>> created at line 343.
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_259_OUT<31:0>> created at line 351.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_260_OUT<7:0>> created at line 352.
+    Found 8x11-bit multiplier for signal <n2000[7]_PWR_5_o_MuLt_20_OUT> created at line 168.
+    Found 8x11-bit multiplier for signal <restriction_2000[7]_PWR_5_o_MuLt_22_OUT> created at line 170.
+    Found 8x10-bit multiplier for signal <n1000[7]_PWR_5_o_MuLt_27_OUT> created at line 175.
+    Found 8x10-bit multiplier for signal <restriction_1000[7]_PWR_5_o_MuLt_29_OUT> created at line 177.
+    Found 8x9-bit multiplier for signal <n500[7]_PWR_5_o_MuLt_34_OUT> created at line 182.
+    Found 8x9-bit multiplier for signal <restriction_500[7]_PWR_5_o_MuLt_36_OUT> created at line 184.
+    Found 8x7-bit multiplier for signal <n100[7]_PWR_5_o_MuLt_41_OUT> created at line 189.
+    Found 8x7-bit multiplier for signal <restriction_100[7]_PWR_5_o_MuLt_43_OUT> created at line 191.
+    Found 32-bit 4-to-1 multiplexer for signal <_n1116> created at line 166.
+    Found 5-bit comparator equal for signal <bank_id[4]_decrypted_data[52]_equal_4_o> created at line 136
+    Found 8-bit comparator lessequal for signal <n0037> created at line 167
+    Found 8-bit comparator lessequal for signal <n0045> created at line 174
+    Found 8-bit comparator lessequal for signal <n0053> created at line 181
+    Found 8-bit comparator lessequal for signal <n0061> created at line 188
+    Found 32-bit comparator greater for signal <n0070> created at line 196
+    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_65_o> created at line 204
+    Found 32-bit comparator greater for signal <n0111> created at line 214
+    Found 3-bit comparator greater for signal <count_blink[2]_GND_5_o_LessThan_199_o> created at line 285
+    Found 32-bit comparator lessequal for signal <n0319> created at line 318
+    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_225_o> created at line 318
+    Found 8-bit comparator greater for signal <GND_5_o_n2000[7]_LessThan_226_o> created at line 318
+    Found 32-bit comparator lessequal for signal <n0331> created at line 327
+    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_235_o> created at line 327
+    Found 8-bit comparator greater for signal <GND_5_o_n1000[7]_LessThan_236_o> created at line 327
+    Found 32-bit comparator lessequal for signal <n0343> created at line 336
+    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_245_o> created at line 336
+    Found 8-bit comparator greater for signal <GND_5_o_n500[7]_LessThan_246_o> created at line 336
+    Found 32-bit comparator lessequal for signal <n0355> created at line 345
+    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_255_o> created at line 345
+    Found 8-bit comparator greater for signal <GND_5_o_n100[7]_LessThan_256_o> created at line 345
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_5_o_LessThan_307_o> created at line 370
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_5_o_LessThan_339_o> created at line 382
     Summary:
-	inferred   4 Multiplier(s).
-	inferred  12 Adder/Subtractor(s).
-	inferred 416 D-type flip-flop(s).
-	inferred  10 Comparator(s).
-	inferred 154 Multiplexer(s).
-	inferred   2 Finite State Machine(s).
+	inferred   8 Multiplier(s).
+	inferred  11 Adder/Subtractor(s).
+	inferred 479 D-type flip-flop(s).
+	inferred  23 Comparator(s).
+	inferred 210 Multiplexer(s).
+	inferred   3 Finite State Machine(s).
 Unit <ATM_main_controller> synthesized.
 
 Synthesizing Unit <timer>.
@@ -255,7 +290,7 @@ Synthesizing Unit <read_multiple_data_bytes>.
     Found 1-bit register for signal <done>.
     Found 64-bit register for signal <data>.
     Found 1-bit register for signal <prev_value>.
-    Found finite state machine <FSM_2> for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -284,40 +319,47 @@ Unit <read_multiple_data_bytes> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 4
- 10x8-bit multiplier                                   : 1
- 11x8-bit multiplier                                   : 1
- 8x7-bit multiplier                                    : 1
- 9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 15
- 19-bit adder                                          : 3
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 2
+ 8x7-bit multiplier                                    : 2
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 14
  25-bit adder                                          : 1
  3-bit adder                                           : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
  4-bit adder                                           : 1
  64-bit adder                                          : 1
- 8-bit subtractor                                      : 8
-# Registers                                            : 36
- 1-bit register                                        : 15
+ 8-bit adder                                           : 4
+ 8-bit subtractor                                      : 4
+# Registers                                            : 37
+ 1-bit register                                        : 14
  25-bit register                                       : 1
  3-bit register                                        : 1
+ 32-bit register                                       : 2
  4-bit register                                        : 1
  5-bit register                                        : 2
  64-bit register                                       : 7
  8-bit register                                        : 9
-# Comparators                                          : 13
+# Comparators                                          : 26
  25-bit comparator greater                             : 2
  3-bit comparator greater                              : 3
- 32-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 4
  4-bit comparator greater                              : 1
  5-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 4
-# Multiplexers                                         : 155
- 1-bit 2-to-1 multiplexer                              : 14
- 64-bit 2-to-1 multiplexer                             : 16
- 8-bit 2-to-1 multiplexer                              : 125
-# FSMs                                                 : 3
+# Multiplexers                                         : 211
+ 1-bit 2-to-1 multiplexer                              : 24
+ 32-bit 2-to-1 multiplexer                             : 34
+ 64-bit 2-to-1 multiplexer                             : 17
+ 8-bit 2-to-1 multiplexer                              : 136
+# FSMs                                                 : 4
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -325,16 +367,12 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <ATM_main_controller>.
+The following registers are absorbed into accumulator <atm_cash_that_can_be_given>: 1 register on signal <atm_cash_that_can_be_given>.
 The following registers are absorbed into counter <count_blink>: 1 register on signal <count_blink>.
 The following registers are absorbed into counter <d2000>: 1 register on signal <d2000>.
 The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
-The following registers are absorbed into counter <d100>: 1 register on signal <d100>.
 The following registers are absorbed into counter <d500>: 1 register on signal <d500>.
-	The following adders/subtractors are grouped into adder tree <Madd_n2000[7]_GND_5_o_add_25_OUT1> :
- 	<Madd_n0823> in block <ATM_main_controller>, 	<Madd_n0826> in block <ATM_main_controller>, 	<Madd_n2000[7]_GND_5_o_add_25_OUT> in block <ATM_main_controller>.
-	Multiplier <Mmult_n100[7]_PWR_5_o_MuLt_24_OUT> in block <ATM_main_controller> and adder/subtractor <ADDER_FOR_MULTADD_Madd2> in block <ATM_main_controller> are combined into a MAC<Maddsub_n100[7]_PWR_5_o_MuLt_24_OUT>.
-	Multiplier <Mmult_n500[7]_PWR_5_o_MuLt_22_OUT> in block <ATM_main_controller> and adder/subtractor <ADDER_FOR_MULTADD_Madd1> in block <ATM_main_controller> are combined into a MAC<Maddsub_n500[7]_PWR_5_o_MuLt_22_OUT>.
-	Multiplier <Mmult_n0820> in block <ATM_main_controller> and adder/subtractor <ADDER_FOR_MULTADD_Madd> in block <ATM_main_controller> are combined into a MAC<Maddsub_n0820>.
+The following registers are absorbed into counter <d100>: 1 register on signal <d100>.
 Unit <ATM_main_controller> synthesized (advanced).
 
 Synthesizing (advanced) Unit <read_multiple_data_bytes>.
@@ -350,35 +388,39 @@ Unit <timer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# MACs                                                 : 3
- 11x8-to-19-bit MAC                                    : 1
- 8x7-to-19-bit MAC                                     : 1
- 9x8-to-19-bit MAC                                     : 1
-# Multipliers                                          : 1
- 10x8-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 4
+# Multipliers                                          : 8
+ 10x8-bit multiplier                                   : 2
+ 11x8-bit multiplier                                   : 2
+ 8x7-bit multiplier                                    : 2
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 5
+ 32-bit subtractor                                     : 1
  8-bit subtractor                                      : 4
 # Counters                                             : 7
  25-bit up counter                                     : 1
  3-bit up counter                                      : 1
  4-bit up counter                                      : 1
- 8-bit down counter                                    : 4
-# Accumulators                                         : 1
+ 8-bit up counter                                      : 4
+# Accumulators                                         : 2
+ 32-bit up accumulator                                 : 1
  64-bit up loadable accumulator                        : 1
-# Registers                                            : 449
- Flip-Flops                                            : 449
-# Comparators                                          : 13
+# Registers                                            : 480
+ Flip-Flops                                            : 480
+# Comparators                                          : 26
  25-bit comparator greater                             : 2
  3-bit comparator greater                              : 3
- 32-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 2
+ 32-bit comparator lessequal                           : 4
  4-bit comparator greater                              : 1
  5-bit comparator equal                                : 2
+ 8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 4
-# Multiplexers                                         : 154
- 1-bit 2-to-1 multiplexer                              : 14
- 64-bit 2-to-1 multiplexer                             : 15
- 8-bit 2-to-1 multiplexer                              : 125
-# FSMs                                                 : 3
+# Multiplexers                                         : 210
+ 1-bit 2-to-1 multiplexer                              : 24
+ 32-bit 2-to-1 multiplexer                             : 34
+ 64-bit 2-to-1 multiplexer                             : 16
+ 8-bit 2-to-1 multiplexer                              : 136
+# FSMs                                                 : 4
 
 =========================================================================
 
@@ -391,25 +433,6 @@ INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_main_controll
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <state[1:13]> with one-hot encoding.
-------------------------
- State | Encoding
-------------------------
- 00000 | 0000000000001
- 11111 | 0000000000010
- 00001 | 0000000000100
- 00010 | 0000000001000
- 00011 | 0000000010000
- 00100 | 0000000100000
- 10011 | 0000001000000
- 10110 | 0000010000000
- 10101 | 0000100000000
- 10100 | 0001000000000
- 00111 | 0010000000000
- 00110 | 0100000000000
- 00101 | 1000000000000
-------------------------
-Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_1> on signal <state2[1:2]> with sequential encoding.
 -------------------
  State | Encoding
@@ -419,7 +442,38 @@ Optimizing FSM <FSM_1> on signal <state2[1:2]> with sequential encoding.
  00010 | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <data_inp/FSM_2> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <FSM_2> on signal <state[1:5]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 11111 | 11111
+ 00001 | 00001
+ 00010 | 00010
+ 00011 | 00011
+ 00100 | 00100
+ 10011 | 10011
+ 10100 | 10100
+ 10110 | 10110
+ 10101 | 10101
+ 01111 | 01111
+ 00111 | 00111
+ 00110 | 00110
+ 00101 | 00101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <substate[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 011
+ 011   | 010
+ 100   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <data_inp/FSM_3> on signal <state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -427,53 +481,27 @@ Optimizing FSM <data_inp/FSM_2> on signal <state[1:2]> with gray encoding.
  11    | 01
  10    | 11
 -------------------
+INFO:Xst:2261 - The FF/Latch <data_out_leds_0> in Unit <ATM_main_controller> is equivalent to the following 2 FFs/Latches, which will be removed : <data_out_leds_1> <data_out_leds_2> 
 
 Optimizing unit <ATM_main_controller> ...
 
 Optimizing unit <read_multiple_data_bytes> ...
-WARNING:Xst:1293 - FF/Latch <d500_7> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_6> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_5> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_4> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_3> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_2> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_1> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d500_0> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_7> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_6> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_5> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_4> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_3> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_2> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_1> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d100_0> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_7> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_6> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_5> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_4> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_3> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_2> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_1> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d2000_0> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_7> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_6> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_5> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_4> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_3> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_2> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_1> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <d1000_0> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n100_7> is unconnected in block <ATM_main_controller>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n100_6> is unconnected in block <ATM_main_controller>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n500_7> is unconnected in block <ATM_main_controller>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n500_6> is unconnected in block <ATM_main_controller>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n2000_7> is unconnected in block <ATM_main_controller>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <n2000_6> is unconnected in block <ATM_main_controller>.
-INFO:Xst:2261 - The FF/Latch <data_out_leds_0> in Unit <ATM_main_controller> is equivalent to the following 3 FFs/Latches, which will be removed : <data_out_leds_1> <data_out_leds_2> <data_out_leds_3> 
+WARNING:Xst:1293 - FF/Latch <atm_cash_that_can_be_given_0> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <atm_cash_that_can_be_given_1> has a constant value of 0 in block <ATM_main_controller>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block ATM_main_controller, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block ATM_main_controller, actual ratio is 5.
+FlipFlop count_blink_1 has been replicated 1 time(s)
+FlipFlop count_blink_2 has been replicated 1 time(s)
+FlipFlop n1000_1 has been replicated 1 time(s)
+FlipFlop n1000_2 has been replicated 1 time(s)
+FlipFlop n2000_2 has been replicated 1 time(s)
+FlipFlop n500_2 has been replicated 1 time(s)
+FlipFlop state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop state_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop state_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop state_FSM_FFd5 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -481,8 +509,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 530
- Flip-Flops                                            : 530
+# Registers                                            : 655
+ Flip-Flops                                            : 655
 
 =========================================================================
 
@@ -505,33 +533,31 @@ Top Level Output File Name         : ATM_main_controller.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 752
+# BELS                             : 2033
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 24
-#      LUT2                        : 57
-#      LUT3                        : 25
-#      LUT4                        : 35
-#      LUT5                        : 106
-#      LUT6                        : 262
-#      MUXCY                       : 124
+#      INV                         : 7
+#      LUT1                        : 65
+#      LUT2                        : 68
+#      LUT3                        : 222
+#      LUT4                        : 195
+#      LUT5                        : 261
+#      LUT6                        : 478
+#      MUXCY                       : 384
+#      MUXF7                       : 8
 #      VCC                         : 1
-#      XORCY                       : 113
-# FlipFlops/Latches                : 530
-#      FD                          : 9
+#      XORCY                       : 343
+# FlipFlops/Latches                : 655
+#      FD                          : 14
 #      FDC                         : 3
 #      FDCE                        : 68
-#      FDE                         : 399
-#      FDR                         : 42
-#      FDRE                        : 8
-#      FDS                         : 1
+#      FDE                         : 487
+#      FDR                         : 40
+#      FDRE                        : 43
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 675
-#      IBUF                        : 340
+# IO Buffers                       : 738
+#      IBUF                        : 403
 #      OBUF                        : 335
-# DSPs                             : 3
-#      DSP48A1                     : 3
 
 Device utilization summary:
 ---------------------------
@@ -540,24 +566,23 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             530  out of  54576     0%  
- Number of Slice LUTs:                  513  out of  27288     1%  
-    Number used as Logic:               513  out of  27288     1%  
+ Number of Slice Registers:             655  out of  54576     1%  
+ Number of Slice LUTs:                 1296  out of  27288     4%  
+    Number used as Logic:              1296  out of  27288     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    727
-   Number with an unused Flip Flop:     197  out of    727    27%  
-   Number with an unused LUT:           214  out of    727    29%  
-   Number of fully used LUT-FF pairs:   316  out of    727    43%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:   1451
+   Number with an unused Flip Flop:     796  out of   1451    54%  
+   Number with an unused LUT:           155  out of   1451    10%  
+   Number of fully used LUT-FF pairs:   500  out of   1451    34%  
+   Number of unique control sets:        24
 
 IO Utilization: 
- Number of IOs:                         716
- Number of bonded IOBs:                 676  out of    218   310% (*) 
+ Number of IOs:                         739
+ Number of bonded IOBs:                 739  out of    218   338% (*) 
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      3  out of     58     5%  
 
 WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
@@ -582,7 +607,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 533   |
+clk                                | BUFGP                  | 655   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -593,9 +618,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 13.030ns (Maximum Frequency: 76.747MHz)
-   Minimum input arrival time before clock: 7.631ns
-   Maximum output required time after clock: 3.701ns
+   Minimum period: 7.473ns (Maximum Frequency: 133.812MHz)
+   Minimum input arrival time before clock: 8.740ns
+   Maximum output required time after clock: 3.668ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -604,97 +629,76 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 13.030ns (frequency: 76.747MHz)
-  Total number of paths / destination ports: 297445668 / 898
+  Clock period: 7.473ns (frequency: 133.812MHz)
+  Total number of paths / destination ports: 551294 / 1251
 -------------------------------------------------------------------------
-Delay:               13.030ns (Levels of Logic = 32)
-  Source:            n1000_1 (FF)
-  Destination:       is_suf_atm (FF)
+Delay:               7.473ns (Levels of Logic = 7)
+  Source:            d500_3 (FF)
+  Destination:       data_out_leds_4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: n1000_1 to is_suf_atm
+  Data Path: d500_3 to data_out_leds_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             17   0.447   1.132  n1000_1 (n1000_1)
-     LUT3:I1->O            1   0.203   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_lut<4> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_lut<4>)
-     MUXCY:S->O            1   0.172   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<4> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<5> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<6> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<7> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<8> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<9> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<9>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<10> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<10>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<11> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<11>)
-     MUXCY:CI->O           1   0.019   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<12> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_cy<12>)
-     XORCY:CI->O           1   0.180   0.580  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd3_xor<13> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd_163)
-     LUT3:I2->O            1   0.205   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd4_lut<15> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd4_lut<15>)
-     MUXCY:S->O            0   0.172   0.000  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd4_cy<15> (Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd4_cy<15>)
-     XORCY:CI->O           1   0.180   0.579  Mmult_n1000[7]_PWR_5_o_MuLt_20_OUT_Madd4_xor<16> (n1000[7]_PWR_5_o_MuLt_20_OUT<17>)
-     DSP48A1:C17->PCOUT47    1   2.689   0.000  Maddsub_n0820 (Maddsub_n0820_PCOUT_to_Maddsub_n500[7]_PWR_5_o_MuLt_22_OUT_PCIN_47)
-     DSP48A1:PCIN47->PCOUT47    1   2.265   0.000  Maddsub_n500[7]_PWR_5_o_MuLt_22_OUT (Maddsub_n500[7]_PWR_5_o_MuLt_22_OUT_PCOUT_to_Maddsub_n100[7]_PWR_5_o_MuLt_24_OUT_PCIN_47)
-     DSP48A1:PCIN47->P0    2   2.264   0.845  Maddsub_n100[7]_PWR_5_o_MuLt_24_OUT (ADDER_FOR_MULTADD_Madd_02)
-     LUT4:I1->O            1   0.205   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_lut<0> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<0> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<1> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<2> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<3> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<4> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<5> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<6> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<7> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<8> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<9> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<9>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<10> (Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<10>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_cy<11> (data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o)
-     MUXCY:CI->O           1   0.019   0.000  is_suf_atm_glue_set_cy (data_to_be_encrypted_signal[31]_GND_5_o_LessThan_27_o_l1)
-     MUXCY:CI->O           1   0.258   0.000  is_suf_atm_glue_set_cy1 (is_suf_atm_glue_set)
-     FDR:D                     0.102          is_suf_atm
+     FDRE:C->Q             5   0.447   0.819  d500_3 (d500_3)
+     LUT4:I2->O            1   0.203   0.924  d500[7]_restriction_500[7]_LessThan_245_o1_SW0 (N13)
+     LUT5:I0->O            3   0.203   0.651  GND_5_o_GND_5_o_AND_427_o_SW0 (N170)
+     LUT6:I5->O            1   0.205   0.808  GND_5_o_GND_5_o_AND_427_o_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_1 (GND_5_o_GND_5_o_AND_427_o_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy)
+     LUT4:I1->O           17   0.205   1.028  _n4515_inv11 (_n4515_inv1)
+     LUT6:I5->O            1   0.205   0.580  data_out_leds[7]_GND_5_o_mux_366_OUT<4>23 (data_out_leds[7]_GND_5_o_mux_366_OUT<4>23)
+     LUT6:I5->O            4   0.205   0.684  data_out_leds[7]_GND_5_o_mux_366_OUT<4>24 (data_out_leds[7]_GND_5_o_mux_366_OUT<4>2)
+     LUT6:I5->O            1   0.205   0.000  data_out_leds[7]_GND_5_o_mux_366_OUT<7>1 (data_out_leds[7]_GND_5_o_mux_366_OUT<7>)
+     FDRE:D                    0.102          data_out_leds_7
     ----------------------------------------
-    Total                     13.030ns (9.894ns logic, 3.136ns route)
-                                       (75.9% logic, 24.1% route)
+    Total                      7.473ns (1.980ns logic, 5.493ns route)
+                                       (26.5% logic, 73.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 9571 / 949
+  Total number of paths / destination ports: 278335 / 1171
 -------------------------------------------------------------------------
-Offset:              7.631ns (Levels of Logic = 4)
-  Source:            reset_button (PAD)
-  Destination:       data_to_be_decrypted_0 (FF)
+Offset:              8.740ns (Levels of Logic = 8)
+  Source:            restriction_1000<1> (PAD)
+  Destination:       data_out_leds_4 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset_button to data_to_be_decrypted_0
+  Data Path: restriction_1000<1> to data_out_leds_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            74   1.222   2.050  reset_button_IBUF (reset_button_IBUF)
-     LUT5:I0->O           69   0.203   1.777  _n3695_inv11 (_n3695_inv1)
-     LUT6:I4->O           64   0.203   1.868  Mmux_data_to_be_decrypted[63]_data_to_be_decrypted[63]_mux_110_OUT110 (Mmux_data_to_be_decrypted[63]_data_to_be_decrypted[63]_mux_110_OUT110)
-     LUT6:I3->O            1   0.205   0.000  Mmux_data_to_be_decrypted[63]_data_to_be_decrypted[63]_mux_110_OUT210 (data_to_be_decrypted[63]_data_to_be_decrypted[63]_mux_110_OUT<10>)
-     FDE:D                     0.102          data_to_be_decrypted_10
+     IBUF:I->O            19   1.222   1.416  restriction_1000_1_IBUF (restriction_1000_1_IBUF)
+     LUT6:I1->O            1   0.203   0.808  d1000[7]_restriction_1000[7]_LessThan_235_o2 (d1000[7]_restriction_1000[7]_LessThan_235_o1)
+     LUT5:I2->O            3   0.205   0.651  GND_5_o_GND_5_o_AND_425_o_SW0 (N166)
+     LUT6:I5->O            5   0.205   0.819  GND_5_o_GND_5_o_AND_425_o_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_1 (GND_5_o_GND_5_o_AND_425_o_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy)
+     LUT4:I2->O           17   0.203   1.028  _n4515_inv11 (_n4515_inv1)
+     LUT6:I5->O            1   0.205   0.580  data_out_leds[7]_GND_5_o_mux_366_OUT<4>23 (data_out_leds[7]_GND_5_o_mux_366_OUT<4>23)
+     LUT6:I5->O            4   0.205   0.684  data_out_leds[7]_GND_5_o_mux_366_OUT<4>24 (data_out_leds[7]_GND_5_o_mux_366_OUT<4>2)
+     LUT6:I5->O            1   0.205   0.000  data_out_leds[7]_GND_5_o_mux_366_OUT<7>1 (data_out_leds[7]_GND_5_o_mux_366_OUT<7>)
+     FDRE:D                    0.102          data_out_leds_7
     ----------------------------------------
-    Total                      7.631ns (1.935ns logic, 5.696ns route)
-                                       (25.4% logic, 74.6% route)
+    Total                      8.740ns (2.755ns logic, 5.985ns route)
+                                       (31.5% logic, 68.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 335 / 335
 -------------------------------------------------------------------------
-Offset:              3.701ns (Levels of Logic = 1)
+Offset:              3.668ns (Levels of Logic = 1)
   Source:            data_out_leds_0 (FF)
-  Destination:       data_out_leds<3> (PAD)
+  Destination:       data_out_leds<2> (PAD)
   Source Clock:      clk rising
 
-  Data Path: data_out_leds_0 to data_out_leds<3>
+  Data Path: data_out_leds_0 to data_out_leds<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             4   0.447   0.683  data_out_leds_0 (data_out_leds_0)
-     OBUF:I->O                 2.571          data_out_leds_3_OBUF (data_out_leds<3>)
+     FDRE:C->Q             3   0.447   0.650  data_out_leds_0 (data_out_leds_0)
+     OBUF:I->O                 2.571          data_out_leds_2_OBUF (data_out_leds<2>)
     ----------------------------------------
-    Total                      3.701ns (3.018ns logic, 0.683ns route)
-                                       (81.6% logic, 18.4% route)
+    Total                      3.668ns (3.018ns logic, 0.650ns route)
+                                       (82.3% logic, 17.7% route)
 
 =========================================================================
 
@@ -706,21 +710,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   13.030|         |         |         |
+clk            |    7.473|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.98 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.60 secs
  
 --> 
 
 
-Total memory usage is 400500 kilobytes
+Total memory usage is 408740 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   44 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 

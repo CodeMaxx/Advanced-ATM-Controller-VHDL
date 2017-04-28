@@ -25,8 +25,6 @@ entity communication is
 	PORT( 
 		  clk : in STD_LOGIC;
 		  reset : in STD_LOGIC;
-		  is_user: out STD_LOGIC;
-		  is_suf_bal: out STD_LOGIC;
 		  is_suf_atm: in STD_LOGIC;
 		  start_comm : in STD_LOGIC;
 		  done_comm : out STD_LOGIC;
@@ -36,7 +34,7 @@ entity communication is
 		  restriction_1000: out STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_500: out STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_100: out STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_total: out STD_LOGIC_VECTOR (7 downto 0);
+		  restriction_total: out STD_LOGIC_VECTOR (31 downto 0);
 		  chanAddr_in  : in std_logic_vector(6 downto 0);  -- the selected channel (0-127)
 
 	-- Host >> FPGA pipe:
@@ -63,24 +61,16 @@ signal e : std_logic_vector(7 downto 0) := "00011111";
 signal f : std_logic_vector(7 downto 0) := "00111111";
 signal g : std_logic_vector(7 downto 0) := "01111111";
 signal h : std_logic_vector(7 downto 0) := "11111111";
+signal x1 : std_logic_vector(7 downto 0) := "11111111";
+signal x2 : std_logic_vector(7 downto 0) := "11111111";
+signal x3 : std_logic_vector(7 downto 0) := "11111111";
+signal x4 : std_logic_vector(7 downto 0) := "11111111";
+
 begin
 	
 	with is_suf_atm select channel0value <=
 					"00000001" when '1',
-					"00000010" when others;
-	with checkuser select is_user <= 
-					'1' when "00000001",
-					'1' when "00000010",
-					'0' when "00000011",
-					'0' when "00000100",
-					'0' when others;
-	with checkuser select is_suf_bal <= 
-					'1' when "00000001",
-					'0' when "00000010",
-					'1' when "00000011",
-					'0' when "00000100",
-					'0' when others;
-	
+					"00000010" when others;	
 	with checkuser select done_comm <= 
 					'1' when "00000001",
 					'1' when "00000010",
@@ -102,8 +92,15 @@ begin
 				elsif(chanAddr_in = "0010111") then
 					restriction_100 <= h2fData_in;
 				elsif(chanAddr_in = "0011000") then
-					restriction_total <= h2fData_in;
+					x1 <= h2fData_in;
+				elsif(chanAddr_in = "0011001") then
+					x2 <= h2fData_in;
+				elsif(chanAddr_in = "0011010") then
+					x3 <= h2fData_in;
+				elsif(chanAddr_in = "0011011") then
+					x4 <= h2fData_in;
 				end if;
+					restriction_total <= x1 & x2 & x3 & x4;
 			end if;
 			if(start_comm = '1') then
 				if(f2hReady_in = '1') then

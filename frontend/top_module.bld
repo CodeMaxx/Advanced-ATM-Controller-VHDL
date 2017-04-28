@@ -2,19 +2,97 @@ Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -nt timestamp -uc constraints.ucf -p xc6slx45-csg324-3
-top_module.ngc top_module.ngd
+ise -dd _ngo -sd ../Project/ethernet_mac-master/xilinx/ipcore_dir -nt timestamp
+-uc constraints.ucf -uc
+/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6
+.ucf -p xc6slx45-csg324-3 top_module.ngc top_module.ngd
 
 Reading NGO file "/home/kanak/CS254/ATM/top_module.ngc" ...
+Loading design module
+"../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.ng
+c"...
 Gathering constraint information from source properties...
 Done.
 
 Annotating constraints to design from ucf file "constraints.ucf" ...
+Annotating constraints to design from ucf file
+"/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan
+6.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'mii_rx_clk_i', used in period specification
+   'TS_mii_rx_clk_i', was traced into BUFIO2 instance
+   ethernet_with_mac/ethernet_inst/mii_gmii_io_inst/mii_rx_clk_BUFIO2_inst. The
+   following new TNM groups and period specifications were generated at the
+   BUFIO2 output(s): 
+   DIVCLK: <TIMESPEC
+   TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0 =
+   PERIOD "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0"
+   TS_mii_rx_clk_i HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'mii_rx_clk_i', used in period specification
+   'TS_mii_rx_clk_i', was traced into BUFIO2 instance
+   ethernet_with_mac/ethernet_inst/mii_gmii_io_inst/mii_rx_clk_BUFIO2_inst. The
+   following new TNM groups and period specifications were generated at the
+   BUFIO2 output(s): 
+   IOCLK: <TIMESPEC
+   TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0 =
+   PERIOD "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0"
+   TS_mii_rx_clk_i HIGH 50%>
+
+WARNING:NgdBuild:1345 - The constraint <TIMEGRP "gmii_out" OFFSET = OUT 25 ns
+   AFTER "mii_tx_clk_i" REFERENCE_PIN "gmii_gtx_clk_o";> [constraints.ucf(28)]
+   is overridden by the constraint <TIMEGRP "gmii_out" OFFSET = OUT 25 ns AFTER
+   "mii_tx_clk_i" REFERENCE_PIN "gmii_gtx_clk_o";>
+   [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spar
+   tan6.ucf(28)]. The overriden constraint usually comes from the input netlist
+   or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this
+   message to an error.
+WARNING:NgdBuild:1345 - The constraint <TIMESPEC TS_mii_tx_clk_i = PERIOD
+   "mii_tx_clk_i" 40 ns HIGH 35%;> [constraints.ucf(31)] is overridden by the
+   constraint <TIMESPEC TS_mii_tx_clk_i = PERIOD "mii_tx_clk_i" 40 ns HIGH 35%;>
+   [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spar
+   tan6.ucf(31)]. The overriden constraint usually comes from the input netlist
+   or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this
+   message to an error.
+WARNING:NgdBuild:1345 - The constraint <TIMESPEC TS_mii_rx_clk_i = PERIOD
+   "mii_rx_clk_i" 125 MHz HIGH 33%;> [constraints.ucf(33)] is overridden by the
+   constraint <TIMESPEC TS_mii_rx_clk_i = PERIOD "mii_rx_clk_i" 125 MHz HIGH
+   33%;>
+   [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spar
+   tan6.ucf(33)]. The overriden constraint usually comes from the input netlist
+   or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this
+   message to an error.
+WARNING:NgdBuild:1345 - The constraint <TIMEGRP "mii_in" OFFSET = IN 2 ns VALID
+   2 ns BEFORE "mii_rx_clk_i" RISING;> [constraints.ucf(35)] is overridden by
+   the constraint <TIMEGRP "mii_in" OFFSET = IN 2 ns VALID 2 ns BEFORE
+   "mii_rx_clk_i" RISING;>
+   [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spar
+   tan6.ucf(35)]. The overriden constraint usually comes from the input netlist
+   or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this
+   message to an error.
+WARNING:NgdBuild:1345 - The constraint <TIMESPEC "TS_clk" = PERIOD "fx2Clk_in"
+   20 ns HIGH 50 %;> [constraints.ucf(151)] is overridden by the constraint
+   <TIMESPEC "TS_clk" = PERIOD "fx2Clk_in" 20 ns HIGH 50 %;>
+   [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spar
+   tan6.ucf(151)]. The overriden constraint usually comes from the input netlist
+   or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this
+   message to an error.
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:440 - FF primitive
+   'ethernet_with_mac/sync_rx_reset_inst/FDPE_out_inst' has unconnected output
+   pin
+WARNING:NgdBuild:440 - FF primitive
+   'ethernet_with_mac/sync_tx_reset_inst/FDPE_out_inst' has unconnected output
+   pin
+WARNING:NgdBuild:440 - FF primitive
+   'ethernet_with_mac/rx_fifo_inst/sync_ack_inst/FDPE_out_inst' has unconnected
+   output pin
+WARNING:NgdBuild:440 - FF primitive
+   'ethernet_with_mac/rx_fifo_inst/sync_reset_inst/FDPE_out_inst' has
+   unconnected output pin
 
 Partition Implementation Status
 -------------------------------
@@ -25,12 +103,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   9
 
-Total memory usage is 414048 kilobytes
+Total memory usage is 422564 kilobytes
 
 Writing NGD file "top_module.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "top_module.bld"...

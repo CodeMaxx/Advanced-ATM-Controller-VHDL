@@ -22,6 +22,10 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="ATM.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_ASY" xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.asy" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHO" xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.vho" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="ATM_main_controller.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="ATM_main_controller.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="ATM_main_controller.ngc"/>
@@ -152,55 +156,77 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-1494643649940145942" xil_pn:start_ts="1493312304">
+    <transform xil_pn:end_ts="1493378026" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7482357744078463527" xil_pn:start_ts="1493378026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:in_ck="4209308347095631794" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="2049528169109847515" xil_pn:start_ts="1493312304">
+    <transform xil_pn:end_ts="1493378026" xil_pn:in_ck="4209308347095631794" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-6442536484254905430" xil_pn:start_ts="1493378026">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.ngc"/>
+      <outfile xil_pn:name="../Project/ethernet_mac-master/xilinx/ipcore_dir/ethernet_mac_tx_fifo_xilinx.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1493378026" xil_pn:in_ck="-8666777135520556959" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1493378026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:in_ck="-8666777135520556959" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1493312304">
+    <transform xil_pn:end_ts="1493378026" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="3741722235924120539" xil_pn:start_ts="1493378026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-2759489412401807060" xil_pn:start_ts="1493312304">
+    <transform xil_pn:end_ts="1493378026" xil_pn:in_ck="-8666777135520556959" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="8977612015756273942" xil_pn:start_ts="1493378026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:in_ck="-8666777135520556959" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="8977612015756273942" xil_pn:start_ts="1493312304">
+    <transform xil_pn:end_ts="1493378026" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="4572330514909559988" xil_pn:start_ts="1493378026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1493312304" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="6333125532172597797" xil_pn:start_ts="1493312304">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1493314263" xil_pn:in_ck="-7307456817170136827" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="4354935674270370228" xil_pn:start_ts="1493314250">
+    <transform xil_pn:end_ts="1493379767" xil_pn:in_ck="-9219362196579386437" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-8681282864391765181" xil_pn:start_ts="1493379735">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="ATM_main_controller.lso"/>
-      <outfile xil_pn:name="ATM_main_controller.ngc"/>
       <outfile xil_pn:name="ATM_main_controller.ngr"/>
-      <outfile xil_pn:name="ATM_main_controller.prj"/>
-      <outfile xil_pn:name="ATM_main_controller.stx"/>
-      <outfile xil_pn:name="ATM_main_controller.syr"/>
-      <outfile xil_pn:name="ATM_main_controller.xst"/>
-      <outfile xil_pn:name="ATM_main_controller_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="communication.ngr"/>
       <outfile xil_pn:name="timer.ngr"/>
+      <outfile xil_pn:name="top_module.lso"/>
+      <outfile xil_pn:name="top_module.ngc"/>
+      <outfile xil_pn:name="top_module.ngr"/>
+      <outfile xil_pn:name="top_module.prj"/>
+      <outfile xil_pn:name="top_module.stx"/>
+      <outfile xil_pn:name="top_module.syr"/>
+      <outfile xil_pn:name="top_module.xst"/>
+      <outfile xil_pn:name="top_module_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1490604683" xil_pn:in_ck="6578114222110546020" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5168643746791539632" xil_pn:start_ts="1490604683">
+    <transform xil_pn:end_ts="1493379867" xil_pn:in_ck="3547512864130677748" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5168643746791539632" xil_pn:start_ts="1493379867">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="InputAdded"/>
+    </transform>
+    <transform xil_pn:end_ts="1493379873" xil_pn:in_ck="-5248503658329287691" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5381864362439231477" xil_pn:start_ts="1493379867">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="top_module.bld"/>
+      <outfile xil_pn:name="top_module.ngd"/>
+      <outfile xil_pn:name="top_module_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1493379898" xil_pn:in_ck="3632447850405074821" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="4245753365082497697" xil_pn:start_ts="1493379873">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="top_module.pcf"/>
+      <outfile xil_pn:name="top_module_map.map"/>
+      <outfile xil_pn:name="top_module_map.mrp"/>
+      <outfile xil_pn:name="top_module_map.ngm"/>
+      <outfile xil_pn:name="top_module_map.xrpt"/>
+      <outfile xil_pn:name="top_module_summary.xml"/>
+      <outfile xil_pn:name="top_module_usage.xml"/>
     </transform>
   </transforms>
 

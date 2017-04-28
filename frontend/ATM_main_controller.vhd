@@ -23,43 +23,43 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ATM_main_controller is
 	Port(clk : in  STD_LOGIC;
-        reset_button : in  STD_LOGIC;
-        data_in_sliders : in  STD_LOGIC_VECTOR (7 downto 0);
-        next_data_in_button : in  STD_LOGIC;
-        done_button: in STD_LOGIC;
-        start_button: in STD_LOGIC;
-        data_out_leds : out  STD_LOGIC_VECTOR (7 downto 0);
-		  data_to_be_encrypted: out STD_LOGIC_VECTOR (63 downto 0);
-		  data_to_be_decrypted: out STD_LOGIC_VECTOR (63 downto 0);
-		  encrypted_data: in STD_LOGIC_VECTOR (63 downto 0);
-		  encrypted_data_comm: out STD_LOGIC_VECTOR (63 downto 0);
-		  decrypted_data_comm: in STD_LOGIC_VECTOR (63 downto 0);
-		  decrypted_data: in STD_LOGIC_VECTOR (63 downto 0);
-		  start_encrypt : out STD_LOGIC;
-		  start_decrypt : out STD_LOGIC;
-		  done_encrypt : in STD_LOGIC;
-		  done_decrypt : in STD_LOGIC;
-		  start_comm : out STD_LOGIC;
-		  done_comm : in STD_LOGIC;
-		  is_suf_atm: out STD_LOGIC;
-		  restriction_2000: in STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_1000: in STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_500: in STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_100: in STD_LOGIC_VECTOR (7 downto 0);
-		  restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
-		  load_bank_id: in STD_LOGIC;
-		  
-		  start_mac_comm : out STD_LOGIC;
-		  done_mac_comm : in STD_LOGIC;
-		  data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  
-		  request_mac_comm : in STD_LOGIC;
-		  is_suf_atm_request : in STD_LOGIC;
-		  data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  reply_mac_comm_valid : out STD_LOGIC;
-		  reply_mac_comm_notvalid : out STD_LOGIC
+			reset_button : in  STD_LOGIC;
+			data_in_sliders : in  STD_LOGIC_VECTOR (7 downto 0);
+			next_data_in_button : in  STD_LOGIC;
+			done_button: in STD_LOGIC;
+			start_button: in STD_LOGIC;
+			data_out_leds : out  STD_LOGIC_VECTOR (7 downto 0);
+			data_to_be_encrypted: out STD_LOGIC_VECTOR (63 downto 0);
+			data_to_be_decrypted: out STD_LOGIC_VECTOR (63 downto 0);
+			encrypted_data: in STD_LOGIC_VECTOR (63 downto 0);
+			encrypted_data_comm: out STD_LOGIC_VECTOR (63 downto 0);
+			decrypted_data_comm: in STD_LOGIC_VECTOR (63 downto 0);
+			decrypted_data: in STD_LOGIC_VECTOR (63 downto 0);
+			start_encrypt : out STD_LOGIC;
+			start_decrypt : out STD_LOGIC;
+			done_encrypt : in STD_LOGIC;
+			done_decrypt : in STD_LOGIC;
+			start_comm : out STD_LOGIC;
+			done_comm : in STD_LOGIC;
+			is_suf_atm: out STD_LOGIC;
+			restriction_2000: in STD_LOGIC_VECTOR (7 downto 0);
+			restriction_1000: in STD_LOGIC_VECTOR (7 downto 0);
+			restriction_500: in STD_LOGIC_VECTOR (7 downto 0);
+			restriction_100: in STD_LOGIC_VECTOR (7 downto 0);
+			restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
+			load_bank_id: in STD_LOGIC;
+
+			start_mac_comm : out STD_LOGIC;
+			done_mac_comm : in STD_LOGIC;
+			data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+
+			request_mac_comm : in STD_LOGIC;
+			is_suf_atm_request : in STD_LOGIC;
+			data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+			data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			reply_mac_comm_valid : out STD_LOGIC;
+			reply_mac_comm_notvalid : out STD_LOGIC
 		   );
 end ATM_main_controller;
 
@@ -84,8 +84,7 @@ architecture Behavioral of ATM_main_controller is
 				data_received : out STD_LOGIC_VECTOR (2 downto 0));
 	end component;
 
-	signal is_user_mac : STD_LOGIC;
-	signal is_suf_bal_mac : STD_LOGIC;
+
 	signal current_user_bank_id : STD_LOGIC_VECTOR(4 downto 0);
 	signal bank_id : STD_LOGIC_VECTOR(4 downto 0);
 	signal timer_inp : STD_LOGIC;
@@ -104,6 +103,7 @@ architecture Behavioral of ATM_main_controller is
 	signal money : std_logic_vector(31 downto 0);
 	signal substate : STD_LOGIC_VECTOR(2 downto 0) := "000";
 	signal atm_cash_that_can_be_given : STD_LOGIC_VECTOR(31 downto 0) := X"00000000";
+	signal is_suf_atm_signal : STD_LOGIC;
 begin
 	done_or_reset <= reset_button or done_button;
 	timer1: timer
@@ -192,7 +192,8 @@ begin
 					substate <= "100";
 				elsif(substate = "100")then
 					if(atm_cash_that_can_be_given >= data_to_be_encrypted_signal(31 downto 0)) then
-					is_suf_atm <= '1';	
+					is_suf_atm <= '1';
+					is_suf_atm_signal <= '1';
 					state <= "00010";				--send data for encryption
 					start_encrypt <= '1';
 					end if;
@@ -207,7 +208,7 @@ begin
 				state <= "00100";				--backend communication done + decrption start
 				data_to_be_decrypted <= decrypted_data_comm;
 				start_decrypt <= '1';
-			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total =< decrypted_data(31 downto 0)) then
+			elsif(state = "00100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
 				start_decrypt <= '0';
 				money <= decrypted_data(31 downto 0);
 				state <= "00101"; 						--user with sufficient balance and less than restricted total
@@ -233,7 +234,7 @@ begin
 				state <= "10100";				--backend communication done + decryption start
 				data_to_be_decrypted <= data_response_mac_comm;
 				start_decrypt <= '1';
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total =< decrypted_data(31 downto 0)) then
+			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
 				start_decrypt <= '0';
 				money <= decrypted_data(31 downto 0);
 				state <= "10101"; 						--user with sufficient balance and less than restricted total
@@ -256,6 +257,8 @@ begin
 				data_out_leds <= "00000000";				--ready state
 				count_blink <= "000";
 				is_suf_atm <= '0';
+				is_suf_atm_signal <= '0';
+
 				start_decrypt <= '0';
 				start_comm <= '0';
 				start_encrypt <= '0';
@@ -294,7 +297,7 @@ begin
 				data_out_leds <= "00000000";
 			elsif(state = "00101" or state = "10101") then								--user with sufficient balance
 				if(decrypted_data(63 downto 35) = X"00000000") then
-					if(is_suf_atm) then
+					if(is_suf_atm_signal = '1') then
 						if(is_blink = '1' and double_time = '0') then
 							double_time <= '1';
 							if(count_blink < "101") then
@@ -381,6 +384,7 @@ begin
 			elsif((state = "01111" or state = "11111") and count_blink = "101") then
 				data_out_leds <= "00000000";
 			end if;
+		end if;
 		end if;
 	end process;
 end Behavioral;
