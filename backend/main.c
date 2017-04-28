@@ -425,7 +425,7 @@ int main(int argc, char* argv[]) {
 
 							uint8 restrict_total[4] = {res_total >> 24, res_total >> 16, res_total >> 8, res_total};
 
-							for(int i = 25, i < 28; i++)
+							for(int i = 24, i < 28; i++)
 							{
 								fStatus = flWriteChannel(handle, (uint8) i, 1, &restrict_total[i-25], &error);
 								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
@@ -471,9 +471,11 @@ int main(int argc, char* argv[]) {
 								// Calculate amount of cash
 
 								for(int i = 0; i < 4; i++)	realData[i] = 0;
-								encrypt(realData);
+								
 								if(!isAdmin){
 									if(cashReqd<=cash and cashReqd <= res_total){
+										realData[3] = 0x06;
+										encrypt(realData);
 										for(int i = 0; i < 8; i++){
 											fStatus = flWriteChannel(handle, (uint8) i+10, 1, &realData[i], &error);
 											CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
@@ -485,6 +487,8 @@ int main(int argc, char* argv[]) {
 										printf("Sufficient balance\n");
 									}
 									else{
+										realData[3] = 0x02;
+										encrypt(realData);
 										for(int i = 0; i < 8; i++){
 											message = 0x00;
 											fStatus = flWriteChannel(handle, (uint8) i+10, 1, &message, &error);
@@ -496,6 +500,8 @@ int main(int argc, char* argv[]) {
 									}
 								}
 								else{
+									realData[3] = 0x01;
+									encrypt(realData);
 									for(int i = 0; i < 8; i++){
 										fStatus = flWriteChannel(handle, (uint8) i+10, 1, &realData[i], &error);
 										CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
