@@ -22,7 +22,6 @@ xlnx_auto_0_xdb/
 *.xml
 *.xrpt
 *.bgn
-*.bit
 *.bld
 *.cmd_log
 *.drc
