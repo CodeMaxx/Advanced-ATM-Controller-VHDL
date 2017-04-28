@@ -1,0 +1,6 @@
+[submodule "chips2"]
+	path = chips2
+	url = https://github.com/dawsonjon/Chips-2.0.git
+[submodule "ethernet_mac"]
+	path = ethernet_mac
+	url = https://github.com/pkerling/ethernet_mac
