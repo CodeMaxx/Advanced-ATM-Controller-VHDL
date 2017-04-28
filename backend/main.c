@@ -599,6 +599,13 @@ int main(int argc, char *argv[]) {
 		ivpOpt, vpOpt, fwOpt, portOpt, queryOpt, progOpt, conOpt, actOpt,
 		shellOpt, benOpt, rstOpt, dumpOpt, assignOpt, helpOpt, eepromOpt, backupOpt, endOpt
 	};
+
+	if(argc < 2)
+	{
+		printf("Usage: %s [Bank ID]", argv[0]);
+		return 0;
+	}
+
 	const char *progName = "flcli";
 	int numErrors;
 	struct FLContext *handle = NULL;
