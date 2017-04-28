@@ -1,0 +1,141 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml sequencer.twx sequencer.ncd -o sequencer.twr sequencer.pcf
+
+Design file:              sequencer.ncd
+Physical constraint file: sequencer.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clk
+------------------+------------+------------+------------+------------+------------------+--------+
+                  |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source            | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------------+------------+------------+------------+------------+------------------+--------+
+data_in_sliders<0>|    1.295(R)|      SLOW  |   -0.759(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<1>|    0.800(R)|      FAST  |   -0.217(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<2>|    0.947(R)|      FAST  |   -0.333(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<3>|    1.042(R)|      FAST  |   -0.472(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<4>|    1.225(R)|      SLOW  |   -0.700(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<5>|    1.327(R)|      SLOW  |   -0.799(R)|      SLOW  |clk_BUFGP         |   0.000|
+data_in_sliders<6>|    1.650(R)|      SLOW  |   -1.066(R)|      FAST  |clk_BUFGP         |   0.000|
+data_in_sliders<7>|    1.990(R)|      SLOW  |   -1.437(R)|      SLOW  |clk_BUFGP         |   0.000|
+next_data_in      |    5.054(R)|      SLOW  |   -1.257(R)|      FAST  |clk_BUFGP         |   0.000|
+reset             |    6.445(R)|      SLOW  |   -0.957(R)|      SLOW  |clk_BUFGP         |   0.000|
+------------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                        |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination             |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+data_to_be_encrypted<0> |         8.790(R)|      SLOW  |         4.914(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<1> |         8.859(R)|      SLOW  |         4.985(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<2> |         9.075(R)|      SLOW  |         5.086(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<3> |         8.851(R)|      SLOW  |         4.954(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<4> |         8.892(R)|      SLOW  |         5.018(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<5> |         8.691(R)|      SLOW  |         4.837(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<6> |         8.669(R)|      SLOW  |         4.789(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<7> |         8.677(R)|      SLOW  |         4.781(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<8> |         8.005(R)|      SLOW  |         4.411(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<9> |         8.203(R)|      SLOW  |         4.519(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<10>|         8.309(R)|      SLOW  |         4.619(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<11>|         8.142(R)|      SLOW  |         4.490(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<12>|         8.033(R)|      SLOW  |         4.445(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<13>|         8.057(R)|      SLOW  |         4.472(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<14>|         8.016(R)|      SLOW  |         4.430(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<15>|         8.020(R)|      SLOW  |         4.434(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<16>|         8.026(R)|      SLOW  |         4.446(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<17>|         8.025(R)|      SLOW  |         4.445(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<18>|         7.822(R)|      SLOW  |         4.262(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<19>|         7.822(R)|      SLOW  |         4.262(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<20>|         8.032(R)|      SLOW  |         4.365(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<21>|         7.879(R)|      SLOW  |         4.286(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<22>|         7.749(R)|      SLOW  |         4.181(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<23>|         7.749(R)|      SLOW  |         4.181(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<24>|         7.692(R)|      SLOW  |         4.206(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<25>|         7.716(R)|      SLOW  |         4.233(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<26>|         7.708(R)|      SLOW  |         4.183(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<27>|         7.698(R)|      SLOW  |         4.216(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<28>|         7.848(R)|      SLOW  |         4.300(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<29>|         7.861(R)|      SLOW  |         4.306(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<30>|         7.545(R)|      SLOW  |         4.023(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<31>|         7.543(R)|      SLOW  |         4.010(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<32>|         7.649(R)|      SLOW  |         4.122(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<33>|         7.649(R)|      SLOW  |         4.122(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<34>|         7.642(R)|      SLOW  |         4.077(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<35>|         7.642(R)|      SLOW  |         4.077(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<36>|         7.701(R)|      SLOW  |         4.118(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<37>|         7.698(R)|      SLOW  |         4.125(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<38>|         7.457(R)|      SLOW  |         3.981(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<39>|         7.449(R)|      SLOW  |         3.965(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<40>|         7.786(R)|      SLOW  |         4.170(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<41>|         7.786(R)|      SLOW  |         4.170(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<42>|         7.441(R)|      SLOW  |         3.980(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<43>|         7.441(R)|      SLOW  |         3.980(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<44>|         7.904(R)|      SLOW  |         4.242(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<45>|         7.904(R)|      SLOW  |         4.242(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<46>|         7.725(R)|      SLOW  |         4.162(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<47>|         7.725(R)|      SLOW  |         4.162(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<48>|         7.821(R)|      SLOW  |         4.248(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<49>|         7.821(R)|      SLOW  |         4.248(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<50>|         7.756(R)|      SLOW  |         4.186(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<51>|         7.756(R)|      SLOW  |         4.186(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<52>|         7.801(R)|      SLOW  |         4.223(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<53>|         7.971(R)|      SLOW  |         4.322(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<54>|         8.015(R)|      SLOW  |         4.399(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<55>|         8.015(R)|      SLOW  |         4.399(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<56>|         7.771(R)|      SLOW  |         4.198(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<57>|         7.787(R)|      SLOW  |         4.209(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<58>|         7.988(R)|      SLOW  |         4.377(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<59>|         7.988(R)|      SLOW  |         4.377(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<60>|         7.718(R)|      SLOW  |         4.138(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<61>|         7.878(R)|      SLOW  |         4.234(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<62>|         7.854(R)|      SLOW  |         4.207(R)|      FAST  |clk_BUFGP         |   0.000|
+data_to_be_encrypted<63>|         7.869(R)|      SLOW  |         4.256(R)|      FAST  |clk_BUFGP         |   0.000|
+------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.031|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Sat Mar 18 22:44:14 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 441 MB
+
+
+

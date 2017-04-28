@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/kanak/CS254/ATM/read_multiple_data_bytes.xst" -ofn "/home/kanak/CS254/ATM/read_multiple_data_bytes.syr" 

@@ -1,0 +1,352 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: communication.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "communication.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "communication"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : communication
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/kanak/CS254/ATM/communication.vhd" into library work
+Parsing entity <communication>.
+Parsing architecture <Behavioral> of entity <communication>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <communication> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <communication>.
+    Related source file is "/home/kanak/CS254/ATM/communication.vhd".
+    Found 8-bit register for signal <checkuser>.
+    Found 8-bit register for signal <a>.
+    Found 8-bit register for signal <b>.
+    Found 8-bit register for signal <c>.
+    Found 8-bit register for signal <d>.
+    Found 8-bit register for signal <e>.
+    Found 8-bit register for signal <f>.
+    Found 8-bit register for signal <g>.
+    Found 8-bit register for signal <h>.
+    Found 8-bit register for signal <f2hData_out>.
+    Summary:
+	inferred  80 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <communication> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 10
+ 8-bit register                                        : 10
+# Multiplexers                                         : 8
+ 8-bit 2-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 80
+ Flip-Flops                                            : 80
+# Multiplexers                                         : 8
+ 8-bit 2-to-1 multiplexer                              : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <communication> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block communication, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 80
+ Flip-Flops                                            : 80
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : communication.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 43
+#      LUT3                        : 4
+#      LUT4                        : 9
+#      LUT5                        : 16
+#      LUT6                        : 13
+#      VCC                         : 1
+# FlipFlops/Latches                : 80
+#      FDE                         : 80
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 160
+#      IBUF                        : 83
+#      OBUF                        : 77
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               8  out of  54576     0%  
+ Number of Slice LUTs:                   42  out of  27288     0%  
+    Number used as Logic:                42  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     44
+   Number with an unused Flip Flop:      36  out of     44    81%  
+   Number with an unused LUT:             2  out of     44     4%  
+   Number of fully used LUT-FF pairs:     6  out of     44    13%  
+   Number of unique control sets:        10
+
+IO Utilization: 
+ Number of IOs:                         161
+ Number of bonded IOBs:                 161  out of    218    73%  
+    IOB Flip Flops/Latches:              72
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 80    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 5.471ns
+   Maximum output required time after clock: 5.825ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 970 / 160
+-------------------------------------------------------------------------
+Offset:              5.471ns (Levels of Logic = 4)
+  Source:            chanAddr_in<6> (PAD)
+  Destination:       checkuser_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: chanAddr_in<6> to checkuser_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.808  chanAddr_in_6_IBUF (chanAddr_in_6_IBUF)
+     LUT3:I0->O            4   0.205   0.684  _n0379_inv1111 (_n0379_inv111)
+     LUT5:I4->O            7   0.205   1.021  _n0237_inv11 (_n0237_inv1)
+     LUT4:I0->O            8   0.203   0.802  _n0237_inv2 (_n0237_inv)
+     FDE:CE                    0.322          checkuser_0
+    ----------------------------------------
+    Total                      5.471ns (2.157ns logic, 3.314ns route)
+                                       (39.4% logic, 60.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 95 / 75
+-------------------------------------------------------------------------
+Offset:              5.825ns (Levels of Logic = 3)
+  Source:            checkuser_7 (FF)
+  Destination:       done_comm (PAD)
+  Source Clock:      clk rising
+
+  Data Path: checkuser_7 to done_comm
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.447   0.924  checkuser_7 (checkuser_7)
+     LUT5:I0->O            3   0.203   0.898  is_suf_bal11 (is_suf_bal1)
+     LUT4:I0->O            1   0.203   0.579  out1 (done_comm_OBUF)
+     OBUF:I->O                 2.571          done_comm_OBUF (done_comm)
+    ----------------------------------------
+    Total                      5.825ns (3.424ns logic, 2.401ns route)
+                                       (58.8% logic, 41.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.06 secs
+ 
+--> 
+
+
+Total memory usage is 392880 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

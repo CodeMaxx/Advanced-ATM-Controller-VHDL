@@ -1,0 +1,622 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Mar 28 19:46:21 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "fx2Clk_in" LOCATE = SITE "C10" LEVEL 1;
+COMP "fx2Data_io<0>" LOCATE = SITE "A2" LEVEL 1;
+COMP "fx2Data_io<1>" LOCATE = SITE "D6" LEVEL 1;
+COMP "fx2Data_io<2>" LOCATE = SITE "C6" LEVEL 1;
+COMP "fx2Data_io<3>" LOCATE = SITE "B3" LEVEL 1;
+COMP "fx2Data_io<4>" LOCATE = SITE "A3" LEVEL 1;
+COMP "fx2Data_io<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "fx2Data_io<6>" LOCATE = SITE "A4" LEVEL 1;
+COMP "fx2Data_io<7>" LOCATE = SITE "C5" LEVEL 1;
+COMP "done" LOCATE = SITE "F6" LEVEL 1;
+COMP "fx2Read_out" LOCATE = SITE "F13" LEVEL 1;
+COMP "reset" LOCATE = SITE "N4" LEVEL 1;
+COMP "start" LOCATE = SITE "P4" LEVEL 1;
+COMP "next_data_in" LOCATE = SITE "P3" LEVEL 1;
+COMP "fx2GotData_in" LOCATE = SITE "C15" LEVEL 1;
+COMP "fx2GotRoom_in" LOCATE = SITE "A9" LEVEL 1;
+COMP "led_out<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "led_out<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "led_out<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "led_out<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "led_out<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "led_out<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "led_out<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "led_out<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
+COMP "sw_in<0>" LOCATE = SITE "A10" LEVEL 1;
+COMP "sw_in<1>" LOCATE = SITE "D14" LEVEL 1;
+COMP "sw_in<2>" LOCATE = SITE "C14" LEVEL 1;
+COMP "sw_in<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "sw_in<4>" LOCATE = SITE "P12" LEVEL 1;
+COMP "sw_in<5>" LOCATE = SITE "R5" LEVEL 1;
+COMP "sw_in<6>" LOCATE = SITE "T5" LEVEL 1;
+COMP "sw_in<7>" LOCATE = SITE "E4" LEVEL 1;
+COMP "fx2PktEnd_out" LOCATE = SITE "C4" LEVEL 1;
+COMP "fx2Addr_out<0>" LOCATE = SITE "A14" LEVEL 1;
+COMP "fx2Addr_out<1>" LOCATE = SITE "B14" LEVEL 1;
+COMP "fx2OE_out" LOCATE = SITE "A15" LEVEL 1;
+TIMEGRP fx2Clk_in = BEL "comm_fpga/state_FSM_FFd1" BEL
+        "comm_fpga/state_FSM_FFd2" BEL "comm_fpga/state_FSM_FFd3" BEL
+        "comm_fpga/state_FSM_FFd4" BEL "comm_fpga/count_16" BEL
+        "comm_fpga/count_15" BEL "comm_fpga/count_14" BEL "comm_fpga/count_13"
+        BEL "comm_fpga/count_12" BEL "comm_fpga/count_11" BEL
+        "comm_fpga/count_10" BEL "comm_fpga/count_9" BEL "comm_fpga/count_8"
+        BEL "comm_fpga/count_7" BEL "comm_fpga/count_6" BEL
+        "comm_fpga/count_5" BEL "comm_fpga/count_4" BEL "comm_fpga/count_3"
+        BEL "comm_fpga/count_2" BEL "comm_fpga/count_1" BEL
+        "comm_fpga/count_0" BEL "comm_fpga/isWrite" BEL "comm_fpga/chanAddr_6"
+        BEL "comm_fpga/chanAddr_5" BEL "comm_fpga/chanAddr_4" BEL
+        "comm_fpga/chanAddr_3" BEL "comm_fpga/chanAddr_2" BEL
+        "comm_fpga/chanAddr_1" BEL "comm_fpga/chanAddr_0" BEL
+        "ATM_Main_cont/timer1/temp_24" BEL "ATM_Main_cont/timer1/temp_23" BEL
+        "ATM_Main_cont/timer1/temp_22" BEL "ATM_Main_cont/timer1/temp_21" BEL
+        "ATM_Main_cont/timer1/temp_20" BEL "ATM_Main_cont/timer1/temp_19" BEL
+        "ATM_Main_cont/timer1/temp_18" BEL "ATM_Main_cont/timer1/temp_17" BEL
+        "ATM_Main_cont/timer1/temp_16" BEL "ATM_Main_cont/timer1/temp_15" BEL
+        "ATM_Main_cont/timer1/temp_14" BEL "ATM_Main_cont/timer1/temp_13" BEL
+        "ATM_Main_cont/timer1/temp_12" BEL "ATM_Main_cont/timer1/temp_11" BEL
+        "ATM_Main_cont/timer1/temp_10" BEL "ATM_Main_cont/timer1/temp_9" BEL
+        "ATM_Main_cont/timer1/temp_8" BEL "ATM_Main_cont/timer1/temp_7" BEL
+        "ATM_Main_cont/timer1/temp_6" BEL "ATM_Main_cont/timer1/temp_5" BEL
+        "ATM_Main_cont/timer1/temp_4" BEL "ATM_Main_cont/timer1/temp_3" BEL
+        "ATM_Main_cont/timer1/temp_2" BEL "ATM_Main_cont/timer1/temp_1" BEL
+        "ATM_Main_cont/timer1/temp_0" BEL "ATM_Main_cont/count_blink_2" BEL
+        "ATM_Main_cont/count_blink_1" BEL "ATM_Main_cont/count_blink_0" BEL
+        "ATM_Main_cont/state_FSM_FFd1" BEL "ATM_Main_cont/state_FSM_FFd3" BEL
+        "ATM_Main_cont/state_FSM_FFd2" BEL "ATM_Main_cont/timer1/i" BEL
+        "ATM_Main_cont/data_to_be_encrypted_63" BEL
+        "ATM_Main_cont/data_to_be_encrypted_62" BEL
+        "ATM_Main_cont/data_to_be_encrypted_61" BEL
+        "ATM_Main_cont/data_to_be_encrypted_60" BEL
+        "ATM_Main_cont/data_to_be_encrypted_59" BEL
+        "ATM_Main_cont/data_to_be_encrypted_58" BEL
+        "ATM_Main_cont/data_to_be_encrypted_57" BEL
+        "ATM_Main_cont/data_to_be_encrypted_56" BEL
+        "ATM_Main_cont/data_to_be_encrypted_55" BEL
+        "ATM_Main_cont/data_to_be_encrypted_54" BEL
+        "ATM_Main_cont/data_to_be_encrypted_53" BEL
+        "ATM_Main_cont/data_to_be_encrypted_52" BEL
+        "ATM_Main_cont/data_to_be_encrypted_51" BEL
+        "ATM_Main_cont/data_to_be_encrypted_50" BEL
+        "ATM_Main_cont/data_to_be_encrypted_49" BEL
+        "ATM_Main_cont/data_to_be_encrypted_48" BEL
+        "ATM_Main_cont/data_to_be_encrypted_47" BEL
+        "ATM_Main_cont/data_to_be_encrypted_46" BEL
+        "ATM_Main_cont/data_to_be_encrypted_45" BEL
+        "ATM_Main_cont/data_to_be_encrypted_44" BEL
+        "ATM_Main_cont/data_to_be_encrypted_43" BEL
+        "ATM_Main_cont/data_to_be_encrypted_42" BEL
+        "ATM_Main_cont/data_to_be_encrypted_41" BEL
+        "ATM_Main_cont/data_to_be_encrypted_40" BEL
+        "ATM_Main_cont/data_to_be_encrypted_39" BEL
+        "ATM_Main_cont/data_to_be_encrypted_38" BEL
+        "ATM_Main_cont/data_to_be_encrypted_37" BEL
+        "ATM_Main_cont/data_to_be_encrypted_36" BEL
+        "ATM_Main_cont/data_to_be_encrypted_35" BEL
+        "ATM_Main_cont/data_to_be_encrypted_34" BEL
+        "ATM_Main_cont/data_to_be_encrypted_33" BEL
+        "ATM_Main_cont/data_to_be_encrypted_32" BEL
+        "ATM_Main_cont/data_to_be_encrypted_31" BEL
+        "ATM_Main_cont/data_to_be_encrypted_30" BEL
+        "ATM_Main_cont/data_to_be_encrypted_29" BEL
+        "ATM_Main_cont/data_to_be_encrypted_28" BEL
+        "ATM_Main_cont/data_to_be_encrypted_27" BEL
+        "ATM_Main_cont/data_to_be_encrypted_26" BEL
+        "ATM_Main_cont/data_to_be_encrypted_25" BEL
+        "ATM_Main_cont/data_to_be_encrypted_24" BEL
+        "ATM_Main_cont/data_to_be_encrypted_23" BEL
+        "ATM_Main_cont/data_to_be_encrypted_22" BEL
+        "ATM_Main_cont/data_to_be_encrypted_21" BEL
+        "ATM_Main_cont/data_to_be_encrypted_20" BEL
+        "ATM_Main_cont/data_to_be_encrypted_19" BEL
+        "ATM_Main_cont/data_to_be_encrypted_18" BEL
+        "ATM_Main_cont/data_to_be_encrypted_17" BEL
+        "ATM_Main_cont/data_to_be_encrypted_16" BEL
+        "ATM_Main_cont/data_to_be_encrypted_15" BEL
+        "ATM_Main_cont/data_to_be_encrypted_14" BEL
+        "ATM_Main_cont/data_to_be_encrypted_13" BEL
+        "ATM_Main_cont/data_to_be_encrypted_12" BEL
+        "ATM_Main_cont/data_to_be_encrypted_11" BEL
+        "ATM_Main_cont/data_to_be_encrypted_10" BEL
+        "ATM_Main_cont/data_to_be_encrypted_9" BEL
+        "ATM_Main_cont/data_to_be_encrypted_8" BEL
+        "ATM_Main_cont/data_to_be_encrypted_7" BEL
+        "ATM_Main_cont/data_to_be_encrypted_6" BEL
+        "ATM_Main_cont/data_to_be_encrypted_5" BEL
+        "ATM_Main_cont/data_to_be_encrypted_4" BEL
+        "ATM_Main_cont/data_to_be_encrypted_3" BEL
+        "ATM_Main_cont/data_to_be_encrypted_2" BEL
+        "ATM_Main_cont/data_to_be_encrypted_1" BEL
+        "ATM_Main_cont/data_to_be_encrypted_0" BEL "ATM_Main_cont/d100_7" BEL
+        "ATM_Main_cont/d100_6" BEL "ATM_Main_cont/d100_5" BEL
+        "ATM_Main_cont/d100_2" BEL "ATM_Main_cont/d100_1" BEL
+        "ATM_Main_cont/d100_0" BEL "ATM_Main_cont/d500_7" BEL
+        "ATM_Main_cont/d500_6" BEL "ATM_Main_cont/d500_5" BEL
+        "ATM_Main_cont/d500_4" BEL "ATM_Main_cont/d500_3" BEL
+        "ATM_Main_cont/d500_2" BEL "ATM_Main_cont/d500_1" BEL
+        "ATM_Main_cont/d500_0" BEL "ATM_Main_cont/data_out_leds_7" BEL
+        "ATM_Main_cont/data_out_leds_6" BEL "ATM_Main_cont/data_out_leds_5"
+        BEL "ATM_Main_cont/data_out_leds_4" BEL
+        "ATM_Main_cont/data_out_leds_3" BEL "ATM_Main_cont/data_out_leds_2"
+        BEL "ATM_Main_cont/data_out_leds_1" BEL
+        "ATM_Main_cont/data_out_leds_0" BEL "ATM_Main_cont/d2000_7" BEL
+        "ATM_Main_cont/d2000_6" BEL "ATM_Main_cont/d2000_5" BEL
+        "ATM_Main_cont/d2000_4" BEL "ATM_Main_cont/d2000_3" BEL
+        "ATM_Main_cont/d2000_2" BEL "ATM_Main_cont/d2000_1" BEL
+        "ATM_Main_cont/d2000_0" BEL "ATM_Main_cont/d1000_7" BEL
+        "ATM_Main_cont/d1000_6" BEL "ATM_Main_cont/d1000_5" BEL
+        "ATM_Main_cont/d1000_4" BEL "ATM_Main_cont/d1000_3" BEL
+        "ATM_Main_cont/d1000_2" BEL "ATM_Main_cont/d1000_1" BEL
+        "ATM_Main_cont/d1000_0" BEL "ATM_Main_cont/n1000_7" BEL
+        "ATM_Main_cont/n1000_6" BEL "ATM_Main_cont/n1000_5" BEL
+        "ATM_Main_cont/n1000_4" BEL "ATM_Main_cont/n1000_3" BEL
+        "ATM_Main_cont/n1000_2" BEL "ATM_Main_cont/n1000_1" BEL
+        "ATM_Main_cont/n1000_0" BEL "ATM_Main_cont/n500_7" BEL
+        "ATM_Main_cont/n500_6" BEL "ATM_Main_cont/n500_5" BEL
+        "ATM_Main_cont/n500_4" BEL "ATM_Main_cont/n500_3" BEL
+        "ATM_Main_cont/n500_2" BEL "ATM_Main_cont/n500_1" BEL
+        "ATM_Main_cont/n500_0" BEL "ATM_Main_cont/n2000_7" BEL
+        "ATM_Main_cont/n2000_6" BEL "ATM_Main_cont/n2000_5" BEL
+        "ATM_Main_cont/n2000_4" BEL "ATM_Main_cont/n2000_3" BEL
+        "ATM_Main_cont/n2000_2" BEL "ATM_Main_cont/n2000_1" BEL
+        "ATM_Main_cont/n2000_0" BEL "ATM_Main_cont/n100_7" BEL
+        "ATM_Main_cont/n100_6" BEL "ATM_Main_cont/n100_5" BEL
+        "ATM_Main_cont/n100_4" BEL "ATM_Main_cont/n100_3" BEL
+        "ATM_Main_cont/n100_2" BEL "ATM_Main_cont/n100_1" BEL
+        "ATM_Main_cont/n100_0" BEL "ATM_Main_cont/encrypted_data_comm_63" BEL
+        "ATM_Main_cont/encrypted_data_comm_62" BEL
+        "ATM_Main_cont/encrypted_data_comm_61" BEL
+        "ATM_Main_cont/encrypted_data_comm_60" BEL
+        "ATM_Main_cont/encrypted_data_comm_59" BEL
+        "ATM_Main_cont/encrypted_data_comm_58" BEL
+        "ATM_Main_cont/encrypted_data_comm_57" BEL
+        "ATM_Main_cont/encrypted_data_comm_56" BEL
+        "ATM_Main_cont/encrypted_data_comm_55" BEL
+        "ATM_Main_cont/encrypted_data_comm_54" BEL
+        "ATM_Main_cont/encrypted_data_comm_53" BEL
+        "ATM_Main_cont/encrypted_data_comm_52" BEL
+        "ATM_Main_cont/encrypted_data_comm_51" BEL
+        "ATM_Main_cont/encrypted_data_comm_50" BEL
+        "ATM_Main_cont/encrypted_data_comm_49" BEL
+        "ATM_Main_cont/encrypted_data_comm_48" BEL
+        "ATM_Main_cont/encrypted_data_comm_47" BEL
+        "ATM_Main_cont/encrypted_data_comm_46" BEL
+        "ATM_Main_cont/encrypted_data_comm_45" BEL
+        "ATM_Main_cont/encrypted_data_comm_44" BEL
+        "ATM_Main_cont/encrypted_data_comm_43" BEL
+        "ATM_Main_cont/encrypted_data_comm_42" BEL
+        "ATM_Main_cont/encrypted_data_comm_41" BEL
+        "ATM_Main_cont/encrypted_data_comm_40" BEL
+        "ATM_Main_cont/encrypted_data_comm_39" BEL
+        "ATM_Main_cont/encrypted_data_comm_38" BEL
+        "ATM_Main_cont/encrypted_data_comm_37" BEL
+        "ATM_Main_cont/encrypted_data_comm_36" BEL
+        "ATM_Main_cont/encrypted_data_comm_35" BEL
+        "ATM_Main_cont/encrypted_data_comm_34" BEL
+        "ATM_Main_cont/encrypted_data_comm_33" BEL
+        "ATM_Main_cont/encrypted_data_comm_32" BEL
+        "ATM_Main_cont/encrypted_data_comm_31" BEL
+        "ATM_Main_cont/encrypted_data_comm_30" BEL
+        "ATM_Main_cont/encrypted_data_comm_29" BEL
+        "ATM_Main_cont/encrypted_data_comm_28" BEL
+        "ATM_Main_cont/encrypted_data_comm_27" BEL
+        "ATM_Main_cont/encrypted_data_comm_26" BEL
+        "ATM_Main_cont/encrypted_data_comm_25" BEL
+        "ATM_Main_cont/encrypted_data_comm_24" BEL
+        "ATM_Main_cont/encrypted_data_comm_23" BEL
+        "ATM_Main_cont/encrypted_data_comm_22" BEL
+        "ATM_Main_cont/encrypted_data_comm_21" BEL
+        "ATM_Main_cont/encrypted_data_comm_20" BEL
+        "ATM_Main_cont/encrypted_data_comm_19" BEL
+        "ATM_Main_cont/encrypted_data_comm_18" BEL
+        "ATM_Main_cont/encrypted_data_comm_17" BEL
+        "ATM_Main_cont/encrypted_data_comm_16" BEL
+        "ATM_Main_cont/encrypted_data_comm_15" BEL
+        "ATM_Main_cont/encrypted_data_comm_14" BEL
+        "ATM_Main_cont/encrypted_data_comm_13" BEL
+        "ATM_Main_cont/encrypted_data_comm_12" BEL
+        "ATM_Main_cont/encrypted_data_comm_11" BEL
+        "ATM_Main_cont/encrypted_data_comm_10" BEL
+        "ATM_Main_cont/encrypted_data_comm_9" BEL
+        "ATM_Main_cont/encrypted_data_comm_8" BEL
+        "ATM_Main_cont/encrypted_data_comm_7" BEL
+        "ATM_Main_cont/encrypted_data_comm_6" BEL
+        "ATM_Main_cont/encrypted_data_comm_5" BEL
+        "ATM_Main_cont/encrypted_data_comm_4" BEL
+        "ATM_Main_cont/encrypted_data_comm_3" BEL
+        "ATM_Main_cont/encrypted_data_comm_2" BEL
+        "ATM_Main_cont/encrypted_data_comm_1" BEL
+        "ATM_Main_cont/encrypted_data_comm_0" BEL
+        "ATM_Main_cont/data_to_be_decrypted_63" BEL
+        "ATM_Main_cont/data_to_be_decrypted_62" BEL
+        "ATM_Main_cont/data_to_be_decrypted_61" BEL
+        "ATM_Main_cont/data_to_be_decrypted_60" BEL
+        "ATM_Main_cont/data_to_be_decrypted_59" BEL
+        "ATM_Main_cont/data_to_be_decrypted_58" BEL
+        "ATM_Main_cont/data_to_be_decrypted_57" BEL
+        "ATM_Main_cont/data_to_be_decrypted_56" BEL
+        "ATM_Main_cont/data_to_be_decrypted_55" BEL
+        "ATM_Main_cont/data_to_be_decrypted_54" BEL
+        "ATM_Main_cont/data_to_be_decrypted_53" BEL
+        "ATM_Main_cont/data_to_be_decrypted_52" BEL
+        "ATM_Main_cont/data_to_be_decrypted_51" BEL
+        "ATM_Main_cont/data_to_be_decrypted_50" BEL
+        "ATM_Main_cont/data_to_be_decrypted_49" BEL
+        "ATM_Main_cont/data_to_be_decrypted_48" BEL
+        "ATM_Main_cont/data_to_be_decrypted_47" BEL
+        "ATM_Main_cont/data_to_be_decrypted_46" BEL
+        "ATM_Main_cont/data_to_be_decrypted_45" BEL
+        "ATM_Main_cont/data_to_be_decrypted_44" BEL
+        "ATM_Main_cont/data_to_be_decrypted_43" BEL
+        "ATM_Main_cont/data_to_be_decrypted_42" BEL
+        "ATM_Main_cont/data_to_be_decrypted_41" BEL
+        "ATM_Main_cont/data_to_be_decrypted_40" BEL
+        "ATM_Main_cont/data_to_be_decrypted_39" BEL
+        "ATM_Main_cont/data_to_be_decrypted_38" BEL
+        "ATM_Main_cont/data_to_be_decrypted_37" BEL
+        "ATM_Main_cont/data_to_be_decrypted_36" BEL
+        "ATM_Main_cont/data_to_be_decrypted_35" BEL
+        "ATM_Main_cont/data_to_be_decrypted_34" BEL
+        "ATM_Main_cont/data_to_be_decrypted_33" BEL
+        "ATM_Main_cont/data_to_be_decrypted_32" BEL
+        "ATM_Main_cont/data_to_be_decrypted_31" BEL
+        "ATM_Main_cont/data_to_be_decrypted_30" BEL
+        "ATM_Main_cont/data_to_be_decrypted_29" BEL
+        "ATM_Main_cont/data_to_be_decrypted_28" BEL
+        "ATM_Main_cont/data_to_be_decrypted_27" BEL
+        "ATM_Main_cont/data_to_be_decrypted_26" BEL
+        "ATM_Main_cont/data_to_be_decrypted_25" BEL
+        "ATM_Main_cont/data_to_be_decrypted_24" BEL
+        "ATM_Main_cont/data_to_be_decrypted_23" BEL
+        "ATM_Main_cont/data_to_be_decrypted_22" BEL
+        "ATM_Main_cont/data_to_be_decrypted_21" BEL
+        "ATM_Main_cont/data_to_be_decrypted_20" BEL
+        "ATM_Main_cont/data_to_be_decrypted_19" BEL
+        "ATM_Main_cont/data_to_be_decrypted_18" BEL
+        "ATM_Main_cont/data_to_be_decrypted_17" BEL
+        "ATM_Main_cont/data_to_be_decrypted_16" BEL
+        "ATM_Main_cont/data_to_be_decrypted_15" BEL
+        "ATM_Main_cont/data_to_be_decrypted_14" BEL
+        "ATM_Main_cont/data_to_be_decrypted_13" BEL
+        "ATM_Main_cont/data_to_be_decrypted_12" BEL
+        "ATM_Main_cont/data_to_be_decrypted_11" BEL
+        "ATM_Main_cont/data_to_be_decrypted_10" BEL
+        "ATM_Main_cont/data_to_be_decrypted_9" BEL
+        "ATM_Main_cont/data_to_be_decrypted_8" BEL
+        "ATM_Main_cont/data_to_be_decrypted_7" BEL
+        "ATM_Main_cont/data_to_be_decrypted_6" BEL
+        "ATM_Main_cont/data_to_be_decrypted_5" BEL
+        "ATM_Main_cont/data_to_be_decrypted_4" BEL
+        "ATM_Main_cont/data_to_be_decrypted_3" BEL
+        "ATM_Main_cont/data_to_be_decrypted_2" BEL
+        "ATM_Main_cont/data_to_be_decrypted_1" BEL
+        "ATM_Main_cont/data_to_be_decrypted_0" BEL
+        "ATM_Main_cont/data_inp/i_3" BEL "ATM_Main_cont/data_inp/i_2" BEL
+        "ATM_Main_cont/data_inp/i_1" BEL "ATM_Main_cont/data_inp/i_0" BEL
+        "ATM_Main_cont/data_inp/temp_63" BEL "ATM_Main_cont/data_inp/temp_62"
+        BEL "ATM_Main_cont/data_inp/temp_61" BEL
+        "ATM_Main_cont/data_inp/temp_60" BEL "ATM_Main_cont/data_inp/temp_59"
+        BEL "ATM_Main_cont/data_inp/temp_58" BEL
+        "ATM_Main_cont/data_inp/temp_57" BEL "ATM_Main_cont/data_inp/temp_56"
+        BEL "ATM_Main_cont/data_inp/temp_55" BEL
+        "ATM_Main_cont/data_inp/temp_54" BEL "ATM_Main_cont/data_inp/temp_53"
+        BEL "ATM_Main_cont/data_inp/temp_52" BEL
+        "ATM_Main_cont/data_inp/temp_51" BEL "ATM_Main_cont/data_inp/temp_50"
+        BEL "ATM_Main_cont/data_inp/temp_49" BEL
+        "ATM_Main_cont/data_inp/temp_48" BEL "ATM_Main_cont/data_inp/temp_47"
+        BEL "ATM_Main_cont/data_inp/temp_46" BEL
+        "ATM_Main_cont/data_inp/temp_45" BEL "ATM_Main_cont/data_inp/temp_44"
+        BEL "ATM_Main_cont/data_inp/temp_43" BEL
+        "ATM_Main_cont/data_inp/temp_42" BEL "ATM_Main_cont/data_inp/temp_41"
+        BEL "ATM_Main_cont/data_inp/temp_40" BEL
+        "ATM_Main_cont/data_inp/temp_39" BEL "ATM_Main_cont/data_inp/temp_38"
+        BEL "ATM_Main_cont/data_inp/temp_37" BEL
+        "ATM_Main_cont/data_inp/temp_36" BEL "ATM_Main_cont/data_inp/temp_35"
+        BEL "ATM_Main_cont/data_inp/temp_34" BEL
+        "ATM_Main_cont/data_inp/temp_33" BEL "ATM_Main_cont/data_inp/temp_32"
+        BEL "ATM_Main_cont/data_inp/temp_31" BEL
+        "ATM_Main_cont/data_inp/temp_30" BEL "ATM_Main_cont/data_inp/temp_29"
+        BEL "ATM_Main_cont/data_inp/temp_28" BEL
+        "ATM_Main_cont/data_inp/temp_27" BEL "ATM_Main_cont/data_inp/temp_26"
+        BEL "ATM_Main_cont/data_inp/temp_25" BEL
+        "ATM_Main_cont/data_inp/temp_24" BEL "ATM_Main_cont/data_inp/temp_23"
+        BEL "ATM_Main_cont/data_inp/temp_22" BEL
+        "ATM_Main_cont/data_inp/temp_21" BEL "ATM_Main_cont/data_inp/temp_20"
+        BEL "ATM_Main_cont/data_inp/temp_19" BEL
+        "ATM_Main_cont/data_inp/temp_18" BEL "ATM_Main_cont/data_inp/temp_17"
+        BEL "ATM_Main_cont/data_inp/temp_16" BEL
+        "ATM_Main_cont/data_inp/temp_15" BEL "ATM_Main_cont/data_inp/temp_14"
+        BEL "ATM_Main_cont/data_inp/temp_13" BEL
+        "ATM_Main_cont/data_inp/temp_12" BEL "ATM_Main_cont/data_inp/temp_11"
+        BEL "ATM_Main_cont/data_inp/temp_10" BEL
+        "ATM_Main_cont/data_inp/temp_9" BEL "ATM_Main_cont/data_inp/temp_8"
+        BEL "ATM_Main_cont/data_inp/temp_7" BEL
+        "ATM_Main_cont/data_inp/temp_6" BEL "ATM_Main_cont/data_inp/temp_5"
+        BEL "ATM_Main_cont/data_inp/temp_4" BEL
+        "ATM_Main_cont/data_inp/temp_3" BEL "ATM_Main_cont/data_inp/temp_2"
+        BEL "ATM_Main_cont/data_inp/temp_1" BEL
+        "ATM_Main_cont/data_inp/temp_0" BEL
+        "ATM_Main_cont/data_inp/state_FSM_FFd2" BEL
+        "ATM_Main_cont/data_inp/state_FSM_FFd1" BEL
+        "ATM_Main_cont/data_inp/data_63" BEL "ATM_Main_cont/data_inp/data_62"
+        BEL "ATM_Main_cont/data_inp/data_61" BEL
+        "ATM_Main_cont/data_inp/data_60" BEL "ATM_Main_cont/data_inp/data_59"
+        BEL "ATM_Main_cont/data_inp/data_58" BEL
+        "ATM_Main_cont/data_inp/data_57" BEL "ATM_Main_cont/data_inp/data_56"
+        BEL "ATM_Main_cont/data_inp/data_55" BEL
+        "ATM_Main_cont/data_inp/data_54" BEL "ATM_Main_cont/data_inp/data_53"
+        BEL "ATM_Main_cont/data_inp/data_52" BEL
+        "ATM_Main_cont/data_inp/data_51" BEL "ATM_Main_cont/data_inp/data_50"
+        BEL "ATM_Main_cont/data_inp/data_49" BEL
+        "ATM_Main_cont/data_inp/data_48" BEL "ATM_Main_cont/data_inp/data_47"
+        BEL "ATM_Main_cont/data_inp/data_46" BEL
+        "ATM_Main_cont/data_inp/data_45" BEL "ATM_Main_cont/data_inp/data_44"
+        BEL "ATM_Main_cont/data_inp/data_43" BEL
+        "ATM_Main_cont/data_inp/data_42" BEL "ATM_Main_cont/data_inp/data_41"
+        BEL "ATM_Main_cont/data_inp/data_40" BEL
+        "ATM_Main_cont/data_inp/data_39" BEL "ATM_Main_cont/data_inp/data_38"
+        BEL "ATM_Main_cont/data_inp/data_37" BEL
+        "ATM_Main_cont/data_inp/data_36" BEL "ATM_Main_cont/data_inp/data_35"
+        BEL "ATM_Main_cont/data_inp/data_34" BEL
+        "ATM_Main_cont/data_inp/data_33" BEL "ATM_Main_cont/data_inp/data_32"
+        BEL "ATM_Main_cont/data_inp/data_31" BEL
+        "ATM_Main_cont/data_inp/data_30" BEL "ATM_Main_cont/data_inp/data_29"
+        BEL "ATM_Main_cont/data_inp/data_28" BEL
+        "ATM_Main_cont/data_inp/data_27" BEL "ATM_Main_cont/data_inp/data_26"
+        BEL "ATM_Main_cont/data_inp/data_25" BEL
+        "ATM_Main_cont/data_inp/data_24" BEL "ATM_Main_cont/data_inp/data_23"
+        BEL "ATM_Main_cont/data_inp/data_22" BEL
+        "ATM_Main_cont/data_inp/data_21" BEL "ATM_Main_cont/data_inp/data_20"
+        BEL "ATM_Main_cont/data_inp/data_19" BEL
+        "ATM_Main_cont/data_inp/data_18" BEL "ATM_Main_cont/data_inp/data_17"
+        BEL "ATM_Main_cont/data_inp/data_16" BEL
+        "ATM_Main_cont/data_inp/data_15" BEL "ATM_Main_cont/data_inp/data_14"
+        BEL "ATM_Main_cont/data_inp/data_13" BEL
+        "ATM_Main_cont/data_inp/data_12" BEL "ATM_Main_cont/data_inp/data_11"
+        BEL "ATM_Main_cont/data_inp/data_10" BEL
+        "ATM_Main_cont/data_inp/data_9" BEL "ATM_Main_cont/data_inp/data_8"
+        BEL "ATM_Main_cont/data_inp/data_7" BEL
+        "ATM_Main_cont/data_inp/data_6" BEL "ATM_Main_cont/data_inp/data_5"
+        BEL "ATM_Main_cont/data_inp/data_4" BEL
+        "ATM_Main_cont/data_inp/data_3" BEL "ATM_Main_cont/data_inp/data_2"
+        BEL "ATM_Main_cont/data_inp/data_1" BEL
+        "ATM_Main_cont/data_inp/data_0" BEL
+        "ATM_Main_cont/data_inp/prev_value" BEL "debouncer4/count_19" BEL
+        "debouncer4/count_18" BEL "debouncer4/count_17" BEL
+        "debouncer4/count_16" BEL "debouncer4/count_15" BEL
+        "debouncer4/count_14" BEL "debouncer4/count_13" BEL
+        "debouncer4/count_12" BEL "debouncer4/count_11" BEL
+        "debouncer4/count_10" BEL "debouncer4/count_9" BEL
+        "debouncer4/count_8" BEL "debouncer4/count_7" BEL "debouncer4/count_6"
+        BEL "debouncer4/count_5" BEL "debouncer4/count_4" BEL
+        "debouncer4/count_3" BEL "debouncer4/count_2" BEL "debouncer4/count_1"
+        BEL "debouncer4/count_0" BEL "debouncer3/count_19" BEL
+        "debouncer3/count_18" BEL "debouncer3/count_17" BEL
+        "debouncer3/count_16" BEL "debouncer3/count_15" BEL
+        "debouncer3/count_14" BEL "debouncer3/count_13" BEL
+        "debouncer3/count_12" BEL "debouncer3/count_11" BEL
+        "debouncer3/count_10" BEL "debouncer3/count_9" BEL
+        "debouncer3/count_8" BEL "debouncer3/count_7" BEL "debouncer3/count_6"
+        BEL "debouncer3/count_5" BEL "debouncer3/count_4" BEL
+        "debouncer3/count_3" BEL "debouncer3/count_2" BEL "debouncer3/count_1"
+        BEL "debouncer3/count_0" BEL "debouncer2/count_19" BEL
+        "debouncer2/count_18" BEL "debouncer2/count_17" BEL
+        "debouncer2/count_16" BEL "debouncer2/count_15" BEL
+        "debouncer2/count_14" BEL "debouncer2/count_13" BEL
+        "debouncer2/count_12" BEL "debouncer2/count_11" BEL
+        "debouncer2/count_10" BEL "debouncer2/count_9" BEL
+        "debouncer2/count_8" BEL "debouncer2/count_7" BEL "debouncer2/count_6"
+        BEL "debouncer2/count_5" BEL "debouncer2/count_4" BEL
+        "debouncer2/count_3" BEL "debouncer2/count_2" BEL "debouncer2/count_1"
+        BEL "debouncer2/count_0" BEL "debouncer1/count_19" BEL
+        "debouncer1/count_18" BEL "debouncer1/count_17" BEL
+        "debouncer1/count_16" BEL "debouncer1/count_15" BEL
+        "debouncer1/count_14" BEL "debouncer1/count_13" BEL
+        "debouncer1/count_12" BEL "debouncer1/count_11" BEL
+        "debouncer1/count_10" BEL "debouncer1/count_9" BEL
+        "debouncer1/count_8" BEL "debouncer1/count_7" BEL "debouncer1/count_6"
+        BEL "debouncer1/count_5" BEL "debouncer1/count_4" BEL
+        "debouncer1/count_3" BEL "debouncer1/count_2" BEL "debouncer1/count_1"
+        BEL "debouncer1/count_0" BEL "encrypt/v1_31" BEL "encrypt/v1_30" BEL
+        "encrypt/v1_29" BEL "encrypt/v1_28" BEL "encrypt/v1_27" BEL
+        "encrypt/v1_26" BEL "encrypt/v1_25" BEL "encrypt/v1_24" BEL
+        "encrypt/v1_23" BEL "encrypt/v1_22" BEL "encrypt/v1_21" BEL
+        "encrypt/v1_20" BEL "encrypt/v1_19" BEL "encrypt/v1_18" BEL
+        "encrypt/v1_17" BEL "encrypt/v1_16" BEL "encrypt/v1_15" BEL
+        "encrypt/v1_14" BEL "encrypt/v1_13" BEL "encrypt/v1_12" BEL
+        "encrypt/v1_11" BEL "encrypt/v1_10" BEL "encrypt/v1_9" BEL
+        "encrypt/v1_8" BEL "encrypt/v1_7" BEL "encrypt/v1_6" BEL
+        "encrypt/v1_5" BEL "encrypt/v1_4" BEL "encrypt/v1_3" BEL
+        "encrypt/v1_2" BEL "encrypt/v1_1" BEL "encrypt/v1_0" BEL
+        "encrypt/v0_31" BEL "encrypt/v0_30" BEL "encrypt/v0_29" BEL
+        "encrypt/v0_28" BEL "encrypt/v0_27" BEL "encrypt/v0_26" BEL
+        "encrypt/v0_25" BEL "encrypt/v0_24" BEL "encrypt/v0_23" BEL
+        "encrypt/v0_22" BEL "encrypt/v0_21" BEL "encrypt/v0_20" BEL
+        "encrypt/v0_19" BEL "encrypt/v0_18" BEL "encrypt/v0_17" BEL
+        "encrypt/v0_16" BEL "encrypt/v0_15" BEL "encrypt/v0_14" BEL
+        "encrypt/v0_13" BEL "encrypt/v0_12" BEL "encrypt/v0_11" BEL
+        "encrypt/v0_10" BEL "encrypt/v0_9" BEL "encrypt/v0_8" BEL
+        "encrypt/v0_7" BEL "encrypt/v0_6" BEL "encrypt/v0_5" BEL
+        "encrypt/v0_4" BEL "encrypt/v0_3" BEL "encrypt/v0_2" BEL
+        "encrypt/v0_1" BEL "encrypt/v0_0" BEL "encrypt/i_5" BEL "encrypt/i_4"
+        BEL "encrypt/i_3" BEL "encrypt/i_2" BEL "encrypt/i_1" BEL
+        "encrypt/i_0" BEL "encrypt/ciphertext_63" BEL "encrypt/ciphertext_62"
+        BEL "encrypt/ciphertext_61" BEL "encrypt/ciphertext_60" BEL
+        "encrypt/ciphertext_59" BEL "encrypt/ciphertext_58" BEL
+        "encrypt/ciphertext_57" BEL "encrypt/ciphertext_56" BEL
+        "encrypt/ciphertext_55" BEL "encrypt/ciphertext_54" BEL
+        "encrypt/ciphertext_53" BEL "encrypt/ciphertext_52" BEL
+        "encrypt/ciphertext_51" BEL "encrypt/ciphertext_50" BEL
+        "encrypt/ciphertext_49" BEL "encrypt/ciphertext_48" BEL
+        "encrypt/ciphertext_47" BEL "encrypt/ciphertext_46" BEL
+        "encrypt/ciphertext_45" BEL "encrypt/ciphertext_44" BEL
+        "encrypt/ciphertext_43" BEL "encrypt/ciphertext_42" BEL
+        "encrypt/ciphertext_41" BEL "encrypt/ciphertext_40" BEL
+        "encrypt/ciphertext_39" BEL "encrypt/ciphertext_38" BEL
+        "encrypt/ciphertext_37" BEL "encrypt/ciphertext_36" BEL
+        "encrypt/ciphertext_35" BEL "encrypt/ciphertext_34" BEL
+        "encrypt/ciphertext_33" BEL "encrypt/ciphertext_32" BEL
+        "encrypt/ciphertext_31" BEL "encrypt/ciphertext_30" BEL
+        "encrypt/ciphertext_29" BEL "encrypt/ciphertext_28" BEL
+        "encrypt/ciphertext_27" BEL "encrypt/ciphertext_26" BEL
+        "encrypt/ciphertext_25" BEL "encrypt/ciphertext_24" BEL
+        "encrypt/ciphertext_23" BEL "encrypt/ciphertext_22" BEL
+        "encrypt/ciphertext_21" BEL "encrypt/ciphertext_20" BEL
+        "encrypt/ciphertext_19" BEL "encrypt/ciphertext_18" BEL
+        "encrypt/ciphertext_17" BEL "encrypt/ciphertext_16" BEL
+        "encrypt/ciphertext_15" BEL "encrypt/ciphertext_14" BEL
+        "encrypt/ciphertext_13" BEL "encrypt/ciphertext_12" BEL
+        "encrypt/ciphertext_11" BEL "encrypt/ciphertext_10" BEL
+        "encrypt/ciphertext_9" BEL "encrypt/ciphertext_8" BEL
+        "encrypt/ciphertext_7" BEL "encrypt/ciphertext_6" BEL
+        "encrypt/ciphertext_5" BEL "encrypt/ciphertext_4" BEL
+        "encrypt/ciphertext_3" BEL "encrypt/ciphertext_2" BEL
+        "encrypt/ciphertext_1" BEL "encrypt/ciphertext_0" BEL "encrypt/sum_31"
+        BEL "encrypt/sum_30" BEL "encrypt/sum_29" BEL "encrypt/sum_28" BEL
+        "encrypt/sum_27" BEL "encrypt/sum_26" BEL "encrypt/sum_25" BEL
+        "encrypt/sum_24" BEL "encrypt/sum_23" BEL "encrypt/sum_22" BEL
+        "encrypt/sum_21" BEL "encrypt/sum_20" BEL "encrypt/sum_19" BEL
+        "encrypt/sum_18" BEL "encrypt/sum_17" BEL "encrypt/sum_16" BEL
+        "encrypt/sum_15" BEL "encrypt/sum_14" BEL "encrypt/sum_13" BEL
+        "encrypt/sum_12" BEL "encrypt/sum_11" BEL "encrypt/sum_10" BEL
+        "encrypt/sum_9" BEL "encrypt/sum_8" BEL "encrypt/sum_7" BEL
+        "encrypt/sum_6" BEL "encrypt/sum_5" BEL "encrypt/sum_4" BEL
+        "encrypt/sum_3" BEL "encrypt/sum_2" BEL "encrypt/sum_1" BEL
+        "encrypt/sum_0" BEL "decrypt/v0_31" BEL "decrypt/v0_30" BEL
+        "decrypt/v0_29" BEL "decrypt/v0_28" BEL "decrypt/v0_27" BEL
+        "decrypt/v0_26" BEL "decrypt/v0_25" BEL "decrypt/v0_24" BEL
+        "decrypt/v0_23" BEL "decrypt/v0_22" BEL "decrypt/v0_21" BEL
+        "decrypt/v0_20" BEL "decrypt/v0_19" BEL "decrypt/v0_18" BEL
+        "decrypt/v0_17" BEL "decrypt/v0_16" BEL "decrypt/v0_15" BEL
+        "decrypt/v0_14" BEL "decrypt/v0_13" BEL "decrypt/v0_12" BEL
+        "decrypt/v0_11" BEL "decrypt/v0_10" BEL "decrypt/v0_9" BEL
+        "decrypt/v0_8" BEL "decrypt/v0_7" BEL "decrypt/v0_6" BEL
+        "decrypt/v0_5" BEL "decrypt/v0_4" BEL "decrypt/v0_3" BEL
+        "decrypt/v0_2" BEL "decrypt/v0_1" BEL "decrypt/v0_0" BEL
+        "decrypt/v1_31" BEL "decrypt/v1_30" BEL "decrypt/v1_29" BEL
+        "decrypt/v1_28" BEL "decrypt/v1_27" BEL "decrypt/v1_26" BEL
+        "decrypt/v1_25" BEL "decrypt/v1_24" BEL "decrypt/v1_23" BEL
+        "decrypt/v1_22" BEL "decrypt/v1_21" BEL "decrypt/v1_20" BEL
+        "decrypt/v1_19" BEL "decrypt/v1_18" BEL "decrypt/v1_17" BEL
+        "decrypt/v1_16" BEL "decrypt/v1_15" BEL "decrypt/v1_14" BEL
+        "decrypt/v1_13" BEL "decrypt/v1_12" BEL "decrypt/v1_11" BEL
+        "decrypt/v1_10" BEL "decrypt/v1_9" BEL "decrypt/v1_8" BEL
+        "decrypt/v1_7" BEL "decrypt/v1_6" BEL "decrypt/v1_5" BEL
+        "decrypt/v1_4" BEL "decrypt/v1_3" BEL "decrypt/v1_2" BEL
+        "decrypt/v1_1" BEL "decrypt/v1_0" BEL "decrypt/i_5" BEL "decrypt/i_4"
+        BEL "decrypt/i_3" BEL "decrypt/i_2" BEL "decrypt/i_1" BEL
+        "decrypt/i_0" BEL "decrypt/plaintext_63" BEL "decrypt/plaintext_62"
+        BEL "decrypt/plaintext_61" BEL "decrypt/plaintext_60" BEL
+        "decrypt/plaintext_59" BEL "decrypt/plaintext_58" BEL
+        "decrypt/plaintext_57" BEL "decrypt/plaintext_56" BEL
+        "decrypt/plaintext_55" BEL "decrypt/plaintext_54" BEL
+        "decrypt/plaintext_53" BEL "decrypt/plaintext_52" BEL
+        "decrypt/plaintext_51" BEL "decrypt/plaintext_50" BEL
+        "decrypt/plaintext_49" BEL "decrypt/plaintext_48" BEL
+        "decrypt/plaintext_47" BEL "decrypt/plaintext_46" BEL
+        "decrypt/plaintext_45" BEL "decrypt/plaintext_44" BEL
+        "decrypt/plaintext_43" BEL "decrypt/plaintext_42" BEL
+        "decrypt/plaintext_41" BEL "decrypt/plaintext_40" BEL
+        "decrypt/plaintext_39" BEL "decrypt/plaintext_38" BEL
+        "decrypt/plaintext_37" BEL "decrypt/plaintext_36" BEL
+        "decrypt/plaintext_35" BEL "decrypt/plaintext_34" BEL
+        "decrypt/plaintext_33" BEL "decrypt/plaintext_32" BEL
+        "decrypt/plaintext_31" BEL "decrypt/plaintext_30" BEL
+        "decrypt/plaintext_29" BEL "decrypt/plaintext_28" BEL
+        "decrypt/plaintext_27" BEL "decrypt/plaintext_26" BEL
+        "decrypt/plaintext_25" BEL "decrypt/plaintext_24" BEL
+        "decrypt/plaintext_23" BEL "decrypt/plaintext_22" BEL
+        "decrypt/plaintext_21" BEL "decrypt/plaintext_20" BEL
+        "decrypt/plaintext_19" BEL "decrypt/plaintext_18" BEL
+        "decrypt/plaintext_17" BEL "decrypt/plaintext_16" BEL
+        "decrypt/plaintext_15" BEL "decrypt/plaintext_14" BEL
+        "decrypt/plaintext_13" BEL "decrypt/plaintext_12" BEL
+        "decrypt/plaintext_11" BEL "decrypt/plaintext_10" BEL
+        "decrypt/plaintext_9" BEL "decrypt/plaintext_8" BEL
+        "decrypt/plaintext_7" BEL "decrypt/plaintext_6" BEL
+        "decrypt/plaintext_5" BEL "decrypt/plaintext_4" BEL
+        "decrypt/plaintext_3" BEL "decrypt/plaintext_2" BEL
+        "decrypt/plaintext_1" BEL "decrypt/plaintext_0" BEL "decrypt/sum_31"
+        BEL "decrypt/sum_30" BEL "decrypt/sum_29" BEL "decrypt/sum_28" BEL
+        "decrypt/sum_27" BEL "decrypt/sum_26" BEL "decrypt/sum_25" BEL
+        "decrypt/sum_24" BEL "decrypt/sum_23" BEL "decrypt/sum_22" BEL
+        "decrypt/sum_21" BEL "decrypt/sum_20" BEL "decrypt/sum_19" BEL
+        "decrypt/sum_18" BEL "decrypt/sum_17" BEL "decrypt/sum_16" BEL
+        "decrypt/sum_15" BEL "decrypt/sum_14" BEL "decrypt/sum_13" BEL
+        "decrypt/sum_12" BEL "decrypt/sum_11" BEL "decrypt/sum_10" BEL
+        "decrypt/sum_9" BEL "decrypt/sum_8" BEL "decrypt/sum_7" BEL
+        "decrypt/sum_6" BEL "decrypt/sum_5" BEL "decrypt/sum_4" BEL
+        "decrypt/sum_3" BEL "decrypt/sum_2" BEL "decrypt/sum_1" BEL
+        "decrypt/sum_0" BEL "comm/f2hData_out_7" BEL "comm/f2hData_out_6" BEL
+        "comm/f2hData_out_5" BEL "comm/f2hData_out_4" BEL "comm/f2hData_out_3"
+        BEL "comm/f2hData_out_2" BEL "comm/f2hData_out_1" BEL
+        "comm/f2hData_out_0" BEL "comm/data_recieved_63" BEL
+        "comm/data_recieved_62" BEL "comm/data_recieved_61" BEL
+        "comm/data_recieved_60" BEL "comm/data_recieved_59" BEL
+        "comm/data_recieved_58" BEL "comm/data_recieved_57" BEL
+        "comm/data_recieved_56" BEL "comm/data_recieved_55" BEL
+        "comm/data_recieved_54" BEL "comm/data_recieved_53" BEL
+        "comm/data_recieved_52" BEL "comm/data_recieved_51" BEL
+        "comm/data_recieved_50" BEL "comm/data_recieved_49" BEL
+        "comm/data_recieved_48" BEL "comm/data_recieved_47" BEL
+        "comm/data_recieved_46" BEL "comm/data_recieved_45" BEL
+        "comm/data_recieved_44" BEL "comm/data_recieved_43" BEL
+        "comm/data_recieved_42" BEL "comm/data_recieved_41" BEL
+        "comm/data_recieved_40" BEL "comm/data_recieved_39" BEL
+        "comm/data_recieved_38" BEL "comm/data_recieved_37" BEL
+        "comm/data_recieved_36" BEL "comm/data_recieved_35" BEL
+        "comm/data_recieved_34" BEL "comm/data_recieved_33" BEL
+        "comm/data_recieved_32" BEL "comm/data_recieved_31" BEL
+        "comm/data_recieved_30" BEL "comm/data_recieved_29" BEL
+        "comm/data_recieved_28" BEL "comm/data_recieved_27" BEL
+        "comm/data_recieved_26" BEL "comm/data_recieved_25" BEL
+        "comm/data_recieved_24" BEL "comm/data_recieved_23" BEL
+        "comm/data_recieved_22" BEL "comm/data_recieved_21" BEL
+        "comm/data_recieved_20" BEL "comm/data_recieved_19" BEL
+        "comm/data_recieved_18" BEL "comm/data_recieved_17" BEL
+        "comm/data_recieved_16" BEL "comm/data_recieved_15" BEL
+        "comm/data_recieved_14" BEL "comm/data_recieved_13" BEL
+        "comm/data_recieved_12" BEL "comm/data_recieved_11" BEL
+        "comm/data_recieved_10" BEL "comm/data_recieved_9" BEL
+        "comm/data_recieved_8" BEL "comm/data_recieved_7" BEL
+        "comm/data_recieved_6" BEL "comm/data_recieved_5" BEL
+        "comm/data_recieved_4" BEL "comm/data_recieved_3" BEL
+        "comm/data_recieved_2" BEL "comm/data_recieved_1" BEL
+        "comm/data_recieved_0" BEL "comm/h2fReady_out" BEL "comm/g_7" BEL
+        "comm/g_6" BEL "comm/g_5" BEL "comm/g_4" BEL "comm/g_3" BEL "comm/g_2"
+        BEL "comm/g_1" BEL "comm/g_0" BEL "comm/f_7" BEL "comm/f_6" BEL
+        "comm/f_5" BEL "comm/f_4" BEL "comm/f_3" BEL "comm/f_2" BEL "comm/f_1"
+        BEL "comm/f_0" BEL "comm/h_7" BEL "comm/h_6" BEL "comm/h_5" BEL
+        "comm/h_4" BEL "comm/h_3" BEL "comm/h_2" BEL "comm/h_1" BEL "comm/h_0"
+        BEL "comm/d_7" BEL "comm/d_6" BEL "comm/d_5" BEL "comm/d_4" BEL
+        "comm/d_3" BEL "comm/d_2" BEL "comm/d_1" BEL "comm/d_0" BEL "comm/c_7"
+        BEL "comm/c_6" BEL "comm/c_5" BEL "comm/c_4" BEL "comm/c_3" BEL
+        "comm/c_2" BEL "comm/c_1" BEL "comm/c_0" BEL "comm/e_7" BEL "comm/e_6"
+        BEL "comm/e_5" BEL "comm/e_4" BEL "comm/e_3" BEL "comm/e_2" BEL
+        "comm/e_1" BEL "comm/e_0" BEL "comm/a_7" BEL "comm/a_6" BEL "comm/a_5"
+        BEL "comm/a_4" BEL "comm/a_3" BEL "comm/a_2" BEL "comm/a_1" BEL
+        "comm/a_0" BEL "comm/checkuser_7" BEL "comm/checkuser_6" BEL
+        "comm/checkuser_5" BEL "comm/checkuser_4" BEL "comm/checkuser_3" BEL
+        "comm/checkuser_2" BEL "comm/checkuser_1" BEL "comm/checkuser_0" BEL
+        "comm/b_7" BEL "comm/b_6" BEL "comm/b_5" BEL "comm/b_4" BEL "comm/b_3"
+        BEL "comm/b_2" BEL "comm/b_1" BEL "comm/b_0" BEL
+        "ATM_Main_cont/start_comm" BEL "ATM_Main_cont/start_encrypt" BEL
+        "ATM_Main_cont/start_decrypt" BEL "ATM_Main_cont/is_suf_atm" BEL
+        "ATM_Main_cont/data_inp/done" BEL "encrypt/done" BEL "encrypt/state"
+        BEL "decrypt/done" BEL "decrypt/state" BEL "comm_fpga/isAligned" BEL
+        "ATM_Main_cont/finish_display" BEL "ATM_Main_cont/double_time" BEL
+        "debouncer4/button_deb" BEL "debouncer4/oldbutton" BEL
+        "debouncer3/button_deb" BEL "debouncer3/oldbutton" BEL
+        "debouncer2/button_deb" BEL "debouncer2/oldbutton" BEL
+        "debouncer1/button_deb" BEL "debouncer1/oldbutton" BEL
+        "ATM_Main_cont/timer1/blink" BEL "comm/f2hValid_out" BEL
+        "ATM_Main_cont/d100_4" BEL "ATM_Main_cont/d100_3" BEL
+        "fx2Clk_in_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+SCHEMATIC END;
+

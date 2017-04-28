@@ -1,0 +1,524 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: sequencer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sequencer.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sequencer"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : sequencer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/kanak/CS254/ATM/read_multiple_data_bytes.vhd" into library work
+Parsing entity <read_multiple_data_bytes>.
+Parsing architecture <Behavioral> of entity <read_multiple_data_bytes>.
+Parsing VHDL file "/home/kanak/CS254/ATM/sequencer.vhd" into library work
+Parsing entity <sequencer>.
+Parsing architecture <Behavioral> of entity <sequencer>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <sequencer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/kanak/CS254/ATM/sequencer.vhd" Line 68: Assignment to state ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <sequencer>.
+    Related source file is "/home/kanak/CS254/ATM/sequencer.vhd".
+WARNING:Xst:647 - Input <start> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <done> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <timer_inp> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/kanak/CS254/ATM/sequencer.vhd" line 60: Output port <done> of the instance <data_inp> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <sequencer> synthesized.
+
+Synthesizing Unit <read_multiple_data_bytes>.
+    Related source file is "/home/kanak/CS254/ATM/read_multiple_data_bytes.vhd".
+    Found 64-bit register for signal <temp_output>.
+    Found 2-bit register for signal <state>.
+    Found 4-bit register for signal <i>.
+    Found 64-bit register for signal <temp>.
+    Found 64-bit register for signal <data>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 64-bit adder for signal <temp_output[63]_temp[63]_add_5_OUT> created at line 93.
+    Found 4-bit adder for signal <i[3]_GND_6_o_add_6_OUT> created at line 94.
+    Found 64-bit shifter logical left for signal <temp[63]_i[3]_shift_left_3_OUT> created at line 325
+    Found 4-bit comparator greater for signal <i[3]_PWR_6_o_LessThan_2_o> created at line 86
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 196 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <read_multiple_data_bytes> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 64-bit adder                                          : 1
+# Registers                                            : 4
+ 4-bit register                                        : 1
+ 64-bit register                                       : 3
+# Comparators                                          : 1
+ 4-bit comparator greater                              : 1
+# Multiplexers                                         : 2
+ 64-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 1
+ 64-bit shifter logical left                           : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <read_multiple_data_bytes>.
+The following registers are absorbed into accumulator <temp_output>: 1 register on signal <temp_output>.
+The following registers are absorbed into counter <i>: 1 register on signal <i>.
+Unit <read_multiple_data_bytes> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 64-bit up accumulator                                 : 1
+# Registers                                            : 128
+ Flip-Flops                                            : 128
+# Comparators                                          : 1
+ 4-bit comparator greater                              : 1
+# Multiplexers                                         : 2
+ 64-bit 2-to-1 multiplexer                             : 2
+# Logic shifters                                       : 1
+ 64-bit shifter logical left                           : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <data_inp/FSM_0> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 10    | 10
+ 11    | 11
+ 01    | 01
+-------------------
+
+Optimizing unit <sequencer> ...
+
+Optimizing unit <read_multiple_data_bytes> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sequencer, actual ratio is 1.
+FlipFlop data_inp/i_0 has been replicated 3 time(s)
+FlipFlop data_inp/i_1 has been replicated 4 time(s)
+FlipFlop data_inp/i_2 has been replicated 3 time(s)
+FlipFlop data_inp/i_3 has been replicated 4 time(s)
+FlipFlop data_inp/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop data_inp/state_FSM_FFd2 has been replicated 4 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 218
+ Flip-Flops                                            : 218
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : sequencer.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 505
+#      GND                         : 1
+#      INV                         : 4
+#      LUT2                        : 66
+#      LUT3                        : 73
+#      LUT4                        : 86
+#      LUT5                        : 49
+#      LUT6                        : 99
+#      MUXCY                       : 63
+#      XORCY                       : 64
+# FlipFlops/Latches                : 218
+#      FDC                         : 8
+#      FDCE                        : 82
+#      FDE                         : 128
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 74
+#      IBUF                        : 10
+#      OBUF                        : 64
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             218  out of  54576     0%  
+ Number of Slice LUTs:                  377  out of  27288     1%  
+    Number used as Logic:               377  out of  27288     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    390
+   Number with an unused Flip Flop:     172  out of    390    44%  
+   Number with an unused LUT:            13  out of    390     3%  
+   Number of fully used LUT-FF pairs:   205  out of    390    52%  
+   Number of unique control sets:         7
+
+IO Utilization: 
+ Number of IOs:                          86
+ Number of bonded IOBs:                  75  out of    218    34%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 218   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.843ns (Maximum Frequency: 260.247MHz)
+   Minimum input arrival time before clock: 5.489ns
+   Maximum output required time after clock: 3.634ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.843ns (frequency: 260.247MHz)
+  Total number of paths / destination ports: 7818 / 428
+-------------------------------------------------------------------------
+Delay:               3.843ns (Levels of Logic = 66)
+  Source:            data_inp/temp_0 (FF)
+  Destination:       data_inp/temp_output_63 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: data_inp/temp_0 to data_inp/temp_output_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.447   0.774  data_inp/temp_0 (data_inp/temp_0)
+     LUT2:I1->O            1   0.205   0.000  data_inp/Maccum_temp_output_lut<0> (data_inp/Maccum_temp_output_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  data_inp/Maccum_temp_output_cy<0> (data_inp/Maccum_temp_output_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<1> (data_inp/Maccum_temp_output_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<2> (data_inp/Maccum_temp_output_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<3> (data_inp/Maccum_temp_output_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<4> (data_inp/Maccum_temp_output_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<5> (data_inp/Maccum_temp_output_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<6> (data_inp/Maccum_temp_output_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<7> (data_inp/Maccum_temp_output_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<8> (data_inp/Maccum_temp_output_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<9> (data_inp/Maccum_temp_output_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<10> (data_inp/Maccum_temp_output_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<11> (data_inp/Maccum_temp_output_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<12> (data_inp/Maccum_temp_output_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<13> (data_inp/Maccum_temp_output_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<14> (data_inp/Maccum_temp_output_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<15> (data_inp/Maccum_temp_output_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<16> (data_inp/Maccum_temp_output_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<17> (data_inp/Maccum_temp_output_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<18> (data_inp/Maccum_temp_output_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<19> (data_inp/Maccum_temp_output_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<20> (data_inp/Maccum_temp_output_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<21> (data_inp/Maccum_temp_output_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<22> (data_inp/Maccum_temp_output_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<23> (data_inp/Maccum_temp_output_cy<23>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<24> (data_inp/Maccum_temp_output_cy<24>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<25> (data_inp/Maccum_temp_output_cy<25>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<26> (data_inp/Maccum_temp_output_cy<26>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<27> (data_inp/Maccum_temp_output_cy<27>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<28> (data_inp/Maccum_temp_output_cy<28>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<29> (data_inp/Maccum_temp_output_cy<29>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<30> (data_inp/Maccum_temp_output_cy<30>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<31> (data_inp/Maccum_temp_output_cy<31>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<32> (data_inp/Maccum_temp_output_cy<32>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<33> (data_inp/Maccum_temp_output_cy<33>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<34> (data_inp/Maccum_temp_output_cy<34>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<35> (data_inp/Maccum_temp_output_cy<35>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<36> (data_inp/Maccum_temp_output_cy<36>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<37> (data_inp/Maccum_temp_output_cy<37>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<38> (data_inp/Maccum_temp_output_cy<38>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<39> (data_inp/Maccum_temp_output_cy<39>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<40> (data_inp/Maccum_temp_output_cy<40>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<41> (data_inp/Maccum_temp_output_cy<41>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<42> (data_inp/Maccum_temp_output_cy<42>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<43> (data_inp/Maccum_temp_output_cy<43>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<44> (data_inp/Maccum_temp_output_cy<44>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<45> (data_inp/Maccum_temp_output_cy<45>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<46> (data_inp/Maccum_temp_output_cy<46>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<47> (data_inp/Maccum_temp_output_cy<47>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<48> (data_inp/Maccum_temp_output_cy<48>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<49> (data_inp/Maccum_temp_output_cy<49>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<50> (data_inp/Maccum_temp_output_cy<50>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<51> (data_inp/Maccum_temp_output_cy<51>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<52> (data_inp/Maccum_temp_output_cy<52>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<53> (data_inp/Maccum_temp_output_cy<53>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<54> (data_inp/Maccum_temp_output_cy<54>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<55> (data_inp/Maccum_temp_output_cy<55>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<56> (data_inp/Maccum_temp_output_cy<56>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<57> (data_inp/Maccum_temp_output_cy<57>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<58> (data_inp/Maccum_temp_output_cy<58>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<59> (data_inp/Maccum_temp_output_cy<59>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<60> (data_inp/Maccum_temp_output_cy<60>)
+     MUXCY:CI->O           1   0.019   0.000  data_inp/Maccum_temp_output_cy<61> (data_inp/Maccum_temp_output_cy<61>)
+     MUXCY:CI->O           0   0.019   0.000  data_inp/Maccum_temp_output_cy<62> (data_inp/Maccum_temp_output_cy<62>)
+     XORCY:CI->O           1   0.180   0.580  data_inp/Maccum_temp_output_xor<63> (data_inp/Result<63>)
+     LUT3:I2->O            1   0.205   0.000  data_inp/temp_output_63_dpot (data_inp/temp_output_63_dpot)
+     FDCE:D                    0.102          data_inp/temp_output_63
+    ----------------------------------------
+    Total                      3.843ns (2.489ns logic, 1.353ns route)
+                                       (64.8% logic, 35.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 373 / 237
+-------------------------------------------------------------------------
+Offset:              5.489ns (Levels of Logic = 4)
+  Source:            next_data_in (PAD)
+  Destination:       data_inp/temp_63 (FF)
+  Destination Clock: clk rising
+
+  Data Path: next_data_in to data_inp/temp_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            66   1.222   1.901  next_data_in_IBUF (next_data_in_IBUF)
+     LUT4:I0->O           19   0.203   1.072  data_inp/Mmux_temp[63]_GND_6_o_mux_10_OUT6211_3 (data_inp/Mmux_temp[63]_GND_6_o_mux_10_OUT62112)
+     LUT5:I4->O            1   0.205   0.580  data_inp/Mmux_temp[63]_GND_6_o_mux_10_OUT431 (data_inp/temp[63]_GND_6_o_mux_10_OUT<48>)
+     LUT6:I5->O            1   0.205   0.000  data_inp/temp_48_dpot (data_inp/temp_48_dpot)
+     FDE:D                     0.102          data_inp/temp_48
+    ----------------------------------------
+    Total                      5.489ns (1.937ns logic, 3.552ns route)
+                                       (35.3% logic, 64.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 64 / 64
+-------------------------------------------------------------------------
+Offset:              3.634ns (Levels of Logic = 1)
+  Source:            data_inp/data_63 (FF)
+  Destination:       data_to_be_encrypted<63> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: data_inp/data_63 to data_to_be_encrypted<63>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.447   0.616  data_inp/data_63 (data_inp/data_63)
+     OBUF:I->O                 2.571          data_to_be_encrypted_63_OBUF (data_to_be_encrypted<63>)
+    ----------------------------------------
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.843|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.48 secs
+ 
+--> 
+
+
+Total memory usage is 392948 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

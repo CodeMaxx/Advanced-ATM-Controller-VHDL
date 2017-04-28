@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/kanak/CS254/ATM/impact.xsl
+OUTFILE=/home/kanak/CS254/ATM/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/kanak/CS254/ATM
+LICENSE=iMPACT
+USER_INFO=iMPACT

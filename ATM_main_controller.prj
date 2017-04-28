@@ -1,0 +1,3 @@
+vhdl work "timer.vhd"
+vhdl work "read_multiple_data_bytes.vhd"
+vhdl work "ATM_main_controller.vhd"
