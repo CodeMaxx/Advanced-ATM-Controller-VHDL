@@ -444,11 +444,10 @@ int main(int argc, char* argv[]) {
 							uint8 realData[8];
 							decrypt(data, realData); //change decrypt function
 							uint16 ID = realData[0] << 8 | realData[1];
-							if(ID >> )
 							uint16 PIN = realData[2] << 8 | realData[3];
 							PIN = hashPIN(PIN);
 
-							uint8 check_bank = (PIN >> 11);
+							uint8 check_bank = (hashPIN(ID) >> 11);
 
 							if(check_bank != BankID)
 							{
