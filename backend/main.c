@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2012-2014 Chris McClelland
  *
  * This program is free software: you can redistribute it and/or modify
@@ -10,7 +10,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * You should have received a copy of the GNU General Public licenses
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -33,6 +33,7 @@
 #include <sys/time.h>
 #endif
 #include <unistd.h>
+#include <limits.h>
 
 bool sigIsRaised(void);
 void sigRegisterHandler(void);
@@ -94,7 +95,7 @@ int readUsersFromFile(void){
 
 	/* allocation of the buffer for every line in the File */
 	char *buffer = malloc(MAX_STR_LEN);
-	char *tmp; 
+	char *tmp;
 
 	/* if the space could not be allocated, return an error */
 	if (buffer == NULL) {
@@ -110,7 +111,7 @@ int readUsersFromFile(void){
 	int i = 0;
 	while (fgets(buffer, 255, f) != NULL){
 		if ((strlen(buffer)>0) && (buffer[strlen (buffer) - 1] == '\n'))
-			buffer[strlen (buffer) - 1] = '\0';       
+			buffer[strlen (buffer) - 1] = '\0';
 		if(i==0){
 			i++;
 			continue;
@@ -149,11 +150,11 @@ void encrypt (uint8* realData) {
 	v[0] = 0;
 	v[1] = 0;
 	for(int i = 0; i<4; i++){
-		v[0] = v[0] | realData[i] << 8*(3-i); 
-	}	 
+		v[0] = v[0] | realData[i] << 8*(3-i);
+	}
 	for(int i = 4; i<8; i++){
-		v[1] = v[1] | realData[i] << 8*(7-i); 
-	}	 
+		v[1] = v[1] | realData[i] << 8*(7-i);
+	}
 
 	uint32_t v0=v[0], v1=v[1], sum=0, i;           /* set up */
 	uint32_t delta=0x9e3779b9;                     /* a key schedule constant */
@@ -237,11 +238,11 @@ void decrypt (uint8* data, uint8* realData) {\
 	v[0] = 0;
 	v[1] = 0;
 	for(int i = 0; i<4; i++){
-		v[0] = v[0] | data[i] << 8*(3-i); 
-	}	 
+		v[0] = v[0] | data[i] << 8*(3-i);
+	}
 	for(int i = 4; i<8; i++){
-		v[1] = v[1] | data[i] << 8*(7-i); 
-	}	 
+		v[1] = v[1] | data[i] << 8*(7-i);
+	}
 	uint32_t v0=v[0], v1=v[1], sum=0xC6EF3720, i;  /* set up */
 	uint32_t delta=0x9e3779b9;                     /* a key schedule constant */
 	for (i=0; i<32; i++) {                         /* basic cycle start */
@@ -265,7 +266,25 @@ void decrypt (uint8* data, uint8* realData) {\
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-int main(void) {
+int main(int argc, char* argv[]) {
+
+//////////////////////////Advanced///////////////////////
+	if(argc < 2)
+	{
+		printf("Usage: %s [Bank ID]\n", argv[0]);
+		return 0;
+	}
+	else if(atoi(argv[1]) > 31)
+	{
+		printf("Bank ID must be between 0-31(both inclusive)\n");
+		return 0;
+	}
+
+	uint8 BankID = atoi(argv[1]);
+
+//////////////////////////Advanced///////////////////////
+
+
 	ReturnCode retVal = FLP_SUCCESS;
 	struct FLContext *handle = NULL;
 	FLStatus fStatus;
@@ -296,7 +315,7 @@ int main(void) {
 				fStatus = flLoadStandardFirmware(ivp, vp, &error);
 			// }
 			CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
-			
+
 			printf("Awaiting renumeration");
 			flSleep(1000);
 			do {
@@ -371,7 +390,7 @@ int main(void) {
 		CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 		if ( isRunning ) {
 			while(1) {
-				sleep(1); 
+				sleep(1);
 				uint8 buffer, message;
 				fStatus = flReadChannel(handle, (uint8) 0, 1, &buffer, &error);
 				CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
@@ -387,6 +406,35 @@ int main(void) {
 						CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 						if(buffer==buffer3){
 							printf("communication starting\n");
+
+
+////////////////////////////////Advanced///////////////////////////////////
+
+							uint8 restrictions[4];
+							restrictions[0] = INT8_MAX; // Restriction on 2000 notes
+							restrictions[1] = INT8_MAX; // Restriction on 1000 notes
+							restrictions[2] = INT8_MAX; // Restriction on 500 notes
+							restrictions[3] = INT8_MAX; // Restriction on 100 notes
+							uint res_total = UINT_MAX; // TODO - Will have to change this in VHDL.
+							printf("Sending Restriction Info...\n");
+							for(int i = 20; i < 24; i++)
+							{
+								fStatus = flWriteChannel(handle, (uint8) i, 1, &restrictions[i-20], &error);
+								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+							}
+
+							uint8 restrict_total[4] = {res_total >> 24, res_total >> 16, res_total >> 8, res_total};
+
+							for(int i = 25, i < 28; i++)
+							{
+								fStatus = flWriteChannel(handle, (uint8) i, 1, &restrict_total[i-25], &error);
+								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+							}
+							printf("Restriction Info Sent!\n");
+
+////////////////////////////////Advanced///////////////////////////////////
+
+
 							uint8 data[8];
 							for(int i = 0; i < 8; i++){
 								fStatus = flReadChannel(handle, (uint8) i+1, 1, &data[i], &error);
@@ -396,8 +444,17 @@ int main(void) {
 							uint8 realData[8];
 							decrypt(data, realData); //change decrypt function
 							uint16 ID = realData[0] << 8 | realData[1];
+							if(ID >> )
 							uint16 PIN = realData[2] << 8 | realData[3];
 							PIN = hashPIN(PIN);
+
+							uint8 check_bank = (PIN >> 11);
+
+							if(check_bank != BankID)
+							{
+								printf("Something wrong with the front end. This user is not of this bank.\n");
+								return 0;
+							}
 
 							bool isAdmin;
 							int cash, index;
@@ -409,11 +466,14 @@ int main(void) {
 								CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 							}else{
 								printf("Valid pin and id\n");
-								int cashReqd = realData[4]*2000 + realData[5]*1000 + realData[6]*500 + realData[7]*100;
+								//// Advanced
+								uint cashReqd = realData[4]*pow(2,24) + realData[5]*pow(2,16) + realData[6]*pow(2,8) + realData[7];
+								// Calculate amount of cash
+
 								for(int i = 0; i < 4; i++)	realData[i] = 0;
 								encrypt(realData);
 								if(!isAdmin){
-									if(cashReqd<=cash){
+									if(cashReqd<=cash and cashReqd <= res_total){
 										for(int i = 0; i < 8; i++){
 											fStatus = flWriteChannel(handle, (uint8) i+10, 1, &realData[i], &error);
 											CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
@@ -451,8 +511,8 @@ int main(void) {
 					}
 				}
 			}
-				
-		}	
+
+		}
 		else {
 			fprintf(stderr, "The FPGALink device at %s is not ready to talk - did you forget --program?\n", vp);
 			FAIL(FLP_ARGS, cleanup);
@@ -461,7 +521,7 @@ int main(void) {
 	else {
 		fprintf(stderr, "Action requested but device at %s does not support CommFPGA\n", vp);
 		FAIL(FLP_ARGS, cleanup);
-	
+
 	}
 
 // --------------------------------------------------------------------------------
@@ -474,4 +534,4 @@ cleanup:
 		flFreeError(error);
 	}
 	return retVal;
-}
+uint8
