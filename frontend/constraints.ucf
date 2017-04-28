@@ -2,67 +2,67 @@
 #NET "clock_125_i" TNM_NET = "clock_125_i";
 #TIMESPEC TS_clock_125_in = PERIOD "clock_125_i" 125 MHz HIGH 50% INPUT_JITTER 80 ps;
 
-NET "mii_tx_er_o" TNM = "gmii_out";
-NET "mii_txd_o[0]" TNM = "gmii_out";
-NET "mii_txd_o[1]" TNM = "gmii_out";
-NET "mii_txd_o[2]" TNM = "gmii_out";
-NET "mii_txd_o[3]" TNM = "gmii_out";
-NET "mii_txd_o[4]" TNM = "gmii_out";
-NET "mii_txd_o[5]" TNM = "gmii_out";
-NET "mii_txd_o[6]" TNM = "gmii_out";
-NET "mii_txd_o[7]" TNM = "gmii_out";
-NET "mii_tx_en_o" TNM = "gmii_out";
-NET "gmii_gtx_clk_o" TNM = "gmii_out";
-NET "mii_rx_er_i" TNM = "mii_in";
-NET "mii_rx_dv_i" TNM = "mii_in";
-NET "mii_rxd_i[7]" TNM = "mii_in";
-NET "mii_rxd_i[6]" TNM = "mii_in";
-NET "mii_rxd_i[5]" TNM = "mii_in";
-NET "mii_rxd_i[4]" TNM = "mii_in";
-NET "mii_rxd_i[3]" TNM = "mii_in";
-NET "mii_rxd_i[1]" TNM = "mii_in";
-NET "mii_rxd_i[0]" TNM = "mii_in";
-NET "mii_rxd_i[2]" TNM = "mii_in";
-# 25 ns constraint is for MII only
-# REFERENCE_PIN constraint is for GMII bus skew analysis
-TIMEGRP "gmii_out" OFFSET = OUT 25 ns AFTER "mii_tx_clk_i" REFERENCE_PIN "gmii_gtx_clk_o";
-
-NET "mii_tx_clk_i" TNM_NET = mii_tx_clk_i;
-TIMESPEC TS_mii_tx_clk_i = PERIOD "mii_tx_clk_i" 40 ns HIGH 35%;
-NET "mii_rx_clk_i" TNM_NET = mii_rx_clk_i;
-TIMESPEC TS_mii_rx_clk_i = PERIOD "mii_rx_clk_i" 125 MHz HIGH 33%;
-#TIMEGRP "mii_in" OFFSET = IN 2.5 ns VALID 3 ns BEFORE "mii_rx_clk_i" RISING;
-TIMEGRP "mii_in" OFFSET = IN 2 ns VALID 2 ns BEFORE "mii_rx_clk_i" RISING;
-
-# Pins
-#NET "clock_125_i" LOC = L15 | IOSTANDARD = LVCMOS33;
-#NET "mdc_o" LOC = F16 | IOSTANDARD = LVCMOS33;
-#NET "mdio_io" LOC = N17 | IOSTANDARD = LVCMOS33;
-
-NET "gmii_gtx_clk_o" LOC = L12 | IOSTANDARD = LVCMOS33;
-NET "mii_tx_en_o" LOC = H15 | IOSTANDARD = LVCMOS33;
-NET "mii_tx_er_o" LOC = G18 | IOSTANDARD = LVCMOS33;
-
-NET "mii_rxd_i[0]" LOC = G16 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[1]" LOC = H14 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[2]" LOC = E16 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[3]" LOC = F15 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[4]" LOC = F14 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[5]" LOC = E18 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[6]" LOC = D18 | IOSTANDARD = LVCMOS33;
-NET "mii_rxd_i[7]" LOC = D17 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[0]" LOC = H16 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[1]" LOC = H13 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[2]" LOC = K14 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[3]" LOC = K13 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[4]" LOC = J13 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[5]" LOC = G14 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[6]" LOC = H12 | IOSTANDARD = LVCMOS33;
-NET "mii_txd_o[7]" LOC = K12 | IOSTANDARD = LVCMOS33;
-NET "mii_rx_clk_i" LOC = K15 | IOSTANDARD = LVCMOS33;
-NET "mii_tx_clk_i" LOC = K16 | IOSTANDARD = LVCMOS33;
-NET "mii_rx_er_i" LOC = F18 | IOSTANDARD = LVCMOS33;
-NET "mii_rx_dv_i" LOC = F17 | IOSTANDARD = LVCMOS33;
+#NET "mii_tx_er_o" TNM = "gmii_out";
+#NET "mii_txd_o[0]" TNM = "gmii_out";
+#NET "mii_txd_o[1]" TNM = "gmii_out";
+#NET "mii_txd_o[2]" TNM = "gmii_out";
+#NET "mii_txd_o[3]" TNM = "gmii_out";
+#NET "mii_txd_o[4]" TNM = "gmii_out";
+#NET "mii_txd_o[5]" TNM = "gmii_out";
+#NET "mii_txd_o[6]" TNM = "gmii_out";
+#NET "mii_txd_o[7]" TNM = "gmii_out";
+#NET "mii_tx_en_o" TNM = "gmii_out";
+#NET "gmii_gtx_clk_o" TNM = "gmii_out";
+#NET "mii_rx_er_i" TNM = "mii_in";
+#NET "mii_rx_dv_i" TNM = "mii_in";
+#NET "mii_rxd_i[7]" TNM = "mii_in";
+#NET "mii_rxd_i[6]" TNM = "mii_in";
+#NET "mii_rxd_i[5]" TNM = "mii_in";
+#NET "mii_rxd_i[4]" TNM = "mii_in";
+#NET "mii_rxd_i[3]" TNM = "mii_in";
+#NET "mii_rxd_i[1]" TNM = "mii_in";
+#NET "mii_rxd_i[0]" TNM = "mii_in";
+#NET "mii_rxd_i[2]" TNM = "mii_in";
+## 25 ns constraint is for MII only
+## REFERENCE_PIN constraint is for GMII bus skew analysis
+#TIMEGRP "gmii_out" OFFSET = OUT 25 ns AFTER "mii_tx_clk_i" REFERENCE_PIN "gmii_gtx_clk_o";
+#
+#NET "mii_tx_clk_i" TNM_NET = mii_tx_clk_i;
+#TIMESPEC TS_mii_tx_clk_i = PERIOD "mii_tx_clk_i" 40 ns HIGH 35%;
+#NET "mii_rx_clk_i" TNM_NET = mii_rx_clk_i;
+#TIMESPEC TS_mii_rx_clk_i = PERIOD "mii_rx_clk_i" 125 MHz HIGH 33%;
+##TIMEGRP "mii_in" OFFSET = IN 2.5 ns VALID 3 ns BEFORE "mii_rx_clk_i" RISING;
+#TIMEGRP "mii_in" OFFSET = IN 2 ns VALID 2 ns BEFORE "mii_rx_clk_i" RISING;
+#
+## Pins
+##NET "clock_125_i" LOC = L15 | IOSTANDARD = LVCMOS33;
+##NET "mdc_o" LOC = F16 | IOSTANDARD = LVCMOS33;
+##NET "mdio_io" LOC = N17 | IOSTANDARD = LVCMOS33;
+#
+#NET "gmii_gtx_clk_o" LOC = L12 | IOSTANDARD = LVCMOS33;
+#NET "mii_tx_en_o" LOC = H15 | IOSTANDARD = LVCMOS33;
+#NET "mii_tx_er_o" LOC = G18 | IOSTANDARD = LVCMOS33;
+#
+#NET "mii_rxd_i[0]" LOC = G16 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[1]" LOC = H14 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[2]" LOC = E16 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[3]" LOC = F15 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[4]" LOC = F14 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[5]" LOC = E18 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[6]" LOC = D18 | IOSTANDARD = LVCMOS33;
+#NET "mii_rxd_i[7]" LOC = D17 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[0]" LOC = H16 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[1]" LOC = H13 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[2]" LOC = K14 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[3]" LOC = K13 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[4]" LOC = J13 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[5]" LOC = G14 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[6]" LOC = H12 | IOSTANDARD = LVCMOS33;
+#NET "mii_txd_o[7]" LOC = K12 | IOSTANDARD = LVCMOS33;
+#NET "mii_rx_clk_i" LOC = K15 | IOSTANDARD = LVCMOS33;
+#NET "mii_tx_clk_i" LOC = K16 | IOSTANDARD = LVCMOS33;
+#NET "mii_rx_er_i" LOC = F18 | IOSTANDARD = LVCMOS33;
+#NET "mii_rx_dv_i" LOC = F17 | IOSTANDARD = LVCMOS33;
 
 
 
@@ -134,6 +134,7 @@ NET "led_out<7>"      LOC="N12"  | IOSTANDARD=LVTTL;
  NET "next_data_in" LOC = "P3";  # Bank = 3, Pin name = IO_L2N, Sch name = BTND 
 # right push button for done
  NET "done" LOC = "F6";  # Bank = 3, Pin name = IO_L55P_M3A13, Sch name = BTNR
+ NET "load_bank_id" LOC = "F5";  # Bank = 3, Pin name = IO_L55P_M3A13, Sch name = BTNR
  
 NET "sw_in<0>"        LOC="A10"  | IOSTANDARD=LVTTL;   # SW0
 NET "sw_in<1>"        LOC="D14"  | IOSTANDARD=LVTTL;   # SW1

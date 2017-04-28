@@ -5,148 +5,61 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 270: Using initial value <arg fmt="%s" index="1">&quot;11&quot;</arg> for <arg fmt="%s" index="2">speed_override_i</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd" Line 314: Net &lt;<arg fmt="%s" index="1">done_mac_comm</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/kanak/CS254/Project/ethernet_mac-master/miim_control.vhd" Line 121: Assignment to <arg fmt="%s" index="1">init_done</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd" Line 316: Net &lt;<arg fmt="%s" index="1">data_response_mac_comm[63]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 265: Net &lt;<arg fmt="%s" index="1">mac_address_i[47]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd" Line 318: Net &lt;<arg fmt="%s" index="1">request_mac_comm</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 267: Net &lt;<arg fmt="%s" index="1">rgmii_rx_ctl_i</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd" Line 319: Net &lt;<arg fmt="%s" index="1">is_suf_atm_request</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 275: Net &lt;<arg fmt="%s" index="1">tx_data_i[7]</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd" Line 320: Net &lt;<arg fmt="%s" index="1">data_request_mac_comm[63]</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 276: Net &lt;<arg fmt="%s" index="1">tx_wr_en_i</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">data_send_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 280: Net &lt;<arg fmt="%s" index="1">rx_rd_en_i</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">data_reply_to_request_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 314: Net &lt;<arg fmt="%s" index="1">done_mac_comm</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">start_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 316: Net &lt;<arg fmt="%s" index="1">data_response_mac_comm[63]</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">reply_mac_comm_valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 318: Net &lt;<arg fmt="%s" index="1">request_mac_comm</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">reply_mac_comm_notvalid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 319: Net &lt;<arg fmt="%s" index="1">is_suf_atm_request</arg>&gt; does not have a driver.
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">data_response_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="old" >"/home/kanak/CS254/ATM/top_module.vhd" Line 320: Net &lt;<arg fmt="%s" index="1">data_request_mac_comm[63]</arg>&gt; does not have a driver.
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">data_request_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">speed_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">done_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">rx_data_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">request_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">rgmii_tx_ctl_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">is_suf_atm_request</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">link_up_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">11111</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">tx_reset_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">10100</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">tx_full_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">10110</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">rx_reset_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">339</arg>: Output port &lt;<arg fmt="%s" index="3">rx_empty_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ethernet_with_mac</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">data_send_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">data_reply_to_request_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">start_mac_comm</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">reply_mac_comm_valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/ATM/top_module.vhd</arg>&quot; line <arg fmt="%s" index="2">439</arg>: Output port &lt;<arg fmt="%s" index="3">reply_mac_comm_notvalid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ATM_Main_cont</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">mac_address_i</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">tx_data_i</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">data_response_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">data_request_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rgmii_rx_ctl_i</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">tx_wr_en_i</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rx_rd_en_i</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">done_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">request_mac_comm</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">is_suf_atm_request</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rgmii_rx_ctl_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Project/ethernet_mac-master/ethernet.vhd</arg>&quot; line <arg fmt="%s" index="2">164</arg>: Output port &lt;<arg fmt="%s" index="3">rgmii_tx_ctl_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mii_gmii_inst</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Project/ethernet_mac-master/ethernet.vhd</arg>&quot; line <arg fmt="%s" index="2">259</arg>: Output port &lt;<arg fmt="%s" index="3">debug_fifo_write_data_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">miim_gen.miim_control_inst</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/kanak/CS254/Project/ethernet_mac-master/ethernet.vhd</arg>&quot; line <arg fmt="%s" index="2">259</arg>: Output port &lt;<arg fmt="%s" index="3">debug_fifo_we_o</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">miim_gen.miim_control_inst</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rgmii_tx_ctl_o</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rgmii_rx_ctl_i</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">rgmii_tx_ctl_o</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read_length_low</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">read_state</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">read_packet</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">read_state</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">11111</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">10100</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">10110</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">10101</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
+<msg type="info" file="Xst" num="1799" delta="new" >State <arg fmt="%s" index="1">10101</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">state</arg>&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -167,295 +80,196 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_49&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_32</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_33</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_34</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_35</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_36</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_37</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_38</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_39</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_40</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_41</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_42</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_43</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">read_update_safe_address_req</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo_inst</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_44</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1898" delta="old" >Due to constant pushing, FF/Latch &lt;<arg fmt="%s" index="1">write_reset_read_side</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">rx_fifo_inst</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_45</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1290" delta="old" >Hierarchical block &lt;<arg fmt="%s" index="1">sync_reset_inst</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">rx_fifo_inst</arg>&gt;.
-It will be removed from the design.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_46</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_tx_state[3]_PWR_27_o_Mux_67_o</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_47</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_gmii_active</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_48</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_state[3]_miim_we_o_MUX_293_o</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_49</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">Mram_memory</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
-
-<msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_read_state[1]_GND_47_o_Mux_100_o</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_32</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_33</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_34</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_35</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_36</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_37</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_38</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_39</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_40</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_41</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_42</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_43</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_44</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_45</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_46</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_47</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_48</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_49</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_50</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_51</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_52</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_53</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_54</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_55</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_56</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_57</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_58</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_59</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_60</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_61</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_62</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_63</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_50</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_51</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_52</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_53</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_54</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_55</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_56</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_57</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_58</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_59</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_60</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_61</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_62</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_63</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_20</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_21</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_22</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_26</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_27</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_28</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_29</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_30</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_31</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_20</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_21</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_22</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_26</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_27</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_28</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_29</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">update_safe_address_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_30</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">read_update_safe_address_req</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">rx_fifo</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">data_reply_to_request_mac_comm_31</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ATM_main_controller</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_50&gt; </arg>
@@ -473,427 +287,208 @@ It will be removed from the design.
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_49&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">write_safe_address_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">rx_fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">11 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;write_safe_address_1&gt; &lt;write_safe_address_2&gt; &lt;write_safe_address_3&gt; &lt;write_safe_address_4&gt; &lt;write_safe_address_5&gt; &lt;write_safe_address_6&gt; &lt;write_safe_address_7&gt; &lt;write_safe_address_8&gt; &lt;write_safe_address_9&gt; &lt;write_safe_address_10&gt; &lt;write_safe_address_11&gt; </arg>
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">miim_control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">miim_control</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;miim_data_write_o_8&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">miim_data_write_o_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">miim_control</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;miim_data_write_o_15&gt; </arg>
-</msg>
-
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">data_out_leds_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_out_leds_1&gt; &lt;data_out_leds_2&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_63</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_62</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_61</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_60</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_59</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_58</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_57</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_56</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_55</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_54</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_53</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_52</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_read_o_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_51</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_63</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_50</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_62</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_49</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_61</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_48</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_60</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_47</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_59</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_46</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_58</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_45</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_57</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_44</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_56</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_43</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_55</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_42</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_54</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_41</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_53</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_52</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_51</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_50</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_49</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_48</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_47</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_46</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_45</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_44</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_43</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_42</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_41</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ATM_Main_cont/data_send_mac_comm_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/rx_data_o_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_write_data_o_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/debug_fifo_we_o</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_control_inst/link_up_o</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_state_FSM_FFd1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/Mram_memory2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/Mram_memory1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/empty_o</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/read_address_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">top_module</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/framing_inst/tx_padding_required_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ethernet_with_mac/ethernet_inst/miim_gen.miim_inst/data_bit_position_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ATM_Main_cont/atm_cash_that_can_be_given_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ATM_Main_cont/atm_cash_that_can_be_given_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ATM_Main_cont/atm_cash_that_can_be_given_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top_module</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">ATM_Main_cont/is_suf_atm_signal</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top_module</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ATM_Main_cont/is_suf_atm&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">ethernet_with_mac/sync_rx_reset_inst/FDPE_tmp_inst</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top_module</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;ethernet_with_mac/sync_tx_reset_inst/FDPE_tmp_inst&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1&gt; &lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1&gt; &lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ethernet_with_mac/tx_fifo_inst/tx_data_fifo_inst</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ATM_Main_cont/is_suf_atm_signal</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top_module</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;ATM_Main_cont/is_suf_atm&gt; </arg>
 </msg>
 
 </messages>

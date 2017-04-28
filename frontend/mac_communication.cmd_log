@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/mac_communication.xst" -ofn "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/mac_communication.syr" 

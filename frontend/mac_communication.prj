@@ -1,0 +1,2 @@
+vhdl ethernet_mac "../ethernet_mac-master/ethernet_types.vhd"
+vhdl work "mac_communication.vhd"

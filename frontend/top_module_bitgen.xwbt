@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/kanak/CS254/ATM/top_module.ncd
-OUTFILE=/home/kanak/CS254/ATM/top_module.bit
+INFILE=/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.ncd
+OUTFILE=/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.bit
 FAMILY=Spartan6
 PART=xc6slx45-3csg324
-WORKINGDIR=/home/kanak/CS254/ATM
+WORKINGDIR=/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend
 LICENSE=WebPack
 USER_INFO=211297953_0_0_777

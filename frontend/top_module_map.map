@@ -10,115 +10,141 @@ Target Device  : xc6slx45
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Apr 28 17:14:35 2017
+Mapped Date    : Fri Apr 28 18:09:46 2017
 
 Mapping design into LUTs...
-WARNING:MapLib:701 - Signal mii_rx_clk_i connected to top level port
-   mii_rx_clk_i has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<7> connected to top level port
-   mii_rxd_i<7> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<6> connected to top level port
-   mii_rxd_i<6> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<5> connected to top level port
-   mii_rxd_i<5> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<4> connected to top level port
-   mii_rxd_i<4> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<3> connected to top level port
-   mii_rxd_i<3> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<2> connected to top level port
-   mii_rxd_i<2> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<1> connected to top level port
-   mii_rxd_i<1> has been removed.
-WARNING:MapLib:701 - Signal mii_rxd_i<0> connected to top level port
-   mii_rxd_i<0> has been removed.
-WARNING:MapLib:701 - Signal mii_rx_er_i connected to top level port mii_rx_er_i
-   has been removed.
-WARNING:MapLib:701 - Signal mii_rx_dv_i connected to top level port mii_rx_dv_i
-   has been removed.
-WARNING:MapLib:41 - All members of TNM group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div" have been
-   optimized out of the design.
-WARNING:MapLib:41 - All members of TNM group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0" have
-   been optimized out of the design.
-WARNING:MapLib:41 - All members of TNM group "mii_rx_clk_i" have been optimized
-   out of the design.
-WARNING:MapLib:41 - All members of TNM group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io" have been
-   optimized out of the design.
-WARNING:MapLib:41 - All members of TNM group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0" have
-   been optimized out of the design.
-WARNING:MapLib:41 - All members of TNM group "mii_in" have been optimized out of
-   the design.
-WARNING:MapLib:50 - The period specification "TS_mii_rx_clk_i" has been
-   discarded because the group "mii_rx_clk_i" has been optimized away.
-WARNING:MapLib:50 - The period specification
-   "TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0" has
-   been discarded because the group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0" has
-   been optimized away.
-WARNING:MapLib:50 - The period specification
-   "TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0" has
-   been discarded because the group
-   "ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0" has been
-   optimized away.
-WARNING:MapLib:53 - The offset specification "TIMEGRP mii_in OFFSET=IN 2000 pS
-   VALID 2000 pS BEFORE mii_rx_clk_i RISING" has been discarded because the
-   referenced clock pad net (mii_rx_clk_i) was optimized away.
 Running directed packing...
 Running delay-based LUT packing...
 Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 9 secs 
-Total CPU  time at the beginning of Placer: 9 secs 
+Total REAL time at the beginning of Placer: 8 secs 
+Total CPU  time at the beginning of Placer: 8 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:e68e0863) REAL time: 11 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:4af3c2b7) REAL time: 10 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 52 IOs, 49 are locked
-   and 3 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:e68e0863) REAL time: 11 secs 
+Phase 2.7  Design Feasibility Check (Checksum:4af3c2b7) REAL time: 10 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:e68e0863) REAL time: 11 secs 
+Phase 3.31  Local Placement Optimization (Checksum:4af3c2b7) REAL time: 10 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-...
-.........
-ERROR:Place:1108 - A clock IOB / BUFGMUX clock component pair have been found
-   that are not placed at an optimal clock IOB / BUFGMUX site pair. The clock
-   IOB component <mii_tx_clk_i> is placed at site <K16>. The corresponding BUFG
-   component
-   <ethernet_with_mac/ethernet_inst/mii_gmii_io_inst/clock_tx_BUFGMUX_inst> is
-   placed at site <BUFGMUX_X3Y8>. There is only a select set of IOBs that can
-   use the fast path to the Clocker buffer, and they are not being used. You may
-   want to analyze why this problem exists and correct it. If this sub optimal
-   condition is acceptable for this design, you may use the
-   CLOCK_DEDICATED_ROUTE constraint in the .ucf file to demote this message to a
-   WARNING and allow your design to continue. However, the use of this override
-   is highly discouraged as it may lead to very poor timing results. It is
-   recommended that this error condition be corrected in the design. A list of
-   all the COMP.PINs used in this clock placement rule is listed below. These
-   examples can be used directly in the .ucf file to override this clock rule.
-   < NET "mii_tx_clk_i" CLOCK_DEDICATED_ROUTE = FALSE; >
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:6540ab50) REAL time: 23 secs 
+(Checksum:479b1bfa) REAL time: 19 secs 
 
-Total REAL time to Placer completion: 23 secs 
-Total CPU  time to Placer completion: 23 secs 
-ERROR:Pack:1654 - The timing-driven placement phase encountered an error.
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:479b1bfa) REAL time: 19 secs 
 
-Mapping completed.
-See MAP report file "top_module_map.mrp" for details.
-Problem encountered during the packing phase.
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:479b1bfa) REAL time: 19 secs 
+
+Phase 7.3  Local Placement Optimization
+Phase 7.3  Local Placement Optimization (Checksum:479b1bfa) REAL time: 19 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:479b1bfa) REAL time: 19 secs 
+
+Phase 9.8  Global Placement
+....................................
+...............................................................................................
+Phase 9.8  Global Placement (Checksum:bd89499e) REAL time: 24 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:bd89499e) REAL time: 24 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:db63467a) REAL time: 26 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:db63467a) REAL time: 26 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:831d099b) REAL time: 26 secs 
+
+Total REAL time to Placer completion: 28 secs 
+Total CPU  time to Placer completion: 28 secs 
+Running post-placement packing...
+Writing output files...
 
 Design Summary
 --------------
-Number of errors   :   2
-Number of warnings :  21
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                 1,234 out of  54,576    2%
+    Number used as Flip Flops:               1,234
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      1,954 out of  27,288    7%
+    Number used as logic:                    1,900 out of  27,288    6%
+      Number using O6 output only:           1,182
+      Number using O5 output only:             355
+      Number using O5 and O6:                  363
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   6,408    0%
+    Number used exclusively as route-thrus:     54
+      Number with same-slice register load:     35
+      Number with same-slice carry load:        19
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   719 out of   6,822   10%
+  Number of MUXCYs used:                     1,208 out of  13,644    8%
+  Number of LUT Flip Flop pairs used:        2,351
+    Number with an unused Flip Flop:         1,162 out of   2,351   49%
+    Number with an unused LUT:                 397 out of   2,351   16%
+    Number of fully used LUT-FF pairs:         792 out of   2,351   33%
+    Number of unique control sets:              63
+    Number of slice register sites lost
+      to control set restrictions:              94 out of  54,576    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        38 out of     218   17%
+    Number of LOCed IOBs:                       38 out of      38  100%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of     116    0%
+  Number of RAMB8BWERs:                          0 out of     232    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       8    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     376    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     376    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     376    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     256    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      58    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       4    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.47
+
+Peak Memory Usage:  784 MB
+Total REAL time to MAP completion:  30 secs 
+Total CPU time to MAP completion:   30 secs 
+
+Mapping completed.
+See MAP report file "top_module_map.mrp" for details.

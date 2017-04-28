@@ -5,40 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="ConstraintSystem" num="178" delta="new" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">mii_rx_clk_i</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_mii_rx_clk_i</arg>&apos;, was traced into <arg fmt="%s" index="4">BUFIO2</arg> instance <arg fmt="%s" index="5">ethernet_with_mac/ethernet_inst/mii_gmii_io_inst/mii_rx_clk_BUFIO2_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">BUFIO2</arg> output(s): 
-<arg fmt="%s" index="7">DIVCLK</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0 = PERIOD &quot;ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_div_0&quot; TS_mii_rx_clk_i HIGH 50%&gt;</arg>
-</msg>
-
-<msg type="info" file="ConstraintSystem" num="178" delta="new" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">mii_rx_clk_i</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_mii_rx_clk_i</arg>&apos;, was traced into <arg fmt="%s" index="4">BUFIO2</arg> instance <arg fmt="%s" index="5">ethernet_with_mac/ethernet_inst/mii_gmii_io_inst/mii_rx_clk_BUFIO2_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">BUFIO2</arg> output(s): 
-<arg fmt="%s" index="7">IOCLK</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0 = PERIOD &quot;ethernet_with_mac_ethernet_inst_mii_gmii_io_inst_clock_mii_rx_io_0&quot; TS_mii_rx_clk_i HIGH 50%&gt;</arg>
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMEGRP &quot;gmii_out&quot; OFFSET = OUT 25 ns AFTER &quot;mii_tx_clk_i&quot; REFERENCE_PIN &quot;gmii_gtx_clk_o&quot;;&gt; [constraints.ucf(28)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMEGRP &quot;gmii_out&quot; OFFSET = OUT 25 ns AFTER &quot;mii_tx_clk_i&quot; REFERENCE_PIN &quot;gmii_gtx_clk_o&quot;;&gt; [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6.ucf(28)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_mii_tx_clk_i = PERIOD &quot;mii_tx_clk_i&quot; 40 ns HIGH 35%;&gt; [constraints.ucf(31)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC TS_mii_tx_clk_i = PERIOD &quot;mii_tx_clk_i&quot; 40 ns HIGH 35%;&gt; [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6.ucf(31)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_mii_rx_clk_i = PERIOD &quot;mii_rx_clk_i&quot; 125 MHz HIGH 33%;&gt; [constraints.ucf(33)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC TS_mii_rx_clk_i = PERIOD &quot;mii_rx_clk_i&quot; 125 MHz HIGH 33%;&gt; [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6.ucf(33)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMEGRP &quot;mii_in&quot; OFFSET = IN 2 ns VALID 2 ns BEFORE &quot;mii_rx_clk_i&quot; RISING;&gt; [constraints.ucf(35)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMEGRP &quot;mii_in&quot; OFFSET = IN 2 ns VALID 2 ns BEFORE &quot;mii_rx_clk_i&quot; RISING;&gt; [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6.ucf(35)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC &quot;TS_clk&quot; = PERIOD &quot;fx2Clk_in&quot; 20 ns HIGH 50 %;&gt; [constraints.ucf(151)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC &quot;TS_clk&quot; = PERIOD &quot;fx2Clk_in&quot; 20 ns HIGH 50 %;&gt; [/home/kanak/CS254/Project/ethernet_mac-master/xilinx/test/test_instance_spartan6.ucf(151)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="440" delta="old" >FF primitive &apos;<arg fmt="%s" index="1">ethernet_with_mac/sync_rx_reset_inst/FDPE_out_inst</arg>&apos; has unconnected output pin
-</msg>
-
-<msg type="warning" file="NgdBuild" num="440" delta="old" >FF primitive &apos;<arg fmt="%s" index="1">ethernet_with_mac/sync_tx_reset_inst/FDPE_out_inst</arg>&apos; has unconnected output pin
-</msg>
-
-<msg type="warning" file="NgdBuild" num="440" delta="old" >FF primitive &apos;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/sync_ack_inst/FDPE_out_inst</arg>&apos; has unconnected output pin
-</msg>
-
-<msg type="warning" file="NgdBuild" num="440" delta="old" >FF primitive &apos;<arg fmt="%s" index="1">ethernet_with_mac/rx_fifo_inst/sync_reset_inst/FDPE_out_inst</arg>&apos; has unconnected output pin
-</msg>
-
 </messages>
 

@@ -19,8 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-library ethernet_mac;
-use ethernet_mac.ethernet_types.all;
+--library ethernet_mac;
+--use ethernet_mac.ethernet_types.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -60,7 +60,7 @@ entity top_module is
 		load_bank_id : in STD_LOGIC;
         next_data_in : in  STD_LOGIC;
         done: in STD_LOGIC;
-        start: in STD_LOGIC;
+        start: in STD_LOGIC
 		  		-- Unbuffered 125 MHz clock input
 		--clock_125_i      : in    std_ulogic;
 		  -- MII (Media-independent interface)
@@ -138,7 +138,7 @@ architecture Behavioral of top_module is
 	 end component;
 	
 
-	 --component mac_communication
+	 --component mac_communication2
 	 --	port(
 		--  clk : in STD_LOGIC;
 	 -- 	  start_mac_comm : in STD_LOGIC;
@@ -262,23 +262,23 @@ architecture Behavioral of top_module is
 
 
 
-	signal mac_address_i : t_mac_address;
-	signal rgmii_tx_ctl_o   : std_ulogic;
-	signal rgmii_rx_ctl_i   : std_ulogic;
-	signal link_up_o        : std_ulogic;
-	signal speed_o          : t_ethernet_speed;
-	signal speed_override_i : t_ethernet_speed := SPEED_UNSPECIFIED;
-	signal tx_reset_o       : std_ulogic;
-	signal rx_reset_o       : std_ulogic;
+	--signal mac_address_i : t_mac_address;
+	--signal rgmii_tx_ctl_o   : std_ulogic;
+	--signal rgmii_rx_ctl_i   : std_ulogic;
+	--signal link_up_o        : std_ulogic;
+	--signal speed_o          : t_ethernet_speed;
+	--signal speed_override_i : t_ethernet_speed := SPEED_UNSPECIFIED;
+	--signal tx_reset_o       : std_ulogic;
+	--signal rx_reset_o       : std_ulogic;
 
 
-	signal tx_data_i        : t_ethernet_data;
-	signal tx_wr_en_i       : std_ulogic;
-	signal tx_full_o        : std_ulogic;
+	--signal tx_data_i        : t_ethernet_data;
+	--signal tx_wr_en_i       : std_ulogic;
+	--signal tx_full_o        : std_ulogic;
 
-	signal rx_empty_o       : std_ulogic;
-	signal rx_rd_en_i       : std_ulogic;
-	signal rx_data_o        : t_ethernet_data;
+	--signal rx_empty_o       : std_ulogic;
+	--signal rx_rd_en_i       : std_ulogic;
+	--signal rx_data_o        : t_ethernet_data;
 
 
 
@@ -498,7 +498,7 @@ comm : communication
 							restriction_100 => restriction_100,
 							restriction_total => restriction_total
 					);
---mac_comm : mac_communication
+--mac_comm : mac_communication2
 --		port map(
 --			clk => fx2Clk_in,
 --							start_mac_comm => start_mac_comm,

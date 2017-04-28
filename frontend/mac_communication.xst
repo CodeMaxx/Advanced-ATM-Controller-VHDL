@@ -1,11 +1,11 @@
 set -tmpdir "xst/projnav.tmp"
 set -xsthdpdir "xst"
 run
--ifn top_module.prj
--ofn top_module
+-ifn mac_communication.prj
+-ofn mac_communication
 -ofmt NGC
 -p xc6slx45-3-csg324
--top top_module
+-top mac_communication
 -opt_mode Speed
 -opt_level 1
 -power NO
