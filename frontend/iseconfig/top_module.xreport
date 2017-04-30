@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-04-28T18:08:48</DateModified>
+  <DateModified>2017-04-30T14:24:11</DateModified>
   <ModuleName>top_module</ModuleName>
-  <SummaryTimeStamp>2017-04-28T17:55:45</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-04-30T14:21:08</SummaryTimeStamp>
   <SavedFilePath>/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/iseconfig/top_module.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/</ImplementationReportsDirectory>
   <DateInitialized>2017-03-27T13:17:03</DateInitialized>

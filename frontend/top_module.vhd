@@ -63,7 +63,7 @@ entity top_module is
         start: in STD_LOGIC
 		  		-- Unbuffered 125 MHz clock input
 		--clock_125_i      : in    std_ulogic;
-		  -- MII (Media-independent interface)
+		--  -- MII (Media-independent interface)
 		--mii_tx_clk_i     : in    std_ulogic;
 		--mii_tx_er_o      : out   std_ulogic;
 		--mii_tx_en_o      : out   std_ulogic;
@@ -86,11 +86,8 @@ entity top_module is
 		----miim_clock_i     : in    std_ulogic;
 		--mdc_o            : out   std_ulogic;
 		--mdio_io          : inout std_ulogic
-
-		  
 		  
 		  );
---        data_out_leds : out  STD_LOGIC_VECTOR (7 downto 0));
 end top_module;
 
 architecture Behavioral of top_module is
@@ -138,23 +135,23 @@ architecture Behavioral of top_module is
 	 end component;
 	
 
-	 --component mac_communication2
-	 --	port(
-		--  clk : in STD_LOGIC;
-	 -- 	  start_mac_comm : in STD_LOGIC;
-		--  done_mac_comm : out STD_LOGIC;
-		--  data_send_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		--  data_response_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		--  is_suf_atm : in STD_LOGIC;
+	 component mac_communication
+	 	port(
+		  clk : in STD_LOGIC;
+	  	  start_mac_comm : in STD_LOGIC;
+		  done_mac_comm : out STD_LOGIC;
+		  data_send_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  data_response_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  is_suf_atm : in STD_LOGIC;
 		  
-		--  request_mac_comm : out STD_LOGIC;
-		--  is_suf_atm_request : out STD_LOGIC;
-		--  data_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		--  data_reply_to_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		--  reply_mac_comm_valid : in STD_LOGIC;
-		--  reply_mac_comm_notvalid : in STD_LOGIC
-		--  );
-	 --end component;
+		  request_mac_comm : out STD_LOGIC;
+		  is_suf_atm_request : out STD_LOGIC;
+		  data_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  data_reply_to_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  reply_mac_comm_valid : in STD_LOGIC;
+		  reply_mac_comm_notvalid : in STD_LOGIC
+		  );
+	 end component;
 
     component debouncer
         port(clk: in STD_LOGIC;
@@ -336,40 +333,6 @@ begin
 		'0' when fx2Reset = '0'
 		else 'Z';
 	
-	--ethernet_with_mac : entity ethernet_mac.ethernet_with_fifos
-	--port map(
-	--		clock_125_i => fx2Clk_in,
-	--		reset_i => '0',
-	--		mac_address_i => mac_address_i,
-	--		mii_tx_clk_i => mii_tx_clk_i,
-	--		mii_tx_er_o => mii_tx_er_o,
-	--		mii_tx_en_o => mii_tx_en_o,
-	--		mii_txd_o => mii_txd_o,
-	--		mii_rx_clk_i => mii_rx_clk_i,
-	--		mii_rx_er_i => mii_rx_er_i,
-	--		mii_rx_dv_i => mii_rx_dv_i,
-	--		mii_rxd_i => mii_rxd_i,
-	--		gmii_gtx_clk_o => gmii_gtx_clk_o,
-	--		rgmii_tx_ctl_o => rgmii_tx_ctl_o,
-	--		rgmii_rx_ctl_i => rgmii_rx_ctl_i,
-	--		miim_clock_i => fx2Clk_in,
-	--		mdc_o => mdc_o,
-	--		mdio_io => mdio_io,
-	--		link_up_o => link_up_o,
-	--		speed_o => speed_o,
-	--		speed_override_i => speed_override_i,
-	--		tx_clock_i => fx2Clk_in,
-	--		tx_reset_o => tx_reset_o,
-	--		tx_data_i => tx_data_i,
-	--		tx_wr_en_i => tx_wr_en_i,
-	--		tx_full_o => tx_full_o,
-	--		rx_clock_i => fx2Clk_in,
-	--		rx_reset_o => rx_reset_o,
-	--		rx_empty_o => rx_empty_o,
-	--		rx_rd_en_i => rx_rd_en_i,
-	--		rx_data_o => rx_data_o
-	--	);
-	
 	comm_fpga : comm_fpga_fx2
 		port map(
 			clk_in         => fx2Clk_in,
@@ -498,19 +461,53 @@ comm : communication
 							restriction_100 => restriction_100,
 							restriction_total => restriction_total
 					);
---mac_comm : mac_communication2
---		port map(
---			clk => fx2Clk_in,
---							start_mac_comm => start_mac_comm,
---							done_mac_comm => done_mac_comm,
---							data_send_mac_comm => data_send_mac_comm,
---							data_response_mac_comm => data_response_mac_comm,
---							request_mac_comm => request_mac_comm,
---							is_suf_atm_request => is_suf_atm_request,
---							data_request_mac_comm => data_request_mac_comm,
---							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
---							reply_mac_comm_valid => reply_mac_comm_valid,
---							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
---							is_suf_atm => is_suf_atm
---			);
+mac_comm : mac_communication
+		port map(
+			clk => fx2Clk_in,
+							start_mac_comm => start_mac_comm,
+							done_mac_comm => done_mac_comm,
+							data_send_mac_comm => data_send_mac_comm,
+							data_response_mac_comm => data_response_mac_comm,
+							request_mac_comm => request_mac_comm,
+							is_suf_atm_request => is_suf_atm_request,
+							data_request_mac_comm => data_request_mac_comm,
+							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
+							reply_mac_comm_valid => reply_mac_comm_valid,
+							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
+							is_suf_atm => is_suf_atm
+			);
+
+	--ethernet_with_mac : entity ethernet_mac.ethernet_with_fifos
+	--port map(
+	--		clock_125_i => clock_125_i,
+	--		reset_i => '0',
+	--		mac_address_i => mac_address_i,
+	--		mii_tx_clk_i => mii_tx_clk_i,
+	--		mii_tx_er_o => mii_tx_er_o,
+	--		mii_tx_en_o => mii_tx_en_o,
+	--		mii_txd_o => mii_txd_o,
+	--		mii_rx_clk_i => mii_rx_clk_i,
+	--		mii_rx_er_i => mii_rx_er_i,
+	--		mii_rx_dv_i => mii_rx_dv_i,
+	--		mii_rxd_i => mii_rxd_i,
+	--		gmii_gtx_clk_o => gmii_gtx_clk_o,
+	--		rgmii_tx_ctl_o => rgmii_tx_ctl_o,
+	--		rgmii_rx_ctl_i => rgmii_rx_ctl_i,
+	--		miim_clock_i => fx2Clk_in,
+	--		mdc_o => mdc_o,
+	--		mdio_io => mdio_io,
+	--		link_up_o => link_up_o,
+	--		speed_o => speed_o,
+	--		speed_override_i => speed_override_i,
+	--		tx_clock_i => fx2Clk_in,
+	--		tx_reset_o => tx_reset_o,
+	--		tx_data_i => tx_data_i,
+	--		tx_wr_en_i => tx_wr_en_i,
+	--		tx_full_o => tx_full_o,
+	--		rx_clock_i => fx2Clk_in,
+	--		rx_reset_o => rx_reset_o,
+	--		rx_empty_o => rx_empty_o,
+	--		rx_rd_en_i => rx_rd_en_i,
+	--		rx_data_o => rx_data_o
+	--	);
 end Behavioral;

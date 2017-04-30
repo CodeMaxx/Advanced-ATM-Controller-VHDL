@@ -104,6 +104,12 @@ architecture Behavioral of ATM_main_controller is
 	signal substate : STD_LOGIC_VECTOR(2 downto 0) := "000";
 	signal atm_cash_that_can_be_given : STD_LOGIC_VECTOR(31 downto 0) := X"00000000";
 	signal is_suf_atm_signal : STD_LOGIC;
+	type balance is array (0 to 4) of std_logic_vector(31 downto 0);
+	type id_or_password is array (0 to 4) of std_logic_vector(16 downto 0);
+	signal cache_user_balance : balance;
+	signal cache_user_id : id_or_password;
+	signal cache_user_password : id_or_password;
+	signal last_entry_in_cache : integer range 0 to 4;
 begin
 	done_or_reset <= reset_button or done_button;
 	timer1: timer

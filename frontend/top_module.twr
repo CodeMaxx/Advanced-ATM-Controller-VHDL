@@ -29,19 +29,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 947821 paths analyzed, 7319 endpoints analyzed, 0 failing endpoints
+ 1009912 paths analyzed, 7429 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  10.050ns.
+ Minimum period is  12.399ns.
 --------------------------------------------------------------------------------
 
-Paths for end point ATM_Main_cont/data_to_be_decrypted_62 (SLICE_X3Y117.CE), 35 paths
+Paths for end point comm/g_6 (SLICE_X1Y114.CE), 15 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.950ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debouncer4/button_deb (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_62 (FF)
+Slack (setup path):     7.601ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd3 (FF)
+  Destination:          comm/g_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      9.969ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.046ns (0.582 - 0.628)
+  Data Path Delay:      12.367ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -52,35 +52,35 @@ Slack (setup path):     9.950ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debouncer4/button_deb to ATM_Main_cont/data_to_be_decrypted_62
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd3 to comm/g_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X11Y48.AQ      Tcko                  0.391   debouncer4/button_deb
-                                                       debouncer4/button_deb
-    SLICE_X27Y99.B4      net (fanout=3)        4.743   debouncer4/button_deb
-    SLICE_X27Y99.B       Tilo                  0.259   ATM_Main_cont/encrypted_data_comm<2>
-                                                       ATM_Main_cont/_n45311
-    SLICE_X13Y105.B5     net (fanout=73)       1.676   ATM_Main_cont/_n4531
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y117.CE      net (fanout=14)       1.845   ATM_Main_cont/_n1273
-    SLICE_X3Y117.CLK     Tceck                 0.340   ATM_Main_cont/data_to_be_decrypted<63>
-                                                       ATM_Main_cont/data_to_be_decrypted_62
+    SLICE_X30Y122.CQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B2     net (fanout=13)       1.592   comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.340   comm/g<7>
+                                                       comm/g_6
     -------------------------------------------------  ---------------------------
-    Total                                      9.969ns (1.508ns logic, 8.461ns route)
-                                                       (15.1% logic, 84.9% route)
+    Total                                     12.367ns (1.556ns logic, 10.811ns route)
+                                                       (12.6% logic, 87.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.962ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               encrypt/done (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_62 (FF)
+Slack (setup path):     7.635ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd1 (FF)
+  Destination:          comm/g_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.013ns (Levels of Logic = 3)
-  Clock Path Skew:      0.010ns (0.490 - 0.480)
+  Data Path Delay:      12.333ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -91,35 +91,35 @@ Slack (setup path):     12.962ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: encrypt/done to ATM_Main_cont/data_to_be_decrypted_62
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd1 to comm/g_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y92.DQ      Tcko                  0.447   encrypt/done
-                                                       encrypt/done
-    SLICE_X21Y92.A6      net (fanout=2)        1.765   encrypt/done
-    SLICE_X21Y92.A       Tilo                  0.259   ATM_Main_cont/state[4]_state[4]_OR_92_o
-                                                       ATM_Main_cont/state_FSM_FFd1-In11
-    SLICE_X13Y105.B1     net (fanout=72)       1.642   ATM_Main_cont/state_FSM_FFd1-In1
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y117.CE      net (fanout=14)       1.845   ATM_Main_cont/_n1273
-    SLICE_X3Y117.CLK     Tceck                 0.340   ATM_Main_cont/data_to_be_decrypted<63>
-                                                       ATM_Main_cont/data_to_be_decrypted_62
+    SLICE_X30Y122.AQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B4     net (fanout=12)       1.558   comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.340   comm/g<7>
+                                                       comm/g_6
     -------------------------------------------------  ---------------------------
-    Total                                      7.013ns (1.564ns logic, 5.449ns route)
-                                                       (22.3% logic, 77.7% route)
+    Total                                     12.333ns (1.556ns logic, 10.777ns route)
+                                                       (12.6% logic, 87.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.060ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/current_user_bank_id_2 (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_62 (FF)
+Slack (setup path):     7.845ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd4 (FF)
+  Destination:          comm/g_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.914ns (Levels of Logic = 4)
-  Clock Path Skew:      0.009ns (0.490 - 0.481)
+  Data Path Delay:      12.113ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.007ns (0.242 - 0.249)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -130,41 +130,38 @@ Slack (setup path):     13.060ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/current_user_bank_id_2 to ATM_Main_cont/data_to_be_decrypted_62
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd4 to comm/g_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X37Y91.CQ      Tcko                  0.391   ATM_Main_cont/current_user_bank_id<3>
-                                                       ATM_Main_cont/current_user_bank_id_2
-    SLICE_X37Y93.D1      net (fanout=2)        0.661   ATM_Main_cont/current_user_bank_id<2>
-    SLICE_X37Y93.D       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5_SW0
-    SLICE_X37Y93.C6      net (fanout=1)        0.118   N102
-    SLICE_X37Y93.C       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5
-    SLICE_X13Y105.B4     net (fanout=72)       2.326   ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y117.CE      net (fanout=14)       1.845   ATM_Main_cont/_n1273
-    SLICE_X3Y117.CLK     Tceck                 0.340   ATM_Main_cont/data_to_be_decrypted<63>
-                                                       ATM_Main_cont/data_to_be_decrypted_62
+    SLICE_X29Y122.AQ     Tcko                  0.391   comm_fpga/state_FSM_FFd4
+                                                       comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B3     net (fanout=32)       1.394   comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.340   comm/g<7>
+                                                       comm/g_6
     -------------------------------------------------  ---------------------------
-    Total                                      6.914ns (1.767ns logic, 5.147ns route)
-                                                       (25.6% logic, 74.4% route)
+    Total                                     12.113ns (1.500ns logic, 10.613ns route)
+                                                       (12.4% logic, 87.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ATM_Main_cont/data_to_be_decrypted_55 (SLICE_X3Y116.CE), 35 paths
+Paths for end point comm/g_5 (SLICE_X1Y114.CE), 15 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.960ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debouncer4/button_deb (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_55 (FF)
+Slack (setup path):     7.617ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd3 (FF)
+  Destination:          comm/g_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      9.962ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.043ns (0.585 - 0.628)
+  Data Path Delay:      12.351ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -175,35 +172,35 @@ Slack (setup path):     9.960ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debouncer4/button_deb to ATM_Main_cont/data_to_be_decrypted_55
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd3 to comm/g_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X11Y48.AQ      Tcko                  0.391   debouncer4/button_deb
-                                                       debouncer4/button_deb
-    SLICE_X27Y99.B4      net (fanout=3)        4.743   debouncer4/button_deb
-    SLICE_X27Y99.B       Tilo                  0.259   ATM_Main_cont/encrypted_data_comm<2>
-                                                       ATM_Main_cont/_n45311
-    SLICE_X13Y105.B5     net (fanout=73)       1.676   ATM_Main_cont/_n4531
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.363   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_55
+    SLICE_X30Y122.CQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B2     net (fanout=13)       1.592   comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.324   comm/g<7>
+                                                       comm/g_5
     -------------------------------------------------  ---------------------------
-    Total                                      9.962ns (1.531ns logic, 8.431ns route)
-                                                       (15.4% logic, 84.6% route)
+    Total                                     12.351ns (1.540ns logic, 10.811ns route)
+                                                       (12.5% logic, 87.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.972ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               encrypt/done (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_55 (FF)
+Slack (setup path):     7.651ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd1 (FF)
+  Destination:          comm/g_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.006ns (Levels of Logic = 3)
-  Clock Path Skew:      0.013ns (0.493 - 0.480)
+  Data Path Delay:      12.317ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -214,35 +211,35 @@ Slack (setup path):     12.972ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: encrypt/done to ATM_Main_cont/data_to_be_decrypted_55
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd1 to comm/g_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y92.DQ      Tcko                  0.447   encrypt/done
-                                                       encrypt/done
-    SLICE_X21Y92.A6      net (fanout=2)        1.765   encrypt/done
-    SLICE_X21Y92.A       Tilo                  0.259   ATM_Main_cont/state[4]_state[4]_OR_92_o
-                                                       ATM_Main_cont/state_FSM_FFd1-In11
-    SLICE_X13Y105.B1     net (fanout=72)       1.642   ATM_Main_cont/state_FSM_FFd1-In1
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.363   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_55
+    SLICE_X30Y122.AQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B4     net (fanout=12)       1.558   comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.324   comm/g<7>
+                                                       comm/g_5
     -------------------------------------------------  ---------------------------
-    Total                                      7.006ns (1.587ns logic, 5.419ns route)
-                                                       (22.7% logic, 77.3% route)
+    Total                                     12.317ns (1.540ns logic, 10.777ns route)
+                                                       (12.5% logic, 87.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.070ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/current_user_bank_id_2 (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_55 (FF)
+Slack (setup path):     7.861ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd4 (FF)
+  Destination:          comm/g_5 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.907ns (Levels of Logic = 4)
-  Clock Path Skew:      0.012ns (0.493 - 0.481)
+  Data Path Delay:      12.097ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.007ns (0.242 - 0.249)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -253,41 +250,38 @@ Slack (setup path):     13.070ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/current_user_bank_id_2 to ATM_Main_cont/data_to_be_decrypted_55
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd4 to comm/g_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X37Y91.CQ      Tcko                  0.391   ATM_Main_cont/current_user_bank_id<3>
-                                                       ATM_Main_cont/current_user_bank_id_2
-    SLICE_X37Y93.D1      net (fanout=2)        0.661   ATM_Main_cont/current_user_bank_id<2>
-    SLICE_X37Y93.D       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5_SW0
-    SLICE_X37Y93.C6      net (fanout=1)        0.118   N102
-    SLICE_X37Y93.C       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5
-    SLICE_X13Y105.B4     net (fanout=72)       2.326   ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.363   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_55
+    SLICE_X29Y122.AQ     Tcko                  0.391   comm_fpga/state_FSM_FFd4
+                                                       comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B3     net (fanout=32)       1.394   comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.324   comm/g<7>
+                                                       comm/g_5
     -------------------------------------------------  ---------------------------
-    Total                                      6.907ns (1.790ns logic, 5.117ns route)
-                                                       (25.9% logic, 74.1% route)
+    Total                                     12.097ns (1.484ns logic, 10.613ns route)
+                                                       (12.3% logic, 87.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ATM_Main_cont/data_to_be_decrypted_53 (SLICE_X3Y116.CE), 35 paths
+Paths for end point comm/g_7 (SLICE_X1Y114.CE), 15 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.961ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               debouncer4/button_deb (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_53 (FF)
+Slack (setup path):     7.625ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd3 (FF)
+  Destination:          comm/g_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      9.961ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.043ns (0.585 - 0.628)
+  Data Path Delay:      12.343ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -298,35 +292,35 @@ Slack (setup path):     9.961ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: debouncer4/button_deb to ATM_Main_cont/data_to_be_decrypted_53
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd3 to comm/g_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X11Y48.AQ      Tcko                  0.391   debouncer4/button_deb
-                                                       debouncer4/button_deb
-    SLICE_X27Y99.B4      net (fanout=3)        4.743   debouncer4/button_deb
-    SLICE_X27Y99.B       Tilo                  0.259   ATM_Main_cont/encrypted_data_comm<2>
-                                                       ATM_Main_cont/_n45311
-    SLICE_X13Y105.B5     net (fanout=73)       1.676   ATM_Main_cont/_n4531
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.362   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_53
+    SLICE_X30Y122.CQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B2     net (fanout=13)       1.592   comm_fpga/state_FSM_FFd3
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.316   comm/g<7>
+                                                       comm/g_7
     -------------------------------------------------  ---------------------------
-    Total                                      9.961ns (1.530ns logic, 8.431ns route)
-                                                       (15.4% logic, 84.6% route)
+    Total                                     12.343ns (1.532ns logic, 10.811ns route)
+                                                       (12.4% logic, 87.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     12.973ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               encrypt/done (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_53 (FF)
+Slack (setup path):     7.659ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd1 (FF)
+  Destination:          comm/g_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.005ns (Levels of Logic = 3)
-  Clock Path Skew:      0.013ns (0.493 - 0.480)
+  Data Path Delay:      12.309ns (Levels of Logic = 3)
+  Clock Path Skew:      0.003ns (0.495 - 0.492)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -337,35 +331,35 @@ Slack (setup path):     12.973ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: encrypt/done to ATM_Main_cont/data_to_be_decrypted_53
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd1 to comm/g_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X52Y92.DQ      Tcko                  0.447   encrypt/done
-                                                       encrypt/done
-    SLICE_X21Y92.A6      net (fanout=2)        1.765   encrypt/done
-    SLICE_X21Y92.A       Tilo                  0.259   ATM_Main_cont/state[4]_state[4]_OR_92_o
-                                                       ATM_Main_cont/state_FSM_FFd1-In11
-    SLICE_X13Y105.B1     net (fanout=72)       1.642   ATM_Main_cont/state_FSM_FFd1-In1
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.362   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_53
+    SLICE_X30Y122.AQ     Tcko                  0.447   comm_fpga/state_FSM_FFd3
+                                                       comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B4     net (fanout=12)       1.558   comm_fpga/state_FSM_FFd1
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.316   comm/g<7>
+                                                       comm/g_7
     -------------------------------------------------  ---------------------------
-    Total                                      7.005ns (1.586ns logic, 5.419ns route)
-                                                       (22.6% logic, 77.4% route)
+    Total                                     12.309ns (1.532ns logic, 10.777ns route)
+                                                       (12.4% logic, 87.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     13.071ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/current_user_bank_id_2 (FF)
-  Destination:          ATM_Main_cont/data_to_be_decrypted_53 (FF)
+Slack (setup path):     7.869ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga/state_FSM_FFd4 (FF)
+  Destination:          comm/g_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.906ns (Levels of Logic = 4)
-  Clock Path Skew:      0.012ns (0.493 - 0.481)
+  Data Path Delay:      12.089ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.007ns (0.242 - 0.249)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -376,34 +370,85 @@ Slack (setup path):     13.071ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/current_user_bank_id_2 to ATM_Main_cont/data_to_be_decrypted_53
+  Maximum Data Path at Slow Process Corner: comm_fpga/state_FSM_FFd4 to comm/g_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X37Y91.CQ      Tcko                  0.391   ATM_Main_cont/current_user_bank_id<3>
-                                                       ATM_Main_cont/current_user_bank_id_2
-    SLICE_X37Y93.D1      net (fanout=2)        0.661   ATM_Main_cont/current_user_bank_id<2>
-    SLICE_X37Y93.D       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5_SW0
-    SLICE_X37Y93.C6      net (fanout=1)        0.118   N102
-    SLICE_X37Y93.C       Tilo                  0.259   ATM_Main_cont/data_to_be_encrypted<31>
-                                                       ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o5
-    SLICE_X13Y105.B4     net (fanout=72)       2.326   ATM_Main_cont/current_user_bank_id[4]_bank_id[4]_equal_63_o
-    SLICE_X13Y105.B      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n4564_inv21
-    SLICE_X13Y105.A5     net (fanout=2)        0.197   ATM_Main_cont/_n4564_inv2
-    SLICE_X13Y105.A      Tilo                  0.259   ATM_Main_cont/_n4564_inv2
-                                                       ATM_Main_cont/_n12731
-    SLICE_X3Y116.CE      net (fanout=14)       1.815   ATM_Main_cont/_n1273
-    SLICE_X3Y116.CLK     Tceck                 0.362   ATM_Main_cont/data_to_be_decrypted<51>
-                                                       ATM_Main_cont/data_to_be_decrypted_53
+    SLICE_X29Y122.AQ     Tcko                  0.391   comm_fpga/state_FSM_FFd4
+                                                       comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B3     net (fanout=32)       1.394   comm_fpga/state_FSM_FFd4
+    SLICE_X25Y113.B      Tilo                  0.259   comm/h2fReady_out
+                                                       comm_fpga/Mmux_h2fValid_out11
+    SLICE_X13Y111.C5     net (fanout=6)        2.866   h2fValid
+    SLICE_X13Y111.C      Tilo                  0.259   comm/_n0421_inv1
+                                                       comm/_n0421_inv11
+    SLICE_X24Y112.D5     net (fanout=6)        2.729   comm/_n0421_inv1
+    SLICE_X24Y112.DMUX   Tilo                  0.251   comm_fpga/chanAddr<6>
+                                                       comm/_n0775_inv1
+    SLICE_X1Y114.CE      net (fanout=2)        3.624   comm/_n0775_inv
+    SLICE_X1Y114.CLK     Tceck                 0.316   comm/g<7>
+                                                       comm/g_7
     -------------------------------------------------  ---------------------------
-    Total                                      6.906ns (1.789ns logic, 5.117ns route)
-                                                       (25.9% logic, 74.1% route)
+    Total                                     12.089ns (1.476ns logic, 10.613ns route)
+                                                       (12.2% logic, 87.8% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point comm/data_recieved_34 (SLICE_X5Y113.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               comm/d_2 (FF)
+  Destination:          comm/data_recieved_34 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.397ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
+  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: comm/d_2 to comm/data_recieved_34
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y113.CQ      Tcko                  0.200   comm/d<3>
+                                                       comm/d_2
+    SLICE_X5Y113.CX      net (fanout=1)        0.138   comm/d<2>
+    SLICE_X5Y113.CLK     Tckdi       (-Th)    -0.059   comm/data_recieved<35>
+                                                       comm/data_recieved_34
+    -------------------------------------------------  ---------------------------
+    Total                                      0.397ns (0.259ns logic, 0.138ns route)
+                                                       (65.2% logic, 34.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point comm/data_recieved_2 (SLICE_X5Y118.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               comm/h_2 (FF)
+  Destination:          comm/data_recieved_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.397ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.034 - 0.032)
+  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: comm/h_2 to comm/data_recieved_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y118.CQ      Tcko                  0.200   comm/h<3>
+                                                       comm/h_2
+    SLICE_X5Y118.CX      net (fanout=1)        0.138   comm/h<2>
+    SLICE_X5Y118.CLK     Tckdi       (-Th)    -0.059   comm/data_recieved<3>
+                                                       comm/data_recieved_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.397ns (0.259ns logic, 0.138ns route)
+                                                       (65.2% logic, 34.8% route)
+
 --------------------------------------------------------------------------------
 
 Paths for end point comm/data_recieved_58 (SLICE_X5Y121.CX), 1 path
@@ -413,7 +458,7 @@ Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - 
   Destination:          comm/data_recieved_58 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.397ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.033 - 0.031)
+  Clock Path Skew:      0.002ns (0.034 - 0.032)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -433,60 +478,6 @@ Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm/restriction_total_22 (SLICE_X25Y101.CX), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm/x2_6 (FF)
-  Destination:          comm/restriction_total_22 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.397ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.036 - 0.034)
-  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: comm/x2_6 to comm/restriction_total_22
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X24Y101.CQ     Tcko                  0.200   comm/x2<7>
-                                                       comm/x2_6
-    SLICE_X25Y101.CX     net (fanout=1)        0.138   comm/x2<6>
-    SLICE_X25Y101.CLK    Tckdi       (-Th)    -0.059   comm/restriction_total<23>
-                                                       comm/restriction_total_22
-    -------------------------------------------------  ---------------------------
-    Total                                      0.397ns (0.259ns logic, 0.138ns route)
-                                                       (65.2% logic, 34.8% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point comm/data_recieved_15 (SLICE_X3Y112.DX), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm/g_7 (FF)
-  Destination:          comm/data_recieved_15 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.447ns (Levels of Logic = 0)
-  Clock Path Skew:      0.039ns (0.235 - 0.196)
-  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: comm/g_7 to comm/data_recieved_15
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X3Y111.DQ      Tcko                  0.198   comm/g<7>
-                                                       comm/g_7
-    SLICE_X3Y112.DX      net (fanout=1)        0.190   comm/g<7>
-    SLICE_X3Y112.CLK     Tckdi       (-Th)    -0.059   comm/data_recieved<15>
-                                                       comm/data_recieved_15
-    -------------------------------------------------  ---------------------------
-    Total                                      0.447ns (0.257ns logic, 0.190ns route)
-                                                       (57.5% logic, 42.5% route)
-
---------------------------------------------------------------------------------
-
 Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 Slack: 18.270ns (period - min period limit)
@@ -500,19 +491,18 @@ Slack: 18.270ns (period - min period limit)
 Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: decrypt/sum<3>/CLK
-  Logical resource: decrypt/sum_0/CK
-  Location pin: SLICE_X0Y107.CLK
+  Physical resource: debouncer5/count<3>/CLK
+  Logical resource: debouncer5/count_0/CK
+  Location pin: SLICE_X0Y83.CLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.570ns (period - (min high pulse limit / (high pulse / period)))
+Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
-  High pulse: 10.000ns
-  High pulse limit: 0.215ns (Trpw)
-  Physical resource: decrypt/sum<3>/SR
-  Logical resource: decrypt/sum_0/SR
-  Location pin: SLICE_X0Y107.SR
-  Clock network: ATM_Main_cont/done_or_reset
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: debouncer5/count<3>/CLK
+  Logical resource: debouncer5/count_1/CK
+  Location pin: SLICE_X0Y83.CLK
+  Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 
 
@@ -528,7 +518,7 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |   10.050|         |         |         |
+fx2Clk_in      |   12.399|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -537,23 +527,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 947821 paths, 0 nets, and 8796 connections
+Constraints cover 1009912 paths, 0 nets, and 9098 connections
 
 Design statistics:
-   Minimum period:  10.050ns{1}   (Maximum frequency:  99.502MHz)
+   Minimum period:  12.399ns{1}   (Maximum frequency:  80.652MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Apr 28 22:50:01 2017 
+Analysis completed Sun Apr 30 14:05:07 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 480 MB
+Peak Memory Usage: 481 MB
 
 
 
