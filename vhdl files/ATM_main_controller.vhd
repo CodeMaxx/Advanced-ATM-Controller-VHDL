@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ATM_main_controller is
-    Generic (no_of_cache_entries : integer := 4;
+    Generic (
     		value2000 : std_logic_vector(10 downto 0) := "11111010000";
     		value1000 : std_logic_vector(9 downto 0) := "1111101000";
     		value500 : std_logic_vector(8 downto 0) := "111110100";
@@ -55,17 +55,19 @@ entity ATM_main_controller is
 			restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
 			load_bank_id: in STD_LOGIC;
 
-			start_mac_comm : out STD_LOGIC;
-			done_mac_comm : in STD_LOGIC;
-			data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-			data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+			--start_mac_comm : out STD_LOGIC;
+			--done_mac_comm : in STD_LOGIC;
+			--data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			--data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
 
-			request_mac_comm : in STD_LOGIC;
-			is_suf_atm_request : in STD_LOGIC;
-			data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-			data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-			reply_mac_comm_valid : out STD_LOGIC;
-			reply_mac_comm_notvalid : out STD_LOGIC;
+			--request_mac_comm : in STD_LOGIC;
+			--is_suf_atm_request : in STD_LOGIC;
+			--data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+			--data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			--reply_mac_comm_valid : out STD_LOGIC;
+			--reply_mac_comm_notvalid : out STD_LOGIC;
+
+
 			data_balance : in STD_LOGIC_VECTOR (31 downto 0);
 			comm_success : in STD_LOGIC
 		   );
@@ -111,18 +113,19 @@ architecture Behavioral of ATM_main_controller is
 	signal money : std_logic_vector(31 downto 0);
 	signal substate : STD_LOGIC_VECTOR(2 downto 0) := "000";
 	signal is_suf_atm_signal : STD_LOGIC;
-
-	type balance is array (0 to no_of_cache_entries) of std_logic_vector(31 downto 0);
-	type id_or_password is array (0 to no_of_cache_entries) of std_logic_vector(15 downto 0);
+	signal data_balance_signal : STD_LOGIC_VECTOR(31 downto 0);
+	type balance is array (0 to 4) of std_logic_vector(31 downto 0);
+	type id_or_password is array (0 to 4) of std_logic_vector(15 downto 0);
 	signal cache_user_balance : balance;
 	signal cache_user_id : id_or_password;
 	signal cache_user_password : id_or_password;
 	signal temp_user_id : std_logic_vector(15 downto 0);
 	signal temp_user_balance : std_logic_vector(31 downto 0);
 	signal temp_user_password : std_logic_vector(15 downto 0);
-	signal substate2 : std_logic_vector(2 downto 0);
-	signal substate3 : std_logic;
-	signal last_entry_in_cache : integer range 0 to no_of_cache_entries := 0;
+	signal substate2 : std_logic_vector(2 downto 0) := "000";
+	signal substate3 : std_logic := '0';
+	signal substate4 : std_logic_vector(3 downto 0):= "0000";
+	signal check : std_logic_vector(3 downto 0) := "0000";
 
 begin
 	done_or_reset <= reset_button or done_button;
@@ -147,12 +150,17 @@ begin
 				bank_id <= data_in_sliders(4 downto 0);
 			end if;
 
-			if(done_comm = '1' and comm_success = '1' and substate3 = '0') then
+			if(done_comm = '1' and comm_success = '1' and read_input_done = '1' and substate3 = '0') then
+			--if(substate3 = '0') then
+				data_balance_signal <= data_balance;
 				substate3 <= '1';
-			elsif(substate3 = '1') then
+			elsif(substate2 /= "111" and substate3 = '1' and decrypted_data(33) = '1') then
 				if(cache_user_id(0) = data_to_be_encrypted_signal(63 downto 48)) then
-					cache_user_balance(0) <= data_balance;
+					check <= "0001";
+					cache_user_balance(0) <= data_balance_signal;
+					substate2 <= "111";
 				elsif(cache_user_id(1) = data_to_be_encrypted_signal(63 downto 48)) then
+					check <= "0010";
 					if(substate2 = "000") then
 						temp_user_id <= cache_user_id(0);
 						temp_user_password <= cache_user_password(0);
@@ -160,14 +168,17 @@ begin
 						substate2 <= "001";
 					elsif(substate2 = "001") then
 						cache_user_id(0) <= cache_user_id(1);
-						cache_user_balance(0) <= data_balance;
+						cache_user_balance(0) <= data_balance_signal;
 						cache_user_password(0) <= cache_user_password(1);
+						substate2 <= "010";
+					elsif(substate2 = "010") then
 						cache_user_id(1) <= temp_user_id;
 						cache_user_password(1) <= temp_user_password;
 						cache_user_balance(1) <= temp_user_balance;
 						substate2 <= "111";
 					end if;
 				elsif(cache_user_id(2) = data_to_be_encrypted_signal(63 downto 48)) then
+					check <= "0011";
 					if(substate2 = "000") then
 						temp_user_id <= cache_user_id(0);
 						temp_user_password <= cache_user_password(0);
@@ -175,19 +186,22 @@ begin
 						substate2 <= "001";
 					elsif(substate2 = "001") then
 						cache_user_id(0) <= cache_user_id(2);
-						cache_user_balance(0) <= data_balance;
+						cache_user_balance(0) <= data_balance_signal;
 						cache_user_password(0) <= cache_user_password(2);
-
+						substate2 <= "010";
+					elsif(substate2 = "010") then
 						cache_user_id(2) <= cache_user_id(1);
 						cache_user_balance(2) <= cache_user_balance(1);
 						cache_user_password(2) <= cache_user_password(1);
-
+						substate2 <= "011";
+					elsif(substate2 = "011") then
 						cache_user_id(1) <= temp_user_id;
 						cache_user_password(1) <= temp_user_password;
 						cache_user_balance(1) <= temp_user_balance;
 						substate2 <= "111";
 					end if;
 				elsif(cache_user_id(3) = data_to_be_encrypted_signal(63 downto 48)) then
+					check <= "0100";
 					if(substate2 = "000") then
 						temp_user_id <= cache_user_id(0);
 						temp_user_password <= cache_user_password(0);
@@ -195,23 +209,27 @@ begin
 						substate2 <= "001";
 					elsif(substate2 = "001") then
 						cache_user_id(0) <= cache_user_id(3);
-						cache_user_balance(0) <= data_balance;
+						cache_user_balance(0) <= data_balance_signal;
 						cache_user_password(0) <= cache_user_password(3);
-
-						cache_user_id(2) <= cache_user_id(1);
-						cache_user_balance(2) <= cache_user_balance(1);
-						cache_user_password(2) <= cache_user_password(1);
-
+						substate2 <= "010";
+					elsif(substate2 = "010") then
 						cache_user_id(3) <= cache_user_id(2);
 						cache_user_balance(3) <= cache_user_balance(2);
 						cache_user_password(3) <= cache_user_password(2);
-
+						substate2 <= "011";
+					elsif(substate2 = "011") then
+						cache_user_id(2) <= cache_user_id(1);
+						cache_user_balance(2) <= cache_user_balance(1);
+						cache_user_password(2) <= cache_user_password(1);
+						substate2 <= "100";
+					elsif(substate2 = "100") then
 						cache_user_id(1) <= temp_user_id;
 						cache_user_password(1) <= temp_user_password;
 						cache_user_balance(1) <= temp_user_balance;
 						substate2 <= "111";
 					end if;
 				elsif(cache_user_id(4) = data_to_be_encrypted_signal(63 downto 48)) then
+					check <= "0101";
 					if(substate2 = "000") then
 						temp_user_id <= cache_user_id(0);
 						temp_user_password <= cache_user_password(0);
@@ -219,47 +237,58 @@ begin
 						substate2 <= "001";
 					elsif(substate2 = "001") then
 						cache_user_id(0) <= cache_user_id(4);
-						cache_user_balance(0) <= data_balance;
+						cache_user_balance(0) <= data_balance_signal;
 						cache_user_password(0) <= cache_user_password(4);
-
-						cache_user_id(2) <= cache_user_id(1);
-						cache_user_balance(2) <= cache_user_balance(1);
-						cache_user_password(2) <= cache_user_password(1);
-
-						cache_user_id(3) <= cache_user_id(2);
-						cache_user_balance(3) <= cache_user_balance(2);
-						cache_user_password(3) <= cache_user_password(2);
-
+						substate2 <= "010";
+					elsif(substate2 = "010") then
 						cache_user_id(4) <= cache_user_id(3);
 						cache_user_balance(4) <= cache_user_balance(3);
 						cache_user_password(4) <= cache_user_password(3);
-
+						substate2 <= "011";
+					elsif(substate2 = "011") then
+						cache_user_id(3) <= cache_user_id(2);
+						cache_user_balance(3) <= cache_user_balance(2);
+						cache_user_password(3) <= cache_user_password(2);
+						substate2 <= "100";
+					elsif(substate2 = "100") then
+						cache_user_id(2) <= cache_user_id(1);
+						cache_user_balance(2) <= cache_user_balance(1);
+						cache_user_password(2) <= cache_user_password(1);						
+						substate2 <= "101";
+					elsif(substate2 = "101") then
 						cache_user_id(1) <= temp_user_id;
 						cache_user_password(1) <= temp_user_password;
 						cache_user_balance(1) <= temp_user_balance;
 						substate2 <= "111";
 					end if;
 				else
-
-					cache_user_id(0) <= data_to_be_encrypted_signal(63 downto 48);
-					cache_user_balance(0) <= data_to_be_encrypted_signal(31 downto 0);
-					cache_user_password(0) <= data_to_be_encrypted_signal(47 downto 32);
-
-					cache_user_id(2) <= cache_user_id(1);
-					cache_user_balance(2) <= cache_user_balance(1);
-					cache_user_password(2) <= cache_user_password(1);
-
-					cache_user_id(3) <= cache_user_id(2);
-					cache_user_balance(3) <= cache_user_balance(2);
-					cache_user_password(3) <= cache_user_password(2);
-
-					cache_user_id(4) <= cache_user_id(3);
-					cache_user_balance(4) <= cache_user_balance(3);
-					cache_user_password(4) <= cache_user_password(3);
-
-					cache_user_id(1) <= cache_user_id(0);
-					cache_user_password(1) <= cache_user_id(0);
-					cache_user_balance(1) <= cache_user_balance(0);
+					check <= "1111";
+					if(substate2 = "000") then
+						cache_user_id(4) <= cache_user_id(3);
+						cache_user_balance(4) <= cache_user_balance(3);
+						cache_user_password(4) <= cache_user_password(3);
+						substate2 <= "010";
+					elsif(substate2 = "010") then
+						cache_user_id(3) <= cache_user_id(2);
+						cache_user_balance(3) <= cache_user_balance(2);
+						cache_user_password(3) <= cache_user_password(2);
+						substate2 <= "011";
+					elsif(substate2 = "011") then
+						cache_user_id(2) <= cache_user_id(1);
+						cache_user_balance(2) <= cache_user_balance(1);
+						cache_user_password(2) <= cache_user_password(1);
+						substate2 <= "100";
+					elsif(substate2 = "100") then
+						cache_user_id(1) <= cache_user_id(0);
+						cache_user_password(1) <= cache_user_id(0);
+						cache_user_balance(1) <= cache_user_balance(0);
+						substate2 <= "101";
+					elsif(substate2 = "101") then
+						cache_user_id(0) <= data_to_be_encrypted_signal(63 downto 48);
+						cache_user_balance(0) <= data_to_be_encrypted_signal(31 downto 0);
+						cache_user_password(0) <= data_to_be_encrypted_signal(47 downto 32);
+						substate2 <= "111";
+					end if;
 				end if;
 			end if;
 
@@ -344,13 +373,14 @@ begin
 				state <= "00011";				--communicating_with_backend
 				encrypted_data_comm <= encrypted_data;
 				start_comm <= '1';
-			elsif(state = "00011" and done_comm = '1' and comm_success <= '1') then
+			elsif(state = "00011" and done_comm = '1' and comm_success = '1') then
 				start_comm <= '0';
 				state <= "00100";				--backend communication done + decrption start
 				data_to_be_decrypted <= decrypted_data_comm;
 				start_decrypt <= '1';
 
-			elsif(state = "00011" and done_comm = '1' and comm_success <= '0') then
+			elsif(state = "00011" and done_comm = '1' and comm_success = '0') then
+				start_comm <= '0';
 				if(cache_user_id(0) = data_to_be_encrypted_signal(63 downto 48) and cache_user_password(0) = data_to_be_encrypted_signal(47 downto 32)) then
 					if(cache_user_balance(0) < data_to_be_encrypted_signal(31 downto 0)) then
 						state <= "00110"; 						--user with insufficient balance
@@ -438,57 +468,101 @@ begin
 
 
 
-			elsif(state = "00010" and done_encrypt = '1') then --- User of different bank
-				start_encrypt <= '0';
-				state <= "10011";
-				data_send_mac_comm <= encrypted_data;
-				start_mac_comm <= '1';
-			elsif(state = "10011" and done_mac_comm = '1' ) then
-				start_mac_comm <= '0';
-				state <= "10100";				--backend communication done + decryption start
-				data_to_be_decrypted <= data_response_mac_comm;
-				start_decrypt <= '1';
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
-				start_decrypt <= '0';
-				money <= decrypted_data(31 downto 0);
-				state <= "10101"; 						--user with sufficient balance and less than restricted total
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
-				state <= "11111";
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
-				state <= "10110"; 						--user with insufficient balance
-			elsif(state = "10100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
-				state <= "00000";
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
-				state <= "00000";
+			--elsif(state = "00010" and done_encrypt = '1') then --- User of different bank
+			--	start_encrypt <= '0';
+			--	state <= "10011";
+			--	data_send_mac_comm <= encrypted_data;
+			--	start_mac_comm <= '1';
+			--elsif(state = "10011" and done_mac_comm = '1' ) then
+			--	start_mac_comm <= '0';
+			--	state <= "10100";				--backend communication done + decryption start
+			--	data_to_be_decrypted <= data_response_mac_comm;
+			--	start_decrypt <= '1';
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
+			--	start_decrypt <= '0';
+			--	money <= decrypted_data(31 downto 0);
+			--	state <= "10101"; 						--user with sufficient balance and less than restricted total
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
+			--	state <= "11111";
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
+			--	state <= "10110"; 						--user with insufficient balance
+			--elsif(state = "10100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
+			--	state <= "00000";
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
+			--	state <= "00000";
 
 			elsif(done_button = '1') then
 				state <= "00000";
 			end if;
 			
 			if(state = "00000") then
-				data_out_leds <= "000000"& done_comm & comm_success;				--ready state
-				count_blink <= "000";
-				is_suf_atm <= '0';
-				is_suf_atm_signal <= '0';
-				substate <= "000";
-				substate2 <= "000";
-				money <= X"00000000";
-				start_decrypt <= '0';
-				start_comm <= '0';
-				start_mac_comm <= '0';
-				start_encrypt <= '0';
-				double_time <= '1';
-				d2000 <= X"00";
-				d1000 <= X"00";
-				substate3 <= '0';
-				substate2 <= "000";
-				d500 <= X"00";
-				d100 <= X"00";
-				finish_display <= '0';
+				if(substate4 = "0000") then
+					data_out_leds <= check & timer_inp & timer_inp & timer_inp & timer_inp;				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0001";
+					end if;
+				elsif(substate4 = "0001") then
+					data_out_leds <= cache_user_id(0)(15 downto 8);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0010";
+					end if;
+				elsif(substate4 = "0010") then
+					data_out_leds <= cache_user_id(0)(7 downto 0);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0011";
+					end if;
+				elsif(substate4 = "0011") then
+					data_out_leds <= cache_user_password(0)(15 downto 8);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0100";
+					end if;
+				elsif(substate4 = "0100") then
+					data_out_leds <= cache_user_password(0)(7 downto 0);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0101";
+					end if;
+				elsif(substate4 = "0101") then
+					data_out_leds <= data_balance_signal(31 downto 24);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0110";
+					end if;
+				elsif(substate4 = "0110") then
+					data_out_leds <= data_balance_signal(23 downto 16);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0111";
+					end if;
+				elsif(substate4 = "0111") then
+					data_out_leds <= data_balance_signal(15 downto 8);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "1000";
+					end if;
+				elsif(substate4 = "1000") then
+					data_out_leds <= data_balance_signal(7 downto 0);				--ready state
+					if(is_blink = '1') then
+						substate4 <= "0000";
+					end if;
+				end if;
+					count_blink <= "000";
+					is_suf_atm <= '0';
+					is_suf_atm_signal <= '0';
+					substate <= "000";
+					money <= X"00000000";
+					start_decrypt <= '0';
+					start_comm <= '0';
+					--start_mac_comm <= '0';
+					start_encrypt <= '0';
+					double_time <= '1';
+					d2000 <= X"00";
+					d1000 <= X"00";
+					substate3 <= '0';
+					substate2 <= "000";
+					d500 <= X"00";
+					d100 <= X"00";
+					finish_display <= '0';
 			elsif(state = "00001") then
 				data_out_leds <= timer_inp & data_collected_so_far & "0000";	--get_user_input
 			elsif(state = "00011" or state = "10011") then
-				data_out_leds <= timer_inp & timer_inp & "000000";		--communicating_with_backend
+				data_out_leds <= timer_inp & timer_inp & "0000" & done_comm & comm_success;		--communicating_with_backend
 			elsif((state = "00111" or state = "10111") and count_blink < "101") then
 				data_out_leds <= 	timer_inp & timer_inp & timer_inp & "00000"; -- admin (Loading cash)
 				if(is_blink = '1') then

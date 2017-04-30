@@ -8,7 +8,106 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/crc.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/crc32.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/ethernet.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/ethernet_types.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/ethernet_with_fifos.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/framing.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/framing_common.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/mii_gmii.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/mii_gmii_io.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/miim.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/miim_control.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/miim_registers.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/miim_types.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/reset_generator.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/rx_fifo.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/single_signal_synchronizer.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/tx_fifo_adapter.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/utility.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/fixed_input_delay.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/input_buffer.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/mii_gmii_io_spartan6.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/output_buffer.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/single_signal_synchronizer_spartan6.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/tx_fifo.vhd&quot; into library ethernet_mac</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/ATM_main_controller.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/comm_fpga_fx2.vhdl&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/communication.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/debouncer.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/decryptor.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/encrypter.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/mac_communication.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/read_multiple_data_bytes.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/timer.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/kanak/CS254/Advanced-ATM-Controller-VHDL/frontend/top_module.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

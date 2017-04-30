@@ -1,7 +1,5 @@
 vhdl work "../vhdl files/timer.vhd"
 vhdl work "../vhdl files/read_multiple_data_bytes.vhd"
-vhdl ethernet_mac "../ethernet_mac/ethernet_types.vhd"
-vhdl work "../vhdl files/mac_communication.vhd"
 vhdl work "../vhdl files/encrypter.vhd"
 vhdl work "../vhdl files/decryptor.vhd"
 vhdl work "../vhdl files/debouncer.vhd"

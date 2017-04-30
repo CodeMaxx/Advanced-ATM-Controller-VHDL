@@ -122,17 +122,17 @@ architecture Behavioral of top_module is
 		  load_bank_id: in STD_LOGIC;
 
 
-		  start_mac_comm : out STD_LOGIC;
-		  done_mac_comm : in STD_LOGIC;
-		  data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  --start_mac_comm : out STD_LOGIC;
+		  --done_mac_comm : in STD_LOGIC;
+		  --data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  --data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
 		  
-		  request_mac_comm : in STD_LOGIC;
-		  is_suf_atm_request : in STD_LOGIC;
-		  data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  reply_mac_comm_valid : out STD_LOGIC;
-		  reply_mac_comm_notvalid : out STD_LOGIC;
+		  --request_mac_comm : in STD_LOGIC;
+		  --is_suf_atm_request : in STD_LOGIC;
+		  --data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		  --data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		  --reply_mac_comm_valid : out STD_LOGIC;
+		  --reply_mac_comm_notvalid : out STD_LOGIC;
 
 		  data_balance : in STD_LOGIC_VECTOR (31 downto 0);
 		comm_success : in STD_LOGIC
@@ -140,23 +140,23 @@ architecture Behavioral of top_module is
 	 end component;
 	
 
-	 component mac_communication
-	 	port(
-		  clk : in STD_LOGIC;
-	  	  start_mac_comm : in STD_LOGIC;
-		  done_mac_comm : out STD_LOGIC;
-		  data_send_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  data_response_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  is_suf_atm : in STD_LOGIC;
+	 --component mac_communication
+	 --	port(
+		--  clk : in STD_LOGIC;
+	 -- 	  start_mac_comm : in STD_LOGIC;
+		--  done_mac_comm : out STD_LOGIC;
+		--  data_send_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		--  data_response_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		--  is_suf_atm : in STD_LOGIC;
 		  
-		  request_mac_comm : out STD_LOGIC;
-		  is_suf_atm_request : out STD_LOGIC;
-		  data_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-		  data_reply_to_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  reply_mac_comm_valid : in STD_LOGIC;
-		  reply_mac_comm_notvalid : in STD_LOGIC
-		  );
-	 end component;
+		--  request_mac_comm : out STD_LOGIC;
+		--  is_suf_atm_request : out STD_LOGIC;
+		--  data_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+		--  data_reply_to_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+		--  reply_mac_comm_valid : in STD_LOGIC;
+		--  reply_mac_comm_notvalid : in STD_LOGIC
+		--  );
+	 --end component;
 
     component debouncer
         port(clk: in STD_LOGIC;
@@ -314,17 +314,17 @@ signal encrypted_data_comm: STD_LOGIC_VECTOR (63 downto 0);
 signal decrypted_data_comm: STD_LOGIC_VECTOR (63 downto 0);
 signal done_or_reset : STD_LOGIC;
 
-signal start_mac_comm : STD_LOGIC;
-signal done_mac_comm : STD_LOGIC;
-signal data_send_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
-signal data_response_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+--signal start_mac_comm : STD_LOGIC;
+--signal done_mac_comm : STD_LOGIC;
+--signal data_send_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+--signal data_response_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
 		  
-signal request_mac_comm : STD_LOGIC;
-signal is_suf_atm_request : STD_LOGIC;
-signal data_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
-signal data_reply_to_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
-signal reply_mac_comm_valid : STD_LOGIC;
-signal reply_mac_comm_notvalid : STD_LOGIC;
+--signal request_mac_comm : STD_LOGIC;
+--signal is_suf_atm_request : STD_LOGIC;
+--signal data_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+--signal data_reply_to_request_mac_comm : STD_LOGIC_VECTOR (63 downto 0);
+--signal reply_mac_comm_valid : STD_LOGIC;
+--signal reply_mac_comm_notvalid : STD_LOGIC;
 
 signal data_balance : STD_LOGIC_VECTOR (31 downto 0);
 signal comm_success : STD_LOGIC;
@@ -435,16 +435,16 @@ ATM_Main_cont : ATM_main_controller
 							restriction_100 => restriction_100,
 							restriction_total => restriction_total,
 							load_bank_id => debounced_load_bank_id,
-							start_mac_comm => start_mac_comm,
-							done_mac_comm => done_mac_comm,
-							data_send_mac_comm => data_send_mac_comm,
-							data_response_mac_comm => data_response_mac_comm,
-							request_mac_comm => request_mac_comm,
-							is_suf_atm_request => is_suf_atm_request,
-							data_request_mac_comm => data_request_mac_comm,
-							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
-							reply_mac_comm_valid => reply_mac_comm_valid,
-							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
+							--start_mac_comm => start_mac_comm,
+							--done_mac_comm => done_mac_comm,
+							--data_send_mac_comm => data_send_mac_comm,
+							--data_response_mac_comm => data_response_mac_comm,
+							--request_mac_comm => request_mac_comm,
+							--is_suf_atm_request => is_suf_atm_request,
+							--data_request_mac_comm => data_request_mac_comm,
+							--data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
+							--reply_mac_comm_valid => reply_mac_comm_valid,
+							--reply_mac_comm_notvalid => reply_mac_comm_notvalid,
 							data_balance => data_balance,
 							comm_success => comm_success
 							);
@@ -473,21 +473,21 @@ comm : communication
 							data_balance => data_balance,
 							comm_success => comm_success							
 					);
-mac_comm : mac_communication
-		port map(
-			clk => fx2Clk_in,
-							start_mac_comm => start_mac_comm,
-							done_mac_comm => done_mac_comm,
-							data_send_mac_comm => data_send_mac_comm,
-							data_response_mac_comm => data_response_mac_comm,
-							request_mac_comm => request_mac_comm,
-							is_suf_atm_request => is_suf_atm_request,
-							data_request_mac_comm => data_request_mac_comm,
-							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
-							reply_mac_comm_valid => reply_mac_comm_valid,
-							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
-							is_suf_atm => is_suf_atm
-			);
+--mac_comm : mac_communication
+--		port map(
+--			clk => fx2Clk_in,
+--							start_mac_comm => start_mac_comm,
+--							done_mac_comm => done_mac_comm,
+--							data_send_mac_comm => data_send_mac_comm,
+--							data_response_mac_comm => data_response_mac_comm,
+--							request_mac_comm => request_mac_comm,
+--							is_suf_atm_request => is_suf_atm_request,
+--							data_request_mac_comm => data_request_mac_comm,
+--							data_reply_to_request_mac_comm => data_reply_to_request_mac_comm,
+--							reply_mac_comm_valid => reply_mac_comm_valid,
+--							reply_mac_comm_notvalid => reply_mac_comm_notvalid,
+--							is_suf_atm => is_suf_atm
+--			);
 
 	--ethernet_with_mac : entity ethernet_mac.ethernet_with_fifos
 	--port map(

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: top_module.prj
@@ -117,11 +117,6 @@ Parsing architecture <Behavioral> of entity <timer>.
 Parsing VHDL file "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/read_multiple_data_bytes.vhd" into library work
 Parsing entity <read_multiple_data_bytes>.
 Parsing architecture <Behavioral> of entity <read_multiple_data_bytes>.
-Parsing VHDL file "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/ethernet_types.vhd" into library ethernet_mac
-Parsing package <ethernet_types>.
-Parsing VHDL file "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/mac_communication.vhd" into library work
-Parsing entity <mac_communication>.
-Parsing architecture <Behavioral> of entity <mac_communication>.
 Parsing VHDL file "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/encrypter.vhd" into library work
 Parsing entity <encrypter>.
 Parsing architecture <Behavioral> of entity <encrypter>.
@@ -165,8 +160,6 @@ Elaborating entity <timer> (architecture <Behavioral>) with generics from librar
 Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <communication> (architecture <Behavioral>) with generics from library <work>.
-
-Elaborating entity <mac_communication> (architecture <Behavioral>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -288,27 +281,22 @@ Unit <decrypter> synthesized.
 
 Synthesizing Unit <ATM_main_controller>.
     Related source file is "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/ATM_main_controller.vhd".
-        no_of_cache_entries = 4
         value2000 = "11111010000"
         value1000 = "1111101000"
         value500 = "111110100"
         value100 = "1100100"
-WARNING:Xst:647 - Input <data_request_mac_comm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <request_mac_comm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <is_suf_atm_request> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <data_reply_to_request_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <reply_mac_comm_valid> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <reply_mac_comm_notvalid> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <data_balance_signal>.
     Found 1-bit register for signal <substate3>.
+    Found 4-bit register for signal <check>.
     Found 32-bit register for signal <cache_user_balance<0>>.
     Found 32-bit register for signal <cache_user_balance<1>>.
     Found 32-bit register for signal <cache_user_balance<2>>.
     Found 32-bit register for signal <cache_user_balance<3>>.
     Found 32-bit register for signal <cache_user_balance<4>>.
+    Found 3-bit register for signal <substate2>.
     Found 16-bit register for signal <temp_user_id>.
     Found 16-bit register for signal <temp_user_password>.
     Found 32-bit register for signal <temp_user_balance>.
-    Found 3-bit register for signal <substate2>.
     Found 16-bit register for signal <cache_user_id<0>>.
     Found 16-bit register for signal <cache_user_id<1>>.
     Found 16-bit register for signal <cache_user_id<2>>.
@@ -339,46 +327,57 @@ WARNING:Xst:653 - Signal <reply_mac_comm_notvalid> is used but never assigned. T
     Found 1-bit register for signal <start_comm>.
     Found 64-bit register for signal <data_to_be_decrypted>.
     Found 1-bit register for signal <start_decrypt>.
-    Found 64-bit register for signal <data_send_mac_comm>.
-    Found 1-bit register for signal <start_mac_comm>.
     Found 8-bit register for signal <data_out_leds>.
+    Found 4-bit register for signal <substate4>.
     Found 3-bit register for signal <count_blink>.
     Found 1-bit register for signal <double_time>.
     Found 1-bit register for signal <finish_display>.
     Found 5-bit register for signal <bank_id>.
-    Found finite state machine <FSM_1> for signal <substate2>.
+    Found finite state machine <FSM_1> for signal <substate4>.
     -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 17                                             |
-    | Inputs             | 9                                              |
+    | States             | 9                                              |
+    | Transitions        | 27                                             |
+    | Inputs             | 2                                              |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | state[4]_GND_27_o_equal_550_o (positive)       |
-    | Reset type         | synchronous                                    |
-    | Reset State        | 000                                            |
+    | Power Up State     | 0000                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_2> for signal <substate>.
+    Found finite state machine <FSM_3> for signal <substate>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
     | Transitions        | 51                                             |
     | Inputs             | 17                                             |
     | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | state[4]_GND_27_o_equal_550_o (positive)       |
+    | Reset              | state[4]_GND_27_o_equal_657_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | 000                                            |
     | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_3> for signal <state>.
+    Found finite state machine <FSM_4> for signal <substate2>.
     -----------------------------------------------------------------------
-    | States             | 15                                             |
-    | Transitions        | 47                                             |
-    | Inputs             | 32                                             |
-    | Outputs            | 20                                             |
+    | States             | 7                                              |
+    | Transitions        | 55                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 6                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | state[4]_GND_27_o_equal_657_o (positive)       |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 127                                            |
+    | Inputs             | 30                                             |
+    | Outputs            | 14                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | reset_button (positive)                        |
     | Reset type         | synchronous                                    |
@@ -387,71 +386,70 @@ WARNING:Xst:653 - Signal <reply_mac_comm_notvalid> is used but never assigned. T
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <d2000[7]_GND_27_o_add_260_OUT> created at line 309.
-    Found 8-bit adder for signal <d1000[7]_GND_27_o_add_270_OUT> created at line 316.
-    Found 8-bit adder for signal <d500[7]_GND_27_o_add_280_OUT> created at line 323.
-    Found 8-bit adder for signal <d100[7]_GND_27_o_add_290_OUT> created at line 330.
-    Found 3-bit adder for signal <count_blink[2]_GND_27_o_add_711_OUT> created at line 605.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_258_OUT<7:0>> created at line 307.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_260_OUT<31:0>> created at line 308.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_268_OUT<7:0>> created at line 314.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_270_OUT<31:0>> created at line 315.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_278_OUT<7:0>> created at line 321.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_280_OUT<31:0>> created at line 322.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_288_OUT<7:0>> created at line 328.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_290_OUT<31:0>> created at line 329.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_334_OUT<31:0>> created at line 359.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_342_OUT<31:0>> created at line 369.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_350_OUT<31:0>> created at line 379.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_358_OUT<31:0>> created at line 389.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_366_OUT<31:0>> created at line 399.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_594_OUT<7:0>> created at line 538.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_604_OUT<7:0>> created at line 547.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_614_OUT<7:0>> created at line 556.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_624_OUT<7:0>> created at line 565.
-    Found 16-bit comparator equal for signal <cache_user_id[0][15]_data_to_be_encrypted_signal[63]_equal_2_o> created at line 153
-    Found 16-bit comparator equal for signal <cache_user_id[1][15]_data_to_be_encrypted_signal[63]_equal_3_o> created at line 155
-    Found 16-bit comparator equal for signal <cache_user_id[2][15]_data_to_be_encrypted_signal[63]_equal_23_o> created at line 170
-    Found 16-bit comparator equal for signal <cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_49_o> created at line 190
-    Found 16-bit comparator equal for signal <cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_81_o> created at line 214
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_259_o> created at line 307
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_269_o> created at line 314
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_279_o> created at line 321
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_289_o> created at line 328
-    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_328_o> created at line 342
-    Found 16-bit comparator equal for signal <cache_user_password[0][15]_data_to_be_encrypted_signal[47]_equal_332_o> created at line 354
-    Found 32-bit comparator greater for signal <cache_user_balance[0][31]_data_to_be_encrypted_signal[31]_LessThan_333_o> created at line 355
-    Found 16-bit comparator equal for signal <cache_user_password[1][15]_data_to_be_encrypted_signal[47]_equal_340_o> created at line 364
-    Found 32-bit comparator greater for signal <cache_user_balance[1][31]_data_to_be_encrypted_signal[31]_LessThan_341_o> created at line 365
-    Found 16-bit comparator equal for signal <cache_user_password[2][15]_data_to_be_encrypted_signal[47]_equal_348_o> created at line 374
-    Found 32-bit comparator greater for signal <cache_user_balance[2][31]_data_to_be_encrypted_signal[31]_LessThan_349_o> created at line 375
-    Found 16-bit comparator equal for signal <cache_user_password[3][15]_data_to_be_encrypted_signal[47]_equal_356_o> created at line 384
-    Found 32-bit comparator greater for signal <cache_user_balance[3][31]_data_to_be_encrypted_signal[31]_LessThan_357_o> created at line 385
-    Found 16-bit comparator equal for signal <cache_user_password[4][15]_data_to_be_encrypted_signal[47]_equal_364_o> created at line 394
-    Found 32-bit comparator greater for signal <cache_user_balance[4][31]_data_to_be_encrypted_signal[31]_LessThan_365_o> created at line 395
-    Found 32-bit comparator greater for signal <n0355> created at line 413
-    Found 32-bit comparator greater for signal <n0372> created at line 451
-    Found 3-bit comparator greater for signal <count_blink[2]_GND_27_o_LessThan_564_o> created at line 499
-    Found 32-bit comparator greater for signal <n0596> created at line 531
-    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_589_o> created at line 531
-    Found 8-bit comparator greater for signal <GND_27_o_n2000[7]_LessThan_590_o> created at line 531
-    Found 32-bit comparator greater for signal <n0607> created at line 540
-    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_599_o> created at line 540
-    Found 8-bit comparator greater for signal <GND_27_o_n1000[7]_LessThan_600_o> created at line 540
-    Found 32-bit comparator greater for signal <n0618> created at line 549
-    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_609_o> created at line 549
-    Found 8-bit comparator greater for signal <GND_27_o_n500[7]_LessThan_610_o> created at line 549
-    Found 32-bit comparator greater for signal <n0629> created at line 558
-    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_619_o> created at line 558
-    Found 8-bit comparator greater for signal <GND_27_o_n100[7]_LessThan_620_o> created at line 558
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_671_o> created at line 583
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_711_o> created at line 602
+    Found 8-bit adder for signal <d2000[7]_GND_27_o_add_404_OUT> created at line 338.
+    Found 8-bit adder for signal <d1000[7]_GND_27_o_add_414_OUT> created at line 345.
+    Found 8-bit adder for signal <d500[7]_GND_27_o_add_424_OUT> created at line 352.
+    Found 8-bit adder for signal <d100[7]_GND_27_o_add_434_OUT> created at line 359.
+    Found 3-bit adder for signal <count_blink[2]_GND_27_o_add_854_OUT> created at line 679.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_402_OUT<7:0>> created at line 336.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_404_OUT<31:0>> created at line 337.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_412_OUT<7:0>> created at line 343.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_414_OUT<31:0>> created at line 344.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_422_OUT<7:0>> created at line 350.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_424_OUT<31:0>> created at line 351.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_432_OUT<7:0>> created at line 357.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_434_OUT<31:0>> created at line 358.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_478_OUT<31:0>> created at line 389.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_486_OUT<31:0>> created at line 399.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_494_OUT<31:0>> created at line 409.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_502_OUT<31:0>> created at line 419.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_510_OUT<31:0>> created at line 429.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_737_OUT<7:0>> created at line 612.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_747_OUT<7:0>> created at line 621.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_757_OUT<7:0>> created at line 630.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_767_OUT<7:0>> created at line 639.
+    Found 16-bit comparator equal for signal <cache_user_id[0][15]_data_to_be_encrypted_signal[63]_equal_3_o> created at line 158
+    Found 16-bit comparator equal for signal <cache_user_id[1][15]_data_to_be_encrypted_signal[63]_equal_4_o> created at line 162
+    Found 16-bit comparator equal for signal <cache_user_id[2][15]_data_to_be_encrypted_signal[63]_equal_29_o> created at line 180
+    Found 16-bit comparator equal for signal <cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o> created at line 203
+    Found 16-bit comparator equal for signal <cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_124_o> created at line 231
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_403_o> created at line 336
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_413_o> created at line 343
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_423_o> created at line 350
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_433_o> created at line 357
+    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_472_o> created at line 371
+    Found 16-bit comparator equal for signal <cache_user_password[0][15]_data_to_be_encrypted_signal[47]_equal_476_o> created at line 384
+    Found 32-bit comparator greater for signal <cache_user_balance[0][31]_data_to_be_encrypted_signal[31]_LessThan_477_o> created at line 385
+    Found 16-bit comparator equal for signal <cache_user_password[1][15]_data_to_be_encrypted_signal[47]_equal_484_o> created at line 394
+    Found 32-bit comparator greater for signal <cache_user_balance[1][31]_data_to_be_encrypted_signal[31]_LessThan_485_o> created at line 395
+    Found 16-bit comparator equal for signal <cache_user_password[2][15]_data_to_be_encrypted_signal[47]_equal_492_o> created at line 404
+    Found 32-bit comparator greater for signal <cache_user_balance[2][31]_data_to_be_encrypted_signal[31]_LessThan_493_o> created at line 405
+    Found 16-bit comparator equal for signal <cache_user_password[3][15]_data_to_be_encrypted_signal[47]_equal_500_o> created at line 414
+    Found 32-bit comparator greater for signal <cache_user_balance[3][31]_data_to_be_encrypted_signal[31]_LessThan_501_o> created at line 415
+    Found 16-bit comparator equal for signal <cache_user_password[4][15]_data_to_be_encrypted_signal[47]_equal_508_o> created at line 424
+    Found 32-bit comparator greater for signal <cache_user_balance[4][31]_data_to_be_encrypted_signal[31]_LessThan_509_o> created at line 425
+    Found 32-bit comparator greater for signal <n0524> created at line 443
+    Found 3-bit comparator greater for signal <count_blink[2]_GND_27_o_LessThan_707_o> created at line 573
+    Found 32-bit comparator greater for signal <n0737> created at line 605
+    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_732_o> created at line 605
+    Found 8-bit comparator greater for signal <GND_27_o_n2000[7]_LessThan_733_o> created at line 605
+    Found 32-bit comparator greater for signal <n0748> created at line 614
+    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_742_o> created at line 614
+    Found 8-bit comparator greater for signal <GND_27_o_n1000[7]_LessThan_743_o> created at line 614
+    Found 32-bit comparator greater for signal <n0759> created at line 623
+    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_752_o> created at line 623
+    Found 8-bit comparator greater for signal <GND_27_o_n500[7]_LessThan_753_o> created at line 623
+    Found 32-bit comparator greater for signal <n0770> created at line 632
+    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_762_o> created at line 632
+    Found 8-bit comparator greater for signal <GND_27_o_n100[7]_LessThan_763_o> created at line 632
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_814_o> created at line 657
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_854_o> created at line 676
     Summary:
 	inferred  22 Adder/Subtractor(s).
-	inferred 766 D-type flip-flop(s).
-	inferred  37 Comparator(s).
-	inferred 405 Multiplexer(s).
-	inferred   3 Finite State Machine(s).
+	inferred 737 D-type flip-flop(s).
+	inferred  36 Comparator(s).
+	inferred 412 Multiplexer(s).
+	inferred   4 Finite State Machine(s).
 Unit <ATM_main_controller> synthesized.
 
 Synthesizing Unit <timer>.
@@ -477,7 +475,7 @@ Synthesizing Unit <read_multiple_data_bytes>.
     Found 1-bit register for signal <done>.
     Found 64-bit register for signal <data>.
     Found 1-bit register for signal <prev_value>.
-    Found finite state machine <FSM_4> for signal <state>.
+    Found finite state machine <FSM_5> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -506,7 +504,9 @@ Synthesizing Unit <communication>.
     Related source file is "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/communication.vhd".
         wait_cycles = "1110111001101011001010000000"
     Found 8-bit register for signal <checkuser>.
-    Found 1-bit register for signal <h2fReady_out>.
+    Found 1-bit register for signal <comm_success>.
+    Found 1-bit register for signal <done_comm>.
+    Found 28-bit register for signal <count>.
     Found 8-bit register for signal <restriction_2000>.
     Found 8-bit register for signal <restriction_1000>.
     Found 8-bit register for signal <restriction_500>.
@@ -516,7 +516,6 @@ Synthesizing Unit <communication>.
     Found 8-bit register for signal <x3>.
     Found 8-bit register for signal <x4>.
     Found 32-bit register for signal <restriction_total>.
-    Found 1-bit register for signal <f2hValid_out>.
     Found 8-bit register for signal <f2hData_out>.
     Found 8-bit register for signal <a>.
     Found 8-bit register for signal <b>.
@@ -532,63 +531,14 @@ Synthesizing Unit <communication>.
     Found 8-bit register for signal <b4>.
     Found 64-bit register for signal <data_recieved>.
     Found 32-bit register for signal <data_balance>.
-    Found 28-bit adder for signal <temp[27]_GND_30_o_add_17_OUT> created at line 107.
-WARNING:Xst:737 - Found 1-bit latch for signal <state<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <state<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <temp<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <comm_success>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 28-bit comparator greater for signal <temp[27]_PWR_21_o_LessThan_11_o> created at line 95
-    Found 28-bit comparator greater for signal <temp[27]_PWR_21_o_LessThan_12_o> created at line 97
+    Found 28-bit adder for signal <count[27]_GND_30_o_add_4_OUT> created at line 97.
+    Found 8-bit comparator greater for signal <checkuser[7]_GND_30_o_LessThan_7_o> created at line 99
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred 306 D-type flip-flop(s).
-	inferred  31 Latch(s).
-	inferred   2 Comparator(s).
-	inferred  95 Multiplexer(s).
+	inferred 334 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   9 Multiplexer(s).
 Unit <communication> synthesized.
-
-Synthesizing Unit <mac_communication>.
-    Related source file is "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/mac_communication.vhd".
-WARNING:Xst:647 - Input <data_send_mac_comm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <data_reply_to_request_mac_comm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <is_suf_atm> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <reply_mac_comm_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <reply_mac_comm_notvalid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <data_response_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <data_request_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <request_mac_comm> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <is_suf_atm_request> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 1-bit register for signal <done_mac_comm>.
-    Summary:
-	inferred   1 D-type flip-flop(s).
-Unit <mac_communication> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -608,41 +558,40 @@ Macro Statistics
  8-bit adder                                           : 4
  8-bit subtractor                                      : 8
 # Registers                                            : 113
- 1-bit register                                        : 32
+ 1-bit register                                        : 30
  16-bit register                                       : 12
  17-bit register                                       : 1
  20-bit register                                       : 5
  25-bit register                                       : 1
+ 28-bit register                                       : 1
  3-bit register                                        : 1
- 32-bit register                                       : 15
- 4-bit register                                        : 1
+ 32-bit register                                       : 16
+ 4-bit register                                        : 2
  5-bit register                                        : 2
  6-bit register                                        : 2
- 64-bit register                                       : 9
+ 64-bit register                                       : 8
  7-bit register                                        : 1
  8-bit register                                        : 31
-# Latches                                              : 31
- 1-bit latch                                           : 31
-# Comparators                                          : 46
+# Comparators                                          : 44
  16-bit comparator equal                               : 10
  25-bit comparator greater                             : 2
- 28-bit comparator greater                             : 2
  3-bit comparator greater                              : 3
- 32-bit comparator greater                             : 11
+ 32-bit comparator greater                             : 10
  4-bit comparator greater                              : 1
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
- 8-bit comparator greater                              : 12
-# Multiplexers                                         : 534
- 1-bit 2-to-1 multiplexer                              : 114
+ 8-bit comparator greater                              : 13
+# Multiplexers                                         : 455
+ 1-bit 2-to-1 multiplexer                              : 25
  16-bit 2-to-1 multiplexer                             : 16
  17-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 258
- 64-bit 2-to-1 multiplexer                             : 2
- 8-bit 2-to-1 multiplexer                              : 141
+ 4-bit 2-to-1 multiplexer                              : 3
+ 64-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 149
 # Tristates                                            : 13
  1-bit tristate buffer                                 : 13
-# FSMs                                                 : 5
+# FSMs                                                 : 6
 # Xors                                                 : 18
  1-bit xor2                                            : 10
  32-bit xor2                                           : 8
@@ -653,20 +602,24 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
+INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
-INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
-INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 
 Synthesizing (advanced) Unit <ATM_main_controller>.
 The following registers are absorbed into counter <d2000>: 1 register on signal <d2000>.
-The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
 The following registers are absorbed into counter <d500>: 1 register on signal <d500>.
+The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
 The following registers are absorbed into counter <d100>: 1 register on signal <d100>.
 The following registers are absorbed into counter <count_blink>: 1 register on signal <count_blink>.
 Unit <ATM_main_controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <communication>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <communication> synthesized (advanced).
 
 Synthesizing (advanced) Unit <debouncer>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
@@ -697,16 +650,16 @@ Unit <timer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 37
  17-bit subtractor                                     : 1
  20-bit adder                                          : 5
- 28-bit adder                                          : 1
  32-bit adder                                          : 13
  32-bit subtractor                                     : 10
  8-bit subtractor                                      : 8
-# Counters                                             : 14
+# Counters                                             : 15
  20-bit up counter                                     : 5
  25-bit up counter                                     : 1
+ 28-bit up counter                                     : 1
  3-bit up counter                                      : 1
  4-bit up counter                                      : 1
  6-bit up counter                                      : 2
@@ -715,26 +668,25 @@ Macro Statistics
  32-bit down loadable accumulator                      : 2
  32-bit up loadable accumulator                        : 2
  64-bit up loadable accumulator                        : 1
-# Registers                                            : 1338
- Flip-Flops                                            : 1338
-# Comparators                                          : 46
+# Registers                                            : 1308
+ Flip-Flops                                            : 1308
+# Comparators                                          : 44
  16-bit comparator equal                               : 10
  25-bit comparator greater                             : 2
- 28-bit comparator greater                             : 2
  3-bit comparator greater                              : 3
- 32-bit comparator greater                             : 11
+ 32-bit comparator greater                             : 10
  4-bit comparator greater                              : 1
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
- 8-bit comparator greater                              : 12
-# Multiplexers                                         : 559
- 1-bit 2-to-1 multiplexer                              : 146
+ 8-bit comparator greater                              : 13
+# Multiplexers                                         : 479
+ 1-bit 2-to-1 multiplexer                              : 56
  16-bit 2-to-1 multiplexer                             : 14
  17-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 254
- 64-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 141
-# FSMs                                                 : 5
+ 4-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 149
+# FSMs                                                 : 6
 # Xors                                                 : 18
  1-bit xor2                                            : 10
  32-bit xor2                                           : 8
@@ -744,14 +696,14 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
+INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
-INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
-INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_2> on signal <substate[1:3]> with gray encoding.
+Optimizing FSM <ATM_Main_cont/FSM_3> on signal <substate[1:3]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -763,37 +715,51 @@ Optimizing FSM <ATM_Main_cont/FSM_2> on signal <substate[1:3]> with gray encodin
  101   | 111
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_3> on signal <state[1:5]> with user encoding.
+Optimizing FSM <ATM_Main_cont/FSM_2> on signal <state[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ 00000 | 0000000001
+ 00001 | 0000000010
+ 00010 | 0000000100
+ 00011 | 0000001000
+ 00100 | 0000010000
+ 00111 | 0000100000
+ 00110 | 0001000000
+ 01111 | 0010000000
+ 00101 | 0100000000
+ 01000 | 1000000000
+---------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ATM_Main_cont/FSM_1> on signal <substate4[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 00000 | 00000
- 11111 | 11111
- 00001 | 00001
- 00010 | 00010
- 00011 | 00011
- 00100 | 00100
- 10011 | 10011
- 10100 | 10100
- 10110 | 10110
- 10101 | 10101
- 00111 | 00111
- 00110 | 00110
- 01111 | 01111
- 00101 | 00101
- 01000 | 01000
+ 0000  | 0000
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
+ 1000  | 1000
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_1> on signal <substate2[1:2]> with gray encoding.
+Optimizing FSM <ATM_Main_cont/FSM_4> on signal <substate2[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 000   | 00
- 001   | 01
- 111   | 11
+ 000   | 000
+ 111   | 111
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 010   | 010
+ 001   | 001
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/data_inp/FSM_4> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <ATM_Main_cont/data_inp/FSM_5> on signal <state[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -820,494 +786,6 @@ Optimizing FSM <comm_fpga/FSM_0> on signal <state[1:4]> with user encoding.
 Optimizing unit <top_module> ...
 
 Optimizing unit <ATM_main_controller> ...
-WARNING:Xst:2677 - Node <temp_user_password_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_16> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_17> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_18> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_19> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_20> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_21> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_22> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_23> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_24> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_25> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_26> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_27> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_28> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_29> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_30> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_31> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_16> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_17> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_18> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_19> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_20> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_21> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_22> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_23> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_24> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_25> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_26> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_27> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_28> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_29> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_30> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_31> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_16> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_17> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_18> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_19> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_20> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_21> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_22> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_23> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_24> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_25> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_26> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_27> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_28> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_29> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_30> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_1_31> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate2_FSM_FFd2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate2_FSM_FFd1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_password_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_0_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_id_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_1_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_2_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_3_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_id_4_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_1_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_2_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_3_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_4_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_1> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_4> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_5> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_6> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_7> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_8> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_9> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_10> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_11> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_12> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_13> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_14> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_password_0_15> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <cache_user_balance_0_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <temp_user_balance_0> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate3> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate2_FSM_FFd2> of sequential type is unconnected in block <ATM_main_controller>.
-WARNING:Xst:2677 - Node <substate2_FSM_FFd1> of sequential type is unconnected in block <ATM_main_controller>.
 
 Optimizing unit <read_multiple_data_bytes> ...
 
@@ -1318,142 +796,10 @@ Optimizing unit <encrypter> ...
 Optimizing unit <decrypter> ...
 
 Optimizing unit <communication> ...
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_63> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_62> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_61> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_60> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_59> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_58> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_57> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_56> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_55> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_54> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_53> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_52> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_51> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_50> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_49> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_48> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_47> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_46> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_45> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_44> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_43> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_42> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_41> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_40> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_39> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_38> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_37> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_36> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_35> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_34> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_33> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_32> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_31> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_30> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_29> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_28> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_27> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_26> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_25> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_24> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_23> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_22> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_21> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_20> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_19> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_18> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_17> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_16> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_15> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_14> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_13> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_12> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_11> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_10> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_9> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_8> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <ATM_Main_cont/data_send_mac_comm_0> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_31> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_30> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_29> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_28> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_27> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_26> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_25> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_24> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_23> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_22> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_21> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_20> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_19> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_18> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_17> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_16> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_15> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_14> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_13> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_12> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_11> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_10> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_9> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_8> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/data_balance_0> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b4_0> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b3_0> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b2_0> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_7> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_6> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_5> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_4> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_3> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_2> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_1> of sequential type is unconnected in block <top_module>.
-WARNING:Xst:2677 - Node <comm/b1_0> of sequential type is unconnected in block <top_module>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 10.
-FlipFlop ATM_Main_cont/state_FSM_FFd1 has been replicated 2 time(s)
-FlipFlop ATM_Main_cont/state_FSM_FFd3 has been replicated 2 time(s)
-FlipFlop ATM_Main_cont/state_FSM_FFd4 has been replicated 2 time(s)
-FlipFlop ATM_Main_cont/state_FSM_FFd5 has been replicated 2 time(s)
+Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 13.
 
 Final Macro Processing ...
 
@@ -1461,8 +807,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1209
- Flip-Flops                                            : 1209
+# Registers                                            : 1724
+ Flip-Flops                                            : 1724
 
 =========================================================================
 
@@ -1485,32 +831,29 @@ Top Level Output File Name         : top_module.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4219
+# BELS                             : 5412
 #      GND                         : 1
 #      INV                         : 291
-#      LUT1                        : 408
-#      LUT2                        : 205
-#      LUT3                        : 91
-#      LUT4                        : 202
-#      LUT5                        : 331
-#      LUT6                        : 564
-#      MUXCY                       : 1074
-#      MUXF7                       : 4
+#      LUT1                        : 407
+#      LUT2                        : 370
+#      LUT3                        : 151
+#      LUT4                        : 453
+#      LUT5                        : 358
+#      LUT6                        : 814
+#      MUXCY                       : 1353
+#      MUXF7                       : 6
 #      VCC                         : 1
-#      XORCY                       : 1047
-# FlipFlops/Latches                : 1240
-#      FD                          : 22
+#      XORCY                       : 1207
+# FlipFlops/Latches                : 1724
+#      FD                          : 32
 #      FDC                         : 7
 #      FDCE                        : 115
-#      FDE                         : 808
+#      FDE                         : 1284
 #      FDPE                        : 37
-#      FDR                         : 145
-#      FDRE                        : 75
-#      LDCE_1                      : 28
-#      LDE                         : 2
-#      LDPE_1                      : 1
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+#      FDR                         : 155
+#      FDRE                        : 93
+#      FDS                         : 1
+# Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 37
 #      IBUF                        : 15
@@ -1525,23 +868,23 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1240  out of  54576     2%  
- Number of Slice LUTs:                 2092  out of  27288     7%  
-    Number used as Logic:              2092  out of  27288     7%  
+ Number of Slice Registers:            1724  out of  54576     3%  
+ Number of Slice LUTs:                 2844  out of  27288    10%  
+    Number used as Logic:              2844  out of  27288    10%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2642
-   Number with an unused Flip Flop:    1402  out of   2642    53%  
-   Number with an unused LUT:           550  out of   2642    20%  
-   Number of fully used LUT-FF pairs:   690  out of   2642    26%  
-   Number of unique control sets:        63
+ Number of LUT Flip Flop pairs used:   3642
+   Number with an unused Flip Flop:    1918  out of   3642    52%  
+   Number with an unused LUT:           798  out of   3642    21%  
+   Number of fully used LUT-FF pairs:   926  out of   3642    25%  
+   Number of unique control sets:        77
 
 IO Utilization: 
  Number of IOs:                          50
  Number of bonded IOBs:                  38  out of    218    17%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1561,17 +904,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------+------------------------+-------+
-Clock Signal                                                                 | Clock buffer(FF name)  | Load  |
------------------------------------------------------------------------------+------------------------+-------+
-fx2Clk_in                                                                    | BUFGP                  | 1209  |
-comm/checkuser[7]_GND_30_o_equal_9_o(comm/checkuser[7]_GND_30_o_equal_9_o1:O)| NONE(*)(comm/state_0)  | 2     |
-comm/state[1]_GND_30_o_equal_10_o(comm/state[1]_GND_30_o_equal_10_o1:O)      | BUFG(*)(comm/temp_0)   | 29    |
------------------------------------------------------------------------------+------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fx2Clk_in                          | BUFGP                  | 1724  |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -1581,10 +918,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.247ns (Maximum Frequency: 121.256MHz)
-   Minimum input arrival time before clock: 6.888ns
-   Maximum output required time after clock: 6.739ns
-   Maximum combinational path delay: 6.889ns
+   Minimum period: 8.377ns (Maximum Frequency: 119.374MHz)
+   Minimum input arrival time before clock: 8.125ns
+   Maximum output required time after clock: 5.814ns
+   Maximum combinational path delay: 5.988ns
 
 Timing Details:
 ---------------
@@ -1592,133 +929,65 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
-  Clock period: 8.247ns (frequency: 121.256MHz)
-  Total number of paths / destination ports: 413156 / 2469
+  Clock period: 8.377ns (frequency: 119.374MHz)
+  Total number of paths / destination ports: 651812 / 3475
 -------------------------------------------------------------------------
-Delay:               8.247ns (Levels of Logic = 7)
-  Source:            ATM_Main_cont/state_FSM_FFd2 (FF)
-  Destination:       ATM_Main_cont/money_24 (FF)
+Delay:               8.377ns (Levels of Logic = 12)
+  Source:            ATM_Main_cont/cache_user_id_3_2 (FF)
+  Destination:       ATM_Main_cont/money_31 (FF)
   Source Clock:      fx2Clk_in rising
   Destination Clock: fx2Clk_in rising
 
-  Data Path: ATM_Main_cont/state_FSM_FFd2 to ATM_Main_cont/money_24
+  Data Path: ATM_Main_cont/cache_user_id_3_2 to ATM_Main_cont/money_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             18   0.447   1.050  ATM_Main_cont/state_FSM_FFd2 (ATM_Main_cont/state_FSM_FFd2)
-     LUT4:I3->O           17   0.205   1.028  ATM_Main_cont/state_state[4]_GND_27_o_equal_559_o1 (ATM_Main_cont/state[4]_state[4]_OR_140_o)
-     LUT4:I3->O            8   0.205   0.907  ATM_Main_cont/state[4]_count_blink[2]_AND_66_o1 (ATM_Main_cont/state[4]_count_blink[2]_AND_66_o)
-     LUT6:I4->O           13   0.203   0.933  ATM_Main_cont/n500[7]_n500[7]_mux_814_OUT<0>11 (ATM_Main_cont/n500[7]_n500[7]_mux_814_OUT<0>1)
-     LUT6:I5->O            4   0.205   0.684  ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>12_1 (ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>12)
-     LUT6:I5->O           15   0.205   1.086  ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>3 (ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>3)
-     LUT6:I4->O            1   0.203   0.580  ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>5_SW0 (N156)
-     LUT5:I4->O            1   0.205   0.000  ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>5 (ATM_Main_cont/money[31]_GND_27_o_mux_751_OUT<10>)
-     FDRE:D                    0.102          ATM_Main_cont/money_10
+     FDE:C->Q              3   0.447   1.015  ATM_Main_cont/cache_user_id_3_2 (ATM_Main_cont/cache_user_id_3_2)
+     LUT6:I0->O            1   0.203   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<0> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<0> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<1> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<2> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<4> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<4>)
+     MUXCY:CI->O          88   0.213   1.799  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<5> (ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o)
+     LUT6:I5->O            2   0.205   0.721  ATM_Main_cont/_n870021 (ATM_Main_cont/_n87002)
+     LUT6:I4->O            1   0.203   0.000  ATM_Main_cont/state__n10311_inv6_SW0_F (N455)
+     MUXF7:I0->O           2   0.131   0.617  ATM_Main_cont/state__n10311_inv6_SW0 (N375)
+     LUT6:I5->O            1   0.205   0.580  ATM_Main_cont/state__n10311_inv12_SW2 (N399)
+     LUT6:I5->O           30   0.205   1.263  ATM_Main_cont/state__n10311_inv12 (ATM_Main_cont/_n10311_inv)
+     FDRE:CE                   0.322          ATM_Main_cont/money_2
     ----------------------------------------
-    Total                      8.247ns (1.980ns logic, 6.267ns route)
-                                       (24.0% logic, 76.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'comm/checkuser[7]_GND_30_o_equal_9_o'
-  Clock period: 2.291ns (frequency: 436.415MHz)
-  Total number of paths / destination ports: 4 / 2
--------------------------------------------------------------------------
-Delay:               2.291ns (Levels of Logic = 1)
-  Source:            comm/state_0 (LATCH)
-  Destination:       comm/state_0 (LATCH)
-  Source Clock:      comm/checkuser[7]_GND_30_o_equal_9_o falling
-  Destination Clock: comm/checkuser[7]_GND_30_o_equal_9_o falling
-
-  Data Path: comm/state_0 to comm/state_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDE:G->Q             33   0.498   1.553  comm/state_0 (comm/state_0)
-     LUT4:I0->O            1   0.203   0.000  comm/state[1]_PWR_21_o_MUX_530_o1 (comm/state[1]_PWR_21_o_MUX_530_o)
-     LDE:D                     0.037          comm/state_0
-    ----------------------------------------
-    Total                      2.291ns (0.738ns logic, 1.553ns route)
-                                       (32.2% logic, 67.8% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'comm/state[1]_GND_30_o_equal_10_o'
-  Clock period: 3.216ns (frequency: 310.935MHz)
-  Total number of paths / destination ports: 406 / 28
--------------------------------------------------------------------------
-Delay:               3.216ns (Levels of Logic = 30)
-  Source:            comm/temp_0 (LATCH)
-  Destination:       comm/temp_27 (LATCH)
-  Source Clock:      comm/state[1]_GND_30_o_equal_10_o rising
-  Destination Clock: comm/state[1]_GND_30_o_equal_10_o rising
-
-  Data Path: comm/temp_0 to comm/temp_27
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDCE_1:G->Q           2   0.498   0.616  comm/temp_0 (comm/temp_0)
-     INV:I->O              1   0.206   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_lut<0>_INV_0 (comm/Madd_temp[27]_GND_30_o_add_17_OUT_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<0> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<1> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<2> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<3> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<4> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<5> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<6> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<7> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<8> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<9> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<9>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<10> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<10>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<11> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<11>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<12> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<12>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<13> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<13>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<14> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<14>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<15> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<15>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<16> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<16>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<17> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<17>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<18> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<18>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<19> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<19>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<20> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<20>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<21> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<21>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<22> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<22>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<23> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<23>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<24> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<24>)
-     MUXCY:CI->O           1   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<25> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<25>)
-     MUXCY:CI->O           0   0.019   0.000  comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<26> (comm/Madd_temp[27]_GND_30_o_add_17_OUT_cy<26>)
-     XORCY:CI->O           1   0.180   0.808  comm/Madd_temp[27]_GND_30_o_add_17_OUT_xor<27> (comm/temp[27]_GND_30_o_add_17_OUT<27>)
-     LUT3:I0->O            1   0.205   0.000  comm/Mmux_temp[27]_temp[27]_MUX_533_o11 (comm/temp[27]_temp[27]_MUX_533_o)
-     LDCE_1:D                  0.037          comm/temp_27
-    ----------------------------------------
-    Total                      3.216ns (1.792ns logic, 1.424ns route)
-                                       (55.7% logic, 44.3% route)
+    Total                      8.377ns (2.382ns logic, 5.995ns route)
+                                       (28.4% logic, 71.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 1075 / 610
+  Total number of paths / destination ports: 1169 / 705
 -------------------------------------------------------------------------
-Offset:              6.888ns (Levels of Logic = 5)
+Offset:              8.125ns (Levels of Logic = 5)
   Source:            fx2GotData_in (PAD)
-  Destination:       comm/e_7 (FF)
+  Destination:       comm/f_7 (FF)
   Destination Clock: fx2Clk_in rising
 
-  Data Path: fx2GotData_in to comm/e_7
+  Data Path: fx2GotData_in to comm/f_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            27   1.222   1.585  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
-     LUT6:I0->O            7   0.203   0.774  comm_fpga/Mmux_h2fValid_out11 (h2fValid)
-     LUT4:I3->O            1   0.205   0.580  comm/_n0965_inv4_SW1 (N289)
-     LUT6:I5->O            4   0.205   0.788  comm/_n0965_inv4 (comm/_n0965_inv_bdd2)
-     LUT3:I1->O            8   0.203   0.802  comm/_n0991_inv11 (comm/_n0991_inv)
+     IBUF:I->O            27   1.222   1.565  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O            9   0.203   0.830  comm_fpga/Mmux_h2fValid_out11 (h2fValid)
+     LUT4:I3->O          102   0.205   1.883  comm/_n0783_inv11 (comm/_n0783_inv1)
+     LUT5:I4->O            4   0.205   0.684  comm/_n0825_inv11 (comm/_n0825_inv1)
+     LUT4:I3->O            8   0.205   0.802  comm/_n0851_inv1 (comm/_n0851_inv)
      FDE:CE                    0.322          comm/d_0
     ----------------------------------------
-    Total                      6.888ns (2.360ns logic, 4.528ns route)
-                                       (34.3% logic, 65.7% route)
+    Total                      8.125ns (2.362ns logic, 5.763ns route)
+                                       (29.1% logic, 70.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 140 / 22
+  Total number of paths / destination ports: 121 / 22
 -------------------------------------------------------------------------
-Offset:              6.739ns (Levels of Logic = 3)
+Offset:              5.814ns (Levels of Logic = 2)
   Source:            comm_fpga/state_FSM_FFd4 (FF)
   Destination:       fx2Data_io<7> (PAD)
   Source Clock:      fx2Clk_in rising
@@ -1727,19 +996,18 @@ Offset:              6.739ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              34   0.447   1.685  comm_fpga/state_FSM_FFd4 (comm_fpga/state_FSM_FFd4)
-     LUT6:I0->O           18   0.203   1.050  comm_fpga/driveBus_inv1 (comm_fpga/driveBus_inv)
-     LUT2:I1->O            1   0.205   0.579  comm_fpga/Mmux_dataOut11 (comm_fpga/dataOut<0>)
-     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+     FD:C->Q              41   0.447   1.764  comm_fpga/state_FSM_FFd4 (comm_fpga/state_FSM_FFd4)
+     LUT5:I0->O            9   0.203   0.829  comm_fpga/driveBus_inv1 (comm_fpga/driveBus_inv)
+     OBUFT:I->O                2.571          fx2Write_out_OBUFT (fx2Write_out)
     ----------------------------------------
-    Total                      6.739ns (3.426ns logic, 3.313ns route)
-                                       (50.8% logic, 49.2% route)
+    Total                      5.814ns (3.221ns logic, 2.593ns route)
+                                       (55.4% logic, 44.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 19 / 11
 -------------------------------------------------------------------------
-Delay:               6.889ns (Levels of Logic = 4)
+Delay:               5.988ns (Levels of Logic = 3)
   Source:            fx2GotRoom_in (PAD)
   Destination:       fx2Data_io<7> (PAD)
 
@@ -1747,59 +1015,38 @@ Delay:               6.889ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   1.222   1.059  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
-     LUT6:I1->O           18   0.203   1.050  comm_fpga/driveBus_inv1 (comm_fpga/driveBus_inv)
-     LUT2:I1->O            1   0.205   0.579  comm_fpga/Mmux_dataOut11 (comm_fpga/dataOut<0>)
-     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+     IBUF:I->O            13   1.222   1.161  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
+     LUT5:I2->O            9   0.205   0.829  comm_fpga/driveBus_inv1 (comm_fpga/driveBus_inv)
+     OBUFT:I->O                2.571          fx2Write_out_OBUFT (fx2Write_out)
     ----------------------------------------
-    Total                      6.889ns (4.201ns logic, 2.688ns route)
-                                       (61.0% logic, 39.0% route)
+    Total                      5.988ns (3.998ns logic, 1.990ns route)
+                                       (66.8% logic, 33.2% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock comm/checkuser[7]_GND_30_o_equal_9_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-comm/checkuser[7]_GND_30_o_equal_9_o|         |         |    2.291|         |
-comm/state[1]_GND_30_o_equal_10_o   |         |         |    3.107|         |
-------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock comm/state[1]_GND_30_o_equal_10_o
-------------------------------------+---------+---------+---------+---------+
-                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------+---------+---------+---------+---------+
-comm/checkuser[7]_GND_30_o_equal_9_o|         |    3.682|         |         |
-comm/state[1]_GND_30_o_equal_10_o   |    3.216|         |         |         |
-fx2Clk_in                           |    4.172|         |         |         |
-------------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock fx2Clk_in
----------------------------------+---------+---------+---------+---------+
-                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------------------+---------+---------+---------+---------+
-comm/state[1]_GND_30_o_equal_10_o|    5.547|         |         |         |
-fx2Clk_in                        |    8.247|         |         |         |
----------------------------------+---------+---------+---------+---------+
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |    8.377|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 24.27 secs
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 27.77 secs
  
 --> 
 
 
-Total memory usage is 428464 kilobytes
+Total memory usage is 440200 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  662 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

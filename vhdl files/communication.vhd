@@ -74,41 +74,39 @@ signal b1 : std_logic_vector(7 downto 0) := "00000000";
 signal b2 : std_logic_vector(7 downto 0) := "00000000";
 signal b3 : std_logic_vector(7 downto 0) := "00000000";
 signal b4 : std_logic_vector(7 downto 0) := "00000000";
-signal temp : std_logic_vector(27 downto 0) := x"0000000";
 
 begin
 	with is_suf_atm select channel0value <=
 					"00000001" when '1',
-					"00000010" when others;	
-	with checkuser select done_comm <= 
-					'1' when "00000001",
-					'1' when "00000010",
-					'1' when "00000011",
-					'1' when "00000100",
-					'0' when others;	
-	process(clk,reset,temp)
+					"00000010" when others;		
+	process(clk,reset)
+	variable count : STD_LOGIC_VECTOR(27 downto 0) := (others => '0');
 	begin
-		--f2hValid_out <= '1';
-		--h2fReady_out <= '1';
-		if(checkuser = "0") then
-			if(temp < wait_cycles) then
-				temp <= temp + "1";
-				comm_success <= '1';
-			elsif(temp < wait_cycles + "11") then
-				temp <= temp + "1";
-				comm_success <= '0';
-			else
-				comm_success <= '0';
-				temp <= x"0000000";
-			end if;
-		else
-			comm_success <= '1';
-			temp <= x"0000000";
-		end if;
+		f2hValid_out <= '1';
+		h2fReady_out <= '1';
 		if(reset = '1') then
-			checkuser <= "00000000";
+			checkuser <= x"00";
 		elsif(rising_edge(clk)) then
-			h2fReady_out <= '1';
+			if(start_comm = '1' and checkuser = "0") then
+				if(count = wait_cycles) then
+					comm_success <= '0';
+					done_comm <= '1';
+				else
+					done_comm <= '0';
+					comm_success <= '0';
+					count := count + '1';
+				end if;
+			elsif(start_comm = '1' and checkuser < "110") then
+				done_comm <= '1';
+				comm_success <= '1';
+				count := (others => '0');
+			else
+				done_comm <= '0';
+				comm_success <= '0';
+				count := (others => '0');
+			end if;
+
+			--h2fReady_out <= '1';
 			if(h2fValid_in = '1') then
 				if(chanAddr_in = "0010100") then
 					restriction_2000 <= h2fData_in;
@@ -131,7 +129,7 @@ begin
 			end if;
 			if(start_comm = '1') then
 				if(f2hReady_in = '1') then
-					f2hValid_out <= '1';
+					--f2hValid_out <= '1';
 					if(chanAddr_in = "0000000") then
 						f2hData_out <= channel0value;
 					elsif(chanAddr_in = "0000001") then
@@ -152,7 +150,7 @@ begin
 						f2hData_out <= data_send(7 downto 0);
 					end if;
 				end if;
-				h2fReady_out <= '1';
+				--h2fReady_out <= '1';
 				if(h2fValid_in = '1') then
 					if(chanAddr_in = "0001001") then
 						checkuser <= h2fData_in;
@@ -184,9 +182,9 @@ begin
 					data_recieved <= a & b & c & d & e & f & g & h;
 					data_balance <= b1 & b2 & b3 & b4;
 				end if;
-			else
-				f2hValid_out <= '0';
-				h2fReady_out <= '0';
+			--else
+			--	f2hValid_out <= '0';
+			--	h2fReady_out <= '0';
 			end if;
 		end if;
 	end process;
