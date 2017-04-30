@@ -179,8 +179,8 @@ void encrypt (uint8* realData) {
 
 }
 
-uint16 hashPIN(uint16 PIN){
-	return (PIN << 11) | (PIN >> 5);
+uint16 hashPIN(uint16 PIN, int bank_id){
+	return (PIN << bank_id) | (PIN >> (16 - bank_id));
 }
 
 bool matchPIN(uint16 ID, uint16 PIN, bool* isAdmin,uint32* cash,int* index, int numberOfUsers){
@@ -423,29 +423,35 @@ int main(int argc, char* argv[]) {
                             fStatus = flWriteChannel(handle, (uint8) 127, 1, 0x01, &error);
                             CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 ////////////////////////////////Advanced///////////////////////////////////
-                            uint8 one = 0x1;
-                            fStatus = flWriteChannel(handle, (uint8) 127, 1, &one, &error);
-                            CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
-                            uint8 cache_data[30];
-                            for(int i = 0; i < 30; i++){
-                                fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
-                                fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
-                                CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
-                            }
+                            // uint8 one = 0x1;
+                            // fStatus = flWriteChannel(handle, (uint8) 127, 1, &one, &error);
+                            // CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 
-                            uint16 cache_id;
-                            uint cache_balance;
+                            // For caching
 
-                            for(int i = 0; i < 5; i++)
-                            {
-                                cache_id = cache_data[i*6] << 8 | cache_data[i*6 + 1];
-                                cache_balance = cache_data[i*6 + 2] << 24 | cache_data[i*6 + 3] << 16 | cache_data[i*6 + 4] << 8 | cache_data[i*6 + 5];
-                                setBalance(get_index(cache_id, numberOfUsers), cache_balance);
-                            }
+                            // uint8 cache_data[30];
+                            // for(int i = 0; i < 30; i++){
+                            //     fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
+                            //     fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
+                            //     CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+                            // }
 
-                            uint8 zero = 0x0;
-                            fStatus = flWriteChannel(handle, (uint8) 127, 1, &zero, &error);
-                            CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+                            // uint16 cache_id;
+                            // uint cache_balance;
+
+                            // for(int i = 0; i < 5; i++)
+                            // {
+                            //     cache_id = cache_data[i*6] << 8 | cache_data[i*6 + 1];
+                            //     cache_balance = cache_data[i*6 + 2] << 24 | cache_data[i*6 + 3] << 16 | cache_data[i*6 + 4] << 8 | cache_data[i*6 + 5];
+                            //     setBalance(get_index(cache_id, numberOfUsers), cache_balance);
+                            // }
+
+                            // uint8 zero = 0x0;
+                            // fStatus = flWriteChannel(handle, (uint8) 127, 1, &zero, &error);
+                            // CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+
+                            // For caching
+
 							uint8 restrictions[4];
 							restrictions[0] = 2*INT8_MAX + 1; // Restriction on 2000 notes
 							restrictions[1] = 2*INT8_MAX + 1; // Restriction on 1000 notes
@@ -487,7 +493,7 @@ int main(int argc, char* argv[]) {
 							decrypt(data, realData); //change decrypt function
 							uint16 ID = realData[0] << 8 | realData[1];
 							uint16 PIN = realData[2] << 8 | realData[3];
-							PIN = hashPIN(PIN);
+							PIN = hashPIN(PIN, BankID);
 
 							uint8 check_bank = (hashPIN(ID) >> 11);
 
