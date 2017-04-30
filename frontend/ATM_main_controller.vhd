@@ -22,6 +22,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ATM_main_controller is
+ Generic (	value2000 : std_logic_vector(10 downto 0) := "11111010000";
+    		value1000 : std_logic_vector(9 downto 0) := "1111101000";
+    		value500 : std_logic_vector(8 downto 0) := "111110100";
+    		value100 : std_logic_vector(6 downto 0) := "1100100"
+    		);
 	Port(clk : in  STD_LOGIC;
 			reset_button : in  STD_LOGIC;
 			data_in_sliders : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -47,19 +52,19 @@ entity ATM_main_controller is
 			restriction_500: in STD_LOGIC_VECTOR (7 downto 0);
 			restriction_100: in STD_LOGIC_VECTOR (7 downto 0);
 			restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
-			load_bank_id: in STD_LOGIC;
+			load_bank_id: in STD_LOGIC
 
-			start_mac_comm : out STD_LOGIC;
-			done_mac_comm : in STD_LOGIC;
-			data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-			data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+			--start_mac_comm : out STD_LOGIC;
+			--done_mac_comm : in STD_LOGIC;
+			--data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			--data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
 
-			request_mac_comm : in STD_LOGIC;
-			is_suf_atm_request : in STD_LOGIC;
-			data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-			data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
-			reply_mac_comm_valid : out STD_LOGIC;
-			reply_mac_comm_notvalid : out STD_LOGIC
+			--request_mac_comm : in STD_LOGIC;
+			--is_suf_atm_request : in STD_LOGIC;
+			--data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
+			--data_reply_to_request_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
+			--reply_mac_comm_valid : out STD_LOGIC;
+			--reply_mac_comm_notvalid : out STD_LOGIC
 		   );
 end ATM_main_controller;
 
@@ -102,14 +107,7 @@ architecture Behavioral of ATM_main_controller is
 	signal finish_display : STD_LOGIC := '0';
 	signal money : std_logic_vector(31 downto 0);
 	signal substate : STD_LOGIC_VECTOR(2 downto 0) := "000";
-	signal atm_cash_that_can_be_given : STD_LOGIC_VECTOR(31 downto 0) := X"00000000";
 	signal is_suf_atm_signal : STD_LOGIC;
-	type balance is array (0 to 4) of std_logic_vector(31 downto 0);
-	type id_or_password is array (0 to 4) of std_logic_vector(16 downto 0);
-	signal cache_user_balance : balance;
-	signal cache_user_id : id_or_password;
-	signal cache_user_password : id_or_password;
-	signal last_entry_in_cache : integer range 0 to 4;
 begin
 	done_or_reset <= reset_button or done_button;
 	timer1: timer
@@ -133,29 +131,29 @@ begin
 				bank_id <= data_in_sliders(4 downto 0);
 			end if;
 
-			if(request_mac_comm = '1' and state2 = "00000") then
-				data_to_be_decrypted <= data_request_mac_comm;
-				start_decrypt <= '1';
-				state2 <= "00001";
-			elsif(state2 = "00001" and done_decrypt = '1') then
-				if(bank_id = decrypted_data(52 downto 48)) then 
-					state2 <= "00010";
-					is_suf_atm <= is_suf_atm_request;
-					encrypted_data_comm <= data_request_mac_comm;
-					start_comm <= '1';
-				else
-					reply_mac_comm_notvalid <= '1';
-					state2 <= "00000";
-				end if;
-			elsif(state2 = "00010" and done_comm = '1') then
-				start_comm <= '0';
-				data_reply_to_request_mac_comm <= decrypted_data_comm;
-				reply_mac_comm_valid <= '1';
-				state2 <= "00000";
-			else
-				reply_mac_comm_valid <= '0';
-				reply_mac_comm_notvalid <= '0';
-			end if;	
+			--if(request_mac_comm = '1' and state2 = "00000") then
+			--	data_to_be_decrypted <= data_request_mac_comm;
+			--	start_decrypt <= '1';
+			--	state2 <= "00001";
+			--elsif(state2 = "00001" and done_decrypt = '1') then
+			--	if(bank_id = decrypted_data(52 downto 48)) then 
+			--		state2 <= "00010";
+			--		is_suf_atm <= is_suf_atm_request;
+			--		encrypted_data_comm <= data_request_mac_comm;
+			--		start_comm <= '1';
+			--	else
+			--		reply_mac_comm_notvalid <= '1';
+			--		state2 <= "00000";
+			--	end if;
+			--elsif(state2 = "00010" and done_comm = '1') then
+			--	start_comm <= '0';
+			--	data_reply_to_request_mac_comm <= decrypted_data_comm;
+			--	reply_mac_comm_valid <= '1';
+			--	state2 <= "00000";
+			--else
+			--	reply_mac_comm_valid <= '0';
+			--	reply_mac_comm_notvalid <= '0';
+			--end if;	
 
 			if(reset_button = '1') then
 				state <= "00000";				-- ready state
@@ -169,37 +167,40 @@ begin
 				current_user_bank_id <= data_to_be_encrypted_signal(52 downto 48);
 				data_to_be_encrypted <= data_to_be_encrypted_signal;
 				if(substate="000") then
-					if (restriction_2000 >= n2000) then
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + n2000*"11111010000";
-					else
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + restriction_2000*"11111010000";
-					end if;
+					money <= data_to_be_encrypted_signal(31 downto 0);
 					substate <= "001";
-				elsif(substate="001") then
-					if (restriction_1000 >= n1000) then
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + n1000*"1111101000";
+				elsif(substate = "001") then
+					if(money >= value2000 and d2000 < restriction_2000 and n2000 - d2000 > 0) then
+						money <= money - value2000;
+						d2000 <= d2000 + "1";
 					else
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + restriction_1000*"1111101000";
+						substate <= "010";
 					end if;
-					substate <= "010";
-				elsif(substate="010") then
-					if (restriction_500 >= n500) then
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + n500*"111110100";
+				elsif(substate = "010") then
+					if(money >= value1000 and d1000 < restriction_1000 and n1000 - d1000 > 0) then
+						money <= money - value1000;
+						d1000 <= d1000 + "1";
 					else
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + restriction_500*"111110100";
+						substate <= "011";
 					end if;
-					substate <= "011";
-				elsif(substate="011") then
-					if (restriction_100 >= n100) then
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + n100*"1100100";
+				elsif(substate = "011") then
+					if(money >= value500 and d500 < restriction_500 and n500 - d500 > 0) then
+						money <= money - value500;
+						d500 <= d500 + "1";
 					else
-						atm_cash_that_can_be_given <= atm_cash_that_can_be_given + restriction_100*"1100100";
+						substate <= "100";
 					end if;
-					substate <= "100";
-				elsif(substate = "100")then
-					if(atm_cash_that_can_be_given >= data_to_be_encrypted_signal(31 downto 0)) then
-					is_suf_atm <= '1';
-					is_suf_atm_signal <= '1';
+				elsif(substate = "100") then
+					if(money >= value100 and d100 < restriction_100 and n100 - d100 > 0) then
+						money <= money - value100;
+						d100 <= d100 + "1";
+					else
+						substate <= "101";
+					end if;
+				elsif(substate = "101") then
+					if(money = "0") then
+						is_suf_atm <= '1';
+						is_suf_atm_signal <= '1';
 					end if;
 					state <= "00010";				--send data for encryption
 					start_encrypt <= '1';
@@ -237,28 +238,36 @@ begin
 				start_decrypt <= '0';
 				state <= "00000";
 			
+
 			elsif(state = "00010" and done_encrypt = '1') then --- User of different bank
-				start_encrypt <= '0';
-				state <= "10011";
-				data_send_mac_comm <= encrypted_data;
-				start_mac_comm <= '1';
-			elsif(state = "10011" and done_mac_comm = '1' ) then
-				start_mac_comm <= '0';
-				state <= "10100";				--backend communication done + decryption start
-				data_to_be_decrypted <= data_response_mac_comm;
-				start_decrypt <= '1';
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
-				start_decrypt <= '0';
-				money <= decrypted_data(31 downto 0);
-				state <= "10101"; 						--user with sufficient balance and less than restricted total
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
-				state <= "11111";
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
-				state <= "10110"; 						--user with insufficient balance
-			elsif(state = "10100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
 				state <= "00000";
-			elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
-				state <= "00000";
+			
+
+
+
+
+			--elsif(state = "00010" and done_encrypt = '1') then --- User of different bank
+			--	start_encrypt <= '0';
+			--	state <= "10011";
+			--	data_send_mac_comm <= encrypted_data;
+			--	start_mac_comm <= '1';
+			--elsif(state = "10011" and done_mac_comm = '1' ) then
+			--	start_mac_comm <= '0';
+			--	state <= "10100";				--backend communication done + decryption start
+			--	data_to_be_decrypted <= data_response_mac_comm;
+			--	start_decrypt <= '1';
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total <= decrypted_data(31 downto 0)) then
+			--	start_decrypt <= '0';
+			--	money <= decrypted_data(31 downto 0);
+			--	state <= "10101"; 						--user with sufficient balance and less than restricted total
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '1' and restriction_total > decrypted_data(31 downto 0)) then
+			--	state <= "11111";
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '1' and decrypted_data(34) = '0') then
+			--	state <= "10110"; 						--user with insufficient balance
+			--elsif(state = "10100" and done_decrypt = '1' and  decrypted_data(32) = '1') then
+			--	state <= "00000";
+			--elsif(state = "10100" and done_decrypt = '1' and decrypted_data(33) = '0' and decrypted_data(32) = '0') then
+			--	state <= "00000";
 
 			elsif(done_button = '1') then
 				state <= "00000";
@@ -272,11 +281,10 @@ begin
 				is_suf_atm <= '0';
 				is_suf_atm_signal <= '0';
 				substate <= "000";
-				atm_cash_that_can_be_given <= X"00000000";
 				money <= X"00000000";
 				start_decrypt <= '0';
 				start_comm <= '0';
-				start_mac_comm <= '0';
+				--start_mac_comm <= '0';
 				start_encrypt <= '0';
 				double_time <= '1';
 				d2000 <= X"00";
