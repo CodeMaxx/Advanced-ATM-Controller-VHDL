@@ -216,7 +216,19 @@ void updateBalance(int index, int cashReqd, int numberOfUsers){
 	updateCSVfile(numberOfUsers);
 }
 
-void decrypt (uint8* data, uint8* realData) {\
+void setBalance(int index, int newBalance){
+    Users[index].balance = newBalance;
+}
+
+int get_index(uint8 id, int numberOfUsers) {
+    for(int i = 0; i < numberOfUsers; i++){
+        if(Users[i].ID == ID){
+            return i;
+        }
+    }
+}
+
+void decrypt (uint8* data, uint8* realData) {
 
 
 
@@ -408,9 +420,32 @@ int main(int argc, char* argv[]) {
 						if(buffer==buffer3){
 							printf("communication starting\n");
 
-
+                            fStatus = flWriteChannel(handle, (uint8) 127, 1, 0x01, &error);
+                            CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 ////////////////////////////////Advanced///////////////////////////////////
+                            uint8 one = 0x1;
+                            fStatus = flWriteChannel(handle, (uint8) 127, 1, &one, &error);
+                            CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+                            uint8 cache_data[30];
+                            for(int i = 0; i < 30; i++){
+                                fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
+                                fStatus = flReadChannel(handle, (uint8) i+80, 1, &data[i], &error);
+                                CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+                            }
 
+                            uint16 cache_id;
+                            uint cache_balance;
+
+                            for(int i = 0; i < 5; i++)
+                            {
+                                cache_id = cache_data[i*6] << 8 | cache_data[i*6 + 1];
+                                cache_balance = cache_data[i*6 + 2] << 24 | cache_data[i*6 + 3] << 16 | cache_data[i*6 + 4] << 8 | cache_data[i*6 + 5];
+                                setBalance(get_index(cache_id, numberOfUsers), cache_balance);
+                            }
+
+                            uint8 zero = 0x0;
+                            fStatus = flWriteChannel(handle, (uint8) 127, 1, &zero, &error);
+                            CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 							uint8 restrictions[4];
 							restrictions[0] = 2*INT8_MAX + 1; // Restriction on 2000 notes
 							restrictions[1] = 2*INT8_MAX + 1; // Restriction on 1000 notes
@@ -442,8 +477,6 @@ int main(int argc, char* argv[]) {
 							printf("Restriction Info Sent!\n");
 
 ////////////////////////////////Advanced///////////////////////////////////
-
-
 							uint8 data[8];
 							for(int i = 0; i < 8; i++){
 								fStatus = flReadChannel(handle, (uint8) i+1, 1, &data[i], &error);
@@ -465,7 +498,7 @@ int main(int argc, char* argv[]) {
 							}
 
 							bool isAdmin;
-							uint32 cash; 
+							uint32 cash;
 							int index;
 							bool valid = matchPIN(ID, PIN, &isAdmin, &cash, &index, numberOfUsers);
 							printf("%u %u\n",ID,PIN );
@@ -481,10 +514,9 @@ int main(int argc, char* argv[]) {
 								// Calculate amount of cash
 
 								for(int i = 0; i < 4; i++)	realData[i] = 0;
-								
+
 								if(!isAdmin){
-									// if(cashReqd<=cash && cashReqd <= res_total){
-									if(cashReqd<=0.9*cash){
+									if(cashReqd <= cash){
 										realData[3] = 0x06;
 										encrypt(realData);
 										for(int i = 0; i < 8; i++){
@@ -494,7 +526,10 @@ int main(int argc, char* argv[]) {
 										message = 0x01;
 										fStatus = flWriteChannel(handle, (uint8) 9, 1, &message, &error);
 										CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
-										updateBalance(index, cashReqd,numberOfUsers);
+                                        if (buffer==0x01) {
+                                            updateBalance(index, cashReqd,numberOfUsers);
+                                            cash -= cashReqd;
+                                        }
 										printf("Sufficient balance\n");
 									}
 									else{
@@ -509,6 +544,13 @@ int main(int argc, char* argv[]) {
 										fStatus = flWriteChannel(handle, (uint8) 9, 1, &message, &error);
 										CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
 									}
+
+                                    uint8 balance[4] = {cash >> 24, cash >> 16, cash >> 8, cash};
+                                    for(int i = 0; i < 4; i++){
+                                        fStatus = flWriteChannel(handle, (uint8) i+30, 1, &balance[i], &error);
+                                        CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
+                                    }
+                                    printf("Balance sent for caching!\n");
 								}
 								else{
 									realData[3] = 0x01;
@@ -520,8 +562,6 @@ int main(int argc, char* argv[]) {
 									message = 0x03;
 									fStatus = flWriteChannel(handle, (uint8) 9, 1, &message, &error);
 									CHECK_STATUS(fStatus, FLP_LIBERR, cleanup);
-									if(buffer==0x01)
-										updateBalance(index, cashReqd,numberOfUsers);
 								}
 							}
 						}
