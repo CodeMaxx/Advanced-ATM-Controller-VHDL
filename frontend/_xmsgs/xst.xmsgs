@@ -5,10 +5,40 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="104" delta="old" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/tx_fifo.vhd" Line 44: Cannot find &lt;<arg fmt="%s" index="1">ethernet_mac_tx_fifo_xilinx</arg>&gt; in library &lt;<arg fmt="%s" index="2">ethernet_mac</arg>&gt;. Please ensure that the library was compiled, and that a library and a use clause are present in the VHDL file.
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_50&gt; </arg>
 </msg>
 
-<msg type="error" file="HDLCompiler" num="854" delta="old" >"/home/kanak/CS254/Advanced-ATM-Controller-VHDL/ethernet_mac/xilinx/tx_fifo.vhd" Line 32: Unit &lt;<arg fmt="%s" index="1">rtl</arg>&gt; ignored due to previous errors.
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_51&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_52&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_48&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_49&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">is_suf_atm_signal</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_Main_cont</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;is_suf_atm&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_50&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_51&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_52&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_48&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">current_user_bank_id_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;data_to_be_encrypted_49&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">is_suf_atm</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ATM_main_controller</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;is_suf_atm_signal&gt; </arg>
 </msg>
 
 </messages>
