@@ -29,19 +29,319 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 651812 paths analyzed, 8830 endpoints analyzed, 0 failing endpoints
+ 955690 paths analyzed, 9137 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  10.676ns.
+ Minimum period is  11.341ns.
 --------------------------------------------------------------------------------
 
-Paths for end point ATM_Main_cont/money_25 (SLICE_X4Y100.C2), 606 paths
+Paths for end point ATM_Main_cont/money_26 (SLICE_X11Y99.CE), 3165 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.324ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_17 (FF)
+Slack (setup path):     8.659ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/data_inp/data_51 (FF)
+  Destination:          ATM_Main_cont/money_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.262ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.044ns (0.465 - 0.509)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_51 to ATM_Main_cont/money_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y77.DQ      Tcko                  0.447   ATM_Main_cont/data_inp/data<51>
+                                                       ATM_Main_cont/data_inp/data_51
+    SLICE_X46Y78.B5      net (fanout=7)        1.372   ATM_Main_cont/data_inp/data<51>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.340   ATM_Main_cont/money<26>
+                                                       ATM_Main_cont/money_26
+    -------------------------------------------------  ---------------------------
+    Total                                     11.262ns (2.258ns logic, 9.004ns route)
+                                                       (20.0% logic, 80.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.764ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_3 (FF)
+  Destination:          ATM_Main_cont/money_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.155ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.046ns (0.465 - 0.511)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_3 to ATM_Main_cont/money_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y78.DQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_3
+    SLICE_X46Y78.B1      net (fanout=2)        1.321   ATM_Main_cont/cache_user_id_4<3>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.340   ATM_Main_cont/money<26>
+                                                       ATM_Main_cont/money_26
+    -------------------------------------------------  ---------------------------
+    Total                                     11.155ns (2.202ns logic, 8.953ns route)
+                                                       (19.7% logic, 80.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.770ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_0 (FF)
+  Destination:          ATM_Main_cont/money_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.149ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.046ns (0.465 - 0.511)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_0 to ATM_Main_cont/money_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y78.AQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_0
+    SLICE_X46Y78.A1      net (fanout=2)        1.295   ATM_Main_cont/cache_user_id_4<0>
+    SLICE_X46Y78.COUT    Topcya                0.395   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<0>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.340   ATM_Main_cont/money<26>
+                                                       ATM_Main_cont/money_26
+    -------------------------------------------------  ---------------------------
+    Total                                     11.149ns (2.222ns logic, 8.927ns route)
+                                                       (19.9% logic, 80.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ATM_Main_cont/money_31 (SLICE_X13Y98.CE), 3165 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.685ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/data_inp/data_51 (FF)
+  Destination:          ATM_Main_cont/money_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.238ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.042ns (0.467 - 0.509)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_51 to ATM_Main_cont/money_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y77.DQ      Tcko                  0.447   ATM_Main_cont/data_inp/data<51>
+                                                       ATM_Main_cont/data_inp/data_51
+    SLICE_X46Y78.B5      net (fanout=7)        1.372   ATM_Main_cont/data_inp/data<51>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X13Y98.CE      net (fanout=16)       1.895   ATM_Main_cont/_n7958_inv
+    SLICE_X13Y98.CLK     Tceck                 0.295   ATM_Main_cont/money<31>
+                                                       ATM_Main_cont/money_31
+    -------------------------------------------------  ---------------------------
+    Total                                     11.238ns (2.213ns logic, 9.025ns route)
+                                                       (19.7% logic, 80.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.790ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_3 (FF)
+  Destination:          ATM_Main_cont/money_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.131ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.044ns (0.467 - 0.511)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_3 to ATM_Main_cont/money_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y78.DQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_3
+    SLICE_X46Y78.B1      net (fanout=2)        1.321   ATM_Main_cont/cache_user_id_4<3>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X13Y98.CE      net (fanout=16)       1.895   ATM_Main_cont/_n7958_inv
+    SLICE_X13Y98.CLK     Tceck                 0.295   ATM_Main_cont/money<31>
+                                                       ATM_Main_cont/money_31
+    -------------------------------------------------  ---------------------------
+    Total                                     11.131ns (2.157ns logic, 8.974ns route)
+                                                       (19.4% logic, 80.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.796ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_0 (FF)
+  Destination:          ATM_Main_cont/money_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.125ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.044ns (0.467 - 0.511)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_0 to ATM_Main_cont/money_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y78.AQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_0
+    SLICE_X46Y78.A1      net (fanout=2)        1.295   ATM_Main_cont/cache_user_id_4<0>
+    SLICE_X46Y78.COUT    Topcya                0.395   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<0>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X13Y98.CE      net (fanout=16)       1.895   ATM_Main_cont/_n7958_inv
+    SLICE_X13Y98.CLK     Tceck                 0.295   ATM_Main_cont/money<31>
+                                                       ATM_Main_cont/money_31
+    -------------------------------------------------  ---------------------------
+    Total                                     11.125ns (2.177ns logic, 8.948ns route)
+                                                       (19.6% logic, 80.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ATM_Main_cont/money_25 (SLICE_X11Y99.CE), 3165 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.704ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/data_inp/data_51 (FF)
   Destination:          ATM_Main_cont/money_25 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.621ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.020ns (0.238 - 0.258)
+  Data Path Delay:      11.217ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.044ns (0.465 - 0.509)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -52,46 +352,45 @@ Slack (setup path):     9.324ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_17 to ATM_Main_cont/money_25
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_51 to ATM_Main_cont/money_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X8Y97.DQ       Tcko                  0.408   ATM_Main_cont/money<17>
-                                                       ATM_Main_cont/money_17
-    SLICE_X0Y88.C5       net (fanout=9)        1.914   ATM_Main_cont/money<17>
-    SLICE_X0Y88.COUT     Topcyc                0.295   ATM_Main_cont/Mcompar_n0748_cy<3>
-                                                       ATM_Main_cont/Mcompar_n0748_lut<2>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.CIN      net (fanout=1)        0.003   ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.BMUX     Tcinb                 0.222   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.C2      net (fanout=16)       1.619   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<25>5
+    SLICE_X56Y77.DQ      Tcko                  0.447   ATM_Main_cont/data_inp/data<51>
+                                                       ATM_Main_cont/data_inp/data_51
+    SLICE_X46Y78.B5      net (fanout=7)        1.372   ATM_Main_cont/data_inp/data<51>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.295   ATM_Main_cont/money<26>
                                                        ATM_Main_cont/money_25
     -------------------------------------------------  ---------------------------
-    Total                                     10.621ns (2.194ns logic, 8.427ns route)
-                                                       (20.7% logic, 79.3% route)
+    Total                                     11.217ns (2.213ns logic, 9.004ns route)
+                                                       (19.7% logic, 80.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.328ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_17 (FF)
+Slack (setup path):     8.809ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_3 (FF)
   Destination:          ATM_Main_cont/money_25 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.617ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.020ns (0.238 - 0.258)
+  Data Path Delay:      11.110ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.046ns (0.465 - 0.511)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -102,46 +401,45 @@ Slack (setup path):     9.328ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_17 to ATM_Main_cont/money_25
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_3 to ATM_Main_cont/money_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X8Y97.DQ       Tcko                  0.408   ATM_Main_cont/money<17>
-                                                       ATM_Main_cont/money_17
-    SLICE_X0Y88.C5       net (fanout=9)        1.914   ATM_Main_cont/money<17>
-    SLICE_X0Y88.COUT     Topcyc                0.291   ATM_Main_cont/Mcompar_n0748_cy<3>
-                                                       ATM_Main_cont/Mcompar_n0748_lutdi2
-                                                       ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.CIN      net (fanout=1)        0.003   ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.BMUX     Tcinb                 0.222   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.C2      net (fanout=16)       1.619   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<25>5
+    SLICE_X53Y78.DQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_3
+    SLICE_X46Y78.B1      net (fanout=2)        1.321   ATM_Main_cont/cache_user_id_4<3>
+    SLICE_X46Y78.COUT    Topcyb                0.375   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<1>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.295   ATM_Main_cont/money<26>
                                                        ATM_Main_cont/money_25
     -------------------------------------------------  ---------------------------
-    Total                                     10.617ns (2.190ns logic, 8.427ns route)
-                                                       (20.6% logic, 79.4% route)
+    Total                                     11.110ns (2.157ns logic, 8.953ns route)
+                                                       (19.4% logic, 80.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.429ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_25 (FF)
+Slack (setup path):     8.815ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ATM_Main_cont/cache_user_id_4_0 (FF)
   Destination:          ATM_Main_cont/money_25 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.536ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      11.104ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.046ns (0.465 - 0.511)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -152,379 +450,78 @@ Slack (setup path):     9.429ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_25 to ATM_Main_cont/money_25
+  Maximum Data Path at Slow Process Corner: ATM_Main_cont/cache_user_id_4_0 to ATM_Main_cont/money_25
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X4Y100.CQ      Tcko                  0.408   ATM_Main_cont/money<25>
+    SLICE_X53Y78.AQ      Tcko                  0.391   ATM_Main_cont/cache_user_id_4<3>
+                                                       ATM_Main_cont/cache_user_id_4_0
+    SLICE_X46Y78.A1      net (fanout=2)        1.295   ATM_Main_cont/cache_user_id_4<0>
+    SLICE_X46Y78.COUT    Topcya                0.395   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_lut<0>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<3>
+    SLICE_X46Y79.BMUX    Tcinb                 0.222   ATM_Main_cont/cache_user_password_3<15>
+                                                       ATM_Main_cont/Mcompar_cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o_cy<5>
+    SLICE_X29Y80.D2      net (fanout=70)       3.919   ATM_Main_cont/cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o
+    SLICE_X29Y80.D       Tilo                  0.259   N300
+                                                       ATM_Main_cont/state__n7958_inv14_SW1
+    SLICE_X24Y80.A4      net (fanout=1)        0.690   N300
+    SLICE_X24Y80.A       Tilo                  0.205   ATM_Main_cont/cache_user_id[3][15]_cache_user_password[3][15]_AND_37_o
+                                                       ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C3      net (fanout=1)        0.942   ATM_Main_cont/state__n7958_inv15
+    SLICE_X20Y87.C       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D5      net (fanout=1)        0.204   ATM_Main_cont/state__n7958_inv16
+    SLICE_X20Y87.D       Tilo                  0.205   ATM_Main_cont/_n7958_inv
+                                                       ATM_Main_cont/state__n7958_inv113
+    SLICE_X11Y99.CE      net (fanout=16)       1.874   ATM_Main_cont/_n7958_inv
+    SLICE_X11Y99.CLK     Tceck                 0.295   ATM_Main_cont/money<26>
                                                        ATM_Main_cont/money_25
-    SLICE_X0Y89.A4       net (fanout=9)        1.873   ATM_Main_cont/money<25>
-    SLICE_X0Y89.BMUX     Topab                 0.476   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_lutdi4
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.C2      net (fanout=16)       1.619   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<25>5
-                                                       ATM_Main_cont/money_25
     -------------------------------------------------  ---------------------------
-    Total                                     10.536ns (2.153ns logic, 8.383ns route)
-                                                       (20.4% logic, 79.6% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point ATM_Main_cont/money_24 (SLICE_X4Y100.A3), 606 paths
---------------------------------------------------------------------------------
-Slack (setup path):     9.434ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_17 (FF)
-  Destination:          ATM_Main_cont/money_24 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.511ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.020ns (0.238 - 0.258)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_17 to ATM_Main_cont/money_24
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y97.DQ       Tcko                  0.408   ATM_Main_cont/money<17>
-                                                       ATM_Main_cont/money_17
-    SLICE_X0Y88.C5       net (fanout=9)        1.914   ATM_Main_cont/money<17>
-    SLICE_X0Y88.COUT     Topcyc                0.295   ATM_Main_cont/Mcompar_n0748_cy<3>
-                                                       ATM_Main_cont/Mcompar_n0748_lut<2>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.CIN      net (fanout=1)        0.003   ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.BMUX     Tcinb                 0.222   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.A3      net (fanout=16)       1.509   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<24>5
-                                                       ATM_Main_cont/money_24
-    -------------------------------------------------  ---------------------------
-    Total                                     10.511ns (2.194ns logic, 8.317ns route)
-                                                       (20.9% logic, 79.1% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     9.438ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_17 (FF)
-  Destination:          ATM_Main_cont/money_24 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.507ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.020ns (0.238 - 0.258)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_17 to ATM_Main_cont/money_24
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X8Y97.DQ       Tcko                  0.408   ATM_Main_cont/money<17>
-                                                       ATM_Main_cont/money_17
-    SLICE_X0Y88.C5       net (fanout=9)        1.914   ATM_Main_cont/money<17>
-    SLICE_X0Y88.COUT     Topcyc                0.291   ATM_Main_cont/Mcompar_n0748_cy<3>
-                                                       ATM_Main_cont/Mcompar_n0748_lutdi2
-                                                       ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.CIN      net (fanout=1)        0.003   ATM_Main_cont/Mcompar_n0748_cy<3>
-    SLICE_X0Y89.BMUX     Tcinb                 0.222   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.A3      net (fanout=16)       1.509   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<24>5
-                                                       ATM_Main_cont/money_24
-    -------------------------------------------------  ---------------------------
-    Total                                     10.507ns (2.190ns logic, 8.317ns route)
-                                                       (20.8% logic, 79.2% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     9.539ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/money_25 (FF)
-  Destination:          ATM_Main_cont/money_24 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.426ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/money_25 to ATM_Main_cont/money_24
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X4Y100.CQ      Tcko                  0.408   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/money_25
-    SLICE_X0Y89.A4       net (fanout=9)        1.873   ATM_Main_cont/money<25>
-    SLICE_X0Y89.BMUX     Topab                 0.476   ATM_Main_cont/Mcompar_n0748_cy<5>
-                                                       ATM_Main_cont/Mcompar_n0748_lutdi4
-                                                       ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A4      net (fanout=8)        1.558   ATM_Main_cont/Mcompar_n0748_cy<5>
-    SLICE_X13Y92.A       Tilo                  0.259   comm/restriction_1000<7>
-                                                       ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy_1
-    SLICE_X8Y90.D4       net (fanout=4)        0.659   ATM_Main_cont/GND_27_o_GND_27_o_AND_61_o1_cy_cy_cy_cy_cy_cy_cy_cy_cy
-    SLICE_X8Y90.D        Tilo                  0.205   N401
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_SW0
-    SLICE_X12Y81.C3      net (fanout=3)        1.199   N401
-    SLICE_X12Y81.C       Tilo                  0.205   N96
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61_1
-    SLICE_X5Y97.C6       net (fanout=2)        1.475   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<10>61
-    SLICE_X5Y97.C        Tilo                  0.259   ATM_Main_cont/money<23>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>41
-    SLICE_X4Y100.A3      net (fanout=16)       1.509   ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<2>4
-    SLICE_X4Y100.CLK     Tas                   0.341   ATM_Main_cont/money<25>
-                                                       ATM_Main_cont/state_money[31]_GND_27_o_mux_894_OUT<24>5
-                                                       ATM_Main_cont/money_24
-    -------------------------------------------------  ---------------------------
-    Total                                     10.426ns (2.153ns logic, 8.273ns route)
-                                                       (20.7% logic, 79.3% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point ATM_Main_cont/money_30 (SLICE_X2Y102.CE), 2573 paths
---------------------------------------------------------------------------------
-Slack (setup path):     9.513ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/data_inp/data_59 (FF)
-  Destination:          ATM_Main_cont/money_30 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.402ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.050ns (0.459 - 0.509)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_59 to ATM_Main_cont/money_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X36Y76.DQ      Tcko                  0.408   ATM_Main_cont/data_inp/data<59>
-                                                       ATM_Main_cont/data_inp/data_59
-    SLICE_X48Y74.D1      net (fanout=7)        1.723   ATM_Main_cont/data_inp/data<59>
-    SLICE_X48Y74.COUT    Topcyd                0.261   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<3>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.BMUX    Tcinb                 0.268   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<5>
-    SLICE_X16Y74.B4      net (fanout=86)       2.430   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-    SLICE_X16Y74.B       Tilo                  0.205   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/_n870021
-    SLICE_X16Y74.D1      net (fanout=2)        0.451   ATM_Main_cont/_n87002
-    SLICE_X16Y74.CMUX    Topdc                 0.338   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/state__n10311_inv6_SW0_F
-                                                       ATM_Main_cont/state__n10311_inv6_SW0
-    SLICE_X8Y86.D3       net (fanout=2)        1.406   N375
-    SLICE_X8Y86.D        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12_SW2
-    SLICE_X8Y86.C6       net (fanout=1)        0.118   N399
-    SLICE_X8Y86.C        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12
-    SLICE_X2Y102.CE      net (fanout=12)       2.050   ATM_Main_cont/_n10311_inv
-    SLICE_X2Y102.CLK     Tceck                 0.331   ATM_Main_cont/money<31>
-                                                       ATM_Main_cont/money_30
-    -------------------------------------------------  ---------------------------
-    Total                                     10.402ns (2.221ns logic, 8.181ns route)
-                                                       (21.4% logic, 78.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     9.538ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/data_inp/data_58 (FF)
-  Destination:          ATM_Main_cont/money_30 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.377ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.050ns (0.459 - 0.509)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_58 to ATM_Main_cont/money_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X36Y76.CQ      Tcko                  0.408   ATM_Main_cont/data_inp/data<59>
-                                                       ATM_Main_cont/data_inp/data_58
-    SLICE_X48Y74.D3      net (fanout=7)        1.698   ATM_Main_cont/data_inp/data<58>
-    SLICE_X48Y74.COUT    Topcyd                0.261   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<3>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.BMUX    Tcinb                 0.268   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<5>
-    SLICE_X16Y74.B4      net (fanout=86)       2.430   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-    SLICE_X16Y74.B       Tilo                  0.205   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/_n870021
-    SLICE_X16Y74.D1      net (fanout=2)        0.451   ATM_Main_cont/_n87002
-    SLICE_X16Y74.CMUX    Topdc                 0.338   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/state__n10311_inv6_SW0_F
-                                                       ATM_Main_cont/state__n10311_inv6_SW0
-    SLICE_X8Y86.D3       net (fanout=2)        1.406   N375
-    SLICE_X8Y86.D        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12_SW2
-    SLICE_X8Y86.C6       net (fanout=1)        0.118   N399
-    SLICE_X8Y86.C        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12
-    SLICE_X2Y102.CE      net (fanout=12)       2.050   ATM_Main_cont/_n10311_inv
-    SLICE_X2Y102.CLK     Tceck                 0.331   ATM_Main_cont/money<31>
-                                                       ATM_Main_cont/money_30
-    -------------------------------------------------  ---------------------------
-    Total                                     10.377ns (2.221ns logic, 8.156ns route)
-                                                       (21.4% logic, 78.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     9.643ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ATM_Main_cont/data_inp/data_50 (FF)
-  Destination:          ATM_Main_cont/money_30 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      10.274ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.048ns (0.459 - 0.507)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: ATM_Main_cont/data_inp/data_50 to ATM_Main_cont/money_30
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y75.CQ      Tcko                  0.447   ATM_Main_cont/data_inp/data<51>
-                                                       ATM_Main_cont/data_inp/data_50
-    SLICE_X48Y74.A3      net (fanout=7)        1.438   ATM_Main_cont/data_inp/data<50>
-    SLICE_X48Y74.COUT    Topcya                0.379   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<0>
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.CIN     net (fanout=1)        0.003   ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>
-    SLICE_X48Y75.BMUX    Tcinb                 0.268   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-                                                       ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<5>
-    SLICE_X16Y74.B4      net (fanout=86)       2.430   ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o
-    SLICE_X16Y74.B       Tilo                  0.205   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/_n870021
-    SLICE_X16Y74.D1      net (fanout=2)        0.451   ATM_Main_cont/_n87002
-    SLICE_X16Y74.CMUX    Topdc                 0.338   ATM_Main_cont/_n87002
-                                                       ATM_Main_cont/state__n10311_inv6_SW0_F
-                                                       ATM_Main_cont/state__n10311_inv6_SW0
-    SLICE_X8Y86.D3       net (fanout=2)        1.406   N375
-    SLICE_X8Y86.D        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12_SW2
-    SLICE_X8Y86.C6       net (fanout=1)        0.118   N399
-    SLICE_X8Y86.C        Tilo                  0.205   N399
-                                                       ATM_Main_cont/state__n10311_inv12
-    SLICE_X2Y102.CE      net (fanout=12)       2.050   ATM_Main_cont/_n10311_inv
-    SLICE_X2Y102.CLK     Tceck                 0.331   ATM_Main_cont/money<31>
-                                                       ATM_Main_cont/money_30
-    -------------------------------------------------  ---------------------------
-    Total                                     10.274ns (2.378ns logic, 7.896ns route)
-                                                       (23.1% logic, 76.9% route)
+    Total                                     11.104ns (2.177ns logic, 8.927ns route)
+                                                       (19.6% logic, 80.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point comm/restriction_total_10 (SLICE_X9Y99.CX), 1 path
+Paths for end point comm/data_recieved_38 (SLICE_X9Y107.CX), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm/x3_2 (FF)
-  Destination:          comm/restriction_total_10 (FF)
+  Source:               comm/d_6 (FF)
+  Destination:          comm/data_recieved_38 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.397ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.042 - 0.040)
+  Clock Path Skew:      0.002ns (0.039 - 0.037)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm/x3_2 to comm/restriction_total_10
+  Minimum Data Path at Fast Process Corner: comm/d_6 to comm/data_recieved_38
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X8Y99.CQ       Tcko                  0.200   comm/x3<3>
-                                                       comm/x3_2
-    SLICE_X9Y99.CX       net (fanout=1)        0.138   comm/x3<2>
-    SLICE_X9Y99.CLK      Tckdi       (-Th)    -0.059   comm/restriction_total<11>
-                                                       comm/restriction_total_10
+    SLICE_X8Y107.CQ      Tcko                  0.200   comm/d<7>
+                                                       comm/d_6
+    SLICE_X9Y107.CX      net (fanout=1)        0.138   comm/d<6>
+    SLICE_X9Y107.CLK     Tckdi       (-Th)    -0.059   comm/data_recieved<39>
+                                                       comm/data_recieved_38
     -------------------------------------------------  ---------------------------
     Total                                      0.397ns (0.259ns logic, 0.138ns route)
                                                        (65.2% logic, 34.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm/data_balance_18 (SLICE_X21Y82.CX), 1 path
+Paths for end point comm/data_balance_18 (SLICE_X29Y85.CX), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
   Source:               comm/b2_2 (FF)
   Destination:          comm/data_balance_18 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.397ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.042 - 0.040)
+  Clock Path Skew:      0.002ns (0.036 - 0.034)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -533,10 +530,10 @@ Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y82.CQ      Tcko                  0.200   comm/b2<3>
+    SLICE_X28Y85.CQ      Tcko                  0.200   comm/b2<3>
                                                        comm/b2_2
-    SLICE_X21Y82.CX      net (fanout=1)        0.138   comm/b2<2>
-    SLICE_X21Y82.CLK     Tckdi       (-Th)    -0.059   comm/data_balance<19>
+    SLICE_X29Y85.CX      net (fanout=1)        0.138   comm/b2<2>
+    SLICE_X29Y85.CLK     Tckdi       (-Th)    -0.059   comm/data_balance<19>
                                                        comm/data_balance_18
     -------------------------------------------------  ---------------------------
     Total                                      0.397ns (0.259ns logic, 0.138ns route)
@@ -544,27 +541,27 @@ Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm/data_balance_22 (SLICE_X21Y86.CX), 1 path
+Paths for end point comm/data_balance_30 (SLICE_X33Y84.CX), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.395ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm/b2_6 (FF)
-  Destination:          comm/data_balance_22 (FF)
+  Source:               comm/b1_6 (FF)
+  Destination:          comm/data_balance_30 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.397ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.033 - 0.031)
+  Clock Path Skew:      0.002ns (0.039 - 0.037)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm/b2_6 to comm/data_balance_22
+  Minimum Data Path at Fast Process Corner: comm/b1_6 to comm/data_balance_30
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y86.CQ      Tcko                  0.200   comm/b2<7>
-                                                       comm/b2_6
-    SLICE_X21Y86.CX      net (fanout=1)        0.138   comm/b2<6>
-    SLICE_X21Y86.CLK     Tckdi       (-Th)    -0.059   comm/data_balance<23>
-                                                       comm/data_balance_22
+    SLICE_X32Y84.CQ      Tcko                  0.200   comm/b1<7>
+                                                       comm/b1_6
+    SLICE_X33Y84.CX      net (fanout=1)        0.138   comm/b1<6>
+    SLICE_X33Y84.CLK     Tckdi       (-Th)    -0.059   comm/data_balance<31>
+                                                       comm/data_balance_30
     -------------------------------------------------  ---------------------------
     Total                                      0.397ns (0.259ns logic, 0.138ns route)
                                                        (65.2% logic, 34.8% route)
@@ -584,19 +581,18 @@ Slack: 18.270ns (period - min period limit)
 Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: decrypt/sum<3>/CLK
-  Logical resource: decrypt/sum_0/CK
-  Location pin: SLICE_X8Y104.CLK
+  Physical resource: ATM_Main_cont/cache_user_balance_1<31>/CLK
+  Logical resource: ATM_Main_cont/cache_user_balance_1_29/CK
+  Location pin: SLICE_X24Y74.CLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.570ns (period - (min high pulse limit / (high pulse / period)))
+Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
-  High pulse: 10.000ns
-  High pulse limit: 0.215ns (Trpw)
-  Physical resource: decrypt/sum<3>/SR
-  Logical resource: decrypt/sum_0/SR
-  Location pin: SLICE_X8Y104.SR
-  Clock network: ATM_Main_cont/done_or_reset
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: ATM_Main_cont/cache_user_balance_1<31>/CLK
+  Logical resource: ATM_Main_cont/cache_user_balance_1_30/CK
+  Location pin: SLICE_X24Y74.CLK
+  Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 
 
@@ -612,7 +608,7 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |   10.676|         |         |         |
+fx2Clk_in      |   11.341|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -621,23 +617,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 651812 paths, 0 nets, and 11944 connections
+Constraints cover 955690 paths, 0 nets, and 12205 connections
 
 Design statistics:
-   Minimum period:  10.676ns{1}   (Maximum frequency:  93.668MHz)
+   Minimum period:  11.341ns{1}   (Maximum frequency:  88.176MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon May  1 04:01:07 2017 
+Analysis completed Mon May  1 05:37:53 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 491 MB
+Peak Memory Usage: 492 MB
 
 
 

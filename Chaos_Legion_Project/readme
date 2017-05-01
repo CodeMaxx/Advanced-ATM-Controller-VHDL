@@ -1,0 +1,33 @@
+Team Name - Chaos Legion
+Team Members - Shaan Vaidya(150050004), Kanak Agrawal(150050016), Abhishek Kumar(150050020), Akash Trehan(150050031)
+
+
+
+Everything other than ethernet and Caching is working. Apart from the constraint file of last assignment, load_bank_id is mapped to F5 pin in Atlys board.
+
+In C, an argument between 0 and 31 has to be passed to ATM.out while running it. (ex: ./ATM.out 31)
+
+Run "make depend" for c code.
+
+
+
+
+
+
+Honor Code:
+
+Shaan Vaidya
+“The entire work submitted by the above group members have been done by them, and no part has been copied, or copied-and-modified-to-obfuscate,
+except the code fragments given by the instructors. All work that has been referenced has been properly cited, and no cited work has been copied, or copied-and-modified-to-obfuscate.”
+
+Kanak Agrawal
+“The entire work submitted by the above group members have been done by them, and no part has been copied, or copied-and-modified-to-obfuscate,
+except the code fragments given by the instructors. All work that has been referenced has been properly cited, and no cited work has been copied, or copied-and-modified-to-obfuscate.”
+
+Abhishek Kumar
+“The entire work submitted by the above group members have been done by them, and no part has been copied, or copied-and-modified-to-obfuscate,
+except the code fragments given by the instructors. All work that has been referenced has been properly cited, and no cited work has been copied, or copied-and-modified-to-obfuscate.”
+
+Akash Trehan
+“The entire work submitted by the above group members have been done by them, and no part has been copied, or copied-and-modified-to-obfuscate,
+except the code fragments given by the instructors. All work that has been referenced has been properly cited, and no cited work has been copied, or copied-and-modified-to-obfuscate.”

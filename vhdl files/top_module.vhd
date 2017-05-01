@@ -86,9 +86,6 @@ entity top_module is
 		----miim_clock_i     : in    std_ulogic;
 		--mdc_o            : out   std_ulogic;
 		--mdio_io          : inout std_ulogic
-
-		  
-		  
 		  );
 end top_module;
 
@@ -120,13 +117,12 @@ architecture Behavioral of top_module is
 		  restriction_100: in STD_LOGIC_VECTOR (7 downto 0);
 		  restriction_total: in STD_LOGIC_VECTOR (31 downto 0);
 		  load_bank_id: in STD_LOGIC;
-
-
+	
 		  --start_mac_comm : out STD_LOGIC;
 		  --done_mac_comm : in STD_LOGIC;
 		  --data_send_mac_comm : out STD_LOGIC_VECTOR (63 downto 0);
 		  --data_response_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
-		  
+
 		  --request_mac_comm : in STD_LOGIC;
 		  --is_suf_atm_request : in STD_LOGIC;
 		  --data_request_mac_comm : in STD_LOGIC_VECTOR (63 downto 0);
@@ -138,7 +134,7 @@ architecture Behavioral of top_module is
 		comm_success : in STD_LOGIC
 );
 	 end component;
-	
+
 
 	 --component mac_communication
 	 --	port(

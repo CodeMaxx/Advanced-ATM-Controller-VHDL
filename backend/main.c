@@ -222,7 +222,7 @@ void setBalance(int index, int newBalance){
 
 int get_index(uint8 id, int numberOfUsers) {
     for(int i = 0; i < numberOfUsers; i++){
-        if(Users[i].ID == ID){
+        if(Users[i].ID == id){
             return i;
         }
     }

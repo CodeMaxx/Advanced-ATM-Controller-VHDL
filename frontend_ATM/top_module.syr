@@ -158,6 +158,7 @@ Elaborating entity <ATM_main_controller> (architecture <Behavioral>) with generi
 Elaborating entity <timer> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/kanak/CS254/Advanced-ATM-Controller-VHDL/vhdl files/ATM_main_controller.vhd" Line 147: Assignment to substate3 ignored, since the identifier is never used
 
 Elaborating entity <communication> (architecture <Behavioral>) with generics from library <work>.
 
@@ -285,28 +286,6 @@ Synthesizing Unit <ATM_main_controller>.
         value1000 = "1111101000"
         value500 = "111110100"
         value100 = "1100100"
-    Found 32-bit register for signal <data_balance_signal>.
-    Found 1-bit register for signal <substate3>.
-    Found 4-bit register for signal <check>.
-    Found 32-bit register for signal <cache_user_balance<0>>.
-    Found 32-bit register for signal <cache_user_balance<1>>.
-    Found 32-bit register for signal <cache_user_balance<2>>.
-    Found 32-bit register for signal <cache_user_balance<3>>.
-    Found 32-bit register for signal <cache_user_balance<4>>.
-    Found 3-bit register for signal <substate2>.
-    Found 16-bit register for signal <temp_user_id>.
-    Found 16-bit register for signal <temp_user_password>.
-    Found 32-bit register for signal <temp_user_balance>.
-    Found 16-bit register for signal <cache_user_id<0>>.
-    Found 16-bit register for signal <cache_user_id<1>>.
-    Found 16-bit register for signal <cache_user_id<2>>.
-    Found 16-bit register for signal <cache_user_id<3>>.
-    Found 16-bit register for signal <cache_user_id<4>>.
-    Found 16-bit register for signal <cache_user_password<0>>.
-    Found 16-bit register for signal <cache_user_password<1>>.
-    Found 16-bit register for signal <cache_user_password<2>>.
-    Found 16-bit register for signal <cache_user_password<3>>.
-    Found 16-bit register for signal <cache_user_password<4>>.
     Found 5-bit register for signal <state>.
     Found 8-bit register for signal <n100>.
     Found 8-bit register for signal <n500>.
@@ -325,8 +304,30 @@ Synthesizing Unit <ATM_main_controller>.
     Found 1-bit register for signal <start_encrypt>.
     Found 64-bit register for signal <encrypted_data_comm>.
     Found 1-bit register for signal <start_comm>.
+    Found 1-bit register for signal <start_comm_signal>.
     Found 64-bit register for signal <data_to_be_decrypted>.
     Found 1-bit register for signal <start_decrypt>.
+    Found 32-bit register for signal <cache_user_balance<0>>.
+    Found 32-bit register for signal <cache_user_balance<1>>.
+    Found 32-bit register for signal <cache_user_balance<2>>.
+    Found 32-bit register for signal <cache_user_balance<3>>.
+    Found 32-bit register for signal <cache_user_balance<4>>.
+    Found 32-bit register for signal <data_balance_signal>.
+    Found 4-bit register for signal <check>.
+    Found 3-bit register for signal <substate2>.
+    Found 16-bit register for signal <temp_user_id>.
+    Found 16-bit register for signal <temp_user_password>.
+    Found 32-bit register for signal <temp_user_balance>.
+    Found 16-bit register for signal <cache_user_id<0>>.
+    Found 16-bit register for signal <cache_user_id<1>>.
+    Found 16-bit register for signal <cache_user_id<2>>.
+    Found 16-bit register for signal <cache_user_id<3>>.
+    Found 16-bit register for signal <cache_user_id<4>>.
+    Found 16-bit register for signal <cache_user_password<0>>.
+    Found 16-bit register for signal <cache_user_password<1>>.
+    Found 16-bit register for signal <cache_user_password<2>>.
+    Found 16-bit register for signal <cache_user_password<3>>.
+    Found 16-bit register for signal <cache_user_password<4>>.
     Found 8-bit register for signal <data_out_leds>.
     Found 4-bit register for signal <substate4>.
     Found 3-bit register for signal <count_blink>.
@@ -344,14 +345,14 @@ Synthesizing Unit <ATM_main_controller>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_3> for signal <substate>.
+    Found finite state machine <FSM_2> for signal <substate>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
     | Transitions        | 51                                             |
     | Inputs             | 17                                             |
     | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | state[4]_GND_27_o_equal_657_o (positive)       |
+    | Reset              | state[4]_GND_27_o_equal_782_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | 000                                            |
     | Power Up State     | 000                                            |
@@ -361,23 +362,23 @@ Synthesizing Unit <ATM_main_controller>.
     Found finite state machine <FSM_4> for signal <substate2>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
-    | Transitions        | 55                                             |
-    | Inputs             | 11                                             |
+    | Transitions        | 2428                                           |
+    | Inputs             | 21                                             |
     | Outputs            | 6                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | state[4]_GND_27_o_equal_657_o (positive)       |
+    | Reset              | state[4]_GND_27_o_equal_782_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | 000                                            |
     | Power Up State     | 000                                            |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_2> for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
-    | States             | 10                                             |
-    | Transitions        | 127                                            |
-    | Inputs             | 30                                             |
-    | Outputs            | 14                                             |
+    | States             | 11                                             |
+    | Transitions        | 129                                            |
+    | Inputs             | 31                                             |
+    | Outputs            | 16                                             |
     | Clock              | clk (rising_edge)                              |
     | Reset              | reset_button (positive)                        |
     | Reset type         | synchronous                                    |
@@ -386,69 +387,69 @@ Synthesizing Unit <ATM_main_controller>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 8-bit adder for signal <d2000[7]_GND_27_o_add_404_OUT> created at line 338.
-    Found 8-bit adder for signal <d1000[7]_GND_27_o_add_414_OUT> created at line 345.
-    Found 8-bit adder for signal <d500[7]_GND_27_o_add_424_OUT> created at line 352.
-    Found 8-bit adder for signal <d100[7]_GND_27_o_add_434_OUT> created at line 359.
-    Found 3-bit adder for signal <count_blink[2]_GND_27_o_add_854_OUT> created at line 679.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_402_OUT<7:0>> created at line 336.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_404_OUT<31:0>> created at line 337.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_412_OUT<7:0>> created at line 343.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_414_OUT<31:0>> created at line 344.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_422_OUT<7:0>> created at line 350.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_424_OUT<31:0>> created at line 351.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_432_OUT<7:0>> created at line 357.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_434_OUT<31:0>> created at line 358.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_478_OUT<31:0>> created at line 389.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_486_OUT<31:0>> created at line 399.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_494_OUT<31:0>> created at line 409.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_502_OUT<31:0>> created at line 419.
-    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_510_OUT<31:0>> created at line 429.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_737_OUT<7:0>> created at line 612.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_747_OUT<7:0>> created at line 621.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_757_OUT<7:0>> created at line 630.
-    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_767_OUT<7:0>> created at line 639.
-    Found 16-bit comparator equal for signal <cache_user_id[0][15]_data_to_be_encrypted_signal[63]_equal_3_o> created at line 158
-    Found 16-bit comparator equal for signal <cache_user_id[1][15]_data_to_be_encrypted_signal[63]_equal_4_o> created at line 162
-    Found 16-bit comparator equal for signal <cache_user_id[2][15]_data_to_be_encrypted_signal[63]_equal_29_o> created at line 180
-    Found 16-bit comparator equal for signal <cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o> created at line 203
-    Found 16-bit comparator equal for signal <cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_124_o> created at line 231
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_403_o> created at line 336
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_413_o> created at line 343
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_423_o> created at line 350
-    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_433_o> created at line 357
-    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_472_o> created at line 371
-    Found 16-bit comparator equal for signal <cache_user_password[0][15]_data_to_be_encrypted_signal[47]_equal_476_o> created at line 384
-    Found 32-bit comparator greater for signal <cache_user_balance[0][31]_data_to_be_encrypted_signal[31]_LessThan_477_o> created at line 385
-    Found 16-bit comparator equal for signal <cache_user_password[1][15]_data_to_be_encrypted_signal[47]_equal_484_o> created at line 394
-    Found 32-bit comparator greater for signal <cache_user_balance[1][31]_data_to_be_encrypted_signal[31]_LessThan_485_o> created at line 395
-    Found 16-bit comparator equal for signal <cache_user_password[2][15]_data_to_be_encrypted_signal[47]_equal_492_o> created at line 404
-    Found 32-bit comparator greater for signal <cache_user_balance[2][31]_data_to_be_encrypted_signal[31]_LessThan_493_o> created at line 405
-    Found 16-bit comparator equal for signal <cache_user_password[3][15]_data_to_be_encrypted_signal[47]_equal_500_o> created at line 414
-    Found 32-bit comparator greater for signal <cache_user_balance[3][31]_data_to_be_encrypted_signal[31]_LessThan_501_o> created at line 415
-    Found 16-bit comparator equal for signal <cache_user_password[4][15]_data_to_be_encrypted_signal[47]_equal_508_o> created at line 424
-    Found 32-bit comparator greater for signal <cache_user_balance[4][31]_data_to_be_encrypted_signal[31]_LessThan_509_o> created at line 425
-    Found 32-bit comparator greater for signal <n0524> created at line 443
-    Found 3-bit comparator greater for signal <count_blink[2]_GND_27_o_LessThan_707_o> created at line 573
-    Found 32-bit comparator greater for signal <n0737> created at line 605
-    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_732_o> created at line 605
-    Found 8-bit comparator greater for signal <GND_27_o_n2000[7]_LessThan_733_o> created at line 605
-    Found 32-bit comparator greater for signal <n0748> created at line 614
-    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_742_o> created at line 614
-    Found 8-bit comparator greater for signal <GND_27_o_n1000[7]_LessThan_743_o> created at line 614
-    Found 32-bit comparator greater for signal <n0759> created at line 623
-    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_752_o> created at line 623
-    Found 8-bit comparator greater for signal <GND_27_o_n500[7]_LessThan_753_o> created at line 623
-    Found 32-bit comparator greater for signal <n0770> created at line 632
-    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_762_o> created at line 632
-    Found 8-bit comparator greater for signal <GND_27_o_n100[7]_LessThan_763_o> created at line 632
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_814_o> created at line 657
-    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_854_o> created at line 676
+    Found 8-bit adder for signal <d2000[7]_GND_27_o_add_10_OUT> created at line 339.
+    Found 8-bit adder for signal <d1000[7]_GND_27_o_add_20_OUT> created at line 346.
+    Found 8-bit adder for signal <d500[7]_GND_27_o_add_30_OUT> created at line 353.
+    Found 8-bit adder for signal <d100[7]_GND_27_o_add_40_OUT> created at line 360.
+    Found 3-bit adder for signal <count_blink[2]_GND_27_o_add_979_OUT> created at line 832.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_8_OUT<7:0>> created at line 337.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_10_OUT<31:0>> created at line 338.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_18_OUT<7:0>> created at line 344.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_20_OUT<31:0>> created at line 345.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_28_OUT<7:0>> created at line 351.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_30_OUT<31:0>> created at line 352.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_38_OUT<7:0>> created at line 358.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_40_OUT<31:0>> created at line 359.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_84_OUT<31:0>> created at line 393.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_92_OUT<31:0>> created at line 403.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_100_OUT<31:0>> created at line 413.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_108_OUT<31:0>> created at line 423.
+    Found 32-bit subtractor for signal <GND_27_o_GND_27_o_sub_116_OUT<31:0>> created at line 433.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_862_OUT<7:0>> created at line 765.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_872_OUT<7:0>> created at line 774.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_882_OUT<7:0>> created at line 783.
+    Found 8-bit subtractor for signal <GND_27_o_GND_27_o_sub_892_OUT<7:0>> created at line 792.
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_9_o> created at line 337
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_19_o> created at line 344
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_29_o> created at line 351
+    Found 8-bit comparator greater for signal <GND_27_o_GND_27_o_LessThan_39_o> created at line 358
+    Found 5-bit comparator equal for signal <current_user_bank_id[4]_bank_id[4]_equal_78_o> created at line 372
+    Found 16-bit comparator equal for signal <cache_user_id[0][15]_data_to_be_encrypted_signal[63]_equal_149_o> created at line 388
+    Found 16-bit comparator equal for signal <cache_user_password[0][15]_data_to_be_encrypted_signal[47]_equal_82_o> created at line 388
+    Found 32-bit comparator greater for signal <cache_user_balance[0][31]_data_to_be_encrypted_signal[31]_LessThan_83_o> created at line 389
+    Found 16-bit comparator equal for signal <cache_user_id[1][15]_data_to_be_encrypted_signal[63]_equal_150_o> created at line 398
+    Found 16-bit comparator equal for signal <cache_user_password[1][15]_data_to_be_encrypted_signal[47]_equal_90_o> created at line 398
+    Found 32-bit comparator greater for signal <cache_user_balance[1][31]_data_to_be_encrypted_signal[31]_LessThan_91_o> created at line 399
+    Found 16-bit comparator equal for signal <cache_user_id[2][15]_data_to_be_encrypted_signal[63]_equal_175_o> created at line 408
+    Found 16-bit comparator equal for signal <cache_user_password[2][15]_data_to_be_encrypted_signal[47]_equal_98_o> created at line 408
+    Found 32-bit comparator greater for signal <cache_user_balance[2][31]_data_to_be_encrypted_signal[31]_LessThan_99_o> created at line 409
+    Found 16-bit comparator equal for signal <cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_214_o> created at line 418
+    Found 16-bit comparator equal for signal <cache_user_password[3][15]_data_to_be_encrypted_signal[47]_equal_106_o> created at line 418
+    Found 32-bit comparator greater for signal <cache_user_balance[3][31]_data_to_be_encrypted_signal[31]_LessThan_107_o> created at line 419
+    Found 16-bit comparator equal for signal <cache_user_id[4][15]_data_to_be_encrypted_signal[63]_equal_270_o> created at line 428
+    Found 16-bit comparator equal for signal <cache_user_password[4][15]_data_to_be_encrypted_signal[47]_equal_114_o> created at line 428
+    Found 32-bit comparator greater for signal <cache_user_balance[4][31]_data_to_be_encrypted_signal[31]_LessThan_115_o> created at line 429
+    Found 32-bit comparator greater for signal <n0476> created at line 588
+    Found 3-bit comparator greater for signal <count_blink[2]_GND_27_o_LessThan_832_o> created at line 726
+    Found 32-bit comparator greater for signal <n0862> created at line 758
+    Found 8-bit comparator greater for signal <d2000[7]_restriction_2000[7]_LessThan_857_o> created at line 758
+    Found 8-bit comparator greater for signal <GND_27_o_n2000[7]_LessThan_858_o> created at line 758
+    Found 32-bit comparator greater for signal <n0873> created at line 767
+    Found 8-bit comparator greater for signal <d1000[7]_restriction_1000[7]_LessThan_867_o> created at line 767
+    Found 8-bit comparator greater for signal <GND_27_o_n1000[7]_LessThan_868_o> created at line 767
+    Found 32-bit comparator greater for signal <n0884> created at line 776
+    Found 8-bit comparator greater for signal <d500[7]_restriction_500[7]_LessThan_877_o> created at line 776
+    Found 8-bit comparator greater for signal <GND_27_o_n500[7]_LessThan_878_o> created at line 776
+    Found 32-bit comparator greater for signal <n0895> created at line 785
+    Found 8-bit comparator greater for signal <d100[7]_restriction_100[7]_LessThan_887_o> created at line 785
+    Found 8-bit comparator greater for signal <GND_27_o_n100[7]_LessThan_888_o> created at line 785
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_939_o> created at line 810
+    Found 3-bit comparator greater for signal <count_blink[2]_PWR_17_o_LessThan_979_o> created at line 829
     Summary:
 	inferred  22 Adder/Subtractor(s).
 	inferred 737 D-type flip-flop(s).
 	inferred  36 Comparator(s).
-	inferred 412 Multiplexer(s).
+	inferred 286 Multiplexer(s).
 	inferred   4 Finite State Machine(s).
 Unit <ATM_main_controller> synthesized.
 
@@ -581,11 +582,11 @@ Macro Statistics
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
  8-bit comparator greater                              : 13
-# Multiplexers                                         : 455
+# Multiplexers                                         : 329
  1-bit 2-to-1 multiplexer                              : 25
  16-bit 2-to-1 multiplexer                             : 16
  17-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 258
+ 32-bit 2-to-1 multiplexer                             : 132
  4-bit 2-to-1 multiplexer                              : 3
  64-bit 2-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 149
@@ -602,17 +603,22 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
-INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
+INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_Main_cont> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 
 Synthesizing (advanced) Unit <ATM_main_controller>.
+The following registers are absorbed into accumulator <cache_user_balance_0>: 1 register on signal <cache_user_balance_0>.
+The following registers are absorbed into accumulator <cache_user_balance_1>: 1 register on signal <cache_user_balance_1>.
+The following registers are absorbed into accumulator <cache_user_balance_2>: 1 register on signal <cache_user_balance_2>.
+The following registers are absorbed into accumulator <cache_user_balance_3>: 1 register on signal <cache_user_balance_3>.
+The following registers are absorbed into accumulator <cache_user_balance_4>: 1 register on signal <cache_user_balance_4>.
+The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
 The following registers are absorbed into counter <d2000>: 1 register on signal <d2000>.
 The following registers are absorbed into counter <d500>: 1 register on signal <d500>.
-The following registers are absorbed into counter <d1000>: 1 register on signal <d1000>.
 The following registers are absorbed into counter <d100>: 1 register on signal <d100>.
 The following registers are absorbed into counter <count_blink>: 1 register on signal <count_blink>.
 Unit <ATM_main_controller> synthesized (advanced).
@@ -650,11 +656,11 @@ Unit <timer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 37
+# Adders/Subtractors                                   : 32
  17-bit subtractor                                     : 1
  20-bit adder                                          : 5
  32-bit adder                                          : 13
- 32-bit subtractor                                     : 10
+ 32-bit subtractor                                     : 5
  8-bit subtractor                                      : 8
 # Counters                                             : 15
  20-bit up counter                                     : 5
@@ -664,12 +670,12 @@ Macro Statistics
  4-bit up counter                                      : 1
  6-bit up counter                                      : 2
  8-bit up counter                                      : 4
-# Accumulators                                         : 5
- 32-bit down loadable accumulator                      : 2
+# Accumulators                                         : 10
+ 32-bit down loadable accumulator                      : 7
  32-bit up loadable accumulator                        : 2
  64-bit up loadable accumulator                        : 1
-# Registers                                            : 1308
- Flip-Flops                                            : 1308
+# Registers                                            : 1148
+ Flip-Flops                                            : 1148
 # Comparators                                          : 44
  16-bit comparator equal                               : 10
  25-bit comparator greater                             : 2
@@ -679,11 +685,11 @@ Macro Statistics
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 4
  8-bit comparator greater                              : 13
-# Multiplexers                                         : 479
+# Multiplexers                                         : 348
  1-bit 2-to-1 multiplexer                              : 56
  16-bit 2-to-1 multiplexer                             : 14
  17-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 254
+ 32-bit 2-to-1 multiplexer                             : 123
  4-bit 2-to-1 multiplexer                              : 3
  8-bit 2-to-1 multiplexer                              : 149
 # FSMs                                                 : 6
@@ -696,14 +702,28 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
-INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_2> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_50> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_3> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_51> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_4> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_52> 
 INFO:Xst:2261 - The FF/Latch <current_user_bank_id_0> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_48> 
+INFO:Xst:2261 - The FF/Latch <current_user_bank_id_1> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <data_to_be_encrypted_49> 
+INFO:Xst:2261 - The FF/Latch <is_suf_atm_signal> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <is_suf_atm> 
+INFO:Xst:2261 - The FF/Latch <start_comm> in Unit <ATM_main_controller> is equivalent to the following FF/Latch, which will be removed : <start_comm_signal> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_3> on signal <substate[1:3]> with gray encoding.
+Optimizing FSM <ATM_Main_cont/FSM_4> on signal <substate2[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 111   | 111
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 010   | 010
+ 001   | 001
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ATM_Main_cont/FSM_2> on signal <substate[1:3]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -715,21 +735,22 @@ Optimizing FSM <ATM_Main_cont/FSM_3> on signal <substate[1:3]> with gray encodin
  101   | 111
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_2> on signal <state[1:10]> with one-hot encoding.
----------------------
+Optimizing FSM <ATM_Main_cont/FSM_3> on signal <state[1:11]> with one-hot encoding.
+----------------------
  State | Encoding
----------------------
- 00000 | 0000000001
- 00001 | 0000000010
- 00010 | 0000000100
- 00011 | 0000001000
- 00100 | 0000010000
- 00111 | 0000100000
- 00110 | 0001000000
- 01111 | 0010000000
- 00101 | 0100000000
- 01000 | 1000000000
----------------------
+----------------------
+ 00000 | 00000000001
+ 11111 | 00000000010
+ 00001 | 00000000100
+ 00010 | 00000001000
+ 00011 | 00000010000
+ 00100 | 00000100000
+ 00111 | 00001000000
+ 00110 | 00010000000
+ 01111 | 00100000000
+ 00101 | 01000000000
+ 01000 | 10000000000
+----------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <ATM_Main_cont/FSM_1> on signal <substate4[1:4]> with user encoding.
 -------------------
@@ -744,19 +765,6 @@ Optimizing FSM <ATM_Main_cont/FSM_1> on signal <substate4[1:4]> with user encodi
  0110  | 0110
  0111  | 0111
  1000  | 1000
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ATM_Main_cont/FSM_4> on signal <substate2[1:3]> with user encoding.
--------------------
- State | Encoding
--------------------
- 000   | 000
- 111   | 111
- 011   | 011
- 100   | 100
- 101   | 101
- 010   | 010
- 001   | 001
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <ATM_Main_cont/data_inp/FSM_5> on signal <state[1:2]> with gray encoding.
@@ -800,6 +808,9 @@ Optimizing unit <communication> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 13.
+FlipFlop ATM_Main_cont/state_FSM_FFd7 has been replicated 1 time(s)
+FlipFlop comm/comm_success has been replicated 1 time(s)
+FlipFlop comm/done_comm has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -807,8 +818,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1724
- Flip-Flops                                            : 1724
+# Registers                                            : 1727
+ Flip-Flops                                            : 1727
 
 =========================================================================
 
@@ -831,27 +842,27 @@ Top Level Output File Name         : top_module.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 5412
+# BELS                             : 5445
 #      GND                         : 1
 #      INV                         : 291
 #      LUT1                        : 407
-#      LUT2                        : 370
-#      LUT3                        : 151
-#      LUT4                        : 453
-#      LUT5                        : 358
-#      LUT6                        : 814
-#      MUXCY                       : 1353
-#      MUXF7                       : 6
+#      LUT2                        : 212
+#      LUT3                        : 221
+#      LUT4                        : 547
+#      LUT5                        : 489
+#      LUT6                        : 715
+#      MUXCY                       : 1346
+#      MUXF7                       : 8
 #      VCC                         : 1
 #      XORCY                       : 1207
-# FlipFlops/Latches                : 1724
-#      FD                          : 32
+# FlipFlops/Latches                : 1727
+#      FD                          : 29
 #      FDC                         : 7
 #      FDCE                        : 115
-#      FDE                         : 1284
+#      FDE                         : 1289
 #      FDPE                        : 37
-#      FDR                         : 155
-#      FDRE                        : 93
+#      FDR                         : 146
+#      FDRE                        : 103
 #      FDS                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -868,16 +879,16 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1724  out of  54576     3%  
- Number of Slice LUTs:                 2844  out of  27288    10%  
-    Number used as Logic:              2844  out of  27288    10%  
+ Number of Slice Registers:            1727  out of  54576     3%  
+ Number of Slice LUTs:                 2882  out of  27288    10%  
+    Number used as Logic:              2882  out of  27288    10%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3642
-   Number with an unused Flip Flop:    1918  out of   3642    52%  
-   Number with an unused LUT:           798  out of   3642    21%  
-   Number of fully used LUT-FF pairs:   926  out of   3642    25%  
-   Number of unique control sets:        77
+ Number of LUT Flip Flop pairs used:   3659
+   Number with an unused Flip Flop:    1932  out of   3659    52%  
+   Number with an unused LUT:           777  out of   3659    21%  
+   Number of fully used LUT-FF pairs:   950  out of   3659    25%  
+   Number of unique control sets:        80
 
 IO Utilization: 
  Number of IOs:                          50
@@ -907,7 +918,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-fx2Clk_in                          | BUFGP                  | 1724  |
+fx2Clk_in                          | BUFGP                  | 1727  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -918,7 +929,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.377ns (Maximum Frequency: 119.374MHz)
+   Minimum period: 8.485ns (Maximum Frequency: 117.856MHz)
    Minimum input arrival time before clock: 8.125ns
    Maximum output required time after clock: 5.814ns
    Maximum combinational path delay: 5.988ns
@@ -929,36 +940,32 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
-  Clock period: 8.377ns (frequency: 119.374MHz)
-  Total number of paths / destination ports: 651812 / 3475
+  Clock period: 8.485ns (frequency: 117.856MHz)
+  Total number of paths / destination ports: 955690 / 3494
 -------------------------------------------------------------------------
-Delay:               8.377ns (Levels of Logic = 12)
-  Source:            ATM_Main_cont/cache_user_id_3_2 (FF)
+Delay:               8.485ns (Levels of Logic = 8)
+  Source:            ATM_Main_cont/n500_2 (FF)
   Destination:       ATM_Main_cont/money_31 (FF)
   Source Clock:      fx2Clk_in rising
   Destination Clock: fx2Clk_in rising
 
-  Data Path: ATM_Main_cont/cache_user_id_3_2 to ATM_Main_cont/money_31
+  Data Path: ATM_Main_cont/n500_2 to ATM_Main_cont/money_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              3   0.447   1.015  ATM_Main_cont/cache_user_id_3_2 (ATM_Main_cont/cache_user_id_3_2)
-     LUT6:I0->O            1   0.203   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<0> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<0> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<1> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<2> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<4> (ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<4>)
-     MUXCY:CI->O          88   0.213   1.799  ATM_Main_cont/Mcompar_cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o_cy<5> (ATM_Main_cont/cache_user_id[3][15]_data_to_be_encrypted_signal[63]_equal_68_o)
-     LUT6:I5->O            2   0.205   0.721  ATM_Main_cont/_n870021 (ATM_Main_cont/_n87002)
-     LUT6:I4->O            1   0.203   0.000  ATM_Main_cont/state__n10311_inv6_SW0_F (N455)
-     MUXF7:I0->O           2   0.131   0.617  ATM_Main_cont/state__n10311_inv6_SW0 (N375)
-     LUT6:I5->O            1   0.205   0.580  ATM_Main_cont/state__n10311_inv12_SW2 (N399)
-     LUT6:I5->O           30   0.205   1.263  ATM_Main_cont/state__n10311_inv12 (ATM_Main_cont/_n10311_inv)
-     FDRE:CE                   0.322          ATM_Main_cont/money_2
+     FDE:C->Q              5   0.447   0.943  ATM_Main_cont/n500_2 (ATM_Main_cont/n500_2)
+     LUT4:I1->O            4   0.205   0.684  ATM_Main_cont/n500[7]_n500[7]_mux_1083_OUT<3>111 (ATM_Main_cont/n500[7]_n500[7]_mux_1083_OUT<3>11)
+     LUT5:I4->O            1   0.205   0.580  ATM_Main_cont/GND_27_o_GND_27_o_AND_58_o_lut_SW0 (N334)
+     LUT6:I5->O            1   0.205   0.000  ATM_Main_cont/GND_27_o_GND_27_o_AND_58_o_lut (ATM_Main_cont/GND_27_o_GND_27_o_AND_58_o_lut)
+     MUXCY:S->O           46   0.366   1.491  ATM_Main_cont/GND_27_o_GND_27_o_AND_58_o_cy (ATM_Main_cont/GND_27_o_GND_27_o_AND_58_o)
+     LUT6:I5->O            7   0.205   0.774  ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<10>61 (ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<10>6)
+     LUT6:I5->O           15   0.205   1.086  ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<10>10 (ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<10>10)
+     LUT6:I4->O            1   0.203   0.580  ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<9>5_SW0 (N166)
+     LUT6:I5->O            1   0.205   0.000  ATM_Main_cont/state_money[31]_GND_27_o_mux_1019_OUT<9>5 (ATM_Main_cont/money[31]_GND_27_o_mux_1019_OUT<9>)
+     FDRE:D                    0.102          ATM_Main_cont/money_9
     ----------------------------------------
-    Total                      8.377ns (2.382ns logic, 5.995ns route)
-                                       (28.4% logic, 71.6% route)
+    Total                      8.485ns (2.348ns logic, 6.137ns route)
+                                       (27.7% logic, 72.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
@@ -1032,21 +1039,21 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |    8.377|         |         |         |
+fx2Clk_in      |    8.485|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 27.77 secs
+Total REAL time to Xst completion: 29.00 secs
+Total CPU time to Xst completion: 29.25 secs
  
 --> 
 
 
-Total memory usage is 440200 kilobytes
+Total memory usage is 446208 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 
